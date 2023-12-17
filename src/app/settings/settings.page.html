@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button (click)="backAction()"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Ajustes </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <div class="options">
+      <ion-item>
+        <ion-select placeholder="Seleccionar" (ionChange)="onChangeDistance()" [(ngModel)]="selectedDistance" label="Distancia a caminar">
+          <ion-select-option value="1">500m</ion-select-option>
+          <ion-select-option value="2">1km</ion-select-option>
+          <ion-select-option value="3">1.5km</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <ion-button color="primary" (click)="faq()" shape="round" expand="block" *ngIf="showFaq">Preguntas frecuentes</ion-button>
+    <a color="primary" href="mailto:queruta@gmail.com" target="_blank" rel="noopener noreferrer">
+      <ion-button shape="round" expand="block" color="primary">Contacto</ion-button>
+    </a>
+    <a color="primary"
+      href="https://docs.google.com/document/d/14d1_fXqkzR4f2iawTnsKjFEPI8EOir3L18qAj560MKk/edit?usp=sharing"
+      target="_blank" rel="noopener noreferrer">
+      <ion-button shape="round" expand="block" color="primary">Términos y condiciones</ion-button>
+    </a>
+    <ion-button color="primary" (click)="changeCity()" shape="round" expand="block">Cambiar de ciudad</ion-button>
+    <ion-button color="primary" (click)="install()" shape="round" expand="block" *ngIf="setup!==undefined">Instalar App</ion-button>
+  </ion-list>
+
+  <div class="buttons">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let page of social" class="center">
+          <a [href]="page.url" target="_blank" rel="noopener noreferrer">
+            <ion-icon [name]="page.icon" class="social"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header class="green">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="modalCtrl.dismiss()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Elejir Ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="address" class="map"></div>
+  <ion-icon name="locate" class="pin floating"></ion-icon>
+  <ion-button class="button floating" (click)="select()" shape="round" color="primary">Seleccionar direccion
+    aqui</ion-button>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Q'ruta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

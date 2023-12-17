@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{route?.get('company')?.get('name')}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="route" style="width:100%; height:60%;"></div>
+  <div class="ion-padding">
+    <h1>{{route?.get('name')}} - {{route?.get('details')}}</h1>
+    <p>{{route?.get('info')}}</p>
+    <swiper-container *ngIf="images.length>0" [pagination]="true">
+      <swiper-slide *ngFor="let image of images">
+        <div class="image-container">
+          <img [src]="image.get('url')">
+        </div>
+        
+      </swiper-slide>
+    </swiper-container>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-icon name="time"></ion-icon>
+          Horarios
+        </ion-col>
+        <ion-col size="3" class="line"> Hora </ion-col>
+        <ion-col size="3" class="line"> Frecuencia </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Lunes a viernes
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.lvhi}} - {{schedule.lvhf}}
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.lvfv}} - {{schedule.lvfp}} min
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Sábado
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.shi}} - {{schedule.shf}}
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.sfv}} - {{schedule.sfp}} min
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Domingos y festivos
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.dfhi}} - {{schedule.dfhf}}
+        </ion-col>
+        <ion-col size="3" class="line">
+          {{schedule.dffv}} - {{schedule.dffp}} min
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <p class="line">Actualizada: {{route?.get('updatedAt') | date:'medium'}}</p>
+  </div>
+
+</ion-content>

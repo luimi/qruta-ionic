@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="manifest" href="manifest.json" />
+  <meta charset="utf-8" />
+  <title>Q'ruta</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar" content="#011f35" />
+  <meta name="theme-color" content="#011f35" />
+
+
+  <!--PWA config-->
+  <script>
+    let installer;
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/serviceWorker.js")
+      })
+    }
+    window.addEventListener('beforeinstallprompt', (event) => {
+      if (!window.matchMedia('(display-mode: standalone)').matches) {
+        installer = event;
+      }
+      return event.preventDefault();
+    });
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

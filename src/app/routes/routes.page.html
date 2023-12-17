@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title>Rutas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="objectKeys(companies).length">
+  <ion-list>
+    <div *ngFor="let company of objectKeys(companies)" >
+      <ion-item (click)="companies[company].show = !companies[company].show">
+        <ion-label>
+          <h2>{{companies[company].name}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-list [ngClass]="{'ion-hide':!companies[company].show}">
+        <ion-item *ngFor="let route of companies[company].routes" [routerLink]="['/route/'+route.id]" routerDirection="forward">
+          <ion-label>
+            <p>{{route.get('name')}} {{route.get('details')?'-':''}} {{route.get('details')}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    
+
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="!objectKeys(companies).length">
+  <app-empty-state  #emptyState icon="bus" text="Cargando rutas"></app-empty-state>
+</ion-content>

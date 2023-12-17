@@ -1,0 +1,33 @@
+.green {
+  background-color: #011f35;
+}
+
+.searchbar {
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 0 12px 0 12px;
+
+  ion-segment {
+    height: 36px;
+  }
+
+  .location {
+    padding: 12px;
+  }
+}
+
+ion-list {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 1px 3px 0px 0px rgba(0, 0, 0, 0.06);
+}
+
+ion-progress-bar {
+  z-index: 1;
+}
+
+ion-searchbar {
+  margin-top: 0;
+  padding: 0;
+}

@@ -1,0 +1,29 @@
+
+
+
+# Generated with ngx-htaccess-generator v1.0.7
+# https://julianpoemp.github.io/ngx-htaccess-generator/
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirection to HTTPS:
+  RewriteCond %{HTTPS} !on
+  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+  
+  # Redirection of requests to index.html
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -s [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+  RewriteRule ^.*$ - [NC,L]
+  # Redirect all non-file routes to index.html
+  RewriteRule ^(?!.*\.).*$ index.html [NC,L]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

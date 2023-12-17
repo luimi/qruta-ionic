@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title>Rutas Cercanas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="loadedRoutes  && (routes.urban.length>0 || routes.massive.length>0)">
+  <ion-grid>
+    <ion-row class="ion-align-items-center"r>
+      <ion-col></ion-col>
+      <ion-col size="12" size-md="8" size-lg="4">
+        <ion-segment [(ngModel)]="selectedBtn" color="primary" mode="ios">
+          <ion-segment-button value="urban">
+            <ion-label>
+              Urbano
+            </ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button value="massive">
+            <ion-label>
+              Masivo
+            </ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="ion-padding">
+    <ion-list *ngIf="routes">
+      <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" (click)="didSelectedRoute(route.id)">
+        <ion-label>
+          <h2>{{ route.name }}</h2>
+          <ion-text color="medium">
+            <p>{{ route.details }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-content *ngIf="routes.urban.length===0 && routes.massive.length===0">
+  <app-empty-state #emptyState icon="location"></app-empty-state>
+</ion-content >

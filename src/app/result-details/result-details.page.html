@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="''"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle de recorrido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="details" style="width:100%; height:60%;"></div>
+  <div *ngFor="let step of option.routes">
+    <ion-item lines="none" (click)="moveCamera(step.startPoint)">
+      <ion-label>
+        <h2><b> Caminar hasta</b></h2>
+        <ion-chip outline color="success">
+          <ion-label color="success">
+            <p>
+              <ion-icon name="walk"></ion-icon>
+              {{ step?.startAddress?.address }}
+            </p>
+          </ion-label>
+        </ion-chip>
+        
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" (click)="moveCamera(step.startPoint)">
+      <ion-label>
+        <h2><b>Tomar el bus</b></h2>
+        <p><ion-icon name="walk"></ion-icon><ion-icon name="bus"></ion-icon><a [routerLink]="['/route/' + step.route.id]" routerDirection="forward"
+          >{{ step.route.company }} - {{ step.route.name }}</a></p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label (click)="moveCamera(step.endPoint)">
+        <h2><b> Bajarse </b></h2>
+        <p>
+          <ion-icon name="bus"></ion-icon><ion-icon name="walk"></ion-icon
+          >{{ step?.endAddress?.address }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+  <ion-item lines="none" (click)="moveCamera(data.end)">
+    <ion-label>
+      <h2><b> Caminar al destino </b></h2>
+      <p><ion-icon name="walk"></ion-icon>{{ data?.endAddress?.address }}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

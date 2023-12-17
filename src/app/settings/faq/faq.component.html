@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="arrow-back" (click)="modalCtrl.dismiss()"></ion-icon>
+    </ion-buttons>
+    <ion-title> Preguntas frecuentes </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="!loading">
+  <ion-searchbar placeholder="Pregunta" [(ngModel)]="search" (ionChange)="getQr()"></ion-searchbar>
+  <ion-card *ngFor="let item of getQr()">
+    <ion-card-header>
+      <ion-card-title>{{item.get('question')}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.get('reply')}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-content *ngIf="loading">
+  <app-empty-state  #emptyState icon="help" text="Cargando preguntas frecuentes"></app-empty-state>
+</ion-content>

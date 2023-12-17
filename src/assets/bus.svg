@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.837" height="36.819" viewBox="0 0 29.837 36.819">
+  <defs>
+    <filter id="Trazado_6933" x="0" y="0" width="29.837" height="36.819" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.259"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Trazado_6968" x="7" y="5.779" width="16.667" height="15.813" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="pointer_bus_1" transform="translate(1.324)">
+    <g transform="matrix(1, 0, 0, 1, -1.32, 0)" filter="url(#Trazado_6933)">
+      <path id="Trazado_6933-2" data-name="Trazado 6933" d="M102.841,45.425a13.291,13.291,0,0,1-.8,5.444,14.347,14.347,0,0,1-3.068,4.864L89.448,65.879,79.923,55.733a14.347,14.347,0,0,1-3.068-4.864,13.292,13.292,0,0,1-.8-5.444,13.4,13.4,0,0,1,26.785,0Zm-2.954.594A10.442,10.442,0,1,0,89.448,56.738,10.581,10.581,0,0,0,99.887,46.02Z" transform="translate(-74.53 -32.56)" fill="#011f35"/>
+    </g>
+    <ellipse id="Elipse_7" data-name="Elipse 7" cx="10.5" cy="11" rx="10.5" ry="11" transform="translate(3.176 2.706)" fill="#fff"/>
+    <g id="_002-school-bus-front" data-name="002-school-bus-front" transform="translate(7.176 7.279)">
+      <g transform="matrix(1, 0, 0, 1, -8.5, -7.28)" filter="url(#Trazado_6968)">
+        <path id="Trazado_6968-2" data-name="Trazado 6968" d="M.427,5.8H.854V8.365H.427A.426.426,0,0,1,0,7.938V6.229A.428.428,0,0,1,.427,5.8Zm12.813,0h-.428V8.365h.428a.427.427,0,0,0,.427-.427V6.229A.427.427,0,0,0,13.24,5.8Zm-1.281-.854v7.688a.854.854,0,0,1-.854.854v.854a.853.853,0,0,1-.854.854H9.4a.854.854,0,0,1-.854-.854v-.854H5.125v.854a.854.854,0,0,1-.854.854H3.417a.854.854,0,0,1-.854-.854v-.854a.854.854,0,0,1-.854-.854V4.949A2.563,2.563,0,0,1,4.271,2.386H9.4A2.563,2.563,0,0,1,11.959,4.949ZM5.125,4.094H8.542V3.24H5.125Zm-.854,7.688a.854.854,0,1,0-.854.854A.853.853,0,0,0,4.271,11.782Zm6.834,0a.854.854,0,1,0-.854.854A.853.853,0,0,0,11.1,11.782Zm0-6.834H2.563v5.125H11.1V4.949Z" transform="translate(8.5 4.89)" fill="011f35"/>
+      </g>
+    </g>
+  </g>
+</svg>

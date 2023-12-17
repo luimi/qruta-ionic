@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Q\'ruta</string>
+    <string name="title_activity_main">Q\'ruta</string>
+    <string name="package_name">com.lui2mi.queruta</string>
+    <string name="custom_url_scheme">com.lui2mi.queruta</string>
+    <string name="admob_app_id">ca-app-pub-6931890428485350~2633469400</string>
+</resources>

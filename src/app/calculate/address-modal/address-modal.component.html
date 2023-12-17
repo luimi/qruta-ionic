@@ -1,0 +1,72 @@
+<ion-header class="green">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="modalCtrl.dismiss()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="searchbar">
+    <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionChange)="search($event)"
+      [placeholder]="type==='address'?'Carrera 64 # 86 - 168':'Centro comercial ...'">
+    </ion-searchbar>
+    <ion-segment [(ngModel)]="type" mode="ios">
+      <ion-segment-button value="address" class="switch">
+        Dirección
+      </ion-segment-button>
+      <ion-segment-button value="place" class="switch">
+        Lugar
+      </ion-segment-button>
+    </ion-segment>
+    <div class="location" (click)="selectFromMap()">
+      <ion-icon name="location"></ion-icon>
+      Fijar la ubicacion en el mapa
+    </div>
+  </div>
+</ion-header>
+<ion-content class="ion-no-padding">
+  <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>  
+  <ion-list lines="none">
+    <ion-item *ngFor="let option of options">
+      <ion-label (click)="select(option)">
+        <h2>{{ option.address }}</h2>
+        <p>{{ option.city }}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="addFavorite(option)" fill="clear" size="12">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-list-header>
+      Recientes
+    </ion-list-header>
+    <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="No hay direcciones recientemente usadas" [fullContent]="false"></app-empty-state>
+    <ion-item *ngFor="let recent of recents; index as i">
+      <ion-icon name="ios-timer" color="dark" class="ion-padding"></ion-icon>
+      <ion-label (click)="select(recent)">
+        <h2>{{ recent.address }}</h2>
+        <p>{{ recent.city }}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="addFavorite(recent)" fill="clear" size="12" class="ion-no-padding">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-list-header>
+      Favoritos
+    </ion-list-header>
+    <app-empty-state *ngIf="favorites.length===0" #emptyState icon="star" text="Agrega algun favorito!" [fullContent]="false"></app-empty-state>
+    <ion-item *ngFor="let favorite of favorites; index as i">
+      <ion-icon name="star" color="primary" class="ion-padding"></ion-icon>
+      <ion-label (click)="select(favorite)">
+        <h2>{{ favorite.address }}</h2>
+        <p>{{ favorite.city }}</p>
+      </ion-label>
+      <ion-button slot="end" (click)="deleteFavorite(i)" fill="clear" size="12" class="ion-no-padding">
+        <ion-icon name="trash" color="dark"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

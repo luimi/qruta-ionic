@@ -1,0 +1,24 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="modalCtrl.dismiss()" color="tertiary">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="list.length>0">
+  <ion-list>
+    <ion-item *ngFor="let path of list" (click)="calculate(path)">
+      <ion-label class="ion-text-wrap">
+        <h2>{{path.from.address}} <ion-icon name="play" color="primary"></ion-icon> {{path.to.address}}</h2>
+        <p>{{path.from.city}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="list.length===0">
+  <app-empty-state  #emptyState icon="timer" text="No has realizado calculos"></app-empty-state>
+</ion-content>
