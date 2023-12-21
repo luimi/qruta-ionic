@@ -35,7 +35,7 @@ export class AdsService {
       position: BannerAdPosition.TOP_CENTER,
       margin: 57,
       isTesting: !environment.production,
-      npa: true
+      //npa: true
     }
     await AdMob.showBanner(options).catch(e => console.log(e))
   }
