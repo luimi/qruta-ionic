@@ -41,8 +41,9 @@ export class CalculatePage implements OnInit {
   ionViewDidEnter() {
     this.city = this.utils.getLocal(constants.keys.city);
     if (this.leaflet.getMap('calculate')) {
-      this.map.invalidateSize()
-      return;
+      //this.map.invalidateSize()
+      this.leaflet.removeMap('calculate')
+      //return;
     }
     this.map = this.leaflet.initialize('calculate');
     this.map.on('click', async (event: any) => {
@@ -79,7 +80,9 @@ export class CalculatePage implements OnInit {
       this.closeAddressField();
     });
   }
-
+  ionViewWillLeave() {
+    this.leaflet.removeMap('calculate')
+  }
   async calculate() {
     if (this.start.location && this.end.location) {
       const walkDistance = this.utils.getLocal(constants.keys.walkDistance);
@@ -96,7 +99,7 @@ export class CalculatePage implements OnInit {
       if (result.success) {
         this.history.add(this.start.location, this.end.location, this.type);
         sessionStorage.setItem('result', JSON.stringify(result));
-        this.router.navigateByUrl('/result');
+        this.router.navigate(['/result']);
         this.saveRecent(this.end.location);
         this.saveRecent(this.start.location);
       } else {

@@ -16,7 +16,6 @@ export class ResultDetailsPage implements OnInit {
   option:any;
   data:any;
   colors = ['blue', 'red', 'green'];
-  isCordova = false;
   constructor(private route: ActivatedRoute, private location: Location, private leaflet: LeafletHelperService, private utils: UtilsService, private geo: GeoService, private platform: Platform) { }
 
   ngOnInit() {
@@ -27,7 +26,9 @@ export class ResultDetailsPage implements OnInit {
     }
     this.data = this.utils.getSess(constants.local.result);
     this.option = this.data.options[position|| 0];
-    this.isCordova = this.platform.is('cordova');
+    
+  }
+  ionViewDidEnter() {
     this.loadData();
   }
   async loadData() {

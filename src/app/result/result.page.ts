@@ -30,7 +30,7 @@ export class ResultPage implements OnInit {
     
   }
   openDetails(index: number) {
-    this.router.navigateByUrl('result-details/' + index);
+    this.router.navigate(['/result-details',index]);
   }
   goBack() {
     this.location.back();
