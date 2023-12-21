@@ -11,7 +11,7 @@ import { AppConfig } from './utils/appConfig';
 import { UtilsService } from './utils/utils.service';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule, HttpClientModule],
   providers: [{
     provide: APP_INITIALIZER,
     useFactory: AppConfig,
