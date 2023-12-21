@@ -27,6 +27,9 @@ export class SettingsPage implements OnInit {
   }, {
     icon: 'logo-instagram',
     url: 'https://www.instagram.com/queruta/'
+  }, {
+    icon: 'logo-discord',
+    url: 'https://discord.gg/u5qCXUTkQx'
   }];
   constructor(
     private location: Location,
