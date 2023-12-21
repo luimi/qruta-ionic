@@ -9,6 +9,7 @@
     "android": "ionic capacitor run android",
     "debug": "ionic capacitor run android -l --external",
     "release": "cd android && ./gradlew bundleRelease",
+    "external": "ionic serve --external --no-open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
