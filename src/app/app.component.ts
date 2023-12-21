@@ -10,11 +10,14 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 export class AppComponent {
   constructor(
     private platform: Platform
-    ) {
+  ) {
     this.platform.ready().then(async () => {
-      if(!this.platform.is("desktop")) {
+      let android = this.platform.is("android")
+      let ios = this.platform.is("ios")
+      let capacitor = this.platform.is("capacitor")
+      if ((android || ios) && capacitor) {
         await StatusBar.setStyle({ style: Style.Dark });
-        await StatusBar.setBackgroundColor({color:'#011f35'});
+        await StatusBar.setBackgroundColor({ color: '#011f35' });
       }
       this.platform.backButton.subscribeWithPriority(9999, () => { })
     });
