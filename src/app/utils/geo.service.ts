@@ -140,6 +140,7 @@ export class GeoService {
         return result.routes[0].geometry;
       },
       arcgis:(result:any)=>{
+        if(!result || !result.routes) return
         const route = result.routes.features[0].geometry.paths[0];
         const path:any[]=[];
         route.forEach((step:number[]) => {
