@@ -49,8 +49,8 @@ export class LeafletHelperService {
     this.layers.push({
       id: '5',
       title: 'Oscuro',
-      layer: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-      attribution: '<a href="https://carto.com/attributions">CARTO</a>'
+      layer: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+      attribution: 'Stadia Maps'
     });
     this.layers.push({
       id: '6',
