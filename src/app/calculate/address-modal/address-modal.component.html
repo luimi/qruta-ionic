@@ -7,7 +7,7 @@
     </ion-buttons>
   </ion-toolbar>
   <div class="searchbar">
-    <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionChange)="search($event)"
+    <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionInput)="search($event)"
       [placeholder]="type==='address'?'Carrera 64 # 86 - 168':'Centro comercial ...'">
     </ion-searchbar>
     <ion-segment [(ngModel)]="type" mode="ios">
