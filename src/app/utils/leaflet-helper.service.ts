@@ -18,27 +18,27 @@ export class LeafletHelperService {
   constructor(private utils: UtilsService) {
     this.layers.push({
       id: '0',
-      title: 'OpenStreetMap',
-      layer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      attribution: '<a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-    });
-    this.layers.push({
-      id: '1',
       title: 'Google',
       layer: 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}',
       attribution: 'Google'
     });
     this.layers.push({
+      id: '1',
+      title: 'OpenStreetMap',
+      layer: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution: '<a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+    });
+    this.layers.push({
       id: '2',
-      title: 'Grafito',
-      layer: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
-      attribution: '<a href="https://opentopomap.org">OpenTopoMap</a>'
+      title: 'Oscuro',
+      layer: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+      attribution: 'Stadia Maps'
     });
     this.layers.push({
       id: '3',
-      title: 'Acuarela',
-      layer: 'https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg',
-      attribution: '<a href="http://stamen.com">Stamen Design</a>'
+      title: 'Grafito',
+      layer: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+      attribution: '<a href="https://opentopomap.org">OpenTopoMap</a>'
     });
     this.layers.push({
       id: '4',
@@ -46,18 +46,7 @@ export class LeafletHelperService {
       layer: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       attribution: 'ArcGIS'
     });
-    this.layers.push({
-      id: '5',
-      title: 'Oscuro',
-      layer: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
-      attribution: 'Stadia Maps'
-    });
-    this.layers.push({
-      id: '6',
-      title: 'Apocalíptico (Temporal)',
-      layer: 'https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey=db5ae1f5778a448ca662554581f283c5',
-      attribution: '<a href="http://www.thunderforest.com/">Thunderforest</a>'
-    });
+    
 
     this.setMarkerRotation();
 
@@ -69,8 +58,8 @@ export class LeafletHelperService {
     this.city = this.utils.getLocal(constants.keys.city);
     const location = this.city.location;
     const zoom = this.city.zoom ? this.city.zoom : 12
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let selectedLayer = isDarkMode ? this.layers[5] : this.layers[1];
+    let selectedLayerId = localStorage.getItem(constants.keys.layer)
+    let selectedLayer = this.layers[selectedLayerId ? this.layers.map((layer) => layer.id).indexOf(selectedLayerId) : 0];
     const map = new L.Map(id, { zoomControl: false }).setView([location.latitude, location.longitude], zoom);
     this.currentLayer = L.tileLayer(selectedLayer.layer, {
       attribution: selectedLayer.attribution,
@@ -116,6 +105,7 @@ export class LeafletHelperService {
     } catch (e) { }
   }
   public setLayer(id: string, index: number) {
+    if(!this.maps[id]) return
     this.maps[id].layer.removeLayer(this.currentLayer);
     const selectedLayer = this.layers[index];
     this.currentLayer = L.tileLayer(selectedLayer.layer, {

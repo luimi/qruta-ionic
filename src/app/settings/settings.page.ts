@@ -16,6 +16,8 @@ declare var installer: any;
 export class SettingsPage implements OnInit {
 
   selectedDistance: any;
+  selectedLayer: any;
+  layers: any[] = [];
   showFaq: any = false;
   public setup: any;
   social = [{
@@ -42,10 +44,13 @@ export class SettingsPage implements OnInit {
   }
 
   async ngOnInit() {
+    this.layers = this.leaflet.getLayers();
     const sd = localStorage.getItem(constants.keys.walkDistance);
     this.selectedDistance = sd ? sd : '1';
     this.showFaq = await this.utils.getServerConfig('showFaq');
+    const sl = localStorage.getItem(constants.keys.layer);
     this.setup = installer;
+    this.selectedLayer = sl ? sl : '0';
   }
 
   ionViewWillEnter() { }
@@ -56,6 +61,10 @@ export class SettingsPage implements OnInit {
 
   onChangeDistance() {
     localStorage.setItem(constants.keys.walkDistance, this.selectedDistance);
+  }
+  onChangeLayer() {
+    localStorage.setItem(constants.keys.layer, this.selectedLayer);
+    this.leaflet.setLayer('calculate',this.selectedLayer);
   }
   changeCity() {
     localStorage.removeItem(constants.keys.city);
