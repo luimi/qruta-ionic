@@ -37,6 +37,8 @@
               },
               "src/logo.png",
               "src/maskable-logo.png",
+              "src/splash-wide.png",
+              "src/splash-portrait.png",
               "src/manifest.json",
               "src/serviceWorker.js",
               "src/.htaccess"
