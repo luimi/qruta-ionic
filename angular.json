@@ -41,7 +41,8 @@
               "src/splash-portrait.png",
               "src/manifest.json",
               "src/serviceWorker.js",
-              "src/.htaccess"
+              "src/.htaccess",
+              "src/ads.html"
             ],
             "styles": [
               "src/theme/variables.scss",

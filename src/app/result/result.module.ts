@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ResultPageRoutingModule } from './result-routing.module';
 
 import { ResultPage } from './result.page';
+import { AdsComponent } from './ads/ads.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ResultPage } from './result.page';
     IonicModule,
     ResultPageRoutingModule
   ],
-  declarations: [ResultPage]
+  declarations: [ResultPage, AdsComponent],
+  exports: [AdsComponent]
 })
 export class ResultPageModule {}

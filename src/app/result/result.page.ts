@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { UtilsService } from '../utils/utils.service';
 import { AdsService } from '../utils/ads.service';
-import { isPlatform } from '@ionic/angular';
+import { ModalController, isPlatform } from '@ionic/angular';
+import { AdsComponent } from './ads/ads.component';
 
 @Component({
   selector: 'app-result',
@@ -14,7 +15,7 @@ import { isPlatform } from '@ionic/angular';
 // https://ionicframework.com/docs/native/admob-free
 export class ResultPage implements OnInit {
   options: any;
-  constructor(private router: Router, private location: Location, private utils: UtilsService, private adsCtrl: AdsService) { }
+  constructor(private router: Router, private location: Location, private utils: UtilsService, private adsCtrl: AdsService, private modalCtrl: ModalController) { }
 
   async ngOnInit() {
     this.options = JSON.parse(sessionStorage.getItem('result') || "[]").options;
@@ -26,6 +27,11 @@ export class ResultPage implements OnInit {
     if(isPlatform("android")) {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
+    } else {
+      const modal = await this.modalCtrl.create({
+        component: AdsComponent
+      });
+      modal.present();
     }
     
   }
