@@ -1,0 +1,18 @@
+#!/bin/bash
+HOST="ftp.host.com"
+USER="user"
+PASSWORD="password"
+DESTINATION="path/"
+FROM="www/"
+
+ionic build
+cd $FROM
+zip -r qruta.zip .
+ftp -inv $HOST <<EOF
+quote USER $USER
+quote PASS $PASSWORD
+cd $DESTINATION
+binary
+mput qruta.zip
+bye
+EOF
