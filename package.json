@@ -36,6 +36,8 @@
     "@capacitor/splash-screen": "^5.0.6",
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "ionicons": "^7.0.0",
     "leaflet": "^1.9.4",
     "leaflet-polylinedecorator": "^1.6.0",
