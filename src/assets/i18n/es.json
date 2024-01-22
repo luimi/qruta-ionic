@@ -2,5 +2,8 @@
     "cities":{
         "title":"Ciudad",
         "subtitle":"Por favor, selecciona tu ciudad."
+    },
+    "maintenance":{
+        "message":"Lo sentimos, por el momento la aplicación se encuentra en mantenimiento, pronto volveremos a la normalidad."
     }
 }

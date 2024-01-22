@@ -8,12 +8,15 @@ import { MaintenancePageRoutingModule } from './maintenance-routing.module';
 
 import { MaintenancePage } from './maintenance.page';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MaintenancePageRoutingModule
+    MaintenancePageRoutingModule,
+    TranslateModule
   ],
   declarations: [MaintenancePage]
 })
