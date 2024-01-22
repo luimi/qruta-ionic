@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CitiesPageRoutingModule } from './cities-routing.module';
 
 import { CitiesPage } from './cities.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CitiesPageRoutingModule
+    CitiesPageRoutingModule,
+    TranslateModule
   ],
   declarations: [CitiesPage]
 })
