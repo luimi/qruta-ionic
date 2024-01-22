@@ -1,12 +1,12 @@
 <div>
-  <span class="address-title">{{title}}</span>
+  <span class="address-title" translate>{{title}}</span>
   <ion-item class="address-input" lines="none" color="tertiary">
     <ion-spinner name="bubbles" slot="start" [ngClass]="{'ion-hide': !currentLocation || !isLoading}" color="secondary"></ion-spinner>
     <ion-icon name="location" slot="start" [ngClass]="{'ion-hide': !currentLocation || isLoading}" (click)="getCurrentLocation()" color="secondary">
     </ion-icon>
     <ion-label (click)="openModal()">
       <p [ngClass]="{'gray': !location, 'black': location}">
-        {{location?(location.address?location.address:locationSelectedText):hint}} </p>
+        {{location?(location.address?location.address:'calculate.input.selected'):hint | translate}} </p>
     </ion-label>
     <ion-icon name="close" slot="end" *ngIf="location" (click)="clear()"></ion-icon>
   </ion-item>

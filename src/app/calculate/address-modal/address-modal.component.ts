@@ -3,7 +3,6 @@ import { ModalController } from '@ionic/angular';
 import { GeoService } from 'src/app/utils/geo.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 import { AddressMapComponent } from '../address-map/address-map.component';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-address-modal',
@@ -16,8 +15,7 @@ export class AddressModalComponent implements OnInit {
     private geo: GeoService,
     private utils: UtilsService,
     private changeRef: ChangeDetectorRef,
-    public modalCtrl: ModalController,
-    private translateCtrl: TranslateService) { }
+    public modalCtrl: ModalController) { }
 
   address: any = '';
   options: any;
@@ -28,12 +26,9 @@ export class AddressModalComponent implements OnInit {
   textMaxLength = 1;
   type = 'place';
   progress = false;
-  translations = { address: "", place: "" }
   ngOnInit() {
     this.getFavorites();
     this.getRecents();
-    this.translateCtrl.get("calculate.modal.address.hint").subscribe(res => this.translations.address = res)
-    this.translateCtrl.get("calculate.modal.place.hint").subscribe(res => this.translations.place = res)
   }
 
   search(e: any) {

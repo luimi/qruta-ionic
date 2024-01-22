@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GeoService } from 'src/app/utils/geo.service';
 import { AddressModalComponent } from '../address-modal/address-modal.component';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-address-input',
@@ -15,12 +14,9 @@ export class AddressInputComponent implements OnInit {
   @Input() currentLocation: boolean = false;
   public location: any;
   isLoading = false;
-  locationSelectedText = "";
-  constructor(public modalCtrl: ModalController, private geo: GeoService, private translateCtrl: TranslateService) { }
+  constructor(public modalCtrl: ModalController, private geo: GeoService) { }
 
-  ngOnInit() { 
-    this.translateCtrl.get("calculate.input.selected").subscribe(res => this.locationSelectedText = res)
-  }
+  ngOnInit() { }
   async openModal() {
     const modal = await this.modalCtrl.create({
       component: AddressModalComponent
