@@ -18,7 +18,6 @@ export class SettingsPage implements OnInit {
   selectedDistance: any;
   selectedLayer: any;
   layers: any[] = [];
-  showFaq: any = false;
   public setup: any;
   social = [{
     icon: 'logo-facebook',
@@ -47,7 +46,6 @@ export class SettingsPage implements OnInit {
     this.layers = this.leaflet.getLayers();
     const sd = localStorage.getItem(constants.keys.walkDistance);
     this.selectedDistance = sd ? sd : '1';
-    this.showFaq = await this.utils.getServerConfig('showFaq');
     const sl = localStorage.getItem(constants.keys.layer);
     this.setup = installer;
     this.selectedLayer = sl ? sl : '0';
