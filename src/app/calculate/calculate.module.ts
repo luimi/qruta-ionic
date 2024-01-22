@@ -12,6 +12,7 @@ import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
 import { HistoryComponent } from './history/history.component';
 import { AddressMapComponent } from './address-map/address-map.component';
 import { AddressModalComponent } from './address-modal/address-modal.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { AddressModalComponent } from './address-modal/address-modal.component';
     FormsModule,
     IonicModule,
     CalculatePageRoutingModule,
-    EmptyStateModule
+    EmptyStateModule,
+    TranslateModule
   ],
   declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent],
   providers: [Geolocation],

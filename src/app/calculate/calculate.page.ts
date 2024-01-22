@@ -9,6 +9,7 @@ import { LeafletHelperService } from '../utils/leaflet-helper.service';
 import { HistoryService } from '../utils/history.service';
 import { HistoryComponent } from './history/history.component';
 import Parse from 'parse';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-calculate',
@@ -25,6 +26,7 @@ export class CalculatePage implements OnInit {
   hiddenToggle = true;
   type = 'urban';
   city: any;
+  translations = { origin: { title: "", hint: "" }, destiny: { title: "", hint: "" } }
   constructor(
     public actionSheet: ActionSheetController,
     private leaflet: LeafletHelperService,
@@ -32,10 +34,16 @@ export class CalculatePage implements OnInit {
     private router: Router,
     private history: HistoryService,
     private utils: UtilsService,
-    public modalCtrl: ModalController) { }
+    public modalCtrl: ModalController,
+    private translationCtrl: TranslateService
+  ) { }
 
   ngOnInit() {
     this.getCurrentPosition();
+    this.translationCtrl.get("calculate.main.origin.title").subscribe(res => this.translations.origin.title = res)
+    this.translationCtrl.get("calculate.main.origin.hint").subscribe(res => this.translations.origin.hint = res)
+    this.translationCtrl.get("calculate.main.destiny.title").subscribe(res => this.translations.destiny.title = res)
+    this.translationCtrl.get("calculate.main.destiny.hint").subscribe(res => this.translations.destiny.hint = res)
   }
 
   ionViewDidEnter() {
@@ -137,12 +145,12 @@ export class CalculatePage implements OnInit {
    * this get user current position and call routes
    */
   async getCurrentPosition() {
-    navigator.geolocation.getCurrentPosition( (loc) => {
+    navigator.geolocation.getCurrentPosition((loc) => {
       let coords = loc.coords;
-        this.geo.reverse([coords.latitude, coords.longitude]).then((location) => {
-          this.start.location = location;
-        });
-    }, () => {  }, { enableHighAccuracy: true })
+      this.geo.reverse([coords.latitude, coords.longitude]).then((location) => {
+        this.start.location = location;
+      });
+    }, () => { }, { enableHighAccuracy: true })
   }
 
   /**

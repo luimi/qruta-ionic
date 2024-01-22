@@ -8,24 +8,24 @@
   </ion-toolbar>
   <div class="searchbar">
     <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionInput)="search($event)"
-      [placeholder]="type==='address'?'Carrera 64 # 86 - 168':'Centro comercial ...'">
+      [placeholder]="type==='address'?translations.address:translations.place">
     </ion-searchbar>
     <ion-segment [(ngModel)]="type" mode="ios">
-      <ion-segment-button value="address" class="switch">
-        Dirección
+      <ion-segment-button value="address" class="switch" translate>
+        calculate.modal.address.title
       </ion-segment-button>
-      <ion-segment-button value="place" class="switch">
-        Lugar
+      <ion-segment-button value="place" class="switch" translate>
+        calculate.modal.place.title
       </ion-segment-button>
     </ion-segment>
-    <div class="location" (click)="selectFromMap()">
+    <div class="location" (click)="selectFromMap()" translate>
       <ion-icon name="location"></ion-icon>
-      Fijar la ubicacion en el mapa
+      calculate.modal.onMap
     </div>
   </div>
 </ion-header>
 <ion-content class="ion-no-padding">
-  <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>  
+  <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>
   <ion-list lines="none">
     <ion-item *ngFor="let option of options">
       <ion-label (click)="select(option)">
@@ -38,10 +38,11 @@
     </ion-item>
   </ion-list>
   <ion-list lines="none">
-    <ion-list-header>
-      Recientes
+    <ion-list-header translate>
+      calculate.modal.recent
     </ion-list-header>
-    <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="No hay direcciones recientemente usadas" [fullContent]="false"></app-empty-state>
+    <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="calculate.modal.recentEmpty"
+      [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let recent of recents; index as i">
       <ion-icon name="ios-timer" color="dark" class="ion-padding"></ion-icon>
       <ion-label (click)="select(recent)">
@@ -54,10 +55,11 @@
     </ion-item>
   </ion-list>
   <ion-list lines="none">
-    <ion-list-header>
-      Favoritos
+    <ion-list-header translate>
+      calculate.modal.favorites
     </ion-list-header>
-    <app-empty-state *ngIf="favorites.length===0" #emptyState icon="star" text="Agrega algun favorito!" [fullContent]="false"></app-empty-state>
+    <app-empty-state *ngIf="favorites.length===0" #emptyState icon="star" text="calculate.modal.favoritesEmpty"
+      [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let favorite of favorites; index as i">
       <ion-icon name="star" color="primary" class="ion-padding"></ion-icon>
       <ion-label (click)="select(favorite)">

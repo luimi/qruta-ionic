@@ -11,15 +11,15 @@
   <div class="lvl3 centered animated faster"
     [ngClass]="{'fadeInDown': addressToggle, 'fadeOutUp': !addressToggle, 'hide': hiddenToggle}">
     <div class="ion-padding">
-      <app-address-input #start title="Dirección de origen" hint="Ejemplo: calle 84 # 27 - 18" [currentLocation]="true">
+      <app-address-input #start [title]="translations.origin.title" [hint]="translations.origin.hint" [currentLocation]="true">
       </app-address-input>
-      <app-address-input #end title="Dirección de destino" hint="Ejemplo: Centro Comercial Buenavista">
+      <app-address-input #end [title]="translations.destiny.title" [hint]="translations.destiny.hint">
       </app-address-input>
       <ion-row class="history ion-align-items-center">
         <ion-col size="10" [hidden]="!city?.massive">
           <ion-segment [(ngModel)]="type" size="10" mode="ios">
-            <ion-segment-button value="urban" class="switch">
-              Urbano
+            <ion-segment-button value="urban" class="switch" translate>
+              calculate.main.urban
             </ion-segment-button>
             <ion-segment-button value="massive" class="switch">
               {{city?.massive?.name}}
@@ -28,20 +28,20 @@
         </ion-col>
         <ion-col [size]="(!city?.massive)?'12':'2'">
           <ion-button fill="clear" class="ion-no-padding" (click)="showHistory()"><img src="./assets/history.svg"
-              class="icon"><span class="text" [hidden]="city?.massive">Historial</span></ion-button>
+              class="icon"><span class="text" [hidden]="city?.massive" translate>calculate.main.history</span></ion-button>
         </ion-col>
 
       </ion-row>
       <ion-row>
         <ion-col class="ion-text-center">
-          <ion-button (click)="calculate()" class="search" expand="block" shape="round" color="tertiary">BUSCAR RUTA
+          <ion-button (click)="calculate()" class="search" expand="block" shape="round" color="tertiary" translate>calculate.main.search
           </ion-button>
         </ion-col>
       </ion-row>
     </div>
   </div>
   <div class="round-input lvl5 centered" (click)="addressToggle=true; hiddenToggle=false;" *ngIf="!addressToggle">
-    <span>¿A dónde quieres ir?</span>
+    <span translate>calculate.wheretogo</span>
   </div>
   <div class="lvl4">
 

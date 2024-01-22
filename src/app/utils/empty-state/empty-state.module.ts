@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { EmptyStateComponent } from './empty-state.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    TranslateModule
   ],
   declarations: [EmptyStateComponent],
   exports:[EmptyStateComponent],

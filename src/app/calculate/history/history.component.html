@@ -5,7 +5,7 @@
         <ion-icon slot="start" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Historial</ion-title>
+    <ion-title translate>calculate.history.title</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,5 +20,5 @@
   </ion-list>
 </ion-content>
 <ion-content *ngIf="list.length===0">
-  <app-empty-state  #emptyState icon="timer" text="No has realizado calculos"></app-empty-state>
+  <app-empty-state  #emptyState icon="timer" text="calculate.history.empty"></app-empty-state>
 </ion-content>

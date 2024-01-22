@@ -1,7 +1,7 @@
 <ion-grid [ngClass]="{'full-content':fullContent}">
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-icon [name]="icon" class="gray"></ion-icon>
-    <h3 class="gray">{{text}}</h3>
+    <h3 class="gray" translate>{{text}}</h3>
     <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>
   </ion-row>
 </ion-grid>
