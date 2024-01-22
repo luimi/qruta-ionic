@@ -9,6 +9,7 @@ import { SettingsPageRoutingModule } from './settings-routing.module';
 import { SettingsPage } from './settings.page';
 import { FaqComponent } from './faq/faq.component';
 import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
     FormsModule,
     IonicModule,
     SettingsPageRoutingModule,
-    EmptyStateModule
+    EmptyStateModule,
+    TranslateModule
   ],
   declarations: [SettingsPage, FaqComponent],
   exports:[]

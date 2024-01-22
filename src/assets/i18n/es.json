@@ -69,17 +69,32 @@
         }
     },
     "routes": {
-        "title":"Rutas",
+        "title": "Rutas",
         "loading": "Cargando rutas",
         "route": {
-            "schedules":"Horarios",
-            "hour":"Hora",
-            "frequenzy":"Frecuencia",
-            "monday2friday":"Lunes a viernes",
-            "saturday":"Sábado",
-            "sunday&holyday":"Domingos y festivos",
-            "updated":"Última actualización: {{date}}",
-            "support":"¿Sabes si esta ruta cambió? ¡Cuéntanos!"
+            "schedules": "Horarios",
+            "hour": "Hora",
+            "frequenzy": "Frecuencia",
+            "monday2friday": "Lunes a viernes",
+            "saturday": "Sábado",
+            "sunday&holyday": "Domingos y festivos",
+            "updated": "Última actualización: {{date}}",
+            "support": "¿Sabes si esta ruta cambió? ¡Cuéntanos!"
         }
+    },
+    "settings": {
+        "title": "Ajustes",
+        "walkDistance":"Distancia a caminar",
+        "mapType":"Tipo de mapa",
+        "contact":"Contacto",
+        "termns":"Términos y condiciones",
+        "changeCity":"Cambiar de ciudad",
+        "install":"Instalar App",
+        "faq": {
+            "title": "Preguntas frecuentes",
+            "loading":"Cargando preguntas frecuentes",
+            "filter":"Filtrar"
+        }
+        
     }
 }

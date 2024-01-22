@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button (click)="backAction()"></ion-back-button>
     </ion-buttons>
-    <ion-title> Ajustes </ion-title>
+    <ion-title translate> settings.title </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,30 +11,30 @@
   <ion-list>
     <div class="options">
       <ion-item>
-        <ion-select placeholder="Seleccionar" (ionChange)="onChangeDistance()" [(ngModel)]="selectedDistance" label="Distancia a caminar">
+        <ion-select placeholder="Seleccionar" (ionChange)="onChangeDistance()" [(ngModel)]="selectedDistance" label="{{'settings.walkDistance' | translate}}">
           <ion-select-option value="1">500m</ion-select-option>
           <ion-select-option value="2">1km</ion-select-option>
           <ion-select-option value="3">1.5km</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item detail>
-        <ion-select placeholder="Seleccionar" (ionChange)="onChangeLayer()" [(ngModel)]="selectedLayer" label="Tipo de mapa">
+        <ion-select placeholder="Seleccionar" (ionChange)="onChangeLayer()" [(ngModel)]="selectedLayer" label="{{'settings.mapType' | translate}}">
           <ion-select-option *ngFor="let layer of layers" [value]="layer.id">{{layer.title}}</ion-select-option>
         </ion-select>
       </ion-item>
     </div>
     
-    <ion-button color="primary" (click)="faq()" shape="round" expand="block">Preguntas frecuentes</ion-button>
+    <ion-button color="primary" (click)="faq()" shape="round" expand="block" translate>settings.faq.title</ion-button>
     <a color="primary" href="mailto:queruta@gmail.com" target="_blank" rel="noopener noreferrer">
-      <ion-button shape="round" expand="block" color="primary">Contacto</ion-button>
+      <ion-button shape="round" expand="block" color="primary" translate>settings.contact</ion-button>
     </a>
     <a color="primary"
       href="https://docs.google.com/document/d/14d1_fXqkzR4f2iawTnsKjFEPI8EOir3L18qAj560MKk/edit?usp=sharing"
       target="_blank" rel="noopener noreferrer">
-      <ion-button shape="round" expand="block" color="primary">Términos y condiciones</ion-button>
+      <ion-button shape="round" expand="block" color="primary" translate>settings.termns</ion-button>
     </a>
-    <ion-button color="primary" (click)="changeCity()" shape="round" expand="block">Cambiar de ciudad</ion-button>
-    <ion-button color="primary" (click)="install()" shape="round" expand="block" *ngIf="setup!==undefined">Instalar App</ion-button>
+    <ion-button color="primary" (click)="changeCity()" shape="round" expand="block" translate>settings.changeCity</ion-button>
+    <ion-button color="primary" (click)="install()" shape="round" expand="block" *ngIf="setup!==undefined" translate>settings.install</ion-button>
   </ion-list>
 
   <div class="buttons">

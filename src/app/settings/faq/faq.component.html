@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-icon slot="icon-only" name="arrow-back" (click)="modalCtrl.dismiss()"></ion-icon>
     </ion-buttons>
-    <ion-title> Preguntas frecuentes </ion-title>
+    <ion-title translate=""> settings.faq.title </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="!loading">
-  <ion-searchbar placeholder="Pregunta" [(ngModel)]="search" (ionChange)="getQr()"></ion-searchbar>
+  <ion-searchbar placeholder="{{'settings.faq.filter' | translate}}" [(ngModel)]="search" (ionChange)="getQr()"></ion-searchbar>
   <ion-card *ngFor="let item of getQr()">
     <ion-card-header>
       <ion-card-title>{{item.get('question')}}</ion-card-title>
@@ -19,5 +19,5 @@
   </ion-card>
 </ion-content>
 <ion-content *ngIf="loading">
-  <app-empty-state  #emptyState icon="help" text="Cargando preguntas frecuentes"></app-empty-state>
+  <app-empty-state  #emptyState icon="help" text="settings.faq.loading"></app-empty-state>
 </ion-content>
