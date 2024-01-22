@@ -8,6 +8,7 @@ import { constants } from './constants';
 })
 export class GeoService {
   city;
+  corsAnyWhere = "https://lui2mi-corsanywhere.fly.dev";
   link: any = {
     geocode:{
       arcgis:(address: string,server:any)=>{
@@ -40,13 +41,13 @@ export class GeoService {
         return `${server.link}/route/v1/walking/${data.from[1]},${data.from[0]};${data.to[1]},${data.to[0]}`;
       },
       osrm:(data:any,server:any)=>{
-        return `https://router.project-osrm.org/route/v1/driving/${data.from[1]},${data.from[0]};${data.to[1]},${data.to[0]}`;
+        return `https://router.project-osrm.org/route/v1/walking/${data.from[1]},${data.from[0]};${data.to[1]},${data.to[0]}`;
       },
       arcgis:(data:any,server:any)=>{
         return `https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve?stops=${data.from[1]},${data.from[0]};${data.to[1]},${data.to[0]}&f=json&travelMode=5&token=${server.key}`;
       },
       google:(data:any,server:any)=>{
-        return `https://maps.googleapis.com/maps/api/directions/json?origin=${data.from[1]},${data.from[0]}&destination=${data.to[1]},${data.to[0]}&key=${server.key}&mode=walking`;
+        return `${this.corsAnyWhere}/https://maps.googleapis.com/maps/api/directions/json?origin=${data.from[0]},${data.from[1]}&destination=${data.to[0]},${data.to[1]}&key=${server.key}&mode=walking`;
       },
       bing:(data:any,server:any)=>{
         return `https://dev.virtualearth.net/REST/v1/Routes/walking?wayPoint.1=${data.from[0]},${data.from[1]}&wayPoint.2=${data.to[0]},${data.to[1]}&key=${server.key}`;
