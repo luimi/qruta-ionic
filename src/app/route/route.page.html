@@ -64,6 +64,17 @@
       </ion-row>
     </ion-grid>
     <p class="line">Actualizada: {{route?.get('updatedAt') | date:'medium'}}</p>
+    <hr>
+    <h2 class="center">¿Sabes si esta ruta cambió? ¡Cuéntanos!</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let page of report" class="center">
+          <a [href]="page.url" target="_blank" rel="noopener noreferrer">
+            <ion-icon [name]="page.icon" class="social"></ion-icon>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
 </ion-content>

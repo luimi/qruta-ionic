@@ -19,6 +19,7 @@ export class RoutePage implements OnInit {
   images: any[] = [];
   vehicles = [];
   schedule: any = {};
+  report: any[] = [];
   constructor(
     private ar: ActivatedRoute,
     private leaflet: LeafletHelperService,
@@ -58,7 +59,25 @@ export class RoutePage implements OnInit {
       let pl2 = this.leaflet.addPolyline(this.map, path.slice(half, path.length), 'red');
       this.leaflet.centerMap(this.map, [pl1, pl2]);
     }
-
+    let subject = "Actualización de ruta."
+    let message = `Hola Q'ruta, esta ruta (${this.route?.get('company')?.get('name')} - ${this.route?.get('name')}), presenta la siguiente actualización: `
+    this.report = [{
+        icon: 'logo-facebook',
+        url: `http://m.me/queruta?text=${message}`
+      }, {
+        icon: 'logo-twitter',
+        url: `https://twitter.com/messages/compose?recipient_id=2575617260&text=${message}`
+      }, {
+        icon: 'logo-instagram',
+        url: `https://ig.me/m/queruta`
+      }, {
+        icon: 'logo-discord',
+        url: 'https://discordapp.com/channels/1187220392260153446/1192299716545888340'
+      }, {
+        icon: 'mail',
+        url: `mailto:queruta@gmail.com?subject=${subject}&body=${message}`
+      }
+    ]
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('route');
