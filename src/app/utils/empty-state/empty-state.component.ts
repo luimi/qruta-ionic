@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./empty-state.component.scss'],
 })
 export class EmptyStateComponent implements OnInit {
-  @Input() icon = 'heart';
-  @Input() text = 'Texto de referencia';
+  @Input() icon = '';
+  @Input() text = '';
   @Input() fullContent = true;
   @Input() progress = false;
   constructor() { }

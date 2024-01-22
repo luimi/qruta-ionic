@@ -53,5 +53,19 @@
             "title": "Historial",
             "empty": "No has realizado cálculos"
         }
+    },
+    "nearRoutes": {
+        "title": "Rutas Cercanas",
+        "urban": "Urbano",
+        "masive": "Masivo",
+        "location": {
+            "search": "Obteniendo tu ubicación",
+            "hint": "Recuerda activar el GPS en tu dispositivo",
+            "error": "No pudimos obtener tu ubicación"
+        },
+        "search": {
+            "searching": "Buscando rutas cercanas a ti",
+            "notFound": "No se encontraron rutas cerca de tu ubicación"
+        }
     }
 }

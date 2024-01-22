@@ -8,6 +8,7 @@ import { NearRoutesPageRoutingModule } from './near-routes-routing.module';
 
 import { NearRoutesPage } from './near-routes.page';
 import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
     FormsModule,
     IonicModule,
     NearRoutesPageRoutingModule,
-    EmptyStateModule
+    EmptyStateModule,
+    TranslateModule
   ],
   declarations: [NearRoutesPage]
 })

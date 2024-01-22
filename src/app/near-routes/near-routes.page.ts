@@ -37,17 +37,17 @@ export class NearRoutesPage implements OnInit {
    */
   async getCurrentPosition() {
     const warning = setTimeout(() => {
-      this.emptyState.setText('Recuerda activar el GPS en tu dispositivo');
+      this.emptyState.setText('nearRoutes.location.hint');
     }, 5 * 1000);
     this.emptyState.setIcon('location');
-    this.emptyState.setText('Buscando ubicación');
+    this.emptyState.setText('nearRoutes.location.search');
     this.emptyState.showProgress();
     navigator.geolocation.getCurrentPosition((location) => {
       clearTimeout(warning);
       this.getNearRoutes(location.coords.latitude, location.coords.longitude);
     }, () => {
       clearTimeout(warning);
-      this.emptyState.setText('No pudimos obtener tu ubicación');
+      this.emptyState.setText('nearRoutes.location.error');
       this.emptyState.hideProgress();
     },{ enableHighAccuracy: true })
   }
@@ -64,14 +64,14 @@ export class NearRoutesPage implements OnInit {
       area: 1
     };
     this.emptyState.setIcon('bus');
-    this.emptyState.setText('Buscando rutas cercanas a ti');
+    this.emptyState.setText('nearRoutes.search.searching');
     const result = await Parse.Cloud.run(constants.methods.nearRoutes, data);
     this.emptyState.hideProgress();
     if (result.success) {
       this.routes = result;
       this.loadedRoutes = true;
       if (this.routes.urban.length === 0 && this.routes.massive.length === 0) {
-        this.emptyState.setText('No se encontraron rutas cerca a tu ubicacion');
+        this.emptyState.setText('nearRoutes.search.notFound');
       }
     } else {
       this.utils.showErrorByCode(result.codeError, constants.errors.nearRoutes);
