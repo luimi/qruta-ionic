@@ -67,5 +67,19 @@
             "searching": "Buscando rutas cercanas a ti",
             "notFound": "No se encontraron rutas cerca de tu ubicación"
         }
+    },
+    "routes": {
+        "title":"Rutas",
+        "loading": "Cargando rutas",
+        "route": {
+            "schedules":"Horarios",
+            "hour":"Hora",
+            "frequenzy":"Frecuencia",
+            "monday2friday":"Lunes a viernes",
+            "saturday":"Sábado",
+            "sunday&holyday":"Domingos y festivos",
+            "updated":"Última actualización: {{date}}",
+            "support":"¿Sabes si esta ruta cambió? ¡Cuéntanos!"
+        }
     }
 }

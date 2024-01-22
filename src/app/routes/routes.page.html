@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="secondary">
-    <ion-title>Rutas</ion-title>
+    <ion-title translate>routes.title</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -25,5 +25,5 @@
   </ion-list>
 </ion-content>
 <ion-content *ngIf="!objectKeys(companies).length">
-  <app-empty-state  #emptyState icon="bus" text="Cargando rutas"></app-empty-state>
+  <app-empty-state  #emptyState icon="bus" text="routes.loading"></app-empty-state>
 </ion-content>

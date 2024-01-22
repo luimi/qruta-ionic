@@ -22,16 +22,16 @@
     </swiper-container>
     <ion-grid>
       <ion-row>
-        <ion-col size="6">
+        <ion-col size="6" translate>
           <ion-icon name="time"></ion-icon>
-          Horarios
+          routes.route.schedules
         </ion-col>
         <ion-col size="3" class="line"> Hora </ion-col>
         <ion-col size="3" class="line"> Frecuencia </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6">
-          Lunes a viernes
+        <ion-col size="6" translate>
+          routes.route.monday2friday
         </ion-col>
         <ion-col size="3" class="line">
           {{schedule.lvhi}} - {{schedule.lvhf}}
@@ -41,8 +41,8 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6">
-          Sábado
+        <ion-col size="6" translate>
+          routes.route.saturday
         </ion-col>
         <ion-col size="3" class="line">
           {{schedule.shi}} - {{schedule.shf}}
@@ -52,8 +52,8 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6">
-          Domingos y festivos
+        <ion-col size="6" translate>
+          routes.route.sunday&holyday
         </ion-col>
         <ion-col size="3" class="line">
           {{schedule.dfhi}} - {{schedule.dfhf}}
@@ -63,9 +63,9 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <p class="line">Actualizada: {{route?.get('updatedAt') | date:'medium'}}</p>
+    <p class="line" translate [translateParams]="{date: route?.get('updatedAt').toLocaleDateString()}">routes.route.updated</p>
     <hr>
-    <h2 class="center">¿Sabes si esta ruta cambió? ¡Cuéntanos!</h2>
+    <h2 class="center" translate>routes.route.support</h2>
     <ion-grid>
       <ion-row>
         <ion-col *ngFor="let page of report" class="center">

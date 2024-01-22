@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RoutePageRoutingModule } from './route-routing.module';
 
 import { RoutePage } from './route.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RoutePageRoutingModule
+    RoutePageRoutingModule,
+    TranslateModule
   ],
   declarations: [RoutePage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

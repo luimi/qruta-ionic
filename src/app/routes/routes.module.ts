@@ -8,6 +8,7 @@ import { RoutesPageRoutingModule } from './routes-routing.module';
 
 import { RoutesPage } from './routes.page';
 import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
     FormsModule,
     IonicModule,
     RoutesPageRoutingModule,
-    EmptyStateModule
+    EmptyStateModule,
+    TranslateModule
   ],
   declarations: [RoutesPage]
 })
