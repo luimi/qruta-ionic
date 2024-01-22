@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button [text]="''"></ion-back-button>
     </ion-buttons>
-    <ion-title>Resultados</ion-title>
+    <ion-title translate>result.title</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -24,18 +24,18 @@
         <ion-row class="ion-justify-content-center ion-align-items-center">
           <ion-col class="ion-text-center">
             <ion-icon name="time" color="primary" size="large"></ion-icon><br>
-            <span size="12">Tiempo</span>
+            <span size="12" translate>result.time</span>
             <h3 size="12">{{option.time}}</h3>
 
           </ion-col>
           <ion-col class="resume">
             <ion-icon name="bus" color="primary" size="large"></ion-icon><br>
-            <span size="12">Buses</span>
+            <span size="12" translate>result.buses</span>
             <h3 size="12">{{option.routes.length}}</h3>
           </ion-col>
           <ion-col class="resume">
             <ion-icon name="navigate" color="primary" size="large"></ion-icon><br>
-            <span size="12">Distancia</span>
+            <span size="12" translate>result.distance</span>
             <h3 size="12">{{option.routeDistance}}</h3>
           </ion-col>
         </ion-row>

@@ -95,6 +95,21 @@
             "loading":"Cargando preguntas frecuentes",
             "filter":"Filtrar"
         }
-        
+    },
+    "result": {
+        "title":"Resultados",
+        "time": "Tiempo",
+        "buses": "Buses",
+        "distance": "Distancia",
+        "advertising": {
+            "title": "Publicidad"
+        },
+        "detail": {
+            "title":"Detalle de recorrido",
+            "walkTo":"Caminar hasta",
+            "takeBus":"Tomar el bus",
+            "getDown":"Bajarse",
+            "destiny":"Caminar al destino"
+        }
     }
 }
