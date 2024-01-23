@@ -44,7 +44,7 @@
     <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="calculate.modal.recentEmpty"
       [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let recent of recents; index as i">
-      <ion-icon name="ios-timer" color="dark" class="ion-padding"></ion-icon>
+      <ion-icon name="timer-outline" color="primary" class="ion-padding"></ion-icon>
       <ion-label (click)="select(recent)">
         <h2>{{ recent.address }}</h2>
         <p>{{ recent.city }}</p>
