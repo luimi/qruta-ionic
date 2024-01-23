@@ -3,6 +3,7 @@ import { AlertController, LoadingController, Platform } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import Parse from 'parse';
 import { lastValueFrom } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -12,20 +13,22 @@ export class UtilsService {
   private config: any;
   public appId = '7S389pHCOfe0ZRH7Dd3598YOpOr9AaJ63r9VdV49';
   public setup: any;
-  constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, private platform: Platform, private http: HttpClient) {
+  constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, private platform: Platform, private http: HttpClient, private translateCtrl: TranslateService) {
 
   }
   public async showConfirmDialog(message: string, callback: any) {
+    const answers: any = await this.getTranslation(["general.yes","general.no"])
+    console.log(answers);
     const alert = await this.alertCtrl.create({
       message: message,
       buttons: [
         {
-          text: 'No',
+          text: answers["general.no"],
           role: 'cancel',
           cssClass: 'secondary'
         },
         {
-          text: 'Si',
+          text: answers["general.yes"],
           handler: callback
         }
       ]
@@ -35,12 +38,14 @@ export class UtilsService {
     return alert;
   }
 
-  public async showAlert(message: string, okCallBack?: any) {
+  public async showAlert(text: string, okCallBack?: any) {
+    const answer: any = await this.getTranslation("general.ok")
+    const message: any = await this.getTranslation(text)
     const alert = await this.alertCtrl.create({
       message: message,
       buttons: [
         {
-          text: 'Ok',
+          text: answer,
           handler: () => {
             if (okCallBack) {
               okCallBack();
@@ -55,8 +60,9 @@ export class UtilsService {
   }
 
   public async showLoading(text: string) {
+    const message: any = await this.getTranslation(text)
     const loading = await this.loadingCtrl.create({
-      message: text
+      message: message
     });
     await loading.present();
     return loading;
@@ -116,5 +122,10 @@ export class UtilsService {
       }
 
     });
+  }
+  public getTranslation(key: string | string[]) {
+    return new Promise((res,rej) => {
+      this.translateCtrl.get(key).subscribe(result => res(result))
+    })
   }
 }

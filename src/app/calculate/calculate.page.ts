@@ -86,7 +86,7 @@ export class CalculatePage implements OnInit {
     if (this.start.location && this.end.location) {
       const walkDistance = this.utils.getLocal(constants.keys.walkDistance);
       const area = walkDistance ? walkDistance : 1;
-      const loading = await this.utils.showLoading('Buscando Rutas');
+      const loading = await this.utils.showLoading('calculate.main.calculating');
       const result = await Parse.Cloud.run("calculate", {
         start: this.start.location.location,
         end: this.end.location.location,
@@ -105,7 +105,7 @@ export class CalculatePage implements OnInit {
         this.utils.showErrorByCode(result.codeError, constants.errors.calculate);
       }
     } else {
-      this.utils.showAlert('Por favor escoja una direccion de origen y una de destino');
+      this.utils.showAlert('calculate.main.errors.originOrDestinyMissing');
     }
   }
   saveRecent(location: any) {

@@ -32,7 +32,7 @@ export class ResultDetailsPage implements OnInit {
     this.loadData();
   }
   async loadData() {
-    let loading = await this.utils.showLoading('Cargando...');
+    let loading = await this.utils.showLoading('result.detail.dialogs.loading');
     let routes = this.option.routes;
     if(this.leaflet.getMap('details')){
       this.leaflet.removeMap('details');

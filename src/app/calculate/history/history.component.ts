@@ -19,7 +19,7 @@ export class HistoryComponent implements OnInit {
     this.list = this.history.get();
   }
   async calculate(path: any) {
-    const loading = await this.utils.showLoading('Calculando, por favor espere');
+    const loading = await this.utils.showLoading("calculate.history.calculating");
     const response = await Parse.Cloud.run("calculate", {
       start: path.from.location,
       end: path.to.location,

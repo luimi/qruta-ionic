@@ -22,7 +22,7 @@ export class CitiesPage implements OnInit {
     this.getCities();
   }
   async getCities() {
-    const loading = await this.utils.showLoading('Cargando lista de ciudades');
+    const loading = await this.utils.showLoading('cities.dialogs.loading');
     const query = new Parse.Query("City");
     query.ascending('name');
     query.equalTo('status', true);

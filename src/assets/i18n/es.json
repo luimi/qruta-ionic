@@ -1,7 +1,15 @@
 {
+    "general": {
+        "yes": "Sí",
+        "no": "No",
+        "ok": "Ok"
+    },
     "cities": {
         "title": "Ciudad",
-        "subtitle": "Por favor, selecciona tu ciudad."
+        "subtitle": "Por favor, selecciona tu ciudad.",
+        "dialogs": {
+            "loading": "Cargando lista de ciudades"
+        }
     },
     "maintenance": {
         "message": "Lo sentimos, por el momento la aplicación se encuentra en mantenimiento, pronto volveremos a la normalidad."
@@ -25,7 +33,19 @@
             },
             "urban": "Urbano",
             "history": "Historial",
-            "search": "BUSCAR RUTA"
+            "search": "BUSCAR RUTA",
+            "calculating": "Buscando Rutas",
+            "errors": {
+                "originOrDestinyMissing": "Por favor, escoja una dirección de origen y una de destino.",
+                "error1": "No se puede realizar el cálculo, intenta nuevamente.",
+                "error2": "No se envió el código de la ciudad.",
+                "error3": "No se envio el codigo de area.",
+                "error4": "No se envió la ubicación de inicio.",
+                "error5": "No se envió la ubicación del destino.",
+                "error6": "No se encontraron rutas cerca del origen.",
+                "error7": "No se encontraron rutas cerca del destino.",
+                "error8": "No se encontraron opciones para este recorrido."
+            }
         },
         "input": {
             "selected": "Ubicación seleccionada"
@@ -43,7 +63,12 @@
             "recent": "Recientes",
             "recentEmpty": "No hay direcciones recientemente usadas",
             "favorites": "Favoritos",
-            "favoritesEmpty": "¡Agrega algún favorito!"
+            "favoritesEmpty": "¡Agrega algún favorito!",
+            "dialogs": {
+                "favoriteAdded": "Dirección agregada a favoritos",
+                "favoriteExists": "Ya tienes esta dirección en tus favoritos",
+                "favoriteDelete": "¿Quieres borrar este favorito?"
+            }
         },
         "map": {
             "title": "Elejir Ubicación",
@@ -51,7 +76,8 @@
         },
         "history": {
             "title": "Historial",
-            "empty": "No has realizado cálculos"
+            "empty": "No has realizado cálculos",
+            "calculating": "Calculando rutas, por favor, espere."
         }
     },
     "nearRoutes": {
@@ -66,6 +92,12 @@
         "search": {
             "searching": "Buscando rutas cercanas a ti",
             "notFound": "No se encontraron rutas cerca de tu ubicación"
+        },
+        "errors": {
+            "error1": "No se puede obtener las rutas cercanas en este momento.",
+            "error2": "No se envió la ubicación.",
+            "error3": "No se envió el código de la ciudad.",
+            "error4": "No se envió el código de área."
         }
     },
     "routes": {
@@ -109,7 +141,10 @@
             "walkTo":"Caminar hasta",
             "takeBus":"Tomar el bus",
             "getDown":"Bajarse",
-            "destiny":"Caminar al destino"
+            "destiny":"Caminar al destino",
+            "dialogs": {
+                "loading": "Cargando..."
+            }
         }
     }
 }

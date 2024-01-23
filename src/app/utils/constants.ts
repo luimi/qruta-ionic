@@ -16,20 +16,20 @@ export const constants = {
     },
     errors:{
         calculate:[
-            'No se puede realizar el calculo, intenta nuevamente',
-            'No se envio el codigo de la ciudad',
-            'No se envio el codigo de area',
-            'No se envio la ubicacion de inicio',
-            'No se envio la ubicacion del destino',
-            'No se encontro rutas cerca al origen',
-            'No se encontro rutas cerca al destino',
-            'No se encontro opciones para este recorrido'
+            'calculate.main.errors.error1',
+            'calculate.main.errors.error2',
+            'calculate.main.errors.error3',
+            'calculate.main.errors.error4',
+            'calculate.main.errors.error5',
+            'calculate.main.errors.error6',
+            'calculate.main.errors.error7',
+            'calculate.main.errors.error8',
           ],
           nearRoutes:[
-            'No se puede obtener las rutas cercanas en este momento',
-            'No se envio la ubicacion',
-            'No se envio el codigo de la ciudad',
-            'No se envio el codigo de area'
+            'nearRoutes.errors.error1',
+            'nearRoutes.errors.error2',
+            'nearRoutes.errors.error3',
+            'nearRoutes.errors.error4'
           ]
     }
 }

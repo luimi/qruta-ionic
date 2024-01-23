@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { GeoService } from 'src/app/utils/geo.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 import { AddressMapComponent } from '../address-map/address-map.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-address-modal',
@@ -15,7 +16,8 @@ export class AddressModalComponent implements OnInit {
     private geo: GeoService,
     private utils: UtilsService,
     private changeRef: ChangeDetectorRef,
-    public modalCtrl: ModalController) { }
+    public modalCtrl: ModalController,
+    private translateCtrl: TranslateService) { }
 
   address: any = '';
   options: any;
@@ -72,11 +74,10 @@ export class AddressModalComponent implements OnInit {
     if (index === -1) {
       this.favorites.push(address);
       this.saveFavorites();
-      this.utils.showAlert('Direccion agregada a favoritos');
+      this.utils.showAlert("calculate.modal.dialogs.favoriteAdded");
     } else {
-      this.utils.showAlert('Ya tienes esta dirección en tus favoritos');
+      this.utils.showAlert("calculate.modal.dialogs.favoriteExists");
     }
-
   }
   getFavorites() {
     this.favorites = JSON.parse(localStorage.getItem('favorites') || "[]");
@@ -85,12 +86,13 @@ export class AddressModalComponent implements OnInit {
     }
   }
   deleteFavorite(index: number) {
-    this.utils.showConfirmDialog('Quieres borrar este favorito?', () => {
-      this.favorites.splice(index, 1);
-      this.saveFavorites();
-      this.changeRef.detectChanges();
-    });
-
+    this.translateCtrl.get("calculate.modal.dialogs.favoriteDelete").subscribe(res => {
+      this.utils.showConfirmDialog(res, () => {
+        this.favorites.splice(index, 1);
+        this.saveFavorites();
+        this.changeRef.detectChanges();
+      });
+    })
   }
   saveFavorites() {
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
