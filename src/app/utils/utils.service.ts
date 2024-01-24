@@ -11,7 +11,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class UtilsService {
 
   private config: any;
-  public appId = '7S389pHCOfe0ZRH7Dd3598YOpOr9AaJ63r9VdV49';
   public setup: any;
   constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, private platform: Platform, private http: HttpClient, private translateCtrl: TranslateService) {
 
@@ -96,7 +95,7 @@ export class UtilsService {
   }
 
   public getInstallationId() {
-    return localStorage.getItem(`Parse/${this.appId}/installationId`);
+    return localStorage.getItem(`Parse/${process.env["NG_APP_APPID"]}/installationId`);
   }
   public getServerConfig(param: string) {
     return new Promise(async (result, reject) => {
