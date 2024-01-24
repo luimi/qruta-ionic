@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import Parse from 'parse';
 import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+declare let gtag: (property: string, value: any, configs: any) => {};
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class UtilsService {
 
   }
   public async showConfirmDialog(message: string, callback: any) {
-    const answers: any = await this.getTranslation(["general.yes","general.no"])
+    const answers: any = await this.getTranslation(["general.yes", "general.no"])
     console.log(answers);
     const alert = await this.alertCtrl.create({
       message: message,
@@ -67,14 +68,14 @@ export class UtilsService {
     return loading;
   }
   public getLocal(key: string) {
-    if(localStorage.getItem(key)) return JSON.parse(localStorage.getItem(key) || "{}");
+    if (localStorage.getItem(key)) return JSON.parse(localStorage.getItem(key) || "{}");
     else return undefined
   }
   public setLocal(key: string, obj: any) {
     localStorage.setItem(key, JSON.stringify(obj));
   }
   public getSess(key: string) {
-    if(sessionStorage.getItem(key)) return JSON.parse(sessionStorage.getItem(key) || "{}");
+    if (sessionStorage.getItem(key)) return JSON.parse(sessionStorage.getItem(key) || "{}");
     else return undefined
   }
   public setSess(key: string, obj: any) {
@@ -123,8 +124,15 @@ export class UtilsService {
     });
   }
   public getTranslation(key: string | string[]) {
-    return new Promise((res,rej) => {
+    return new Promise((res, rej) => {
       this.translateCtrl.get(key).subscribe(result => res(result))
     })
+  }
+  public gaEvent() {
+    gtag('send', "action", {
+      event_category: 'category',
+      event_label: 'label',
+      value: 'value'
+    });
   }
 }
