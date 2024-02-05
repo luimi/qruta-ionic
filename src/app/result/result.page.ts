@@ -28,10 +28,11 @@ export class ResultPage implements OnInit {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
     } else {
-      const modal = await this.modalCtrl.create({
+      window.open("https://queruta.com/ads.html", "_blank")
+      /*const modal = await this.modalCtrl.create({
         component: AdsComponent
       });
-      modal.present();
+      modal.present();*/
     }
     
   }
