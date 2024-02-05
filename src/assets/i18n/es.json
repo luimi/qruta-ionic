@@ -37,6 +37,7 @@
             "calculating": "Buscando Rutas",
             "errors": {
                 "originOrDestinyMissing": "Por favor, escoja una dirección de origen y una de destino.",
+                "highDemand": "En estos momentos, estamos teniendo una alta demanda de solicitudes. Por favor, intenta nuevamente." ,
                 "error1": "No se puede realizar el cálculo, intenta nuevamente.",
                 "error2": "No se envió el código de la ciudad.",
                 "error3": "No se envio el codigo de area.",

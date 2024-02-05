@@ -9,6 +9,7 @@ import { LeafletHelperService } from '../utils/leaflet-helper.service';
 import { HistoryService } from '../utils/history.service';
 import { HistoryComponent } from './history/history.component';
 import Parse from 'parse';
+import { ApiService } from '../utils/api.service';
 
 @Component({
   selector: 'app-calculate',
@@ -32,10 +33,11 @@ export class CalculatePage implements OnInit {
     private router: Router,
     private history: HistoryService,
     private utils: UtilsService,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private apiCtrl: ApiService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ionViewDidEnter() {
     this.city = this.utils.getLocal(constants.keys.city);
@@ -87,13 +89,20 @@ export class CalculatePage implements OnInit {
       const walkDistance = this.utils.getLocal(constants.keys.walkDistance);
       const area = walkDistance ? walkDistance : 1;
       const loading = await this.utils.showLoading('calculate.main.calculating');
-      const result = await Parse.Cloud.run("calculate", {
+      const server = await this.apiCtrl.getServer(this.city.objectId)
+      if (!server.success) {
+        loading.dismiss();
+        this.utils.showAlert('calculate.main.errors.highDemand');
+        return
+      }
+      const data = {
         start: this.start.location.location,
         end: this.end.location.location,
         area: area,
         city: this.city.objectId,
         type: this.type
-      });
+      }
+      const result = await this.apiCtrl.calculate(server, data)
       loading.dismiss();
       if (result.success) {
         this.history.add(this.start.location, this.end.location, this.type);
