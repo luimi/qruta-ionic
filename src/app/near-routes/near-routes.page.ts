@@ -4,6 +4,7 @@ import Parse from 'parse';
 import { UtilsService } from '../utils/utils.service';
 import { Router } from '@angular/router';
 import { constants } from '../utils/constants';
+import { ApiService } from '../utils/api.service';
 
 @Component({
   selector: 'app-near-routes',
@@ -14,12 +15,13 @@ export class NearRoutesPage implements OnInit {
 
   routes: any = { urban: [], massive: [] };
   selectedBtn = 'urban';
-  loadedRoutes = false;
+  executed = false;
   @ViewChild('emptyState') emptyState: any;
   constructor(
     private alertCtrl: AlertController,
     private utils: UtilsService,
-    private router: Router
+    private router: Router,
+    private apiCtrl: ApiService
   ) { }
 
   ngOnInit() {
@@ -27,7 +29,8 @@ export class NearRoutesPage implements OnInit {
   }
 
   ionViewDidEnter() {
-    if (!this.loadedRoutes) {
+    if (!this.executed) {
+      this.executed = true;
       this.getCurrentPosition();
     }
   }
@@ -49,7 +52,7 @@ export class NearRoutesPage implements OnInit {
       clearTimeout(warning);
       this.emptyState.setText('nearRoutes.location.error');
       this.emptyState.hideProgress();
-    },{ enableHighAccuracy: true })
+    }, { enableHighAccuracy: true })
   }
 
   /**
@@ -65,11 +68,17 @@ export class NearRoutesPage implements OnInit {
     };
     this.emptyState.setIcon('bus');
     this.emptyState.setText('nearRoutes.search.searching');
-    const result = await Parse.Cloud.run(constants.methods.nearRoutes, data);
+    const server = await this.apiCtrl.getServer(data.city);
+    if(!server.success){
+      this.emptyState.setIcon('sad');
+      this.emptyState.setText('nearRoutes.search.notFound');
+      this.emptyState.hideProgress();
+      return
+    }
+    const result = await this.apiCtrl.nearRoutes(server, data);
     this.emptyState.hideProgress();
     if (result.success) {
       this.routes = result;
-      this.loadedRoutes = true;
       if (this.routes.urban.length === 0 && this.routes.massive.length === 0) {
         this.emptyState.setText('nearRoutes.search.notFound');
       }

@@ -6,7 +6,9 @@ export const constants = {
 
     },
     methods: {
-        nearRoutes: 'nearRoutes'
+        nearRoutes: 'nearRoutes',
+        calculate: 'calculate',
+        getServer: 'getServer'
     },
     local: {
         result: 'result',
