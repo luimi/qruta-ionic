@@ -39,6 +39,7 @@ export class UtilsService {
   }
 
   public async showAlert(text: string, okCallBack?: any) {
+    if(!text) return
     const answer: any = await this.getTranslation("general.ok")
     const message: any = await this.getTranslation(text)
     const alert = await this.alertCtrl.create({
