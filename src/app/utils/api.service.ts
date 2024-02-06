@@ -20,8 +20,12 @@ export class ApiService {
   public async getServer(city: string) {
     let server: any;
     for (let i = 0; i < 3; i++) {
-      server = await Parse.Cloud.run(constants.methods.getServer, { city });
-      if (server.success) break;
+      try {
+        server = await Parse.Cloud.run(constants.methods.getServer, { city });
+        if (server.success) break;
+      } catch (e) {
+        server = { success: false }
+      }
       await this.sleep(3000)
     }
     return server
