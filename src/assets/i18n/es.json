@@ -2,7 +2,10 @@
     "general": {
         "yes": "Sí",
         "no": "No",
-        "ok": "Ok"
+        "ok": "Ok",
+        "origin": "Origen",
+        "destination": "Destino",
+        "cancel": "Cancelar"
     },
     "cities": {
         "title": "Ciudad",

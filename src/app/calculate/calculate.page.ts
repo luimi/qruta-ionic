@@ -53,22 +53,23 @@ export class CalculatePage implements OnInit {
       } else {
         const ll = event.latlng;
         let location: any = await this.geo.reverse([ll.lat, ll.lng]);
+        const answers: any = await this.utils.getTranslation(["general.origin", "general.destination","general.cancel"])
         const actionSheet = await this.actionSheet.create({
           header: location.address,
           buttons: [{
-            text: 'Origen',
+            text: answers["general.origin"],
             icon: 'location',
             handler: () => {
               this.setAddress(this.start, location);
             }
           }, {
-            text: 'Destino',
+            text: answers["general.destination"],
             icon: 'flag',
             handler: () => {
               this.setAddress(this.end, location);
             }
           }, {
-            text: 'Cancel',
+            text: answers["general.cancel"],
             icon: 'close',
             role: 'cancel'
           }]
