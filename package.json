@@ -7,6 +7,7 @@
     "ng": "ng",
     "start": "ionic serve",
     "android": "ionic capacitor run android",
+    "ios": "ionic capacitor run ios",
     "debug": "ionic capacitor run android -l --external",
     "release": "cd android && ./gradlew bundleRelease",
     "external": "ionic serve --external --no-open",
