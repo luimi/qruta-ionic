@@ -24,11 +24,10 @@ export class ResultPage implements OnInit {
   }
 
   async showAd() {
-    if(isPlatform("android")) {
+    if(isPlatform("android") || isPlatform("ios")) {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
     } else {
-      window.open("https://queruta.com/ads.html", "_blank")
       /*const modal = await this.modalCtrl.create({
         component: AdsComponent
       });

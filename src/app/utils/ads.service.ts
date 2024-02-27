@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AdMob, AdOptions, BannerAdOptions, BannerAdPosition, BannerAdSize } from '@capacitor-community/admob';
+import { isPlatform } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,8 +10,8 @@ export class AdsService {
   constructor() { }
 
   async initializeAdmob() {
-    const {status} = await AdMob.trackingAuthorizationStatus();
-    if(status === "notDetermined") {
+    const { status } = await AdMob.trackingAuthorizationStatus();
+    if (status === "notDetermined") {
       console.log("notDetermined")
     }
     AdMob.initialize({
@@ -20,7 +21,7 @@ export class AdsService {
   }
   async prepareInterstitial() {
     const options: AdOptions = {
-      adId: process.env["NG_APP_ANDROID_ADMOB_INTERSTITIAL"] || "",
+      adId: (isPlatform("android") ? process.env["NG_APP_ANDROID_ADMOB_INTERSTITIAL"] : process.env["NG_APP_IOS_ADMOB_INTERSTITIAL"]) || "",
       isTesting: !environment.production,
     }
     await AdMob.prepareInterstitial(options)
@@ -30,7 +31,7 @@ export class AdsService {
   }
   async showBanner() {
     const options: BannerAdOptions = {
-      adId: process.env["NG_APP_ANDROID_ADMOB_BANNER"] || "",
+      adId: (isPlatform("android") ? process.env["NG_APP_ANDROID_ADMOB_BANNER"] : process.env["NG_APP_IOS_ADMOB_BANNER"]) || "",
       adSize: BannerAdSize.BANNER,
       position: BannerAdPosition.TOP_CENTER,
       margin: 57,

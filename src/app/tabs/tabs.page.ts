@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class TabsPage {
   private activeTab?: HTMLElement;
   constructor(private adsCtrl: AdsService) {
-    if(isPlatform("android")) {
+    if(isPlatform("android") || isPlatform("ios")) {
       this.admob()
     }
   }
