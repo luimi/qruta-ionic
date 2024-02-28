@@ -1,5 +1,72 @@
-ion-item{
-    padding-top: 10px;  
-    margin-bottom: 10px;     
-    box-shadow: 1px 3px 0px 0px rgba(0, 0, 0, 0.06);   
+.blue {
+    color: blue;
+    border-color: blue;
+}
+
+.red {
+    color: red;
+    border-color: red;
+}
+
+.green {
+    color: green;
+    border-color: green;
+}
+.draw {
+    text-align: center;
+    .dots {
+        border-left: 6px dotted var(--ion-color-primary);
+        height: 105px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 0;
+    }
+
+    .line-bus {
+        border-left: 12px solid;
+        height: 80px;
+        position: absolute;
+        left: 50%;
+        margin-left: -6px;
+        top: 40px;
+    }
+
+    .line {
+        border-left: 12px solid;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        margin-left: -6px;
+        top: 0;
+    }
+}
+
+.info {
+    .title {
+        font-weight: 600;
+        color: var(--ion-color-primary);
+        margin: 15px 0px;
+    }
+
+    .content {
+        margin: 15px 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        color: var(--ion-color-primary);
+        ion-icon {
+            flex-shrink: 0;
+        }
+    }
+}
+
+.text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.route-box {
+    margin-left: 20px;
 }

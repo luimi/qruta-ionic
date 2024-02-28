@@ -8,43 +8,81 @@
 </ion-header>
 
 <ion-content>
+  <div #top></div>
   <div id="details" style="width:100%; height:60%;"></div>
-  <div *ngFor="let step of option.routes">
-    <ion-item lines="none" (click)="moveCamera(step.startPoint)">
-      <ion-label>
-        <h2><b translate>result.detail.walkTo</b></h2>
-        <ion-chip outline color="success">
-          <ion-label color="success">
-            <p>
-              <ion-icon name="walk"></ion-icon>
-              {{ step?.startAddress?.address }}
-            </p>
-          </ion-label>
-        </ion-chip>
-        
-      </ion-label>
-    </ion-item>
-    <ion-item lines="none" (click)="moveCamera(step.startPoint)">
-      <ion-label>
-        <h2><b translate>result.detail.takeBus</b></h2>
-        <p><ion-icon name="walk"></ion-icon><ion-icon name="bus"></ion-icon><a [routerLink]="['/route/' + step.route.id]" routerDirection="forward"
-          >{{ step.route.company }} - {{ step.route.name }}</a></p>
-      </ion-label>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-label (click)="moveCamera(step.endPoint)">
-        <h2><b translate> result.detail.getDown </b></h2>
-        <p>
-          <ion-icon name="bus"></ion-icon><ion-icon name="walk"></ion-icon
-          >{{ step?.endAddress?.address }}
-        </p>
-      </ion-label>
-    </ion-item>
-  </div>
-  <ion-item lines="none" (click)="moveCamera(data.end)">
-    <ion-label>
-      <h2><b translate> result.detail.destiny </b></h2>
-      <p><ion-icon name="walk"></ion-icon>{{ data?.endAddress?.address }}</p>
-    </ion-label>
-  </ion-item>
+  <ion-grid>
+    <!-- INICIO -->
+    <ion-row>
+      <ion-col size="2" class="draw">
+        <img src="./assets/origen.png">
+      </ion-col>
+      <ion-col size="10" class="info"></ion-col>
+    </ion-row>
+    <div *ngFor="let step of option.routes; let i = index">
+      <!-- CAMINAR -->
+      <ion-row (click)="moveCamera(step.startPoint)">
+        <ion-col size="2" class="draw">
+          <div class="dots"></div>
+        </ion-col>
+        <ion-col size="10" class="info">
+          <div class="title text" translate>result.detail.walkTo</div>
+          <div class="content text v-center">
+            <ion-icon name="walk" size="large" color="primary"></ion-icon>
+            <span>{{ step?.startAddress?.address }}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- TOMAR BUS -->
+      <ion-row [routerLink]="['/route/' + step.route.id]" routerDirection="forward">
+        <ion-col size="2" [ngClass]="['draw', colors[i]]">
+          <ion-icon name="bus" size="large"></ion-icon>
+          <div class="line-bus"></div>
+        </ion-col>
+        <ion-col size="10" class="info">
+          <div class="title text" translate>result.detail.takeBus</div>
+          <div class="content text v-center">
+            <ion-icon name="walk" size="large" color="primary"></ion-icon><ion-icon name="bus" size="large"
+              color="primary"></ion-icon>
+            <div class="route-box">
+              {{ step.route.company }} - {{ step.route.name }}
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- BAJARSE -->
+      <ion-row (click)="moveCamera(step.endPoint)">
+        <ion-col size="2" [ngClass]="['draw', colors[i]]">
+          <div class="line"></div>
+        </ion-col>
+        <ion-col size="10" class="info">
+          <div class="title text" translate>result.detail.getDown</div>
+          <div class="content text v-center">
+            <ion-icon name="bus" size="large" color="primary"></ion-icon>
+            <ion-icon name="walk" size="large" color="primary"></ion-icon>
+            <span>{{ step?.endAddress?.address }}</span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- CAMINAR FINAL-->
+    <ion-row (click)="moveCamera(data.end)">
+      <ion-col size="2" class="draw">
+        <div class="dots"></div>
+      </ion-col>
+      <ion-col size="10" class="info">
+        <div class="title text" translate>result.detail.destiny </div>
+        <div class="content text v-center">
+          <ion-icon name="walk" size="large" color="primary"></ion-icon>
+          <span>{{ data?.endAddress?.address }}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- FIN -->
+    <ion-row>
+      <ion-col size="2" class="draw">
+        <img src="./assets/destino.png">
+      </ion-col>
+      <ion-col size="10" class="info"></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

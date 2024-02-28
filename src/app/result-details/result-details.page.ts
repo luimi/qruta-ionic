@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { LeafletHelperService } from '../utils/leaflet-helper.service';
@@ -16,6 +16,7 @@ export class ResultDetailsPage implements OnInit {
   option:any;
   data:any;
   colors = ['blue', 'red', 'green'];
+  @ViewChild('top') top: ElementRef | undefined;
   constructor(private route: ActivatedRoute, private location: Location, private leaflet: LeafletHelperService, private utils: UtilsService, private geo: GeoService, private platform: Platform) { }
 
   ngOnInit() {
@@ -66,6 +67,7 @@ export class ResultDetailsPage implements OnInit {
     loading.dismiss();
   }
   moveCamera(location:any) {
-    this.leaflet.moveCamera(this.map, location);
+    this.leaflet.moveCamera(this.map, location, 16);
+    if(this.top) this.top.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }
