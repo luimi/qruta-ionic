@@ -10,7 +10,7 @@
 <ion-content>
   <div id="route" style="width:100%; height:60%;"></div>
   <div class="ion-padding">
-    <h1>{{route?.get('name')}} - {{route?.get('details')}}</h1>
+    <h1>{{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}</h1>
     <p>{{route?.get('info')}}</p>
     <swiper-container *ngIf="images.length>0" [pagination]="true">
       <swiper-slide *ngFor="let image of images">
