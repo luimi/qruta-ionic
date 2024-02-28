@@ -115,11 +115,15 @@
             "schedules": "Schedules",
             "hour": "Hour",
             "frequenzy": "Frequency",
-            "monday2friday": "Monday to Friday",
-            "saturday": "Saturday",
-            "sunday&holyday": "Sundays and Holidays",
+            "monday2friday": "M2F",
+            "saturday": "S",
+            "sunday&holyday": "S&H",
             "updated": "Last update: {{date}}",
-            "support": "Do you know if this route has changed? Tell us!"
+            "support": "Do you know if this route has changed? Tell us!",
+            "help": {
+                "hour": "This is the time of the first dispatch and the time of the last dispatch of the day.",
+                "frequency": "This is the time frequency in which dispatches leave, during off-peak hours and peak hours, respectively."
+            }
         }
     },
     "settings": {

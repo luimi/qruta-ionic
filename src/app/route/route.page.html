@@ -22,44 +22,60 @@
     </swiper-container>
     <ion-grid>
       <ion-row>
-        <ion-col size="6" translate>
+        <ion-col size="2" translate>
           <ion-icon name="time"></ion-icon>
-          routes.route.schedules
         </ion-col>
-        <ion-col size="3" class="line" translate> routes.route.hour </ion-col>
-        <ion-col size="3" class="line" translate> routes.route.frequenzy </ion-col>
+        <ion-col size="5" class="line v-center" translate> 
+          routes.route.hour 
+          <ion-icon name="help-circle-outline" id="help-hour"></ion-icon>
+          <ion-popover trigger="help-hour" side="top" alignment="center">
+            <ng-template>
+              <ion-content class="ion-padding" translate>routes.route.help.hour</ion-content>
+            </ng-template>
+          </ion-popover>
+        </ion-col>
+        <ion-col size="5" class="line v-center" translate> 
+          routes.route.frequenzy 
+          <ion-icon name="help-circle-outline" id="help-frequency"></ion-icon>
+          <ion-popover trigger="help-frequency" side="top" alignment="center">
+            <ng-template>
+              <ion-content class="ion-padding" translate>routes.route.help.frequency</ion-content>
+            </ng-template>
+          </ion-popover>
+        </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6" translate>
+        <ion-col size="2" translate>
           routes.route.monday2friday
+          
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.lvhi}} - {{schedule.lvhf}}
+        <ion-col size="5" class="line">
+          {{schedule.lvhi || '🚫'}} - {{schedule.lvhf || '🚫'}}
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.lvfv}} - {{schedule.lvfp}} min
+        <ion-col size="5" class="line">
+          {{schedule.lvfv || '🚫'}} - {{schedule.lvfp || '🚫'}} min
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6" translate>
+        <ion-col size="2" translate>
           routes.route.saturday
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.shi}} - {{schedule.shf}}
+        <ion-col size="5" class="line">
+          {{schedule.shi || '🚫'}} - {{schedule.shf || '🚫'}}
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.sfv}} - {{schedule.sfp}} min
+        <ion-col size="5" class="line">
+          {{schedule.sfv || '🚫'}} - {{schedule.sfp || '🚫'}} min
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="6" translate>
+        <ion-col size="2" translate>
           routes.route.sunday&holyday
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.dfhi}} - {{schedule.dfhf}}
+        <ion-col size="5" class="line">
+          {{schedule.dfhi || '🚫'}} - {{schedule.dfhf || '🚫'}}
         </ion-col>
-        <ion-col size="3" class="line">
-          {{schedule.dffv}} - {{schedule.dffp}} min
+        <ion-col size="5" class="line">
+          {{schedule.dffv || '🚫'}} - {{schedule.dffp || '🚫'}} min
         </ion-col>
       </ion-row>
     </ion-grid>

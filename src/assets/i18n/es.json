@@ -115,11 +115,15 @@
             "schedules": "Horarios",
             "hour": "Hora",
             "frequenzy": "Frecuencia",
-            "monday2friday": "Lunes a viernes",
-            "saturday": "Sábado",
-            "sunday&holyday": "Domingos y festivos",
+            "monday2friday": "LaV",
+            "saturday": "S",
+            "sunday&holyday": "DyF",
             "updated": "Última actualización: {{date}}",
-            "support": "¿Sabes si esta ruta cambió? ¡Cuéntanos!"
+            "support": "¿Sabes si esta ruta cambió? ¡Cuéntanos!",
+            "help": {
+                "hour": "Esta es la hora del primer despacho y la hora del último despacho del día.",
+                "frequency": "Esta es la frecuencia de tiempo en la que los despachos salen, en horas valle y horas pico, respectivamente."
+            }
         }
     },
     "settings": {
