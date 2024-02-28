@@ -10,15 +10,48 @@
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="list.length>0">
-  <ion-list>
-    <ion-item *ngFor="let path of list" (click)="calculate(path)">
-      <ion-label class="ion-text-wrap">
-        <h2>{{path.from.address}} <ion-icon name="play" color="primary"></ion-icon> {{path.to.address}}</h2>
-        <p>{{path.from.city}}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-card *ngFor="let path of list" (click)="calculate(path)">
+    <ion-card-content>
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-no-padding">
+          <ion-col size="11">
+            <ion-item class="ion-no-padding">
+              <img src="./assets/origen.png" slot="start" class="icon">
+              <ion-label class="text" color="primary">{{
+                (path.from.address && path.from.address !== "")?path.from.address:'calculate.history.selected' | translate
+                }}</ion-label>
+            </ion-item>
+            <ion-item class="ion-no-padding">
+              <img src="./assets/destino.png" slot="start" class="icon">
+              <ion-label class="text" color="primary">{{
+                (path.to.address && path.to.address !== "")?path.to.address:'calculate.history.selected' | translate
+                }}</ion-label>
+            </ion-item>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="text v-center">
+                  <ion-icon name="location" color="primary"></ion-icon>
+                  {{ path.city.name }}
+                </ion-col>
+                <ion-col class="text v-center">
+                  <ion-icon name="walk" color="primary"></ion-icon>
+                  {{ distances[path.area] }}
+                </ion-col>
+                <ion-col class="text v-center">
+                  <ion-icon name="bus" color="primary"></ion-icon>
+                  {{ 'general.'+path.type | translate }}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+          <ion-col class="action-arrow v-center" size="1">
+            <ion-icon name="chevron-forward" size="large" color="primary"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 <ion-content *ngIf="list.length===0">
-  <app-empty-state  #emptyState icon="timer" text="calculate.history.empty"></app-empty-state>
+  <app-empty-state #emptyState icon="timer" text="calculate.history.empty"></app-empty-state>
 </ion-content>

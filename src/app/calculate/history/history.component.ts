@@ -14,6 +14,11 @@ import { ApiService } from 'src/app/utils/api.service';
 })
 export class HistoryComponent implements OnInit {
   list: any[] = [];
+  distances: any = {
+    1: '500m',
+    2: '1km',
+    3: '1.5km',
+  };
   constructor(private history: HistoryService, private router: Router, private utils: UtilsService, public modalCtrl: ModalController, private apiCtrl: ApiService) { }
 
   ngOnInit() {

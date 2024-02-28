@@ -1,0 +1,15 @@
+.action-arrow {
+    justify-content: right;
+}
+
+.text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    ion-icon {
+        flex-shrink: 0;
+    }
+}
+img.icon {
+    margin-right: 10px
+}

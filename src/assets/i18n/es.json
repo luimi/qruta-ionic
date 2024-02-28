@@ -5,7 +5,9 @@
         "ok": "Ok",
         "origin": "Origen",
         "destination": "Destino",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "urban": "Urbano",
+        "massive": "Masivo"
     },
     "cities": {
         "title": "Ciudad",
@@ -81,7 +83,8 @@
         "history": {
             "title": "Historial",
             "empty": "No has realizado cálculos",
-            "calculating": "Calculando rutas, por favor, espere."
+            "calculating": "Calculando rutas, por favor, espere.",
+            "selected": "Ubicación seleccionada"
         }
     },
     "nearRoutes": {
