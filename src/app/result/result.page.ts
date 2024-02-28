@@ -24,7 +24,7 @@ export class ResultPage implements OnInit {
   }
 
   async showAd() {
-    if(isPlatform("android") || isPlatform("ios")) {
+    if (isPlatform("android") || isPlatform("ios")) {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
     } else {
@@ -33,13 +33,22 @@ export class ResultPage implements OnInit {
       });
       modal.present();*/
     }
-    
+
   }
   openDetails(index: number) {
-    this.router.navigate(['/result-details',index]);
+    this.router.navigate(['/result-details', index]);
   }
   goBack() {
     this.location.back();
   }
-
+  getCompanies(option: any) {
+    let companies = '';
+    option.routes.forEach((route: any, index: number) => {
+      if (!companies.includes(route.route.company)) {
+        if (index > 0) companies += ', ';
+        companies += route.route.company;
+      }
+    });
+    return companies;
+  }
 }

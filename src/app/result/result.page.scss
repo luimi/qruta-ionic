@@ -1,30 +1,11 @@
-.green {
-    background-color: #85B200;
+.distance-time {
+    float: right;
+    font-size: x-small;
+    ion-icon {
+        margin: 0 2px 0 10px;
+    }
 }
 
-.resume {
-    text-align: center;
-}
-
-h3 {
-    font-size: 20px;
-    padding-top: 10px;
-}
-
-span {
-    color: gray;
-    padding: 15px;
-}
-
-b {
-    font-size: 20px;
-}
-
-ion-card-content {
-    padding: 0;
-}
-
-ion-grid {
-    padding-top: 10px;
-    padding-bottom: 20px;
+.arrow {
+    margin-left: 10px;
 }

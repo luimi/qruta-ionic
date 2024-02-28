@@ -11,35 +11,32 @@
 <ion-content>
   <ion-card *ngFor="let option of options; let i = index" (click)="openDetails(i)">
     <ion-card-content>
+      <ion-item>
+        <ion-label>{{ getCompanies(option) }}</ion-label>
+      </ion-item>
       <ion-grid>
         <ion-row>
-          <span>
-            <b *ngFor="let route of option.routes; let i = index">{{route.route.company}} - {{route.route.name}}
-              <ion-icon name="play" color="primary" *ngIf="i+1<option.routes.length"></ion-icon>
-            </b>
-
-          </span>
-
-        </ion-row>
-        <ion-row class="ion-justify-content-center ion-align-items-center">
-          <ion-col class="ion-text-center">
-            <ion-icon name="time" color="primary" size="large"></ion-icon><br>
-            <span size="12" translate>result.time</span>
-            <h3 size="12">{{option.time}}</h3>
-
-          </ion-col>
-          <ion-col class="resume">
-            <ion-icon name="bus" color="primary" size="large"></ion-icon><br>
-            <span size="12" translate>result.buses</span>
-            <h3 size="12">{{option.routes.length}}</h3>
-          </ion-col>
-          <ion-col class="resume">
-            <ion-icon name="navigate" color="primary" size="large"></ion-icon><br>
-            <span size="12" translate>result.distance</span>
-            <h3 size="12">{{option.routeDistance}}</h3>
+          <ion-col size="auto" *ngFor="let route of option.routes; let i = index">
+            <ion-grid class="ion-no-padding">
+              <ion-row>
+                <div class="route-box">
+                  <ion-icon name="bus"></ion-icon>
+                  {{ route.route.name }}
+                </div>
+                <ion-col class="v-center arrow" *ngIf="i + 1 < option.routes.length">
+                  <ion-icon name="chevron-forward"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </ion-col>
         </ion-row>
       </ion-grid>
+      <span class="distance-time ion-margin-bottom v-center">
+        <ion-icon name="navigate" color="primary"></ion-icon>
+        {{ option.routeDistance }}
+        <ion-icon name="time" color="primary"></ion-icon>
+        ~{{ option.time }}
+      </span>
     </ion-card-content>
   </ion-card>
 </ion-content>
