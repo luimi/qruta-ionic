@@ -5,25 +5,37 @@
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="objectKeys(companies).length">
-  <ion-list>
-    <div *ngFor="let company of objectKeys(companies)" >
-      <ion-item (click)="companies[company].show = !companies[company].show">
-        <ion-label>
-          <h2>{{companies[company].name}}</h2>
-        </ion-label>
+  <ion-searchbar placeholder="{{'routes.filter' | translate}}" (ionInput)="filter($event)"></ion-searchbar>
+  <ion-accordion-group [multiple]="true" expand="inset" #accordion>
+    <ion-accordion *ngFor="let company of objectKeys(filtered)">
+      <ion-item slot="header" color="primary" class="route-header">
+        <ion-label class="ion-text-center">{{
+          filtered[company].name
+          }}</ion-label>
       </ion-item>
-      <ion-list [ngClass]="{'ion-hide':!companies[company].show}">
-        <ion-item *ngFor="let route of companies[company].routes" [routerLink]="['/route/'+route.id]" routerDirection="forward">
-          <ion-label>
-            <p>{{route.get('name')}} {{route.get('details')?'-':''}} {{route.get('details')}}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </div>
-    
-
-  </ion-list>
+      <div class="ion-padding" slot="content">
+        <div class="ion-text-center social">
+          <a *ngFor="let social of filtered[company].socials" [href]="social.url" target="_blank">
+            <ion-icon [name]="social.icon" size="large"></ion-icon>
+          </a>
+        </div>
+        <ion-grid>
+          <ion-row class="route-list" *ngFor="let route of filtered[company].routes" [routerLink]="['/route/'+route.id]"
+            routerDirection="forward">
+            <ion-col size="auto">
+              <div class="route-box center">
+                <ion-icon name="bus"></ion-icon>
+                {{ route.get("name") }}
+              </div>
+            </ion-col>
+            <ion-col class="detail v-center">
+              <span>{{ route.get("details") }}</span></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
 <ion-content *ngIf="!objectKeys(companies).length">
-  <app-empty-state  #emptyState icon="bus" text="routes.loading"></app-empty-state>
+  <app-empty-state #emptyState icon="bus" text="routes.loading"></app-empty-state>
 </ion-content>

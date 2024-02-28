@@ -106,6 +106,7 @@
     },
     "routes": {
         "title": "Rutas",
+        "filter": "Filtrar",
         "loading": "Cargando rutas",
         "route": {
             "schedules": "Horarios",

@@ -106,6 +106,7 @@
     },
     "routes": {
         "title": "Routes",
+        "filter": "Filter",
         "loading": "Loading routes",
         "route": {
             "schedules": "Schedules",

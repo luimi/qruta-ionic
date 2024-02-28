@@ -91,3 +91,25 @@ ion-segment-button {
   --background-checked: white;
   --indicator-color: white;
 }
+
+.route-box {
+  border-bottom: 5px solid var(--ion-color-primary);
+  border-radius: 5px;
+  padding: 10px 10px 5px 10px;
+  width: fit-content;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--ion-color-primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  ion-icon {
+    margin-right: 5px;
+  }
+}
+.v-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
