@@ -6,7 +6,7 @@
     </ion-icon>
     <ion-label (click)="openModal()">
       <p [ngClass]="{'gray': !location, 'black': location}">
-        {{location?(location.address?location.address:'calculate.input.selected'):hint | translate}} </p>
+        {{(location?(location.address?location.address:'calculate.input.selected'):hint) | translate}} </p>
     </ion-label>
     <ion-icon name="close" slot="end" *ngIf="location" (click)="clear()"></ion-icon>
   </ion-item>
