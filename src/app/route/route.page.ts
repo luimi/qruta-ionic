@@ -27,7 +27,7 @@ export class RoutePage implements OnInit {
     private adsCtrl: AdsService) { }
 
   ngOnInit() {
-    if(isPlatform("android")) {
+    if (isPlatform("android") || isPlatform("ios")) {
       this.adsCtrl.showBanner()
     }
   }
@@ -62,26 +62,26 @@ export class RoutePage implements OnInit {
     let subject = "Actualización de ruta."
     let message = `Hola Q'ruta, esta ruta (${this.route?.get('company')?.get('name')} - ${this.route?.get('name')}), presenta la siguiente actualización: `
     this.report = [{
-        icon: 'logo-facebook',
-        url: `http://m.me/queruta?text=${message}`
-      }, {
-        icon: 'logo-twitter',
-        url: `https://twitter.com/messages/compose?recipient_id=2575617260&text=${message}`
-      }, {
-        icon: 'logo-instagram',
-        url: `https://ig.me/m/queruta`
-      }, {
-        icon: 'logo-discord',
-        url: 'https://discordapp.com/channels/1187220392260153446/1192299716545888340'
-      }, {
-        icon: 'mail',
-        url: `mailto:queruta@gmail.com?subject=${subject}&body=${message}`
-      }
+      icon: 'logo-facebook',
+      url: `http://m.me/queruta?text=${message}`
+    }, {
+      icon: 'logo-twitter',
+      url: `https://twitter.com/messages/compose?recipient_id=2575617260&text=${message}`
+    }, {
+      icon: 'logo-instagram',
+      url: `https://ig.me/m/queruta`
+    }, {
+      icon: 'logo-discord',
+      url: 'https://discordapp.com/channels/1187220392260153446/1192299716545888340'
+    }, {
+      icon: 'mail',
+      url: `mailto:queruta@gmail.com?subject=${subject}&body=${message}`
+    }
     ]
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('route');
-    if(isPlatform("android")){
+    if (isPlatform("android")) {
       this.adsCtrl.hideBanner();
     }
   }

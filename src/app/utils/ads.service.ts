@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AdsService {
+  lastInterstitial: number = 0;
   constructor() { }
 
   async initializeAdmob() {
@@ -28,6 +29,10 @@ export class AdsService {
   }
   async showInterstitial() {
     await AdMob.showInterstitial()
+    this.lastInterstitial = new Date().getTime()
+  }
+  isReadyForAds() {
+    return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > 30 * 1000
   }
   async showBanner() {
     const options: BannerAdOptions = {

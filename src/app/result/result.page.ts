@@ -16,12 +16,11 @@ import { AdsComponent } from './ads/ads.component';
 export class ResultPage implements OnInit {
   options: any;
   view: string = "list";
-  gridSizes: number[] = [12,6,4]
-  constructor(private router: Router, private location: Location, private utils: UtilsService, private adsCtrl: AdsService, private modalCtrl: ModalController) { }
+  gridSizes: number[] = [12, 6, 4]
+  constructor(private router: Router, private location: Location, private adsCtrl: AdsService) { }
 
   async ngOnInit() {
     this.options = JSON.parse(sessionStorage.getItem('result') || "[]").options;
-    //this.router.navigateByUrl('/ads');
     this.showAd()
   }
 
@@ -29,13 +28,7 @@ export class ResultPage implements OnInit {
     if (isPlatform("android") || isPlatform("ios")) {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
-    } else {
-      /*const modal = await this.modalCtrl.create({
-        component: AdsComponent
-      });
-      modal.present();*/
     }
-
   }
   openDetails(index: number) {
     this.router.navigate(['/result-details', index]);
