@@ -27,7 +27,7 @@ export class RoutePage implements OnInit {
     private adsCtrl: AdsService) { }
 
   ngOnInit() {
-    if (isPlatform("android") || isPlatform("ios")) {
+    if (isPlatform("android")) {
       this.adsCtrl.showBanner()
     }
   }

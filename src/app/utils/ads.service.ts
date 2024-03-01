@@ -38,8 +38,7 @@ export class AdsService {
     const options: BannerAdOptions = {
       adId: (isPlatform("android") ? process.env["NG_APP_ANDROID_ADMOB_BANNER"] : process.env["NG_APP_IOS_ADMOB_BANNER"]) || "",
       adSize: BannerAdSize.BANNER,
-      position: BannerAdPosition.TOP_CENTER,
-      margin: 57,
+      position: BannerAdPosition.BOTTOM_CENTER,
       isTesting: !environment.production,
       //npa: true
     }
