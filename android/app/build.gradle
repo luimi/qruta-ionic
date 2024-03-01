@@ -11,8 +11,8 @@ android {
         applicationId "com.lui2mi.queruta"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 41006
-        versionName "4.1.6"
+        versionCode 41008
+        versionName "4.1.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
