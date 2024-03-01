@@ -15,6 +15,8 @@ import { AdsComponent } from './ads/ads.component';
 // https://ionicframework.com/docs/native/admob-free
 export class ResultPage implements OnInit {
   options: any;
+  view: string = "list";
+  gridSizes: number[] = [12,6,4]
   constructor(private router: Router, private location: Location, private utils: UtilsService, private adsCtrl: AdsService, private modalCtrl: ModalController) { }
 
   async ngOnInit() {
@@ -40,15 +42,5 @@ export class ResultPage implements OnInit {
   }
   goBack() {
     this.location.back();
-  }
-  getCompanies(option: any) {
-    let companies = '';
-    option.routes.forEach((route: any, index: number) => {
-      if (!companies.includes(route.route.company)) {
-        if (index > 0) companies += ', ';
-        companies += route.route.company;
-      }
-    });
-    return companies;
   }
 }

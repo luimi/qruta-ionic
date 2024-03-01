@@ -4,39 +4,73 @@
       <ion-back-button [text]="''"></ion-back-button>
     </ion-buttons>
     <ion-title translate>result.title</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="view = view === 'grid' ? 'list' : 'grid'">
+        <ion-icon slot="icon-only" [name]="view === 'grid' ? 'list' : 'grid'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
-  <ion-card *ngFor="let option of options; let i = index" (click)="openDetails(i)">
-    <ion-card-content>
-      <ion-item>
-        <ion-label>{{ getCompanies(option) }}</ion-label>
+  <ion-card *ngFor="let option of options; let i = index" (click)="openDetails(i)" class="ion-no-padding">
+    <ion-grid class="top">
+      <ion-row>
+        <ion-col class="v-center">
+          <ion-icon name="walk" color="light"></ion-icon>
+          <ion-icon name="bus" color="light"></ion-icon>
+          {{ option.startWalkDistance }}
+        </ion-col>
+        <ion-col class="v-center">
+          <ion-icon name="navigate" color="light"></ion-icon>
+          {{ option.routeDistance }}
+        </ion-col>
+        <ion-col class="v-center">
+          <ion-icon name="time" color="light"></ion-icon>
+          ~{{ option.time }}
+        </ion-col>
+        <ion-col class="v-center">
+          <ion-icon name="walk" color="light"></ion-icon>
+          <ion-icon name="flag" color="light"></ion-icon>
+          {{ option.endWalkDistances }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-content *ngIf="view === 'list'">
+      <ion-item *ngFor="let route of option.routes; let i = index">
+        <ion-icon aria-hidden="true" name="bus" slot="start" color="primary"></ion-icon>
+        <ion-label>{{ route.route.company }} - {{ route.route.name }}</ion-label>
       </ion-item>
-      <ion-grid>
+    </ion-card-content>
+    <ion-card-content *ngIf="view === 'grid'">
+      <ion-grid class="ion-text-center ion-no-padding">
         <ion-row>
-          <ion-col size="auto" *ngFor="let route of option.routes; let i = index">
+          <ion-col *ngFor="let route of option.routes; let i = index" class="ion-no-padding" [size]="gridSizes[option.routes.length-1]">
             <ion-grid class="ion-no-padding">
               <ion-row>
-                <div class="route-box">
-                  <ion-icon name="bus"></ion-icon>
-                  {{ route.route.name }}
-                </div>
-                <ion-col class="v-center arrow" *ngIf="i + 1 < option.routes.length">
-                  <ion-icon name="chevron-forward"></ion-icon>
+                <ion-col class="ion-no-padding"><ion-icon name="bus" size="large" color="primary"></ion-icon></ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-no-padding">
+                  <ion-icon name="navigate" color="primary"></ion-icon>
+                  {{ route.routeDistanceText }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-no-padding text">
+                  {{ route.route.company }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-no-padding route-name text">
+                  <b>{{ route.route.name }}</b>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <span class="distance-time ion-margin-bottom v-center">
-        <ion-icon name="navigate" color="primary"></ion-icon>
-        {{ option.routeDistance }}
-        <ion-icon name="time" color="primary"></ion-icon>
-        ~{{ option.time }}
-      </span>
     </ion-card-content>
   </ion-card>
 </ion-content>
