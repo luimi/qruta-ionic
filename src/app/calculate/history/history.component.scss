@@ -13,3 +13,9 @@
 img.icon {
     margin-right: 10px
 }
+
+@media (prefers-color-scheme: dark) {
+    ion-card {
+        border: 1px solid #888;
+    }
+}
