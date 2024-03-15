@@ -55,34 +55,13 @@ export class CalculatePage implements OnInit {
       } else {
         const ll = event.latlng;
         let location: any = await this.geo.reverse([ll.lat, ll.lng]);
-        const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.cancel"])
-        const actionSheet = await this.actionSheet.create({
-          header: location.address,
-          buttons: [{
-            text: answers["general.origin"],
-            icon: 'location',
-            handler: () => {
-              this.setAddress(this.start, location);
-            }
-          }, {
-            text: answers["general.destination"],
-            icon: 'flag',
-            handler: () => {
-              this.setAddress(this.end, location);
-            }
-          }, {
-            text: answers["general.cancel"],
-            icon: 'close',
-            role: 'cancel'
-          }]
-        });
-        await actionSheet.present();
+        this.actionSheetAddress(location);
       }
-
     });
     this.map.on('movestart', async () => {
       this.closeAddressField();
     });
+    this.showPlaceMarks();
     if (!this.advertise) this.showAdvertise();
   }
   ionViewWillLeave() {
@@ -120,6 +99,30 @@ export class CalculatePage implements OnInit {
     } else {
       this.utils.showAlert('calculate.main.errors.originOrDestinyMissing');
     }
+  }
+  private async actionSheetAddress(location: any) {
+    const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.cancel"])
+    const actionSheet = await this.actionSheet.create({
+      header: location.address,
+      buttons: [{
+        text: answers["general.origin"],
+        icon: 'location',
+        handler: () => {
+          this.setAddress(this.start, location);
+        }
+      }, {
+        text: answers["general.destination"],
+        icon: 'flag',
+        handler: () => {
+          this.setAddress(this.end, location);
+        }
+      }, {
+        text: answers["general.cancel"],
+        icon: 'close',
+        role: 'cancel'
+      }]
+    });
+    await actionSheet.present();
   }
   saveRecent(location: any) {
     let recents = this.utils.getLocal(constants.local.recents) || [];
@@ -189,5 +192,24 @@ export class CalculatePage implements OnInit {
   }
   public openAdvertise(url: string) {
     window.open(url, '_blank')
+  }
+
+  private async showPlaceMarks() {
+    let city = new Parse.Object("City")
+    city.id = this.city.objectId
+    let sponsors = await new Parse.Query("Sponsor").equalTo("status", true).equalTo("city", city).select("").find();
+    if (sponsors.length === 0) return
+    let placemarks = await new Parse.Query("PlaceMark").include("sponsor").containedIn("sponsor", sponsors).find();
+    placemarks.forEach((placemark) => {
+      let place = {
+        address: placemark.get("title"),
+        city: this.city.name,
+        location: [placemark.get("location").latitude, placemark.get("location").longitude]
+      }
+      let marker = this.leaflet.addMarker(this.map, place.location, placemark.get("title"), placemark.get("icon"), placemark.get("size"))
+      marker.on('click', () => {
+        this.actionSheetAddress(place);
+      })
+    })
   }
 }
