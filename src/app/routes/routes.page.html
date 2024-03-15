@@ -6,8 +6,8 @@
 
 <ion-content class="ion-padding" *ngIf="objectKeys(companies).length">
   <ion-searchbar placeholder="{{'routes.filter' | translate}}" (ionInput)="filter($event)"></ion-searchbar>
-  <ion-accordion-group [multiple]="true" expand="inset" #accordion>
-    <ion-accordion *ngFor="let company of objectKeys(filtered)">
+  <ion-accordion-group [multiple]="true" expand="inset" #accordion [value]="['0']">
+    <ion-accordion *ngFor="let company of objectKeys(filtered); index as i" [value]="i">
       <ion-item slot="header" color="primary" class="route-header">
         <ion-label class="ion-text-center">{{
           filtered[company].name
