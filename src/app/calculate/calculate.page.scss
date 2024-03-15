@@ -82,3 +82,16 @@
     margin-left: 10px;
   }
 }
+
+
+ion-modal#advertise {
+  --width: fit-content;
+  --max-width: 250px;
+  --height: auto;
+  --border-radius: 6px;
+  --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+}
+
+ion-modal#advertise .wrapper {
+  margin-bottom: 10px;
+}

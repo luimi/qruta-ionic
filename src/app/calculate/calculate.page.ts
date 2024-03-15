@@ -22,10 +22,12 @@ export class CalculatePage implements OnInit {
   mapType: any;
   @ViewChild('start') start: any;
   @ViewChild('end') end: any;
+  @ViewChild('modalAdvertise') modal: any;
   addressToggle = false;
   hiddenToggle = true;
   type = 'urban';
   city: any;
+  advertise: any;
   constructor(
     public actionSheet: ActionSheetController,
     private leaflet: LeafletHelperService,
@@ -53,7 +55,7 @@ export class CalculatePage implements OnInit {
       } else {
         const ll = event.latlng;
         let location: any = await this.geo.reverse([ll.lat, ll.lng]);
-        const answers: any = await this.utils.getTranslation(["general.origin", "general.destination","general.cancel"])
+        const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.cancel"])
         const actionSheet = await this.actionSheet.create({
           header: location.address,
           buttons: [{
@@ -81,6 +83,7 @@ export class CalculatePage implements OnInit {
     this.map.on('movestart', async () => {
       this.closeAddressField();
     });
+    if (!this.advertise) this.showAdvertise();
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
@@ -173,5 +176,18 @@ export class CalculatePage implements OnInit {
     modal.present();
   }
 
-
+  private async showAdvertise() {
+    let city = new Parse.Object("City")
+    city.id = this.city.objectId
+    let sponsors = await new Parse.Query("Sponsor").equalTo("status", true).equalTo("city", city).select("").find();
+    if (sponsors.length === 0) return
+    let adQuery = new Parse.Query("Advertise").include("sponsor").containedIn("sponsor", sponsors)
+    let count = await adQuery.count();
+    if (count === 0) return
+    this.advertise = await adQuery.skip(Math.floor(Math.random() * count)).first()
+    this.modal.present()
+  }
+  public openAdvertise(url: string) {
+    window.open(url, '_blank')
+  }
 }

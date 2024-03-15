@@ -46,4 +46,14 @@
   <div class="lvl4">
 
   </div>
+  <ion-modal id="advertise" #modalAdvertise>
+    <ng-template>
+      <img [src]="advertise.get('picture')" (click)="openAdvertise(advertise.get('url'))"/>
+      <ion-fab slot="fixed" vertical="top" horizontal="end">
+        <ion-fab-button size="small" color="primary" (click)="modal.dismiss()">
+          <ion-icon name="close"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ng-template>
+  </ion-modal>
 </ion-content>
