@@ -6,6 +6,7 @@ import { LeafletHelperService } from '../utils/leaflet-helper.service';
 import { ModalController } from '@ionic/angular';
 import { constants } from '../utils/constants';
 import { FaqComponent } from './faq/faq.component';
+import Parse from 'parse';
 declare var installer: any;
 
 @Component({
@@ -18,6 +19,7 @@ export class SettingsPage implements OnInit {
   selectedDistance: any;
   selectedLayer: any;
   layers: any[] = [];
+  sponsors: any [] = [];
   public setup: any;
   social = [{
     icon: 'logo-facebook',
@@ -49,6 +51,7 @@ export class SettingsPage implements OnInit {
     const sl = localStorage.getItem(constants.keys.layer);
     this.setup = installer;
     this.selectedLayer = sl ? sl : '0';
+    this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).find()
   }
 
   ionViewWillEnter() { }
