@@ -54,7 +54,7 @@ export class RoutesPage implements OnInit {
   filter(evt: any) {
     let filter = evt.target.value.toLowerCase();
     this.filtered = {};
-    let keys = this.objectKeys(this.companies).slice(0, -1);
+    let keys = this.objectKeys(this.companies);
     keys.forEach((key) => {
       if (
         this.companies[key].name &&
