@@ -51,7 +51,7 @@ export class SettingsPage implements OnInit {
     const sl = localStorage.getItem(constants.keys.layer);
     this.setup = installer;
     this.selectedLayer = sl ? sl : '0';
-    this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).find()
+    this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).exists("icon").find()
   }
 
   ionViewWillEnter() { }
