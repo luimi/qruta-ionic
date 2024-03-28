@@ -9,17 +9,16 @@ import { constants } from './constants';
 export class GeoService {
   city;
   corsAnyWhere = "https://lui2mi-corsanywhere.fly.dev";
+  gap = 0.5;
   link: any = {
     geocode:{
       arcgis:(address: string,server:any)=>{
         const location = this.city.location;
-        const gap = 0.5;
-        return `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?address=${address.trim()}&searchExtent=${location.longitude-gap},${location.latitude-gap},${location.longitude+gap},${location.latitude+gap}&maxLocations=5&outFields=city&forStorage=false&f=json`;
+        return `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?address=${address.trim()}&searchExtent=${location.longitude-this.gap},${location.latitude-this.gap},${location.longitude+this.gap},${location.latitude+this.gap}&maxLocations=5&outFields=city&forStorage=false&f=json`;
       },
       google:(address: string,server:any)=>{
         const location = this.city.location;
-        const gap = 0.5;
-        return `https://maps.googleapis.com/maps/api/geocode/json?key=${server.key}&address=${address.trim()}&bounds=${location.latitude-gap},${location.longitude-gap}|${location.latitude+gap},${location.longitude+gap}`;
+        return `https://maps.googleapis.com/maps/api/geocode/json?key=${server.key}&address=${address.trim()}&bounds=${location.latitude-this.gap},${location.longitude-this.gap}|${location.latitude+this.gap},${location.longitude+this.gap}`;
       },
       bing:(address: string,server:any)=>{
         return `https://dev.virtualearth.net/REST/v1/Locations?q=${address}&key=${server.key}`;
@@ -56,13 +55,11 @@ export class GeoService {
     places:{
       nominatim:(place:string,server:any) => {
         const location = this.city.location;
-        const gap = 0.1;
-        return `https://nominatim.openstreetmap.org/search?format=json&limit=50&bounded=1&q=${place.trim()}&viewbox=${location.longitude-gap},${location.latitude-gap},${location.longitude+gap},${location.latitude+gap}`;
+        return `https://nominatim.openstreetmap.org/search?format=json&limit=50&bounded=1&q=${place.trim()}&viewbox=${location.longitude-this.gap},${location.latitude-this.gap},${location.longitude+this.gap},${location.latitude+this.gap}`;
       },
       custom_nominatim:(place:string,server:any) => {
         const location = this.city.location;
-        const gap = 0.1;
-        return `${server.link}/search?format=json&limit=50&bounded=1&q=${place.trim()}&viewbox=${location.longitude-gap},${location.latitude-gap},${location.longitude+gap},${location.latitude+gap}`;
+        return `${server.link}/search?format=json&limit=50&bounded=1&q=${place.trim()}&viewbox=${location.longitude-this.gap},${location.latitude-this.gap},${location.longitude+this.gap},${location.latitude+this.gap}`;
       }
     }
   }
