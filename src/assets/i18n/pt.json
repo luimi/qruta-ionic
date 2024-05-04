@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Sim",
+        "no": "Não",
+        "ok": "Ok",
+        "origin": "Origem",
+        "destination": "Destino",
+        "cancel": "Cancelar",
+        "urban": "Urbano",
+        "massive": "Massivo"
+    },
+    "cities": {
+        "title": "Cidade",
+        "subtitle": "Por favor, selecione a sua cidade.",
+        "dialogs": {
+            "loading": "Carregando lista de cidades"
+        }
+    },
+    "maintenance": {
+        "message": "Desculpe, no momento o aplicativo está em manutenção, em breve estaremos de volta à normalidade."
+    },
+    "tabs": {
+        "calculate": "Calcular",
+        "near": "Próximos",
+        "routes": "Rotas",
+        "settings": "Configurações"
+    },
+    "calculate": {
+        "wheretogo": "Para onde você quer ir?",
+        "main": {
+            "origin": {
+                "title": "Endereço de origem",
+                "hint": "Exemplo: rua 84 nº 27 - 18"
+            },
+            "destiny": {
+                "title": "Endereço de destino",
+                "hint": "Exemplo: Shopping ..."
+            },
+            "urban": "Urbano",
+            "history": "Histórico",
+            "search": "BUSCAR ROTA",
+            "calculating": "Buscando rotas",
+            "errors": {
+                "originOrDestinyMissing": "Por favor, escolha um endereço de origem e um de destino.",
+                "highDemand": "Neste momento, estamos com uma alta demanda de solicitações. Por favor, tente novamente mais tarde." ,
+                "error1": "Não é possível calcular, tente novamente.",
+                "error2": "O código da cidade não foi enviado.",
+                "error3": "O código da área não foi enviado.",
+                "error4": "A localização de origem não foi enviada.",
+                "error5": "A localização de destino não foi enviada.",
+                "error6": "Não foram encontradas rotas próximas à origem.",
+                "error7": "Não foram encontradas rotas próximas ao destino.",
+                "error8": "Não foram encontradas opções para esta rota."
+            }
+        },
+        "input": {
+            "selected": "Localização selecionada"
+        },
+        "modal": {
+            "address": {
+                "title": "Endereço",
+                "hint": "Carrera 64 nº 86 - 168"
+            },
+            "place": {
+                "title": "Local",
+                "hint": "Shopping ..."
+            },
+            "onMap": "Fixar a localização no mapa",
+            "recent": "Recentes",
+            "recentEmpty": "Não há endereços usados recentemente",
+            "favorites": "Favoritos",
+            "favoritesEmpty": "Adicione algum favorito!",
+            "dialogs": {
+                "favoriteAdded": "Endereço adicionado aos favoritos",
+                "favoriteExists": "Você já tem este endereço nos seus favoritos",
+                "favoriteDelete": "Deseja excluir este favorito?"
+            }
+        },
+        "map": {
+            "title": "Escolher Localização",
+            "select": "Selecione o endereço aqui"
+        },
+        "history": {
+            "title": "Histórico",
+            "empty": "Você não fez cálculos",
+            "calculating": "Calculando rotas, por favor, aguarde.",
+            "selected": "Localização selecionada"
+        }
+    },
+    "nearRoutes": {
+        "title": "Rotas Próximas",
+        "urban": "Urbano",
+        "masive": "Massivo",
+        "location": {
+            "search": "Obtendo sua localização",
+            "hint": "Lembre-se de ativar o GPS no seu dispositivo",
+            "error": "Não foi possível obter sua localização"
+        },
+        "search": {
+            "searching": "Buscando rotas próximas a você",
+            "notFound": "Não foram encontradas rotas próximas à sua localização"
+        },
+        "errors": {
+            "error1": "Não é possível obter as rotas próximas no momento.",
+            "error2": "A localização não foi enviada.",
+            "error3": "O código da cidade não foi enviado.",
+            "error4": "O código da área não foi enviado."
+        }
+    },
+    "routes": {
+        "title": "Rotas",
+        "filter": "Filtrar",
+        "loading": "Carregando rotas",
+        "route": {
+            "schedules": "Horários",
+            "hour": "Hora",
+            "frequenzy": "Frequência",
+            "monday2friday": "Seg-Sex",
+            "saturday": "Sáb",
+            "sunday&holyday": "Dom&Feriados",
+            "updated": "Última atualização: {{date}}",
+            "support": "Sabe se esta rota mudou? Conte-nos!",
+            "help": {
+                "hour": "Este é o horário da primeira e última partida do dia.",
+                "frequency": "Esta é a frequência com que as partidas são feitas, em horários de pico e fora de pico, respectivamente."
+            }
+        }
+    },
+    "settings": {
+        "title": "Configurações",
+        "walkDistance":"Distância a pé",
+        "mapType":"Tipo de mapa",
+        "contact":"Contato",
+        "terms":"Termos e condições",
+        "changeCity":"Mudar de cidade",
+        "install":"Instalar App",
+        "sponsors": "Patrocinadores",
+        "faq": {
+            "title": "Perguntas Frequentes",
+            "loading":"Carregando perguntas frequentes",
+            "filter":"Filtrar"
+        }
+    },
+    "result": {
+        "title":"Resultados",
+        "time": "Tempo",
+        "buses": "Ônibus",
+        "distance": "Distância",
+        "advertising": {
+            "title": "Publicidade"
+        },
+        "detail": {
+            "title":"Detalhe da Rota",
+            "walkTo":"Caminhar até",
+            "takeBus":"Pegar ônibus",
+            "getDown":"Descer",
+            "destiny":"Caminhar até o destino",
+            "dialogs": {
+                "loading": "Carregando..."
+            }
+        }
+    }
+}
