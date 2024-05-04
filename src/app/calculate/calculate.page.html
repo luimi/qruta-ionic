@@ -11,10 +11,8 @@
   <div class="lvl3 centered animated faster"
     [ngClass]="{'fadeInDown': addressToggle, 'fadeOutUp': !addressToggle, 'hide': hiddenToggle}">
     <div class="ion-padding">
-      <app-address-input #start title="calculate.main.origin.title" hint="calculate.main.origin.hint" [currentLocation]="true">
-      </app-address-input>
-      <app-address-input #end title="calculate.main.destiny.title" hint="calculate.main.destiny.hint">
-      </app-address-input>
+      <app-address-input #start title="calculate.main.origin.title" hint="calculate.main.origin.hint" [currentLocation]="true" (onChanged)="inputChanged($event)" identifier="start"/>
+      <app-address-input #end title="calculate.main.destiny.title" hint="calculate.main.destiny.hint" (onChanged)="inputChanged($event)" identifier="end"/>
       <ion-row class="history ion-align-items-center">
         <ion-col size="10" [hidden]="!city?.massive">
           <ion-segment [(ngModel)]="type" size="10" mode="ios">

@@ -28,6 +28,9 @@ export class CalculatePage implements OnInit {
   type = 'urban';
   city: any;
   advertise: any;
+  startMarker: any;
+  endMarker: any;
+  pathLine: any;
   constructor(
     public actionSheet: ActionSheetController,
     private leaflet: LeafletHelperService,
@@ -143,6 +146,7 @@ export class CalculatePage implements OnInit {
   }
   setAddress(place: any, location: any) {
     place.location = location;
+    place.onChanged.emit(place.identifier)
     if (!this.addressToggle) {
       this.addressToggle = true;
       this.hiddenToggle = false;
@@ -211,5 +215,31 @@ export class CalculatePage implements OnInit {
         this.actionSheetAddress(place);
       })
     })
+  }
+
+  inputChanged(input: string) {
+    if(input === "start") {
+      if(this.startMarker) {
+        this.map.removeLayer(this.startMarker)
+        delete this.startMarker
+      }
+      if(this.start.location) {
+        this.startMarker = this.leaflet.addMarker(this.map, this.start.location.location, 'Inicio', './assets/origen.png');
+      }
+    } else {
+      if(this.endMarker) {
+        this.map.removeLayer(this.endMarker)
+        delete this.endMarker
+      }
+      if(this.end.location) {
+        this.endMarker = this.leaflet.addMarker(this.map, this.end.location.location, 'Inicio', './assets/destino.png');
+      }
+    }
+    if(this.pathLine) {
+      this.map.removeLayer(this.pathLine)
+    }
+    if(this.startMarker && this.endMarker) {
+      this.pathLine = this.leaflet.addPolyline(this.map, [this.start.location.location, this.end.location.location], "blue")
+    }
   }
 }

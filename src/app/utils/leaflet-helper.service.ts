@@ -115,13 +115,14 @@ export class LeafletHelperService {
     });
     this.maps[id].layer.addLayer(this.currentLayer);
   }
-  public addPolyline(map: any, path: number[][], color: string, dashed?: boolean) {
+  public addPolyline(map: any, path: number[][], color: string, dashed?: boolean, arrows?: boolean) {
     let options: any = { color: color, weight: 8, opacity: 0.6 };
     if (dashed) {
       options.dashArray = '5, 10';
     }
 
     let pl = L.polyline(path, options).addTo(map);
+    if(arrows)
     L.polylineDecorator(pl, {
       patterns: [
         { offset: 0, repeat: 100, symbol: L.Symbol.arrowHead({ pixelSize: 8, polygon: true, pathOptions: { stroke: true, color: color } }) }
