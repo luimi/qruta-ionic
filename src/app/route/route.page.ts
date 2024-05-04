@@ -55,8 +55,8 @@ export class RoutePage implements OnInit {
         }
       });
       const half = Math.ceil(path.length / 2);
-      let pl1 = this.leaflet.addPolyline(this.map, path.slice(0, half + 1), 'blue');
-      let pl2 = this.leaflet.addPolyline(this.map, path.slice(half, path.length), 'red');
+      let pl1 = this.leaflet.addPolyline(this.map, path.slice(0, half + 1), 'blue', false, true);
+      let pl2 = this.leaflet.addPolyline(this.map, path.slice(half, path.length), 'red', false, true);
       this.leaflet.centerMap(this.map, [pl1, pl2]);
     }
     let subject = "Actualización de ruta."

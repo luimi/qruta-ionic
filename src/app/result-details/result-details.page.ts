@@ -68,7 +68,7 @@ export class ResultDetailsPage implements OnInit {
         route.startAddress = await this.geo.reverse(route.startPoint);
         route.endAddress = await this.geo.reverse(route.endPoint);
       }
-      this.leaflet.addPolyline(this.map, this.geo.decode(route.route.polyline), this.colors[index]);
+      this.leaflet.addPolyline(this.map, this.geo.decode(route.route.polyline), this.colors[index], false, true);
     });
     this.data.endAddress = await this.geo.reverse(this.data.end);
     this.leaflet.centerMap(this.map, [start, end]);
