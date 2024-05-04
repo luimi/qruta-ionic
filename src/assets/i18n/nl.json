@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Ja",
+        "no": "Nee",
+        "ok": "OK",
+        "origin": "Oorsprong",
+        "destination": "Bestemming",
+        "cancel": "Annuleren",
+        "urban": "Stedelijk",
+        "massive": "Massief"
+    },
+    "cities": {
+        "title": "Steden",
+        "subtitle": "Selecteer alstublieft uw stad.",
+        "dialogs": {
+            "loading": "Laden van stedenlijst"
+        }
+    },
+    "maintenance": {
+        "message": "Sorry, de applicatie is momenteel in onderhoud, we zullen snel weer normaal functioneren."
+    },
+    "tabs": {
+        "calculate": "Berekenen",
+        "near": "Dichtbij",
+        "routes": "Routes",
+        "settings": "Instellingen"
+    },
+    "calculate": {
+        "wheretogo": "Waar wil je naartoe?",
+        "main": {
+            "origin": {
+                "title": "Vertrekadres",
+                "hint": "Bijvoorbeeld: straat 84 nr. 27 - 18"
+            },
+            "destiny": {
+                "title": "Bestemmingsadres",
+                "hint": "Bijvoorbeeld: Winkelcentrum ..."
+            },
+            "urban": "Stedelijk",
+            "history": "Geschiedenis",
+            "search": "ZOEK ROUTE",
+            "calculating": "Routes zoeken",
+            "errors": {
+                "originOrDestinyMissing": "Selecteer alstublieft een vertrek- en bestemmingsadres.",
+                "highDemand": "Op dit moment is er veel vraag naar aanvragen. Probeer het later opnieuw." ,
+                "error1": "Kan geen berekening maken, probeer het opnieuw.",
+                "error2": "Stadscode niet verzonden.",
+                "error3": "Gebiedscode niet verzonden.",
+                "error4": "Vertreklocatie niet verzonden.",
+                "error5": "Bestemmingslocatie niet verzonden.",
+                "error6": "Geen routes gevonden in de buurt van de oorsprong.",
+                "error7": "Geen routes gevonden in de buurt van de bestemming.",
+                "error8": "Geen opties gevonden voor deze route."
+            }
+        },
+        "input": {
+            "selected": "Geselecteerde locatie"
+        },
+        "modal": {
+            "address": {
+                "title": "Adres",
+                "hint": "Carrera 64 nr. 86 - 168"
+            },
+            "place": {
+                "title": "Plaats",
+                "hint": "Winkelcentrum ..."
+            },
+            "onMap": "Locatie op kaart vastzetten",
+            "recent": "Recent",
+            "recentEmpty": "Geen recent gebruikte adressen",
+            "favorites": "Favorieten",
+            "favoritesEmpty": "Voeg enkele favorieten toe!",
+            "dialogs": {
+                "favoriteAdded": "Adres toegevoegd aan favorieten",
+                "favoriteExists": "Dit adres staat al in uw favorieten",
+                "favoriteDelete": "Wil je deze favoriet verwijderen?"
+            }
+        },
+        "map": {
+            "title": "Locatie selecteren",
+            "select": "Selecteer hier het adres"
+        },
+        "history": {
+            "title": "Geschiedenis",
+            "empty": "U heeft geen berekeningen uitgevoerd",
+            "calculating": "Routes berekenen, even geduld a.u.b.",
+            "selected": "Geselecteerde locatie"
+        }
+    },
+    "nearRoutes": {
+        "title": "Routes in de buurt",
+        "urban": "Stedelijk",
+        "masive": "Massief",
+        "location": {
+            "search": "Uw locatie ophalen",
+            "hint": "Zorg ervoor dat de GPS op uw apparaat is ingeschakeld",
+            "error": "Kan uw locatie niet ophalen"
+        },
+        "search": {
+            "searching": "Routes zoeken in uw buurt",
+            "notFound": "Geen routes gevonden in uw buurt"
+        },
+        "errors": {
+            "error1": "Kan momenteel geen routes in de buurt ophalen.",
+            "error2": "Locatie niet verzonden.",
+            "error3": "Stadscode niet verzonden.",
+            "error4": "Gebiedscode niet verzonden."
+        }
+    },
+    "routes": {
+        "title": "Routes",
+        "filter": "Filteren",
+        "loading": "Routes laden",
+        "route": {
+            "schedules": "Schema's",
+            "hour": "Uur",
+            "frequenzy": "Frequentie",
+            "monday2friday": "Ma-Vr",
+            "saturday": "Za",
+            "sunday&holyday": "Zo&Feestdagen",
+            "updated": "Laatste update: {{date}}",
+            "support": "Weet u of deze route is gewijzigd? Laat het ons weten!",
+            "help": {
+                "hour": "Dit is het tijdstip van de eerste en laatste rit van de dag.",
+                "frequency": "Dit is de frequentie waarmee ritten vertrekken, respectievelijk tijdens piek- en daluren."
+            }
+        }
+    },
+    "settings": {
+        "title": "Instellingen",
+        "walkDistance":"Loopafstand",
+        "mapType":"Kaarttype",
+        "contact":"Contact",
+        "terms":"Voorwaarden",
+        "changeCity":"Stad wijzigen",
+        "install":"App installeren",
+        "sponsors": "Sponsors",
+        "faq": {
+            "title": "Veelgestelde vragen",
+            "loading":"Veelgestelde vragen laden",
+            "filter":"Filteren"
+        }
+    },
+    "result": {
+        "title":"Resultaten",
+        "time": "Tijd",
+        "buses": "Bussen",
+        "distance": "Afstand",
+        "advertising": {
+            "title": "Advertenties"
+        },
+        "detail": {
+            "title":"Routedetails",
+            "walkTo":"Lopen naar",
+            "takeBus":"Bus nemen",
+            "getDown":"Uitstappen",
+            "destiny":"Lopen naar bestemming",
+            "dialogs": {
+                "loading": "Laden..."
+            }
+        }
+    }
+}
