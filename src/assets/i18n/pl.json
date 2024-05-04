@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Tak",
+        "no": "Nie",
+        "ok": "OK",
+        "origin": "Początek",
+        "destination": "Cel",
+        "cancel": "Anuluj",
+        "urban": "Miejski",
+        "massive": "Masywny"
+    },
+    "cities": {
+        "title": "Miasta",
+        "subtitle": "Proszę wybrać swoje miasto.",
+        "dialogs": {
+            "loading": "Ładowanie listy miast"
+        }
+    },
+    "maintenance": {
+        "message": "Przepraszamy, aplikacja jest obecnie w trakcie konserwacji, niedługo wrócimy do normy."
+    },
+    "tabs": {
+        "calculate": "Oblicz",
+        "near": "W pobliżu",
+        "routes": "Trasy",
+        "settings": "Ustawienia"
+    },
+    "calculate": {
+        "wheretogo": "Gdzie chcesz się udać?",
+        "main": {
+            "origin": {
+                "title": "Początkowy adres",
+                "hint": "Przykład: ul. 84 nr 27 - 18"
+            },
+            "destiny": {
+                "title": "Docelowy adres",
+                "hint": "Przykład: Centrum Handlowe ..."
+            },
+            "urban": "Miejski",
+            "history": "Historia",
+            "search": "SZUKAJ TRASY",
+            "calculating": "Wyszukiwanie tras",
+            "errors": {
+                "originOrDestinyMissing": "Proszę wybrać adres początkowy i docelowy.",
+                "highDemand": "Obecnie mamy dużo zapytań. Proszę spróbować ponownie później." ,
+                "error1": "Nie można obliczyć, spróbuj ponownie.",
+                "error2": "Nie przesłano kodu miasta.",
+                "error3": "Nie przesłano kodu obszaru.",
+                "error4": "Nie przesłano lokalizacji początkowej.",
+                "error5": "Nie przesłano lokalizacji docelowej.",
+                "error6": "Nie znaleziono tras w pobliżu początku.",
+                "error7": "Nie znaleziono tras w pobliżu celu.",
+                "error8": "Nie znaleziono opcji dla tej trasy."
+            }
+        },
+        "input": {
+            "selected": "Wybrana lokalizacja"
+        },
+        "modal": {
+            "address": {
+                "title": "Adres",
+                "hint": "Carrera 64 nr 86 - 168"
+            },
+            "place": {
+                "title": "Miejsce",
+                "hint": "Centrum handlowe ..."
+            },
+            "onMap": "Zaznacz lokalizację na mapie",
+            "recent": "Ostatnie",
+            "recentEmpty": "Brak ostatnio używanych adresów",
+            "favorites": "Ulubione",
+            "favoritesEmpty": "Dodaj ulubione!",
+            "dialogs": {
+                "favoriteAdded": "Adres dodany do ulubionych",
+                "favoriteExists": "Ten adres znajduje się już w ulubionych",
+                "favoriteDelete": "Czy na pewno chcesz usunąć to ulubione?"
+            }
+        },
+        "map": {
+            "title": "Wybierz lokalizację",
+            "select": "Wybierz adres tutaj"
+        },
+        "history": {
+            "title": "Historia",
+            "empty": "Nie dokonano obliczeń",
+            "calculating": "Obliczanie tras, proszę czekać.",
+            "selected": "Wybrana lokalizacja"
+        }
+    },
+    "nearRoutes": {
+        "title": "Trasy w pobliżu",
+        "urban": "Miejski",
+        "masive": "Masywny",
+        "location": {
+            "search": "Pobieranie twojej lokalizacji",
+            "hint": "Pamiętaj, aby włączyć GPS na swoim urządzeniu",
+            "error": "Nie udało się pobrać twojej lokalizacji"
+        },
+        "search": {
+            "searching": "Wyszukiwanie tras w twojej okolicy",
+            "notFound": "Nie znaleziono tras w twojej okolicy"
+        },
+        "errors": {
+            "error1": "Aktualnie nie można pobrać tras w pobliżu.",
+            "error2": "Nie przesłano lokalizacji.",
+            "error3": "Nie przesłano kodu miasta.",
+            "error4": "Nie przesłano kodu obszaru."
+        }
+    },
+    "routes": {
+        "title": "Trasy",
+        "filter": "Filtruj",
+        "loading": "Wczytywanie tras",
+        "route": {
+            "schedules": "Rozkłady jazdy",
+            "hour": "Godzina",
+            "frequenzy": "Częstotliwość",
+            "monday2friday": "Pon-Pt",
+            "saturday": "Sob",
+            "sunday&holyday": "Nd&Św",
+            "updated": "Ostatnia aktualizacja: {{date}}",
+            "support": "Czy wiesz, czy ta trasa została zmieniona? Powiedz nam!",
+            "help": {
+                "hour": "To jest godzina pierwszego i ostatniego kursu w ciągu dnia.",
+                "frequency": "To jest częstotliwość czasu, w którym kursy wychodzą, w godzinach szczytu i poza nimi, odpowiednio."
+            }
+        }
+    },
+    "settings": {
+        "title": "Ustawienia",
+        "walkDistance":"Dystans spaceru",
+        "mapType":"Typ mapy",
+        "contact":"Kontakt",
+        "terms":"Warunki",
+        "changeCity":"Zmień miasto",
+        "install":"Zainstaluj aplikację",
+        "sponsors": "Sponsorzy",
+        "faq": {
+            "title": "Najczęstsze pytania",
+            "loading":"Ładowanie najczęstszych pytań",
+            "filter":"Filtruj"
+        }
+    },
+    "result": {
+        "title":"Wyniki",
+        "time": "Czas",
+        "buses": "Autobusy",
+        "distance": "Dystans",
+        "advertising": {
+            "title": "Reklama"
+        },
+        "detail": {
+            "title":"Szczegóły trasy",
+            "walkTo":"Idź pieszo do",
+            "takeBus":"Weź autobus",
+            "getDown":"Wysiądź",
+            "destiny":"Idź pieszo do celu",
+            "dialogs": {
+                "loading": "Ładowanie..."
+            }
+        }
+    }
+}
