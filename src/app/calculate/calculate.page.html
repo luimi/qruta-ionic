@@ -4,6 +4,15 @@
 </ion-header>
 <ion-content>
   <div class="lvl1">
+    
+    <ion-card class="info" *ngIf="info.isUpdate">
+      <ion-card-content class="ion-no-padding">
+        <ion-item *ngIf="info.isUpdate" lines="none">
+          <ion-label translate>calculate.info.update.title</ion-label>
+          <ion-button slot="end" translate (click)="openStore()"> calculate.info.update.button </ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
     <div id="calculate" style="width:100%; height:100%;"></div>
   </div>
   <div class="lvl2 centered animated faster green"
@@ -44,6 +53,7 @@
   <div class="lvl4">
 
   </div>
+  
   <ion-modal id="advertise" #modalAdvertise>
     <ng-template>
       <img [src]="advertise.get('picture')" (click)="openAdvertise(advertise.get('url'))"/>

@@ -85,7 +85,13 @@
             "empty": "Non hai effettuato calcoli",
             "calculating": "Calcolo dei percorsi in corso, attendere prego.",
             "selected": "Posizione selezionata"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "C'è una nuova versione dell'applicazione!",
+                "button": "Aggiorna"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Percorsi Vicini",

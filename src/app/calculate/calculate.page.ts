@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import { ActionSheetController, ModalController, Platform } from '@ionic/angular';
 import { GeoService } from '../utils/geo.service';
 import { Router } from '@angular/router';
 import { UtilsService } from '../utils/utils.service';
@@ -31,6 +31,7 @@ export class CalculatePage implements OnInit {
   startMarker: any;
   endMarker: any;
   pathLine: any;
+  info = { isUpdate: false }
   constructor(
     public actionSheet: ActionSheetController,
     private leaflet: LeafletHelperService,
@@ -39,7 +40,8 @@ export class CalculatePage implements OnInit {
     private history: HistoryService,
     private utils: UtilsService,
     public modalCtrl: ModalController,
-    private apiCtrl: ApiService
+    private apiCtrl: ApiService,
+    private platform: Platform
   ) { }
 
   ngOnInit() { }
@@ -66,6 +68,9 @@ export class CalculatePage implements OnInit {
     });
     this.showPlaceMarks();
     if (!this.advertise) this.showAdvertise();
+    this.utils.getServerConfig("status").then((status: any) => {
+      this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
+    })
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
@@ -218,28 +223,31 @@ export class CalculatePage implements OnInit {
   }
 
   inputChanged(input: string) {
-    if(input === "start") {
-      if(this.startMarker) {
+    if (input === "start") {
+      if (this.startMarker) {
         this.map.removeLayer(this.startMarker)
         delete this.startMarker
       }
-      if(this.start.location) {
+      if (this.start.location) {
         this.startMarker = this.leaflet.addMarker(this.map, this.start.location.location, 'Inicio', './assets/origen.png');
       }
     } else {
-      if(this.endMarker) {
+      if (this.endMarker) {
         this.map.removeLayer(this.endMarker)
         delete this.endMarker
       }
-      if(this.end.location) {
+      if (this.end.location) {
         this.endMarker = this.leaflet.addMarker(this.map, this.end.location.location, 'Inicio', './assets/destino.png');
       }
     }
-    if(this.pathLine) {
+    if (this.pathLine) {
       this.map.removeLayer(this.pathLine)
     }
-    if(this.startMarker && this.endMarker) {
+    if (this.startMarker && this.endMarker) {
       this.pathLine = this.leaflet.addPolyline(this.map, [this.start.location.location, this.end.location.location], "blue")
     }
+  }
+  openStore() {
+    window.open(process.env[this.platform.is("ios") ? "NG_APP_APPSTORE_URL" : "NG_APP_PLAYSTORE_URL"], '_blank');
   }
 }

@@ -85,7 +85,13 @@
             "empty": "U heeft geen berekeningen uitgevoerd",
             "calculating": "Routes berekenen, even geduld a.u.b.",
             "selected": "Geselecteerde locatie"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "Er is een nieuwe versie van de applicatie!",
+                "button": "Bijwerken"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Routes in de buurt",

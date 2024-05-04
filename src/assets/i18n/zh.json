@@ -85,7 +85,13 @@
             "empty": "您尚未进行计算",
             "calculating": "正在计算路线，请稍候。",
             "selected": "已选择位置"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "应用有新版本！",
+                "button": "更新"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "附近路线",

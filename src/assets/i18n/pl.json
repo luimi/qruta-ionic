@@ -85,7 +85,13 @@
             "empty": "Nie dokonano obliczeń",
             "calculating": "Obliczanie tras, proszę czekać.",
             "selected": "Wybrana lokalizacja"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "Jest nowa wersja aplikacji!",
+                "button": "Aktualizuj"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Trasy w pobliżu",

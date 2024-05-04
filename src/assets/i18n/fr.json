@@ -85,7 +85,13 @@
             "empty": "Vous n'avez pas effectué de calculs",
             "calculating": "Calcul des itinéraires, veuillez patienter.",
             "selected": "Emplacement sélectionné"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "Il y a une nouvelle version de l'application!",
+                "button": "Mettre à jour"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Itinéraires Proches",

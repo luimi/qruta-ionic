@@ -85,7 +85,13 @@
             "empty": "You haven't made any calculations",
             "calculating": "Calculating routes, please wait.",
             "selected": "Selected location"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "There is a new version of the application!",
+                "button": "Update"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Nearby Routes",

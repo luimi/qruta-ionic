@@ -85,7 +85,13 @@
             "empty": "Você não fez cálculos",
             "calculating": "Calculando rotas, por favor, aguarde.",
             "selected": "Localização selecionada"
-        }
+        },
+        "info": {
+            "update": {
+                "title": "Há uma nova versão do aplicativo!",
+                "button": "Atualizar"
+            }
+        }        
     },
     "nearRoutes": {
         "title": "Rotas Próximas",
