@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Sì",
+        "no": "No",
+        "ok": "Ok",
+        "origin": "Origine",
+        "destination": "Destinazione",
+        "cancel": "Annulla",
+        "urban": "Urbano",
+        "massive": "Massivo"
+    },
+    "cities": {
+        "title": "Città",
+        "subtitle": "Per favore, seleziona la tua città.",
+        "dialogs": {
+            "loading": "Caricamento dell'elenco delle città"
+        }
+    },
+    "maintenance": {
+        "message": "Spiacenti, al momento l'applicazione è in manutenzione, torneremo presto alla normalità."
+    },
+    "tabs": {
+        "calculate": "Calcola",
+        "near": "Vicini",
+        "routes": "Percorsi",
+        "settings": "Impostazioni"
+    },
+    "calculate": {
+        "wheretogo": "Dove vuoi andare?",
+        "main": {
+            "origin": {
+                "title": "Indirizzo di origine",
+                "hint": "Esempio: via 84 n° 27 - 18"
+            },
+            "destiny": {
+                "title": "Indirizzo di destinazione",
+                "hint": "Esempio: Centro commerciale ..."
+            },
+            "urban": "Urbano",
+            "history": "Cronologia",
+            "search": "CERCA PERCORSO",
+            "calculating": "Ricerca dei percorsi",
+            "errors": {
+                "originOrDestinyMissing": "Si prega di selezionare un indirizzo di origine e uno di destinazione.",
+                "highDemand": "Al momento c'è un'elevata domanda di richieste. Si prega di riprovare più tardi." ,
+                "error1": "Impossibile effettuare il calcolo, si prega di riprovare.",
+                "error2": "Il codice della città non è stato inviato.",
+                "error3": "Il codice di area non è stato inviato.",
+                "error4": "La posizione di partenza non è stata inviata.",
+                "error5": "La posizione di destinazione non è stata inviata.",
+                "error6": "Nessun percorso trovato vicino all'origine.",
+                "error7": "Nessun percorso trovato vicino alla destinazione.",
+                "error8": "Nessuna opzione trovata per questo percorso."
+            }
+        },
+        "input": {
+            "selected": "Posizione selezionata"
+        },
+        "modal": {
+            "address": {
+                "title": "Indirizzo",
+                "hint": "Carrera 64 n° 86 - 168"
+            },
+            "place": {
+                "title": "Luogo",
+                "hint": "Centro commerciale ..."
+            },
+            "onMap": "Fissa la posizione sulla mappa",
+            "recent": "Recenti",
+            "recentEmpty": "Nessun indirizzo utilizzato di recente",
+            "favorites": "Preferiti",
+            "favoritesEmpty": "Aggiungi qualche preferito!",
+            "dialogs": {
+                "favoriteAdded": "Indirizzo aggiunto ai preferiti",
+                "favoriteExists": "Hai già questo indirizzo nei tuoi preferiti",
+                "favoriteDelete": "Vuoi eliminare questo preferito?"
+            }
+        },
+        "map": {
+            "title": "Scegli posizione",
+            "select": "Seleziona l'indirizzo qui"
+        },
+        "history": {
+            "title": "Cronologia",
+            "empty": "Non hai effettuato calcoli",
+            "calculating": "Calcolo dei percorsi in corso, attendere prego.",
+            "selected": "Posizione selezionata"
+        }
+    },
+    "nearRoutes": {
+        "title": "Percorsi Vicini",
+        "urban": "Urbano",
+        "masive": "Massivo",
+        "location": {
+            "search": "Recupero della tua posizione",
+            "hint": "Ricorda di attivare il GPS sul tuo dispositivo",
+            "error": "Impossibile recuperare la tua posizione"
+        },
+        "search": {
+            "searching": "Ricerca di percorsi vicino a te",
+            "notFound": "Nessun percorso trovato vicino alla tua posizione"
+        },
+        "errors": {
+            "error1": "Impossibile ottenere i percorsi vicini al momento.",
+            "error2": "La posizione non è stata inviata.",
+            "error3": "Il codice della città non è stato inviato.",
+            "error4": "Il codice di area non è stato inviato."
+        }
+    },
+    "routes": {
+        "title": "Percorsi",
+        "filter": "Filtra",
+        "loading": "Caricamento dei percorsi",
+        "route": {
+            "schedules": "Orari",
+            "hour": "Ora",
+            "frequenzy": "Frequenza",
+            "monday2friday": "Lun-Ven",
+            "saturday": "Sab",
+            "sunday&holyday": "Dom&Festivi",
+            "updated": "Ultimo aggiornamento: {{date}}",
+            "support": "Sai se questo percorso è cambiato? Raccontacelo!",
+            "help": {
+                "hour": "Questa è l'ora della prima e dell'ultima partenza del giorno.",
+                "frequency": "Questa è la frequenza con cui le partenze vengono effettuate, in ore di punta e non, rispettivamente."
+            }
+        }
+    },
+    "settings": {
+        "title": "Impostazioni",
+        "walkDistance":"Distanza da percorrere a piedi",
+        "mapType":"Tipo di mappa",
+        "contact":"Contatto",
+        "terms":"Termini e condizioni",
+        "changeCity":"Cambia città",
+        "install":"Installa App",
+        "sponsors": "Sponsor",
+        "faq": {
+            "title": "Domande frequenti",
+            "loading":"Caricamento delle domande frequenti",
+            "filter":"Filtra"
+        }
+    },
+    "result": {
+        "title":"Risultati",
+        "time": "Tempo",
+        "buses": "Autobus",
+        "distance": "Distanza",
+        "advertising": {
+            "title": "Pubblicità"
+        },
+        "detail": {
+            "title":"Dettagli del percorso",
+            "walkTo":"Cammina fino a",
+            "takeBus":"Prendi l'autobus",
+            "getDown":"Scendi",
+            "destiny":"Cammina fino alla destinazione",
+            "dialogs": {
+                "loading": "Caricamento..."
+            }
+        }
+    }
+}
