@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Ja",
+        "no": "Nein",
+        "ok": "OK",
+        "origin": "Ursprung",
+        "destination": "Ziel",
+        "cancel": "Abbrechen",
+        "urban": "Städtisch",
+        "massive": "Massiv"
+    },
+    "cities": {
+        "title": "Stadt",
+        "subtitle": "Bitte wählen Sie Ihre Stadt aus.",
+        "dialogs": {
+            "loading": "Laden der Stadtliste"
+        }
+    },
+    "maintenance": {
+        "message": "Entschuldigung, die Anwendung befindet sich derzeit in Wartung, wir werden bald wieder normal sein."
+    },
+    "tabs": {
+        "calculate": "Berechnen",
+        "near": "In der Nähe",
+        "routes": "Routen",
+        "settings": "Einstellungen"
+    },
+    "calculate": {
+        "wheretogo": "Wohin möchtest du gehen?",
+        "main": {
+            "origin": {
+                "title": "Herkunftsadresse",
+                "hint": "Beispiel: Straße 84 Nr. 27 - 18"
+            },
+            "destiny": {
+                "title": "Zieladresse",
+                "hint": "Beispiel: Einkaufszentrum ..."
+            },
+            "urban": "Städtisch",
+            "history": "Verlauf",
+            "search": "ROUTEN SUCHEN",
+            "calculating": "Routen suchen",
+            "errors": {
+                "originOrDestinyMissing": "Bitte wählen Sie eine Herkunfts- und eine Zieladresse aus.",
+                "highDemand": "Derzeit haben wir eine hohe Nachfrage nach Anfragen. Bitte versuchen Sie es später erneut." ,
+                "error1": "Die Berechnung konnte nicht durchgeführt werden. Bitte versuchen Sie es erneut.",
+                "error2": "Die Stadtcode wurde nicht gesendet.",
+                "error3": "Die Gebietscode wurde nicht gesendet.",
+                "error4": "Der Startort wurde nicht gesendet.",
+                "error5": "Der Zielspeicherort wurde nicht gesendet.",
+                "error6": "Es wurden keine Routen in der Nähe des Ursprungs gefunden.",
+                "error7": "Es wurden keine Routen in der Nähe des Ziels gefunden.",
+                "error8": "Es wurden keine Optionen für diese Route gefunden."
+            }
+        },
+        "input": {
+            "selected": "Ausgewählter Standort"
+        },
+        "modal": {
+            "address": {
+                "title": "Adresse",
+                "hint": "Carrera 64 Nr. 86 - 168"
+            },
+            "place": {
+                "title": "Ort",
+                "hint": "Einkaufszentrum ..."
+            },
+            "onMap": "Position auf der Karte festlegen",
+            "recent": "Kürzliche",
+            "recentEmpty": "Keine kürzlich verwendeten Adressen",
+            "favorites": "Favoriten",
+            "favoritesEmpty": "Fügen Sie einige Favoriten hinzu!",
+            "dialogs": {
+                "favoriteAdded": "Adresse zu Favoriten hinzugefügt",
+                "favoriteExists": "Sie haben diese Adresse bereits in Ihren Favoriten",
+                "favoriteDelete": "Möchten Sie diesen Favoriten löschen?"
+            }
+        },
+        "map": {
+            "title": "Ort auswählen",
+            "select": "Adresse hier auswählen"
+        },
+        "history": {
+            "title": "Verlauf",
+            "empty": "Sie haben keine Berechnungen durchgeführt",
+            "calculating": "Routen werden berechnet, bitte warten Sie.",
+            "selected": "Ausgewählter Standort"
+        }
+    },
+    "nearRoutes": {
+        "title": "Naheliegende Routen",
+        "urban": "Städtisch",
+        "masive": "Massiv",
+        "location": {
+            "search": "Ihren Standort erhalten",
+            "hint": "Aktivieren Sie den GPS auf Ihrem Gerät",
+            "error": "Wir konnten Ihren Standort nicht erhalten"
+        },
+        "search": {
+            "searching": "Suche nach Routen in Ihrer Nähe",
+            "notFound": "Keine Routen in Ihrer Nähe gefunden"
+        },
+        "errors": {
+            "error1": "Es können derzeit keine nahen Routen abgerufen werden.",
+            "error2": "Der Standort wurde nicht gesendet.",
+            "error3": "Der Stadtcode wurde nicht gesendet.",
+            "error4": "Der Gebietscode wurde nicht gesendet."
+        }
+    },
+    "routes": {
+        "title": "Routen",
+        "filter": "Filtern",
+        "loading": "Routen werden geladen",
+        "route": {
+            "schedules": "Fahrpläne",
+            "hour": "Stunde",
+            "frequenzy": "Frequenz",
+            "monday2friday": "Mo-Fr",
+            "saturday": "Sa",
+            "sunday&holyday": "So&Feiertags",
+            "updated": "Letzte Aktualisierung: {{date}}",
+            "support": "Wissen Sie, ob sich diese Route geändert hat? Lass es uns wissen!",
+            "help": {
+                "hour": "Dies ist die Uhrzeit der ersten und letzten Abfahrt des Tages.",
+                "frequency": "Dies ist die Frequenz, mit der Abfahrten in Neben- und Hauptverkehrszeiten erfolgen."
+            }
+        }
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "walkDistance":"Zu Fuß zurückzulegende Entfernung",
+        "mapType":"Kartentyp",
+        "contact":"Kontakt",
+        "terms":"Geschäftsbedingungen",
+        "changeCity":"Stadt ändern",
+        "install":"App installieren",
+        "sponsors": "Sponsoren",
+        "faq": {
+            "title": "Häufig gestellte Fragen",
+            "loading":"Häufig gestellte Fragen werden geladen",
+            "filter":"Filtern"
+        }
+    },
+    "result": {
+        "title":"Ergebnisse",
+        "time": "Zeit",
+        "buses": "Busse",
+        "distance": "Entfernung",
+        "advertising": {
+            "title": "Werbung"
+        },
+        "detail": {
+            "title":"Routendetails",
+            "walkTo":"Zu Fuß gehen nach",
+            "takeBus":"Bus nehmen",
+            "getDown":"Aussteigen",
+            "destiny":"Zum Ziel gehen",
+            "dialogs": {
+                "loading": "Laden..."
+            }
+        }
+    }
+}
