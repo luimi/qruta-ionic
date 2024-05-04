@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "Oui",
+        "no": "Non",
+        "ok": "D'accord",
+        "origin": "Origine",
+        "destination": "Destination",
+        "cancel": "Annuler",
+        "urban": "Urbain",
+        "massive": "Massif"
+    },
+    "cities": {
+        "title": "Ville",
+        "subtitle": "Veuillez sélectionner votre ville.",
+        "dialogs": {
+            "loading": "Chargement de la liste des villes"
+        }
+    },
+    "maintenance": {
+        "message": "Désolé, l'application est actuellement en maintenance, nous reviendrons bientôt à la normale."
+    },
+    "tabs": {
+        "calculate": "Calculer",
+        "near": "Proches",
+        "routes": "Itinéraires",
+        "settings": "Paramètres"
+    },
+    "calculate": {
+        "wheretogo": "Où voulez-vous aller?",
+        "main": {
+            "origin": {
+                "title": "Adresse d'origine",
+                "hint": "Exemple: rue 84 n° 27 - 18"
+            },
+            "destiny": {
+                "title": "Adresse de destination",
+                "hint": "Exemple: Centre commercial ..."
+            },
+            "urban": "Urbain",
+            "history": "Historique",
+            "search": "RECHERCHER ITINÉRAIRE",
+            "calculating": "Recherche d'itinéraires",
+            "errors": {
+                "originOrDestinyMissing": "Veuillez sélectionner une adresse d'origine et une adresse de destination.",
+                "highDemand": "Actuellement, nous avons une forte demande de demandes. Veuillez réessayer plus tard." ,
+                "error1": "Impossible de calculer, veuillez réessayer.",
+                "error2": "Le code de la ville n'a pas été envoyé.",
+                "error3": "Le code de zone n'a pas été envoyé.",
+                "error4": "L'emplacement de départ n'a pas été envoyé.",
+                "error5": "L'emplacement de destination n'a pas été envoyé.",
+                "error6": "Aucun itinéraire trouvé à proximité de l'origine.",
+                "error7": "Aucun itinéraire trouvé à proximité de la destination.",
+                "error8": "Aucune option trouvée pour cet itinéraire."
+            }
+        },
+        "input": {
+            "selected": "Emplacement sélectionné"
+        },
+        "modal": {
+            "address": {
+                "title": "Adresse",
+                "hint": "Carrera 64 n° 86 - 168"
+            },
+            "place": {
+                "title": "Lieu",
+                "hint": "Centre commercial ..."
+            },
+            "onMap": "Définir l'emplacement sur la carte",
+            "recent": "Récents",
+            "recentEmpty": "Aucune adresse récemment utilisée",
+            "favorites": "Favoris",
+            "favoritesEmpty": "Ajoutez des favoris !",
+            "dialogs": {
+                "favoriteAdded": "Adresse ajoutée aux favoris",
+                "favoriteExists": "Vous avez déjà cette adresse dans vos favoris",
+                "favoriteDelete": "Voulez-vous supprimer ce favori ?"
+            }
+        },
+        "map": {
+            "title": "Choisir un emplacement",
+            "select": "Sélectionner l'adresse ici"
+        },
+        "history": {
+            "title": "Historique",
+            "empty": "Vous n'avez pas effectué de calculs",
+            "calculating": "Calcul des itinéraires, veuillez patienter.",
+            "selected": "Emplacement sélectionné"
+        }
+    },
+    "nearRoutes": {
+        "title": "Itinéraires Proches",
+        "urban": "Urbain",
+        "masive": "Massif",
+        "location": {
+            "search": "Obtention de votre emplacement",
+            "hint": "N'oubliez pas d'activer le GPS sur votre appareil",
+            "error": "Nous n'avons pas pu obtenir votre emplacement"
+        },
+        "search": {
+            "searching": "Recherche des itinéraires proches de vous",
+            "notFound": "Aucun itinéraire trouvé à proximité de votre emplacement"
+        },
+        "errors": {
+            "error1": "Impossible d'obtenir les itinéraires proches pour le moment.",
+            "error2": "L'emplacement n'a pas été envoyé.",
+            "error3": "Le code de la ville n'a pas été envoyé.",
+            "error4": "Le code de zone n'a pas été envoyé."
+        }
+    },
+    "routes": {
+        "title": "Itinéraires",
+        "filter": "Filtrer",
+        "loading": "Chargement des itinéraires",
+        "route": {
+            "schedules": "Horaires",
+            "hour": "Heure",
+            "frequenzy": "Fréquence",
+            "monday2friday": "Lun-Ven",
+            "saturday": "Sam",
+            "sunday&holyday": "Dim&Férié",
+            "updated": "Dernière mise à jour : {{date}}",
+            "support": "Savez-vous si cet itinéraire a changé ? Dites-le nous !",
+            "help": {
+                "hour": "Il s'agit de l'heure du premier et du dernier départ de la journée.",
+                "frequency": "Il s'agit de la fréquence à laquelle les départs sont effectués, en heures creuses et en heures de pointe, respectivement."
+            }
+        }
+    },
+    "settings": {
+        "title": "Paramètres",
+        "walkDistance":"Distance à parcourir à pied",
+        "mapType":"Type de carte",
+        "contact":"Contact",
+        "terms":"Termes et conditions",
+        "changeCity":"Changer de ville",
+        "install":"Installer l'application",
+        "sponsors": "Sponsors",
+        "faq": {
+            "title": "Foire aux questions",
+            "loading":"Chargement des questions fréquentes",
+            "filter":"Filtrer"
+        }
+    },
+    "result": {
+        "title":"Résultats",
+        "time": "Temps",
+        "buses": "Autobus",
+        "distance": "Distance",
+        "advertising": {
+            "title": "Publicité"
+        },
+        "detail": {
+            "title":"Détail de l'itinéraire",
+            "walkTo":"Marcher jusqu'à",
+            "takeBus":"Prendre le bus",
+            "getDown":"Descendre",
+            "destiny":"Marcher vers la destination",
+            "dialogs": {
+                "loading": "Chargement..."
+            }
+        }
+    }
+}
