@@ -1,0 +1,163 @@
+{
+    "general": {
+        "yes": "是",
+        "no": "否",
+        "ok": "确定",
+        "origin": "起点",
+        "destination": "目的地",
+        "cancel": "取消",
+        "urban": "城市",
+        "massive": "大规模"
+    },
+    "cities": {
+        "title": "城市",
+        "subtitle": "请选择您的城市。",
+        "dialogs": {
+            "loading": "加载城市列表中"
+        }
+    },
+    "maintenance": {
+        "message": "抱歉，应用程序目前正在维护中，我们将很快恢复正常。"
+    },
+    "tabs": {
+        "calculate": "计算",
+        "near": "附近",
+        "routes": "路线",
+        "settings": "设置"
+    },
+    "calculate": {
+        "wheretogo": "您想去哪里？",
+        "main": {
+            "origin": {
+                "title": "出发地",
+                "hint": "例如：84号街27号 - 18"
+            },
+            "destiny": {
+                "title": "目的地",
+                "hint": "例如：商场..."
+            },
+            "urban": "城市",
+            "history": "历史",
+            "search": "搜索路线",
+            "calculating": "正在查找路线",
+            "errors": {
+                "originOrDestinyMissing": "请选择一个起始地址和一个目的地地址。",
+                "highDemand": "目前我们收到了大量请求。请稍后再试。",
+                "error1": "无法进行计算，请重试。",
+                "error2": "未发送城市代码。",
+                "error3": "未发送区域代码。",
+                "error4": "未发送起始位置。",
+                "error5": "未发送目的地位置。",
+                "error6": "未找到起始点附近的路线。",
+                "error7": "未找到目的地附近的路线。",
+                "error8": "找不到此行程的选项。"
+            }
+        },
+        "input": {
+            "selected": "已选择位置"
+        },
+        "modal": {
+            "address": {
+                "title": "地址",
+                "hint": "Carrera 64号86号 - 168"
+            },
+            "place": {
+                "title": "地点",
+                "hint": "购物中心..."
+            },
+            "onMap": "在地图上标记位置",
+            "recent": "最近的",
+            "recentEmpty": "没有最近使用的地址",
+            "favorites": "收藏夹",
+            "favoritesEmpty": "添加一些收藏！",
+            "dialogs": {
+                "favoriteAdded": "地址已添加到收藏夹",
+                "favoriteExists": "您已将此地址添加到收藏夹",
+                "favoriteDelete": "您确定要删除此收藏夹吗？"
+            }
+        },
+        "map": {
+            "title": "选择位置",
+            "select": "在这里选择地址"
+        },
+        "history": {
+            "title": "历史",
+            "empty": "您尚未进行计算",
+            "calculating": "正在计算路线，请稍候。",
+            "selected": "已选择位置"
+        }
+    },
+    "nearRoutes": {
+        "title": "附近路线",
+        "urban": "城市",
+        "masive": "大规模",
+        "location": {
+            "search": "获取您的位置",
+            "hint": "请记得在您的设备上启用GPS",
+            "error": "无法获取您的位置"
+        },
+        "search": {
+            "searching": "搜索附近的路线",
+            "notFound": "未找到您附近的路线"
+        },
+        "errors": {
+            "error1": "目前无法获取附近的路线。",
+            "error2": "未发送位置。",
+            "error3": "未发送城市代码。",
+            "error4": "未发送区域代码。"
+        }
+    },
+    "routes": {
+        "title": "路线",
+        "filter": "筛选",
+        "loading": "正在加载路线",
+        "route": {
+            "schedules": "时间表",
+            "hour": "小时",
+            "frequenzy": "频率",
+            "monday2friday": "周一至周五",
+            "saturday": "周六",
+            "sunday&holyday": "周日和假期",
+            "updated": "最后更新：{{date}}",
+            "support": "您知道此路线是否已更改？请告诉我们！",
+            "help": {
+                "hour": "这是一天中第一次和最后一次出发的时间。",
+                "frequency": "这是出发时间的频率，分别是高峰时间和非高峰时间。"
+            }
+        }
+    },
+    "settings": {
+        "title": "设置",
+        "walkDistance":"步行距离",
+        "mapType":"地图类型",
+        "contact":"联系方式",
+        "terms":"条款和条件",
+        "changeCity":"更改城市",
+        "install":"安装应用",
+        "sponsors": "赞助商",
+        "faq": {
+            "title": "常见问题",
+            "loading":"正在加载常见问题",
+            "filter":"筛选"
+        }
+    },
+    "result": {
+        "title":"结果",
+        "time": "时间",
+        "buses": "公交车",
+        "distance": "距离",
+        "advertising": {
+            "title": "广告"
+        },
+        "detail": {
+            "title":"路线详情",
+            "walkTo":"步行至",
+            "takeBus":"乘坐公交车",
+            "getDown":"下车",
+            "destiny":"步行至目的地",
+            "dialogs": {
+                "loading": "加载中..."
+            }
+        }
+    }
+}

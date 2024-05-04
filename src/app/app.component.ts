@@ -15,7 +15,7 @@ export class AppComponent {
   ) {
     this.platform.ready().then(async () => {
       let currentLang = this.translateCtrl.getBrowserLang()
-      let currentLangs = ["es","en","fr","de","pt","it"]
+      let currentLangs = ["es","en","fr","de","pt","it","zh"]
       translateCtrl.use(currentLang && currentLangs.includes(currentLang) ? currentLang : "en")
       let android = this.platform.is("android")
       let ios = this.platform.is("ios")
