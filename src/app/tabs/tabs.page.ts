@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonTabs, isPlatform } from '@ionic/angular';
 import { AdsService } from '../utils/ads.service';
 import { environment } from 'src/environments/environment';
+import { UtilsService } from '../utils/utils.service';
 
 @Component({
   selector: 'app-tabs',
@@ -11,10 +12,16 @@ import { environment } from 'src/environments/environment';
 })
 export class TabsPage {
   private activeTab?: HTMLElement;
-  constructor(private adsCtrl: AdsService) {
+  showNews: boolean = false;
+  constructor(private adsCtrl: AdsService, private utils: UtilsService) {
     if(isPlatform("android") || isPlatform("ios")) {
       this.admob()
     }
+    this.getTabConfig()
+  }
+  async getTabConfig() {
+    let result = await this.utils.getServerConfig("showNews")
+    if(result) this.showNews = result as boolean
   }
   async admob() {
     await this.adsCtrl.initializeAdmob()

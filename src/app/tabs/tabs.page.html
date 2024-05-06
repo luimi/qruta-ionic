@@ -16,7 +16,7 @@
       <ion-label translate>tabs.routes</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="news" href="/main/news">
+    <ion-tab-button tab="news" href="/main/news" *ngIf="showNews">
       <ion-icon aria-hidden="true" name="newspaper"></ion-icon>
       <ion-label translate>tabs.news</ion-label>
     </ion-tab-button>
