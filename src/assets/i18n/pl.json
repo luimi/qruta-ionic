@@ -23,7 +23,8 @@
         "calculate": "Oblicz",
         "near": "W pobliżu",
         "routes": "Trasy",
-        "settings": "Ustawienia"
+        "settings": "Ustawienia",
+        "news": "Nowości"
     },
     "calculate": {
         "wheretogo": "Gdzie chcesz się udać?",
@@ -164,6 +165,14 @@
             "dialogs": {
                 "loading": "Ładowanie..."
             }
+        }
+    },
+    "news": {
+        "title": "Nowości",
+        "loading": "Ładowanie źródeł...",
+        "noNews": "Przepraszamy, brak dostępnych źródeł.",
+        "twitter": {
+            "loading": "Ładowanie tweetów..."
         }
     }
 }

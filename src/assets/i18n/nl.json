@@ -23,7 +23,8 @@
         "calculate": "Berekenen",
         "near": "Dichtbij",
         "routes": "Routes",
-        "settings": "Instellingen"
+        "settings": "Instellingen",
+        "news": "Nieuws"
     },
     "calculate": {
         "wheretogo": "Waar wil je naartoe?",
@@ -164,6 +165,14 @@
             "dialogs": {
                 "loading": "Laden..."
             }
+        }
+    },
+    "news": {
+        "title": "Nieuws",
+        "loading": "Bronnen laden...",
+        "noNews": "Sorry, geen bronnen beschikbaar.",
+        "twitter": {
+            "loading": "Tweets laden..."
         }
     }
 }

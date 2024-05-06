@@ -1,0 +1,14 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="arrow-back" (click)="modalCtrl.dismiss()"></ion-icon>
+    </ion-buttons>
+    <ion-title> {{source.get('alias')}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <a class="twitter-timeline" [href]="source.get('reference')+'?ref_src=twsrc%5Etfw'"
+    data-chrome="noheader nofooter noborders noscrollbar transparent">
+    <app-empty-state [icon]="source.get('icon')" text="news.twitter.loading" [progress]="true" />
+  </a>
+</ion-content>

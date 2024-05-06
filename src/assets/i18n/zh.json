@@ -23,7 +23,8 @@
         "calculate": "计算",
         "near": "附近",
         "routes": "路线",
-        "settings": "设置"
+        "settings": "设置",
+        "news": "新闻"
     },
     "calculate": {
         "wheretogo": "您想去哪里？",
@@ -164,6 +165,14 @@
             "dialogs": {
                 "loading": "加载中..."
             }
+        }
+    },
+    "news": {
+        "title": "新闻",
+        "loading": "加载来源...",
+        "noNews": "抱歉，没有可用的来源。",
+        "twitter": {
+            "loading": "加载推文..."
         }
     }
 }

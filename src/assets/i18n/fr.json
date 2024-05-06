@@ -23,7 +23,8 @@
         "calculate": "Calculer",
         "near": "Proches",
         "routes": "Itinéraires",
-        "settings": "Paramètres"
+        "settings": "Paramètres",
+        "news": "Nouvelles"
     },
     "calculate": {
         "wheretogo": "Où voulez-vous aller?",
@@ -164,6 +165,14 @@
             "dialogs": {
                 "loading": "Chargement..."
             }
+        }
+    },
+    "news": {
+        "title": "Nouvelles",
+        "loading": "Chargement des sources...",
+        "noNews": "Désolé, aucune source disponible.",
+        "twitter": {
+            "loading": "Chargement des tweets..."
         }
     }
 }

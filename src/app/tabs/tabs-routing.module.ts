@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
       },
       {
+        path: 'news',
+        loadChildren: () => import('../news/news.module').then(m => m.NewsPageModule)
+      },
+      {
         path: 'main',
         redirectTo: '/main/calculate',
         pathMatch: 'full'
@@ -40,4 +44,4 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

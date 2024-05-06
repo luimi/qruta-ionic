@@ -23,7 +23,8 @@
         "calculate": "Calculate",
         "near": "Nearby",
         "routes": "Routes",
-        "settings": "Settings"
+        "settings": "Settings",
+        "news": "News"
     },
     "calculate": {
         "wheretogo": "Where do you want to go?",
@@ -164,6 +165,14 @@
             "dialogs": {
                 "loading": "Loading..."
             }
+        }
+    },
+    "news": {
+        "title": "News",
+        "loading": "Loading sources...",
+        "noNews": "Sorry, no sources available.",
+        "twitter": {
+            "loading": "Loading tweets..."
         }
     }
 }
