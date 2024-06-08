@@ -4,19 +4,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" *ngIf="sources.length > 0">
+<ion-content class="ion-padding" *ngIf="sources.length > 0 && info.length > 0">
+  <ion-segment [value]="sources[0].title" *ngIf="sources.length > 1" (ionChange)="loadInfo($event)" mode="ios">
+    <ion-segment-button *ngFor="let source of sources" [value]="source.title">
+      <ion-label translate>news.tabs.{{source.title}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-card *ngFor="let tweet of info">
+    <swiper-container *ngIf="tweet.media.length>0" [pagination]="true">
+      <swiper-slide *ngFor="let image of tweet.media">
+        <div class="image-container">
+          <img [src]="image">
+        </div>
 
-  <ion-list>
-    <ion-item detail="true" *ngFor="let source of sources" (click)="openSource(source)">
-      <ion-icon aria-hidden="true" [name]="source.get('icon')" slot="start"></ion-icon>
+      </swiper-slide>
+    </swiper-container>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="avatar" [src]="tweet.avatar" />
+      </ion-avatar>
       <ion-label>
-        <h2>{{source.get('title')}}</h2>
-        <p>{{source.get('alias')}}</p>
+        <h1>{{tweet.author_name}}</h1>
+        <p>@{{tweet.author}} - {{getTime(tweet.date)}}</p>
       </ion-label>
     </ion-item>
-  </ion-list>
+    <ion-card-content>
+      {{tweet.text}}
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
-<ion-content *ngIf="sources.length === 0">
+<ion-content *ngIf="sources.length === 0 || info.length === 0">
   <app-empty-state #emptyState icon="newspaper" text="news.loading"></app-empty-state>
 </ion-content>

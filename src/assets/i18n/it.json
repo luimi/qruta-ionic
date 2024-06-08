@@ -169,10 +169,15 @@
     },
     "news": {
         "title": "Novità",
-        "loading": "Caricamento delle fonti...",
-        "noNews": "Spiacente, nessuna fonte disponibile.",
+        "loading": "Caricamento fonti...",
+        "noNews": "Spiacenti, nessuna fonte disponibile.",
         "twitter": {
-            "loading": "Caricamento dei tweet..."
+            "loading": "Caricamento tweet...",
+            "noTweets": "Impossibile recuperare alcun tweet"
+        },
+        "tabs":{
+            "transport": "Trasporto",
+            "news": "Notizie"
         }
     }
 }

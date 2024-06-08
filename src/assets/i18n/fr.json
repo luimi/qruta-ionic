@@ -168,11 +168,16 @@
         }
     },
     "news": {
-        "title": "Nouvelles",
+        "title": "Nouveautés",
         "loading": "Chargement des sources...",
         "noNews": "Désolé, aucune source disponible.",
         "twitter": {
-            "loading": "Chargement des tweets..."
+            "loading": "Chargement des tweets...",
+            "noTweets": "Impossible de récupérer des tweets"
+        },
+        "tabs":{
+            "transport": "Transport",
+            "news": "Actualités"
         }
     }
 }

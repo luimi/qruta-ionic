@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -21,6 +21,7 @@ import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
     EmptyStateModule
   ],
   declarations: [NewsPage, TwitterComponent],
-  exports: [TwitterComponent]
+  exports: [TwitterComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class NewsPageModule {}

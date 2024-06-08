@@ -172,7 +172,12 @@
         "loading": "Bronnen laden...",
         "noNews": "Sorry, geen bronnen beschikbaar.",
         "twitter": {
-            "loading": "Tweets laden..."
+            "loading": "Tweets laden...",
+            "noTweets": "Kon geen tweets ophalen"
+        },
+        "tabs":{
+            "transport": "Transport",
+            "news": "Nieuws"
         }
     }
 }

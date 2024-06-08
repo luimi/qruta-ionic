@@ -172,7 +172,12 @@
         "loading": "Cargando fuentes...",
         "noNews": "Lo sentimos, no hay fuentes disponibles.",
         "twitter": {
-            "loading": "Cargando tweets..."
+            "loading": "Cargando tweets...",
+            "noTweets": "No se pudo obtener ningún tweet"
+        },
+        "tabs":{
+            "transport": "Transporte",
+            "news": "Noticias"
         }
     }
 }

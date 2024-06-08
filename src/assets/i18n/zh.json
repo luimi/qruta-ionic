@@ -169,10 +169,15 @@
     },
     "news": {
         "title": "新闻",
-        "loading": "加载来源...",
+        "loading": "加载来源中...",
         "noNews": "抱歉，没有可用的来源。",
         "twitter": {
-            "loading": "加载推文..."
+            "loading": "加载推文中...",
+            "noTweets": "无法获取任何推文"
+        },
+        "tabs":{
+            "transport": "运输",
+            "news": "新闻"
         }
     }
 }

@@ -170,9 +170,14 @@
     "news": {
         "title": "Novidades",
         "loading": "Carregando fontes...",
-        "noNews": "Desculpe, não há fontes disponíveis.",
+        "noNews": "Desculpe, nenhuma fonte disponível.",
         "twitter": {
-            "loading": "Carregando tweets..."
+            "loading": "Carregando tweets...",
+            "noTweets": "Não foi possível recuperar nenhum tweet"
+        },
+        "tabs":{
+            "transport": "Transporte",
+            "news": "Notícias"
         }
     }
 }
