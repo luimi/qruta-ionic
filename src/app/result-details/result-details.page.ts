@@ -35,7 +35,7 @@ export class ResultDetailsPage implements OnInit {
     this.loadData();
   }
   async showAd() {
-    if ((isPlatform("android") || isPlatform("ios")) && this.adsCtrl.isReadyForAds()) {
+    if ((isPlatform("android") || isPlatform("ios")) && await this.adsCtrl.isReadyForAds()) {
       await this.adsCtrl.showInterstitial();
       await this.adsCtrl.prepareInterstitial();
     }

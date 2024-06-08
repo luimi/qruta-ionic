@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { AdMob, AdOptions, BannerAdOptions, BannerAdPosition, BannerAdSize } from '@capacitor-community/admob';
 import { isPlatform } from '@ionic/angular';
 import { environment } from 'src/environments/environment';
+import { UtilsService } from './utils.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdsService {
   lastInterstitial: number = 0;
-  constructor() { }
+  constructor(private utils: UtilsService) { }
 
   async initializeAdmob() {
     const { status } = await AdMob.trackingAuthorizationStatus();
@@ -31,8 +32,9 @@ export class AdsService {
     await AdMob.showInterstitial()
     this.lastInterstitial = new Date().getTime()
   }
-  isReadyForAds() {
-    return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > 30 * 1000
+  async isReadyForAds() {
+    let adTimer = await this.utils.getServerConfig("adTimer") || 30000
+    return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > parseInt(`${adTimer}`)
   }
   async showBanner() {
     const options: BannerAdOptions = {
