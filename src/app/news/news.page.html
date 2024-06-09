@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="sources.length > 0 && info.length > 0">
-  <ion-segment [value]="sources[0].title" *ngIf="sources.length > 1" (ionChange)="loadInfo($event)" mode="ios">
+  <ion-segment *ngIf="sources.length > 1" (ionChange)="loadInfo()" mode="ios" [(ngModel)]="selected" color="primary">
     <ion-segment-button *ngFor="let source of sources" [value]="source.title">
       <ion-label translate>news.tabs.{{source.title}}</ion-label>
     </ion-segment-button>

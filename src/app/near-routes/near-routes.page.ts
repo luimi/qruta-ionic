@@ -1,57 +1,38 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import Parse from 'parse';
+import { Component, OnInit } from '@angular/core';
 import { UtilsService } from '../utils/utils.service';
-import { Router } from '@angular/router';
 import { constants } from '../utils/constants';
 import { ApiService } from '../utils/api.service';
+import { TabPage } from '../tab/tab.page';
 
 @Component({
   selector: 'app-near-routes',
   templateUrl: './near-routes.page.html',
   styleUrls: ['./near-routes.page.scss'],
 })
-export class NearRoutesPage implements OnInit {
+export class NearRoutesPage extends TabPage implements OnInit {
 
   routes: any = { urban: [], massive: [] };
   selectedBtn = 'urban';
-  executed = false;
-  @ViewChild('emptyState') emptyState: any;
   constructor(
-    private alertCtrl: AlertController,
-    private utils: UtilsService,
-    private router: Router,
+    public override utils: UtilsService,
     private apiCtrl: ApiService
-  ) { }
-
-  ngOnInit() {
-
+  ) {
+    super(utils)
   }
 
   ionViewDidEnter() {
-    if (!this.executed) {
-      this.executed = true;
-      this.getCurrentPosition();
-    }
-  }
-
-  /**
-   * this get user current position and call routes
-   */
-  async getCurrentPosition() {
+    if (this.isSameCity() && !this.isTimePassed(5)) return
+    else this.routes = { urban: [], massive: [] }
     const warning = setTimeout(() => {
-      this.emptyState.setText('nearRoutes.location.hint');
+      this.setEmptyStateText('nearRoutes.location.hint');
     }, 5 * 1000);
-    this.emptyState.setIcon('location');
-    this.emptyState.setText('nearRoutes.location.search');
-    this.emptyState.showProgress();
+    this.setEmptyState({icon: 'location', text: 'nearRoutes.location.search', progress: true})
     navigator.geolocation.getCurrentPosition((location) => {
       clearTimeout(warning);
       this.getNearRoutes(location.coords.latitude, location.coords.longitude);
     }, () => {
       clearTimeout(warning);
-      this.emptyState.setText('nearRoutes.location.error');
-      this.emptyState.hideProgress();
+      this.setEmptyState({text: 'nearRoutes.location.error', progress: true})
     }, { enableHighAccuracy: true })
   }
 
@@ -66,21 +47,21 @@ export class NearRoutesPage implements OnInit {
       city: this.utils.getLocal(constants.keys.city).objectId,
       area: 1
     };
-    this.emptyState.setIcon('bus');
-    this.emptyState.setText('nearRoutes.search.searching');
+    this.setEmptyStateIcon('bus')
+    this.setEmptyStateText('nearRoutes.search.searching')
     const server = await this.apiCtrl.getServer(data.city);
-    if(!server.success){
-      this.emptyState.setIcon('sad');
-      this.emptyState.setText('nearRoutes.search.notFound');
-      this.emptyState.hideProgress();
+    if (!server.success) {
+      this.setEmptyStateIcon('sad')
+      this.setEmptyStateText('nearRoutes.search.notFound')
+      this.hideEmptyStateProgress()
       return
     }
     const result = await this.apiCtrl.nearRoutes(server, data);
-    this.emptyState.hideProgress();
+    this.hideEmptyStateProgress()
     if (result.success) {
       this.routes = result;
       if (this.routes.urban.length === 0 && this.routes.massive.length === 0) {
-        this.emptyState.setText('nearRoutes.search.notFound');
+        this.setEmptyStateText('nearRoutes.search.notFound')
       }
     } else {
       this.utils.showErrorByCode(result.codeError, constants.errors.nearRoutes);
@@ -92,26 +73,5 @@ export class NearRoutesPage implements OnInit {
    */
   getCorrectRoutes() {
     return this.routes[this.selectedBtn];
-  }
-
-  /**
-   * this show an error alert
-   * @param message error message
-   */
-  async showError(message: string) {
-    const alert = await this.alertCtrl.create({
-      header: 'Error',
-      message: message,
-      buttons: ['OK']
-    });
-    return await alert.present();
-  }
-
-  /**
-   * this execute when user select a route
-   * @param id 
-   */
-  didSelectedRoute(id: string) {
-    this.router.navigateByUrl('route/' + id);
   }
 }

@@ -1,32 +1,26 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Parse from 'parse';
-import { Router } from '@angular/router';
 import { UtilsService } from '../utils/utils.service';
+import { TabPage } from '../tab/tab.page';
 @Component({
   selector: 'app-routes',
   templateUrl: './routes.page.html',
   styleUrls: ['./routes.page.scss'],
 })
-export class RoutesPage implements OnInit {
+export class RoutesPage extends TabPage implements OnInit {
   companies: any = {};
   filtered: any = {};
   objectKeys = Object.keys;
-  currentCity: any;
-  @ViewChild('emptyState') emptyState: any;
-  constructor(private router: Router, private utils: UtilsService) { }
-  ngOnInit() {
-
+  
+  constructor(public override utils: UtilsService) { 
+    super(utils)
   }
   async ionViewDidEnter() {
-    const _city = this.utils.getLocal('city');
-    if (this.currentCity && this.currentCity.objectId === _city.objectId) {
-      return;
-    }
-    this.companies = {};
-    if (this.emptyState) this.emptyState.showProgress();
+    if(this.isSameCity()) return
+    else  this.companies = {};
+    this.showEmptyStateProgress()
     const City = Parse.Object.extend("City");
     const city = new City();
-    this.currentCity = _city;
     city.id = this.currentCity.objectId;
     let routes = await new Parse.Query('Route').equalTo('city', city).equalTo('status', true).select('name', 'company', 'details').include('company').ascending('name').limit(1000).find();
     routes.sort((a, b) => {
@@ -47,8 +41,7 @@ export class RoutesPage implements OnInit {
       this.companies[companyId].routes.push(route);
     });
     this.filtered = { ...this.companies }
-    if (this.emptyState)
-      this.emptyState.hideProgress();
+    this.hideEmptyStateProgress()
   }
 
   filter(evt: any) {

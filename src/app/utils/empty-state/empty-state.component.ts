@@ -25,4 +25,13 @@ export class EmptyStateComponent implements OnInit {
   public hideProgress() {
     this.progress = false;
   }
+  public apply(changes: {text: string, icon: string, progress: boolean}){
+    Object.keys(changes).forEach((param: string) => {
+      switch(param) {
+        case 'icon': this.icon = changes[param]; break;
+        case 'text': this.text = changes[param]; break;
+        case 'progress': this.progress = changes[param]; break;
+      }
+    })
+  }
 }
