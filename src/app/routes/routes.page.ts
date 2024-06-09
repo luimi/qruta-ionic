@@ -19,10 +19,7 @@ export class RoutesPage extends TabPage implements OnInit {
     if(this.isSameCity()) return
     else  this.companies = {};
     this.showEmptyStateProgress()
-    const City = Parse.Object.extend("City");
-    const city = new City();
-    city.id = this.currentCity.objectId;
-    let routes = await new Parse.Query('Route').equalTo('city', city).equalTo('status', true).select('name', 'company', 'details').include('company').ascending('name').limit(1000).find();
+    let routes = await new Parse.Query('Route').equalTo('city', this.utils.getGenericObject("City", this.currentCity.objectId)).equalTo('status', true).select('name', 'company', 'details').include('company').ascending('name').limit(1000).find();
     routes.sort((a, b) => {
       if (a.get('company').get('name') < b.get('company').get('name'))
         return -1;

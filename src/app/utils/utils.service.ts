@@ -136,4 +136,9 @@ export class UtilsService {
       value: 'value'
     });
   }
+  public getGenericObject(_class: string, id?: string) {
+    let generic = new Parse.Object(_class);
+    if(id) generic.id = id
+    return generic
+  }
 }
