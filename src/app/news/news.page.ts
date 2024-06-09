@@ -30,13 +30,11 @@ export class NewsPage extends TabPage implements OnInit {
       this.setEmptyState({text: "news.loading", icon: "newspaper", progress: true})
     }
     const current = this.utils.getLocal('city');
-    const city = await new Parse.Query("City").get(current.objectId)
-    //TODO a futuro, sacar directo del objeto local
-    this.sources = city.get("news")
+    this.sources = await new Parse.Query("NewsSource").equalTo("city", this.utils.getGenericObject("City", current.objectId)).find()
     if (this.sources.length === 0) {
       this.setEmptyStateText("news.noNews")
     } else {
-      this.selected = this.sources[0].title
+      this.selected = this.sources[0].get("type")
       await this.loadInfo()
     }
     this.hideEmptyStateProgress()
@@ -49,9 +47,9 @@ export class NewsPage extends TabPage implements OnInit {
     }
     this.info = []
     this.setEmptyState({progress: true, icon: "logo-twitter", text: "news.twitter.loading"})
-    const index = this.sources.map((o: any) => o.title).indexOf(this.selected)
+    const index = this.sources.map((o: any) => o.get("type")).indexOf(this.selected)
     try {
-      this.info = await this.getData(this.sources[index].source)
+      this.info = await this.getData(this.sources[index].get("url"))
       this.data[this.selected] = this.info
     } catch (e) { }
     if (this.info.length === 0) {
