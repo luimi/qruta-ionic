@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.lui2mi.queruta",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 41011,
+      "versionName": "4.1.11",
+      "outputFile": "qruta-4.1.11(41011)-release.apk"
+    }
+  ],
+  "elementType": "File"
+}
