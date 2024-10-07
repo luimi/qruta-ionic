@@ -143,7 +143,8 @@
             "help": {
                 "hour": "To jest godzina pierwszego i ostatniego kursu w ciągu dnia.",
                 "frequency": "To jest częstotliwość czasu, w którym kursy wychodzą, w godzinach szczytu i poza nimi, odpowiednio."
-            }
+            },
+            "stops": "Zatrzymuje się"
         }
     },
     "settings": {

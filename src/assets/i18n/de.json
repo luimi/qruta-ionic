@@ -143,7 +143,8 @@
             "help": {
                 "hour": "Dies ist die Uhrzeit der ersten und letzten Abfahrt des Tages.",
                 "frequency": "Dies ist die Frequenz, mit der Abfahrten in Neben- und Hauptverkehrszeiten erfolgen."
-            }
+            },
+            "stops": "Stoppt"
         }
     },
     "settings": {

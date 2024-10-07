@@ -143,7 +143,8 @@
             "help": {
                 "hour": "Dit is het tijdstip van de eerste en laatste rit van de dag.",
                 "frequency": "Dit is de frequentie waarmee ritten vertrekken, respectievelijk tijdens piek- en daluren."
-            }
+            },
+            "stops": "Stopt"
         }
     },
     "settings": {

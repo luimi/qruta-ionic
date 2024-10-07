@@ -143,7 +143,8 @@
             "help": {
                 "hour": "This is the time of the first dispatch and the time of the last dispatch of the day.",
                 "frequency": "This is the time frequency in which dispatches leave, during off-peak hours and peak hours, respectively."
-            }
+            },
+            "stops": "Stops"
         }
     },
     "settings": {
