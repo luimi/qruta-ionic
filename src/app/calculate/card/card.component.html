@@ -1,0 +1,9 @@
+<div class="card ion-margin-bottom" [ngStyle]="{'background-image': 'url('+cardStyle+')'}" [ngClass]="orientation">
+  <div class="balance text">
+    {{info.saldo | currency}}
+  </div>
+  <div class="data">
+    <!-- <p class="text">{{info.nombreEstudiante}}</p> -->
+    <span class="text">{{info.numtarjetaExt}}</span>
+  </div>
+</div>

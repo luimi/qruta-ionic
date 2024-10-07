@@ -7,7 +7,11 @@
         "destination": "Destination",
         "cancel": "Cancel",
         "urban": "Urban",
-        "massive": "Massive"
+        "massive": "Massive",
+        "update": "Update",
+        "delete": "Delete",
+        "search": "Search",
+        "save": "Save"
     },
     "cities": {
         "title": "City",
@@ -43,7 +47,7 @@
             "calculating": "Searching Routes",
             "errors": {
                 "originOrDestinyMissing": "Please choose an origin and a destination address.",
-                "highDemand": "We are currently experiencing a high demand for applications. Please try again." ,
+                "highDemand": "We are currently experiencing a high demand for applications. Please try again.",
                 "error1": "Calculation cannot be performed, please try again.",
                 "error2": "City code not sent.",
                 "error3": "Area code not sent.",
@@ -92,7 +96,16 @@
                 "title": "There is a new version of the application!",
                 "button": "Update"
             }
-        }        
+        },
+        "cards": {
+            "title": "Check your balance",
+            "empty": "Add a card",
+            "number": "Enter card number",
+            "search": "Search",
+            "style": "Card style",
+            "save": "Save",
+            "confirm": "Do you want to delete this card?"
+        }
     },
     "nearRoutes": {
         "title": "Nearby Routes",
@@ -175,7 +188,7 @@
             "loading": "Loading tweets...",
             "noTweets": "Could not retrieve any tweet"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Transport",
             "news": "News"
         }

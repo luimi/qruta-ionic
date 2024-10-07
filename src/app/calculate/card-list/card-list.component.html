@@ -1,0 +1,21 @@
+<ion-header class="green">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="modalCtrl.dismiss()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title translate>calculate.cards.title</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="addCard()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" *ngIf="cards.length > 0">
+  <app-card *ngFor="let card of cards; index as i" class="ion-margin-bottom" [info]="card" [cardStyle]="card.cardStyle" [orientation]="card.orientation" (click)="openCard(i)"/>
+</ion-content>
+<ion-content class="ion-no-padding" *ngIf="cards.length===0">
+  <app-empty-state #emptyState icon="card-outline" text="calculate.cards.empty"></app-empty-state>
+</ion-content>

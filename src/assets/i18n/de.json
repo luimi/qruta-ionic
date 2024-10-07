@@ -7,7 +7,11 @@
         "destination": "Ziel",
         "cancel": "Abbrechen",
         "urban": "Städtisch",
-        "massive": "Massiv"
+        "massive": "Massiv",
+        "update": "Aktualisieren",
+        "delete": "Löschen",
+        "search": "Suchen",
+        "save": "Speichern"
     },
     "cities": {
         "title": "Stadt",
@@ -43,7 +47,7 @@
             "calculating": "Routen suchen",
             "errors": {
                 "originOrDestinyMissing": "Bitte wählen Sie eine Herkunfts- und eine Zieladresse aus.",
-                "highDemand": "Derzeit haben wir eine hohe Nachfrage nach Anfragen. Bitte versuchen Sie es später erneut." ,
+                "highDemand": "Derzeit haben wir eine hohe Nachfrage nach Anfragen. Bitte versuchen Sie es später erneut.",
                 "error1": "Die Berechnung konnte nicht durchgeführt werden. Bitte versuchen Sie es erneut.",
                 "error2": "Die Stadtcode wurde nicht gesendet.",
                 "error3": "Die Gebietscode wurde nicht gesendet.",
@@ -92,6 +96,15 @@
                 "title": "Es gibt eine neue Version der Anwendung!",
                 "button": "Aktualisieren"
             }
+        },
+        "cards": {
+            "title": "Überprüfe dein Guthaben",
+            "empty": "Füge eine Karte hinzu",
+            "number": "Gib die Kartennummer ein",
+            "search": "Suchen",
+            "style": "Kartenstil",
+            "save": "Speichern",
+            "confirm": "Möchtest du diese Karte löschen?"
         }
     },
     "nearRoutes": {
@@ -135,21 +148,21 @@
     },
     "settings": {
         "title": "Einstellungen",
-        "walkDistance":"Zu Fuß zurückzulegende Entfernung",
-        "mapType":"Kartentyp",
-        "contact":"Kontakt",
-        "terms":"Geschäftsbedingungen",
-        "changeCity":"Stadt ändern",
-        "install":"App installieren",
+        "walkDistance": "Zu Fuß zurückzulegende Entfernung",
+        "mapType": "Kartentyp",
+        "contact": "Kontakt",
+        "terms": "Geschäftsbedingungen",
+        "changeCity": "Stadt ändern",
+        "install": "App installieren",
         "sponsors": "Sponsoren",
         "faq": {
             "title": "Häufig gestellte Fragen",
-            "loading":"Häufig gestellte Fragen werden geladen",
-            "filter":"Filtern"
+            "loading": "Häufig gestellte Fragen werden geladen",
+            "filter": "Filtern"
         }
     },
     "result": {
-        "title":"Ergebnisse",
+        "title": "Ergebnisse",
         "time": "Zeit",
         "buses": "Busse",
         "distance": "Entfernung",
@@ -157,11 +170,11 @@
             "title": "Werbung"
         },
         "detail": {
-            "title":"Routendetails",
-            "walkTo":"Zu Fuß gehen nach",
-            "takeBus":"Bus nehmen",
-            "getDown":"Aussteigen",
-            "destiny":"Zum Ziel gehen",
+            "title": "Routendetails",
+            "walkTo": "Zu Fuß gehen nach",
+            "takeBus": "Bus nehmen",
+            "getDown": "Aussteigen",
+            "destiny": "Zum Ziel gehen",
             "dialogs": {
                 "loading": "Laden..."
             }
@@ -175,7 +188,7 @@
             "loading": "Tweets werden geladen...",
             "noTweets": "Es konnte kein Tweet abgerufen werden"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Transport",
             "news": "Nachrichten"
         }

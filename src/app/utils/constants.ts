@@ -3,7 +3,7 @@ export const constants = {
         city: 'city',
         walkDistance: 'walkDistance',
         layer: 'layer',
-
+        
     },
     methods: {
         nearRoutes: 'nearRoutes',
@@ -14,7 +14,7 @@ export const constants = {
         result: 'result',
         recents:'recents',
         status:'status',
-        
+        cards: 'cards',
     },
     errors:{
         calculate:[

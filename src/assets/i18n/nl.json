@@ -7,7 +7,11 @@
         "destination": "Bestemming",
         "cancel": "Annuleren",
         "urban": "Stedelijk",
-        "massive": "Massief"
+        "massive": "Massief",
+        "update": "Bijwerken",
+        "delete": "Verwijderen",
+        "search": "Zoeken",
+        "save": "Opslaan"
     },
     "cities": {
         "title": "Steden",
@@ -43,7 +47,7 @@
             "calculating": "Routes zoeken",
             "errors": {
                 "originOrDestinyMissing": "Selecteer alstublieft een vertrek- en bestemmingsadres.",
-                "highDemand": "Op dit moment is er veel vraag naar aanvragen. Probeer het later opnieuw." ,
+                "highDemand": "Op dit moment is er veel vraag naar aanvragen. Probeer het later opnieuw.",
                 "error1": "Kan geen berekening maken, probeer het opnieuw.",
                 "error2": "Stadscode niet verzonden.",
                 "error3": "Gebiedscode niet verzonden.",
@@ -92,7 +96,16 @@
                 "title": "Er is een nieuwe versie van de applicatie!",
                 "button": "Bijwerken"
             }
-        }        
+        },
+        "cards": {
+            "title": "Controleer je saldo",
+            "empty": "Voeg een kaart toe",
+            "number": "Voer kaartnummer in",
+            "search": "Zoeken",
+            "style": "Kaartstijl",
+            "save": "Opslaan",
+            "confirm": "Wil je deze kaart verwijderen?"
+        }
     },
     "nearRoutes": {
         "title": "Routes in de buurt",
@@ -135,21 +148,21 @@
     },
     "settings": {
         "title": "Instellingen",
-        "walkDistance":"Loopafstand",
-        "mapType":"Kaarttype",
-        "contact":"Contact",
-        "terms":"Voorwaarden",
-        "changeCity":"Stad wijzigen",
-        "install":"App installeren",
+        "walkDistance": "Loopafstand",
+        "mapType": "Kaarttype",
+        "contact": "Contact",
+        "terms": "Voorwaarden",
+        "changeCity": "Stad wijzigen",
+        "install": "App installeren",
         "sponsors": "Sponsors",
         "faq": {
             "title": "Veelgestelde vragen",
-            "loading":"Veelgestelde vragen laden",
-            "filter":"Filteren"
+            "loading": "Veelgestelde vragen laden",
+            "filter": "Filteren"
         }
     },
     "result": {
-        "title":"Resultaten",
+        "title": "Resultaten",
         "time": "Tijd",
         "buses": "Bussen",
         "distance": "Afstand",
@@ -157,11 +170,11 @@
             "title": "Advertenties"
         },
         "detail": {
-            "title":"Routedetails",
-            "walkTo":"Lopen naar",
-            "takeBus":"Bus nemen",
-            "getDown":"Uitstappen",
-            "destiny":"Lopen naar bestemming",
+            "title": "Routedetails",
+            "walkTo": "Lopen naar",
+            "takeBus": "Bus nemen",
+            "getDown": "Uitstappen",
+            "destiny": "Lopen naar bestemming",
             "dialogs": {
                 "loading": "Laden..."
             }
@@ -175,7 +188,7 @@
             "loading": "Tweets laden...",
             "noTweets": "Kon geen tweets ophalen"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Transport",
             "news": "Nieuws"
         }

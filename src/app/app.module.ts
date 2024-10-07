@@ -18,7 +18,7 @@ export function LanguageLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot({swipeBackEnabled: false}), AppRoutingModule, HttpClientModule,
+  imports: [BrowserModule, IonicModule.forRoot({mode: 'ios', hardwareBackButton: false, swipeBackEnabled: false}), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

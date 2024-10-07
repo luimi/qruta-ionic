@@ -10,6 +10,7 @@ import { HistoryService } from '../utils/history.service';
 import { HistoryComponent } from './history/history.component';
 import Parse from 'parse';
 import { ApiService } from '../utils/api.service';
+import { CardListComponent } from './card-list/card-list.component';
 
 @Component({
   selector: 'app-calculate',
@@ -249,5 +250,11 @@ export class CalculatePage implements OnInit {
   }
   openStore() {
     window.open(process.env[this.platform.is("ios") ? "NG_APP_APPSTORE_URL" : "NG_APP_PLAYSTORE_URL"], '_blank');
+  }
+  async openCardList() {
+    const modal = await this.modalCtrl.create({
+      component: CardListComponent
+    });
+    modal.present();
   }
 }

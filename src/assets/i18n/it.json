@@ -7,7 +7,11 @@
         "destination": "Destinazione",
         "cancel": "Annulla",
         "urban": "Urbano",
-        "massive": "Massivo"
+        "massive": "Massivo",
+        "update": "Aggiorna",
+        "delete": "Elimina",
+        "search": "Cerca",
+        "save": "Salva"
     },
     "cities": {
         "title": "Città",
@@ -43,7 +47,7 @@
             "calculating": "Ricerca dei percorsi",
             "errors": {
                 "originOrDestinyMissing": "Si prega di selezionare un indirizzo di origine e uno di destinazione.",
-                "highDemand": "Al momento c'è un'elevata domanda di richieste. Si prega di riprovare più tardi." ,
+                "highDemand": "Al momento c'è un'elevata domanda di richieste. Si prega di riprovare più tardi.",
                 "error1": "Impossibile effettuare il calcolo, si prega di riprovare.",
                 "error2": "Il codice della città non è stato inviato.",
                 "error3": "Il codice di area non è stato inviato.",
@@ -92,7 +96,16 @@
                 "title": "C'è una nuova versione dell'applicazione!",
                 "button": "Aggiorna"
             }
-        }        
+        },
+        "cards": {
+            "title": "Controlla il tuo saldo",
+            "empty": "Aggiungi una carta",
+            "number": "Inserisci il numero della carta",
+            "search": "Cerca",
+            "style": "Stile della carta",
+            "save": "Salva",
+            "confirm": "Vuoi eliminare questa carta?"
+        }
     },
     "nearRoutes": {
         "title": "Percorsi Vicini",
@@ -135,21 +148,21 @@
     },
     "settings": {
         "title": "Impostazioni",
-        "walkDistance":"Distanza da percorrere a piedi",
-        "mapType":"Tipo di mappa",
-        "contact":"Contatto",
-        "terms":"Termini e condizioni",
-        "changeCity":"Cambia città",
-        "install":"Installa App",
+        "walkDistance": "Distanza da percorrere a piedi",
+        "mapType": "Tipo di mappa",
+        "contact": "Contatto",
+        "terms": "Termini e condizioni",
+        "changeCity": "Cambia città",
+        "install": "Installa App",
         "sponsors": "Sponsor",
         "faq": {
             "title": "Domande frequenti",
-            "loading":"Caricamento delle domande frequenti",
-            "filter":"Filtra"
+            "loading": "Caricamento delle domande frequenti",
+            "filter": "Filtra"
         }
     },
     "result": {
-        "title":"Risultati",
+        "title": "Risultati",
         "time": "Tempo",
         "buses": "Autobus",
         "distance": "Distanza",
@@ -157,11 +170,11 @@
             "title": "Pubblicità"
         },
         "detail": {
-            "title":"Dettagli del percorso",
-            "walkTo":"Cammina fino a",
-            "takeBus":"Prendi l'autobus",
-            "getDown":"Scendi",
-            "destiny":"Cammina fino alla destinazione",
+            "title": "Dettagli del percorso",
+            "walkTo": "Cammina fino a",
+            "takeBus": "Prendi l'autobus",
+            "getDown": "Scendi",
+            "destiny": "Cammina fino alla destinazione",
             "dialogs": {
                 "loading": "Caricamento..."
             }
@@ -175,7 +188,7 @@
             "loading": "Caricamento tweet...",
             "noTweets": "Impossibile recuperare alcun tweet"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Trasporto",
             "news": "Notizie"
         }

@@ -7,7 +7,11 @@
         "destination": "目的地",
         "cancel": "取消",
         "urban": "城市",
-        "massive": "大规模"
+        "massive": "大规模",
+        "update": "更新",
+        "delete": "删除",
+        "search": "搜索",
+        "save": "保存"
     },
     "cities": {
         "title": "城市",
@@ -92,7 +96,16 @@
                 "title": "应用有新版本！",
                 "button": "更新"
             }
-        }        
+        },
+        "cards": {
+            "title": "查看您的余额",
+            "empty": "添加一张卡",
+            "number": "输入卡号",
+            "search": "搜索",
+            "style": "卡片样式",
+            "save": "保存",
+            "confirm": "您确定要删除此卡吗？"
+        }
     },
     "nearRoutes": {
         "title": "附近路线",
@@ -135,21 +148,21 @@
     },
     "settings": {
         "title": "设置",
-        "walkDistance":"步行距离",
-        "mapType":"地图类型",
-        "contact":"联系方式",
-        "terms":"条款和条件",
-        "changeCity":"更改城市",
-        "install":"安装应用",
+        "walkDistance": "步行距离",
+        "mapType": "地图类型",
+        "contact": "联系方式",
+        "terms": "条款和条件",
+        "changeCity": "更改城市",
+        "install": "安装应用",
         "sponsors": "赞助商",
         "faq": {
             "title": "常见问题",
-            "loading":"正在加载常见问题",
-            "filter":"筛选"
+            "loading": "正在加载常见问题",
+            "filter": "筛选"
         }
     },
     "result": {
-        "title":"结果",
+        "title": "结果",
         "time": "时间",
         "buses": "公交车",
         "distance": "距离",
@@ -157,11 +170,11 @@
             "title": "广告"
         },
         "detail": {
-            "title":"路线详情",
-            "walkTo":"步行至",
-            "takeBus":"乘坐公交车",
-            "getDown":"下车",
-            "destiny":"步行至目的地",
+            "title": "路线详情",
+            "walkTo": "步行至",
+            "takeBus": "乘坐公交车",
+            "getDown": "下车",
+            "destiny": "步行至目的地",
             "dialogs": {
                 "loading": "加载中..."
             }
@@ -175,7 +188,7 @@
             "loading": "加载推文中...",
             "noTweets": "无法获取任何推文"
         },
-        "tabs":{
+        "tabs": {
             "transport": "运输",
             "news": "新闻"
         }

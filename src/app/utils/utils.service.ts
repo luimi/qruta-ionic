@@ -18,7 +18,6 @@ export class UtilsService {
   }
   public async showConfirmDialog(message: string, callback: any) {
     const answers: any = await this.getTranslation(["general.yes", "general.no"])
-    console.log(answers);
     const alert = await this.alertCtrl.create({
       message: message,
       buttons: [

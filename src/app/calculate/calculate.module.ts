@@ -13,6 +13,9 @@ import { HistoryComponent } from './history/history.component';
 import { AddressMapComponent } from './address-map/address-map.component';
 import { AddressModalComponent } from './address-modal/address-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CardListComponent } from './card-list/card-list.component';
+import { CardAddComponent } from './card-add/card-add.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   imports: [
@@ -23,8 +26,8 @@ import { TranslateModule } from '@ngx-translate/core';
     EmptyStateModule,
     TranslateModule
   ],
-  declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent],
+  declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent],
   providers: [Geolocation],
-  exports: [HistoryComponent, AddressMapComponent, AddressModalComponent]
+  exports: [HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent]
 })
 export class CalculatePageModule {}

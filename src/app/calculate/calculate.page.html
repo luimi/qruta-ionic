@@ -53,7 +53,11 @@
   <div class="lvl4">
 
   </div>
-  
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" *ngIf="city?.objectId  === 'Gu2tL5zMSH'">
+    <ion-fab-button (click)="openCardList()">
+      <ion-icon name="card-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-modal id="advertise" #modalAdvertise>
     <ng-template>
       <img [src]="advertise.get('picture')" (click)="openAdvertise(advertise.get('url'))"/>

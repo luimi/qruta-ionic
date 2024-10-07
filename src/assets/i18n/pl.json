@@ -7,7 +7,11 @@
         "destination": "Cel",
         "cancel": "Anuluj",
         "urban": "Miejski",
-        "massive": "Masywny"
+        "massive": "Masywny",
+        "update": "Aktualizuj",
+        "delete": "Usuń",
+        "search": "Szukaj",
+        "save": "Zapisz"
     },
     "cities": {
         "title": "Miasta",
@@ -43,7 +47,7 @@
             "calculating": "Wyszukiwanie tras",
             "errors": {
                 "originOrDestinyMissing": "Proszę wybrać adres początkowy i docelowy.",
-                "highDemand": "Obecnie mamy dużo zapytań. Proszę spróbować ponownie później." ,
+                "highDemand": "Obecnie mamy dużo zapytań. Proszę spróbować ponownie później.",
                 "error1": "Nie można obliczyć, spróbuj ponownie.",
                 "error2": "Nie przesłano kodu miasta.",
                 "error3": "Nie przesłano kodu obszaru.",
@@ -92,7 +96,16 @@
                 "title": "Jest nowa wersja aplikacji!",
                 "button": "Aktualizuj"
             }
-        }        
+        },
+        "cards": {
+            "title": "Sprawdź saldo",
+            "empty": "Dodaj kartę",
+            "number": "Wprowadź numer karty",
+            "search": "Szukaj",
+            "style": "Styl karty",
+            "save": "Zapisz",
+            "confirm": "Czy chcesz usunąć tę kartę?"
+        }
     },
     "nearRoutes": {
         "title": "Trasy w pobliżu",
@@ -135,21 +148,21 @@
     },
     "settings": {
         "title": "Ustawienia",
-        "walkDistance":"Dystans spaceru",
-        "mapType":"Typ mapy",
-        "contact":"Kontakt",
-        "terms":"Warunki",
-        "changeCity":"Zmień miasto",
-        "install":"Zainstaluj aplikację",
+        "walkDistance": "Dystans spaceru",
+        "mapType": "Typ mapy",
+        "contact": "Kontakt",
+        "terms": "Warunki",
+        "changeCity": "Zmień miasto",
+        "install": "Zainstaluj aplikację",
         "sponsors": "Sponsorzy",
         "faq": {
             "title": "Najczęstsze pytania",
-            "loading":"Ładowanie najczęstszych pytań",
-            "filter":"Filtruj"
+            "loading": "Ładowanie najczęstszych pytań",
+            "filter": "Filtruj"
         }
     },
     "result": {
-        "title":"Wyniki",
+        "title": "Wyniki",
         "time": "Czas",
         "buses": "Autobusy",
         "distance": "Dystans",
@@ -157,11 +170,11 @@
             "title": "Reklama"
         },
         "detail": {
-            "title":"Szczegóły trasy",
-            "walkTo":"Idź pieszo do",
-            "takeBus":"Weź autobus",
-            "getDown":"Wysiądź",
-            "destiny":"Idź pieszo do celu",
+            "title": "Szczegóły trasy",
+            "walkTo": "Idź pieszo do",
+            "takeBus": "Weź autobus",
+            "getDown": "Wysiądź",
+            "destiny": "Idź pieszo do celu",
             "dialogs": {
                 "loading": "Ładowanie..."
             }
@@ -175,7 +188,7 @@
             "loading": "Ładowanie tweetów...",
             "noTweets": "Nie udało się pobrać żadnego tweeta"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Transport",
             "news": "Wiadomości"
         }

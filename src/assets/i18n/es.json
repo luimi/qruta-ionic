@@ -7,7 +7,11 @@
         "destination": "Destino",
         "cancel": "Cancelar",
         "urban": "Urbano",
-        "massive": "Masivo"
+        "massive": "Masivo",
+        "update": "Actualizar",
+        "delete": "Eliminar",
+        "search": "Buscar",
+        "save": "Guardar"
     },
     "cities": {
         "title": "Ciudad",
@@ -92,6 +96,15 @@
                 "title": "¡Hay una nueva versión de la aplicación!",
                 "button": "Actualizar"
             }
+        },
+        "cards": {
+            "title": "Consulta tu saldo",
+            "empty": "Agrega una tarjeta",
+            "number": "Ingresa el número de tarjeta",
+            "search": "Buscar",
+            "style": "Estilo de tarjeta",
+            "save": "Guardar",
+            "confirm": "¿Quieres eliminar esta tarjeta?"
         }
     },
     "nearRoutes": {

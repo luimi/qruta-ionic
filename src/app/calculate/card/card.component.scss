@@ -1,0 +1,64 @@
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: "#d24026";
+    height: 200px;
+    width: 350px;
+    border-radius: 16px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.style1 {
+    .balance {
+        left: 20px;
+    }
+    .data {
+        right: 20px;
+        text-align: right;
+    }
+}
+.style2 {
+    .balance {
+        right: 20px;
+    }
+    .data {
+        left: 20px;
+        text-align: left;
+    }
+}
+.style3 {
+    .balance {
+        left: 20px;
+        bottom: 30px;
+        top: unset;
+    }
+    .data {
+        left: 20px;
+        text-align: left;
+    }
+}
+.balance {
+    position: absolute;
+    top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.data {
+    position: absolute;
+    bottom: 10px;
+    font-weight: bold;
+}
+
+.data p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.text {
+    color: #FFF;
+    text-shadow: -1px -1px 0 var(--qruta-primary), 1px -1px 0 var(--qruta-primary), -1px 1px 0 var(--qruta-primary), 1px 1px 0 var(--qruta-primary);
+}
