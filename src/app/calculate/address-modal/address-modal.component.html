@@ -8,7 +8,7 @@
   </ion-toolbar>
   <div class="searchbar">
     <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionInput)="search($event)"
-      placeholder="{{(type==='address' ? 'calculate.modal.address.hint' : 'calculate.modal.place.hint') | translate}}">
+      placeholder="{{(type==='address' ? 'calculate.modal.address.hint' : 'calculate.modal.place.hint') | translate}}" color="tertiary">
     </ion-searchbar>
     <ion-segment [(ngModel)]="type" mode="ios">
       <ion-segment-button value="address" class="switch" translate>
