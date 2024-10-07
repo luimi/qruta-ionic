@@ -1,5 +1,12 @@
-ion-grid {
+.schedule {
     margin-top: 15px;
+
+    .line {
+        border-left: 1px solid;
+        color: gray;
+        border-color: gray;
+        padding-left: 3%;
+    }
 }
 
 ion-label {
@@ -10,17 +17,6 @@ ion-label {
 
 ion-icon {
     font-size: 20px;
-}
-
-.line {
-    border-left: 1px solid;
-    color: gray;
-    border-color: gray;
-    padding-left: 3%;
-}
-
-.schedule {
-    font-size: 15px;
 }
 
 swiper-slide {
@@ -45,9 +41,6 @@ swiper-slide {
     text-align: center;
 }
 
-.banner {
-    height: 100px;
-}
 
 .draw {
     --circle-size: 20px;
@@ -56,6 +49,7 @@ swiper-slide {
     height: var(--draw-size);
     width: var(--draw-size);
     position: relative;
+
     .circle {
         clip-path: circle(50% at 50% 50%);
         height: var(--circle-size);
@@ -67,28 +61,54 @@ swiper-slide {
         left: 0;
         right: 0;
     }
-    
+
     .stick {
         clip-path: inset(0% var(--stick-size) 0% var(--stick-size));
         height: 100%;
     }
-    
+
     .stick-start {
         clip-path: inset(50% var(--stick-size) 0% var(--stick-size));
         height: 100%;
     }
-    
+
     .stick-end {
         clip-path: inset(0% var(--stick-size) 50% var(--stick-size));
         height: 100%;
     }
-    
+
     .blue {
         background: blue;
     }
-    
+
     .red {
         background: red;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    .col-map {
+        height: 60vh;
+    }
+    .col-info {
+        height: auto;
+    }
+    .scrollable {
+        overflow-y: unset;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .col-map {
+        height: 100%;
+    }
+    .col-info {
+        height: 100%;
+    }
+    .scrollable {
+        overflow-y: scroll;
+    }
+}
+.full-height {
+    height: 100%;
 }
 

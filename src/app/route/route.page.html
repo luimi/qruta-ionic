@@ -8,105 +8,115 @@
 </ion-header>
 
 <ion-content>
-  <div id="route" style="width:100%; height:60%;"></div>
-  <div class="ion-padding">
-    <h1>{{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}</h1>
-    <p style="white-space: break-spaces;">{{route?.get('info')}}</p>
-    <swiper-container *ngIf="images.length>0" [pagination]="true">
-      <swiper-slide *ngFor="let image of images">
-        <div class="image-container">
-          <img [src]="image.get('url')">
+  <ion-grid class="full-height ion-no-padding">
+    <ion-row class="full-height">
+      <ion-col size="12" size-md="6" class="col-map">
+        <div id="route" style="width:100%; height:100%;"></div>
+      </ion-col>
+      <ion-col  size="12" size-md="6" class="col-info scrollable ion-padding-bottom">
+        <div class="ion-padding">
+          <h1>{{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}</h1>
+          <p style="white-space: break-spaces;">{{route?.get('info')}}</p>
+          <swiper-container *ngIf="images.length>0" [pagination]="true">
+            <swiper-slide *ngFor="let image of images">
+              <div class="image-container">
+                <img [src]="image.get('url')">
+              </div>
+
+            </swiper-slide>
+          </swiper-container>
+          <ion-grid class="schedule">
+            <ion-row>
+              <ion-col size="2" translate>
+                <ion-icon name="time"></ion-icon>
+              </ion-col>
+              <ion-col size="5" class="line v-center" translate>
+                routes.route.hour
+                <ion-icon name="help-circle-outline" id="help-hour"></ion-icon>
+                <ion-popover trigger="help-hour" side="top" alignment="center">
+                  <ng-template>
+                    <ion-content class="ion-padding" translate>routes.route.help.hour</ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-col>
+              <ion-col size="5" class="line v-center" translate>
+                routes.route.frequenzy
+                <ion-icon name="help-circle-outline" id="help-frequency"></ion-icon>
+                <ion-popover trigger="help-frequency" side="top" alignment="center">
+                  <ng-template>
+                    <ion-content class="ion-padding" translate>routes.route.help.frequency</ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2" translate>
+                routes.route.monday2friday
+
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.lvhi || '🚫'}} - {{schedule.lvhf || '🚫'}}
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.lvfv || '🚫'}} - {{schedule.lvfp || '🚫'}} min
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2" translate>
+                routes.route.saturday
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.shi || '🚫'}} - {{schedule.shf || '🚫'}}
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.sfv || '🚫'}} - {{schedule.sfp || '🚫'}} min
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2" translate>
+                routes.route.sunday&holyday
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.dfhi || '🚫'}} - {{schedule.dfhf || '🚫'}}
+              </ion-col>
+              <ion-col size="5" class="line">
+                {{schedule.dffv || '🚫'}} - {{schedule.dffp || '🚫'}} min
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div *ngIf="route?.get('osisp')">
+            <h2 translate>routes.route.stops</h2>
+            <ion-grid class="ion-no-margin ion-no-padding">
+              <ion-row *ngFor="let stop of stops; let i = index">
+                <ion-col size="auto">
+                  <div class="draw">
+                    <div
+                      [ngClass]="{'stick-start': i === 0, 'stick-end': i === stops.length - 1, 'stick': i > 0 && i < stops.length - 1, 'blue': i < stops.length/2, 'red': i >= stops.length/2}">
+                    </div>
+                    <div class="circle" [ngClass]="{'blue': i < stops.length/2, 'red': i >= stops.length/2}"></div>
+                  </div>
+                </ion-col>
+                <ion-col class="ion-align-self-center">
+                  <ion-text>{{stop}}</ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <p class="line" translate [translateParams]="{date: route?.get('updatedAt').toLocaleDateString()}">
+            routes.route.updated</p>
+          <hr>
+          <h2 class="center" translate>routes.route.support</h2>
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let page of report" class="center">
+                <a [href]="page.url" target="_blank" rel="noopener noreferrer">
+                  <ion-icon [name]="page.icon" class="social"></ion-icon>
+                </a>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
         </div>
-        
-      </swiper-slide>
-    </swiper-container>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="2" translate>
-          <ion-icon name="time"></ion-icon>
-        </ion-col>
-        <ion-col size="5" class="line v-center" translate> 
-          routes.route.hour 
-          <ion-icon name="help-circle-outline" id="help-hour"></ion-icon>
-          <ion-popover trigger="help-hour" side="top" alignment="center">
-            <ng-template>
-              <ion-content class="ion-padding" translate>routes.route.help.hour</ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-col>
-        <ion-col size="5" class="line v-center" translate> 
-          routes.route.frequenzy 
-          <ion-icon name="help-circle-outline" id="help-frequency"></ion-icon>
-          <ion-popover trigger="help-frequency" side="top" alignment="center">
-            <ng-template>
-              <ion-content class="ion-padding" translate>routes.route.help.frequency</ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="2" translate>
-          routes.route.monday2friday
-          
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.lvhi || '🚫'}} - {{schedule.lvhf || '🚫'}}
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.lvfv || '🚫'}} - {{schedule.lvfp || '🚫'}} min
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="2" translate>
-          routes.route.saturday
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.shi || '🚫'}} - {{schedule.shf || '🚫'}}
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.sfv || '🚫'}} - {{schedule.sfp || '🚫'}} min
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="2" translate>
-          routes.route.sunday&holyday
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.dfhi || '🚫'}} - {{schedule.dfhf || '🚫'}}
-        </ion-col>
-        <ion-col size="5" class="line">
-          {{schedule.dffv || '🚫'}} - {{schedule.dffp || '🚫'}} min
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-    <div *ngIf="route?.get('osisp')">
-      <h2 translate>routes.route.stops</h2>
-      <ion-grid class="ion-no-margin ion-no-padding">
-        <ion-row *ngFor="let stop of stops; let i = index">
-          <ion-col size="auto">
-            <div class="draw">
-              <div [ngClass]="{'stick-start': i === 0, 'stick-end': i === stops.length - 1, 'stick': i > 0 && i < stops.length - 1, 'blue': i < stops.length/2, 'red': i >= stops.length/2}"></div>
-              <div class="circle" [ngClass]="{'blue': i < stops.length/2, 'red': i >= stops.length/2}"></div>
-            </div>
-          </ion-col>
-          <ion-col class="ion-align-self-center">
-            <ion-text>{{stop}}</ion-text>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-    <p class="line" translate [translateParams]="{date: route?.get('updatedAt').toLocaleDateString()}">routes.route.updated</p>
-    <hr>
-    <h2 class="center" translate>routes.route.support</h2>
-    <ion-grid>
-      <ion-row>
-        <ion-col *ngFor="let page of report" class="center">
-          <a [href]="page.url" target="_blank" rel="noopener noreferrer">
-            <ion-icon [name]="page.icon" class="social"></ion-icon>
-          </a>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-  <div class="banner"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
