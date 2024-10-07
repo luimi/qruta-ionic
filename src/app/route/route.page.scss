@@ -35,13 +35,60 @@ swiper-slide {
     }
 
 }
-.social{
-    color:var(--ion-color-primary);
+
+.social {
+    color: var(--ion-color-primary);
     font-size: -webkit-xxx-large;
 }
-.center{
+
+.center {
     text-align: center;
 }
+
 .banner {
     height: 100px;
 }
+
+.draw {
+    --circle-size: 20px;
+    --stick-size: 46%;
+    --draw-size: 60px;
+    height: var(--draw-size);
+    width: var(--draw-size);
+    position: relative;
+    .circle {
+        clip-path: circle(50% at 50% 50%);
+        height: var(--circle-size);
+        width: var(--circle-size);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto auto;
+        left: 0;
+        right: 0;
+    }
+    
+    .stick {
+        clip-path: inset(0% var(--stick-size) 0% var(--stick-size));
+        height: 100%;
+    }
+    
+    .stick-start {
+        clip-path: inset(50% var(--stick-size) 0% var(--stick-size));
+        height: 100%;
+    }
+    
+    .stick-end {
+        clip-path: inset(0% var(--stick-size) 50% var(--stick-size));
+        height: 100%;
+    }
+    
+    .blue {
+        background: blue;
+    }
+    
+    .red {
+        background: red;
+    }
+}
+

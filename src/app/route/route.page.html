@@ -79,6 +79,22 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    <div *ngIf="route?.get('osisp')">
+      <h2>Paradas</h2>
+      <ion-grid class="ion-no-margin ion-no-padding">
+        <ion-row *ngFor="let stop of stops; let i = index">
+          <ion-col size="auto">
+            <div class="draw">
+              <div [ngClass]="{'stick-start': i === 0, 'stick-end': i === stops.length - 1, 'stick': i > 0 && i < stops.length - 1, 'blue': i < stops.length/2, 'red': i >= stops.length/2}"></div>
+              <div class="circle" [ngClass]="{'blue': i < stops.length/2, 'red': i >= stops.length/2}"></div>
+            </div>
+          </ion-col>
+          <ion-col class="ion-align-self-center">
+            <ion-text>{{stop}}</ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
     <p class="line" translate [translateParams]="{date: route?.get('updatedAt').toLocaleDateString()}">routes.route.updated</p>
     <hr>
     <h2 class="center" translate>routes.route.support</h2>

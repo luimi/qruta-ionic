@@ -20,6 +20,7 @@ export class RoutePage implements OnInit {
   vehicles = [];
   schedule: any = {};
   report: any[] = [];
+  stops: string[] = [];
   constructor(
     private ar: ActivatedRoute,
     private leaflet: LeafletHelperService,
@@ -52,6 +53,7 @@ export class RoutePage implements OnInit {
         if (location[2]) {
           const marker = this.leaflet.addMarker(this.map, location, location[2], './assets/stop.png', [40, 45]);
           marker.bindPopup(location[2]);
+          this.stops.push(location[2]);
         }
       });
       const half = Math.ceil(path.length / 2);
