@@ -10,28 +10,31 @@
       <ion-label translate>news.tabs.{{source.get('type')}}</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <ion-card *ngFor="let tweet of info">
-    <swiper-container *ngIf="tweet.media.length>0" [pagination]="true">
-      <swiper-slide *ngFor="let image of tweet.media">
-        <div class="image-container">
-          <img [src]="image">
-        </div>
+  <div class="masonry">
+    <ion-card *ngFor="let tweet of info">
+      <swiper-container *ngIf="tweet.media.length>0" [pagination]="true">
+        <swiper-slide *ngFor="let image of tweet.media">
+          <div class="image-container">
+            <img [src]="image">
+          </div>
 
-      </swiper-slide>
-    </swiper-container>
-    <ion-item>
-      <ion-avatar aria-hidden="true" slot="start">
-        <img alt="avatar" [src]="tweet.avatar" />
-      </ion-avatar>
-      <ion-label>
-        <h1>{{tweet.author_name}}</h1>
-        <p>@{{tweet.author}} - {{getTime(tweet.date)}}</p>
-      </ion-label>
-    </ion-item>
-    <ion-card-content>
-      {{tweet.text}}
-    </ion-card-content>
-  </ion-card>
+        </swiper-slide>
+      </swiper-container>
+      <ion-item>
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="avatar" [src]="tweet.avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h1>{{tweet.author_name}}</h1>
+          <p>@{{tweet.author}} - {{getTime(tweet.date)}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-card-content>
+        {{tweet.text}}
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>
 <ion-content *ngIf="sources.length === 0 || info.length === 0">
