@@ -72,6 +72,7 @@ export class CalculatePage implements OnInit {
     this.utils.getServerConfig("status").then((status: any) => {
       this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
     })
+    this.inputChanged("none")
     this.getCurrentPosition()
   }
   ionViewWillLeave() {
@@ -166,7 +167,7 @@ export class CalculatePage implements OnInit {
     navigator.geolocation.getCurrentPosition((loc) => {
       let coords = loc.coords;
       this.geo.reverse([coords.latitude, coords.longitude]).then((location) => {
-        this.start.location = location;
+        this.setAddress(this.start, location)
       });
     }, () => { }, { enableHighAccuracy: true })
   }
@@ -225,25 +226,21 @@ export class CalculatePage implements OnInit {
   }
 
   inputChanged(input: string) {
-    if (input === "start") {
-      if (this.startMarker) {
-        this.map.removeLayer(this.startMarker)
-        delete this.startMarker
-      }
-      if (this.start.location) {
-        this.startMarker = this.leaflet.addMarker(this.map, this.start.location.location, 'Inicio', './assets/origen.png');
-      }
-    } else {
-      if (this.endMarker) {
-        this.map.removeLayer(this.endMarker)
-        delete this.endMarker
-      }
-      if (this.end.location) {
-        this.endMarker = this.leaflet.addMarker(this.map, this.end.location.location, 'Inicio', './assets/destino.png');
-      }
+    if (input === "start" && this.startMarker) {
+      this.map.removeLayer(this.startMarker)
+      delete this.startMarker
+    } else if (input === 'end' && this.endMarker) {
+      this.map.removeLayer(this.endMarker)
+      delete this.endMarker
     }
     if (this.pathLine) {
       this.map.removeLayer(this.pathLine)
+    }
+    if (this.start.location) {
+      this.startMarker = this.leaflet.addMarker(this.map, this.start.location.location, 'Inicio', './assets/origen.png');
+    }
+    if (this.end.location) {
+      this.endMarker = this.leaflet.addMarker(this.map, this.end.location.location, 'Destino', './assets/destino.png');
     }
     if (this.startMarker && this.endMarker) {
       this.pathLine = this.leaflet.addPolyline(this.map, [this.start.location.location, this.end.location.location], "blue")
