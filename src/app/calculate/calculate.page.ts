@@ -72,6 +72,7 @@ export class CalculatePage implements OnInit {
     this.utils.getServerConfig("status").then((status: any) => {
       this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
     })
+    this.getCurrentPosition()
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
