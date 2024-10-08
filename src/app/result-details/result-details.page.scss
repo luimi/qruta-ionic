@@ -75,3 +75,30 @@
 .route-details {
     overflow: hidden;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .col-map {
+        height: 60vh;
+    }
+    .col-info {
+        height: auto;
+    }
+    .scrollable {
+        overflow-y: unset;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .col-map {
+        height: 100%;
+    }
+    .col-info {
+        height: 100%;
+    }
+    .scrollable {
+        overflow-y: scroll;
+    }
+}
+.full-height {
+    height: 100%;
+}
