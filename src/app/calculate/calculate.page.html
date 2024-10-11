@@ -1,66 +1,66 @@
-<ion-header *ngIf="addressToggle" class="ion-no-border">
-  <ion-toolbar color="secondary">
-  </ion-toolbar>
-</ion-header>
 <ion-content>
-  <div class="lvl1">
-    
-    <ion-card class="info" *ngIf="info.isUpdate">
-      <ion-card-content class="ion-no-padding">
-        <ion-item *ngIf="info.isUpdate" lines="none">
-          <ion-label translate>calculate.info.update.title</ion-label>
-          <ion-button slot="end" translate (click)="openStore()"> calculate.info.update.button </ion-button>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-    <div id="calculate" style="width:100%; height:100%;"></div>
-  </div>
-  <div class="lvl2 centered animated faster"
-    [ngClass]="{'fadeInDown': addressToggle, 'fadeOutUp': !addressToggle, 'hide': hiddenToggle}"></div>
-  <div class="lvl3 centered animated faster"
-    [ngClass]="{'fadeInDown': addressToggle, 'fadeOutUp': !addressToggle, 'hide': hiddenToggle}">
-    <div class="ion-padding">
-      <app-address-input #start title="calculate.main.origin.title" hint="calculate.main.origin.hint" [currentLocation]="true" (onChanged)="inputChanged($event)" identifier="start"/>
-      <app-address-input #end title="calculate.main.destiny.title" hint="calculate.main.destiny.hint" (onChanged)="inputChanged($event)" identifier="end"/>
-      <ion-row class="history ion-align-items-center">
-        <ion-col size="10" [hidden]="!city?.massive">
-          <ion-segment [(ngModel)]="type" size="10" mode="ios">
-            <ion-segment-button value="urban" class="switch" translate>
-              calculate.main.urban
-            </ion-segment-button>
-            <ion-segment-button value="massive" class="switch">
-              {{city?.massive?.name}}
-            </ion-segment-button>
-          </ion-segment>
-        </ion-col>
-        <ion-col [size]="(!city?.massive)?'12':'2'">
-          <ion-button fill="clear" class="ion-no-padding" (click)="showHistory()"><img src="./assets/history.svg"
-              class="icon"><span class="text" [hidden]="city?.massive" translate>calculate.main.history</span></ion-button>
-        </ion-col>
-
-      </ion-row>
-      <ion-row>
-        <ion-col class="ion-text-center">
-          <ion-button (click)="calculate()" class="search" expand="block" shape="round" color="tertiary" translate>calculate.main.search
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </div>
-  </div>
-  <div class="round-input lvl5 centered" (click)="addressToggle=true; hiddenToggle=false;" *ngIf="!addressToggle">
-    <span translate>calculate.wheretogo</span>
-  </div>
-  <div class="lvl4">
-
-  </div>
-  <ion-fab horizontal="end" vertical="bottom" slot="fixed" *ngIf="city?.objectId  === 'Gu2tL5zMSH'">
+  <!-- Fab de tarjetas transcaribe -->
+  <ion-fab horizontal="end" vertical="top" slot="fixed" *ngIf="city?.objectId  === 'Gu2tL5zMSH'">
     <ion-fab-button (click)="openCardList()">
       <ion-icon name="card-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <ion-grid class="full-height ion-no-padding">
+    <ion-row class="full-height">
+      <ion-col size="12" size-md="6" size-lg="8" push-md="6" push-lg="4" class="col-map">
+        <!-- Mensaje de actualizacion disponible -->
+        <ion-card class="info" *ngIf="info.isUpdate">
+          <ion-card-content class="ion-no-padding">
+            <ion-item *ngIf="info.isUpdate" lines="none">
+              <ion-label translate>calculate.info.update.title</ion-label>
+              <ion-button slot="end" translate (click)="openStore()"> calculate.info.update.button </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!-- Mapa -->
+        <div id="calculate" style="width:100%; height:100%;"></div>
+      </ion-col>
+      <ion-col class="bg" size="12" size-md="6" size-lg="4" pull-md="6" pull-lg="8">
+        <div class="calculate">
+          <div class="ion-padding">
+            <!-- Icono draggable -->
+            <div class="ion-text-center ion-hide-md-up">
+              <ion-icon name="reorder-two-outline" color="tertiary"></ion-icon>
+            </div>
+            <!-- Input de direccion de origen -->
+            <app-address-input #start title="calculate.main.origin.title" hint="calculate.main.origin.hint" [currentLocation]="true" (onChanged)="inputChanged($event)" identifier="start" />
+              <!-- Input de direccion de destino -->
+            <app-address-input #end title="calculate.main.destiny.title" hint="calculate.main.destiny.hint" (onChanged)="inputChanged($event)" identifier="end" />
+            <!-- Segment entre urbano y masivo -->
+            <ion-segment [(ngModel)]="type" mode="ios" *ngIf="city?.massive">
+              <ion-segment-button value="urban">
+                <ion-label translate>calculate.main.urban</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="massive">
+                <ion-label>{{city?.massive?.name}}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+            <!-- Boton calcular -->
+            <ion-button (click)="calculate()" class="search ion-margin-top" expand="block" shape="round" color="tertiary"
+              translate>calculate.main.search
+            </ion-button>
+            <!-- Boton historial -->
+            <ion-button fill="clear" class="ion-no-padding ion-hide-md-up" (click)="showHistory()" expand="block"
+              color="tertiary">
+              <ion-icon src="./assets/history.svg" class="ion-margin-horizontal"></ion-icon>
+              <span translate> calculate.main.history</span>
+            </ion-button>
+          </div>
+          <!-- Historial -->
+          <app-history class="ion-hide-md-down" [showBackButton]="false"></app-history>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- Modal de publicidad -->
   <ion-modal id="advertise" #modalAdvertise>
     <ng-template>
-      <img [src]="advertise.get('picture')" (click)="openAdvertise(advertise.get('url'))"/>
+      <img [src]="advertise.get('picture')" (click)="openAdvertise(advertise.get('url'))" />
       <ion-fab slot="fixed" vertical="top" horizontal="end">
         <ion-fab-button size="small" color="primary" (click)="modal.dismiss()">
           <ion-icon name="close"></ion-icon>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { constants } from 'src/app/utils/constants';
@@ -19,6 +19,8 @@ export class HistoryComponent implements OnInit {
     2: '1km',
     3: '1.5km',
   };
+
+  @Input() showBackButton: boolean = true
   constructor(private history: HistoryService, private router: Router, private utils: UtilsService, public modalCtrl: ModalController, private apiCtrl: ApiService) { }
 
   ngOnInit() {

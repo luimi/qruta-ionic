@@ -24,8 +24,6 @@ export class CalculatePage implements OnInit {
   @ViewChild('start') start: any;
   @ViewChild('end') end: any;
   @ViewChild('modalAdvertise') modal: any;
-  addressToggle = false;
-  hiddenToggle = true;
   type = 'urban';
   city: any;
   advertise: any;
@@ -56,17 +54,11 @@ export class CalculatePage implements OnInit {
     }
     this.map = this.leaflet.initialize('calculate');
     this.map.on('click', async (event: any) => {
-      if (this.addressToggle) {
-        this.closeAddressField();
-      } else {
-        const ll = event.latlng;
-        let location: any = await this.geo.reverse([ll.lat, ll.lng]);
-        this.actionSheetAddress(location);
-      }
+      const ll = event.latlng;
+      let location: any = await this.geo.reverse([ll.lat, ll.lng]);
+      this.actionSheetAddress(location);
     });
-    this.map.on('movestart', async () => {
-      this.closeAddressField();
-    });
+
     this.showPlaceMarks();
     if (!this.advertise) this.showAdvertise();
     this.utils.getServerConfig("status").then((status: any) => {
@@ -155,10 +147,6 @@ export class CalculatePage implements OnInit {
   setAddress(place: any, location: any) {
     place.location = location;
     place.onChanged.emit(place.identifier)
-    if (!this.addressToggle) {
-      this.addressToggle = true;
-      this.hiddenToggle = false;
-    }
   }
   /**
    * this get user current position and call routes
@@ -170,18 +158,6 @@ export class CalculatePage implements OnInit {
         this.setAddress(this.start, location)
       });
     }, () => { }, { enableHighAccuracy: true })
-  }
-
-  /**
-   * close address fields if is open
-   */
-  private closeAddressField() {
-    if (this.addressToggle) {
-      this.addressToggle = false;
-      setTimeout(() => {
-        this.hiddenToggle = true;
-      }, 1000);
-    }
   }
 
   public async showHistory() {

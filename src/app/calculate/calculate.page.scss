@@ -1,3 +1,31 @@
+.full-height {
+  height: 100%;
+}
+.bg {
+  background-color: var(--qruta-primary);
+}
+@media only screen and (max-width: 768px) {
+  .col-map {
+      height: 60vh;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .col-map {
+      height: 100%;
+  }
+}
+app-history {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.calculate {
+  height: 100%; 
+  display: flex; 
+  flex-direction: column;
+}
+
+
+
 .lvl1 {
   width: 100%;
   height: 100%;
@@ -67,18 +95,6 @@
   padding: 5px;
 }
 
-.history {
-  text-align: center;
-
-  .icon {
-    width: 35px;
-  }
-
-  .text {
-    color: white;
-    margin-left: 10px;
-  }
-}
 
 .info {
   position: absolute;

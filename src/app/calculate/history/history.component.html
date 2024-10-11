@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" *ngIf="showBackButton">
       <ion-button fill="clear" (click)="modalCtrl.dismiss()" color="tertiary">
         <ion-icon slot="start" name="arrow-back"></ion-icon>
       </ion-button>
