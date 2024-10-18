@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import Parse from 'parse';
 import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-declare let gtag: (property: string, value: any, configs: any) => {};
+declare let gtag: any;
 
 @Injectable({
   providedIn: 'root'
@@ -128,12 +128,8 @@ export class UtilsService {
       this.translateCtrl.get(key).subscribe(result => res(result))
     })
   }
-  public gaEvent() {
-    gtag('send', "action", {
-      event_category: 'category',
-      event_label: 'label',
-      value: 'value'
-    });
+  public gaEvent(name: string) {
+    gtag('event', name, {});
   }
   public getGenericObject(_class: string, id?: string) {
     let generic = new Parse.Object(_class);

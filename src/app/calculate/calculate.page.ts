@@ -54,6 +54,7 @@ export class CalculatePage implements OnInit {
     }
     this.map = this.leaflet.initialize('calculate');
     this.map.on('click', async (event: any) => {
+      this.utils.gaEvent("calculate-mapClick");
       const ll = event.latlng;
       let location: any = await this.geo.reverse([ll.lat, ll.lng]);
       this.actionSheetAddress(location);
@@ -161,6 +162,7 @@ export class CalculatePage implements OnInit {
   }
 
   public async showHistory() {
+    this.utils.gaEvent("history-open")
     const modal = await this.modalCtrl.create({
       component: HistoryComponent
     });

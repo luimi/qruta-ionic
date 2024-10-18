@@ -28,7 +28,7 @@
   </ion-grid>
   <div class="ion-padding">
     <ion-list *ngIf="routes">
-      <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" [routerLink]="['/route',route.id]">
+      <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" [routerLink]="['/route',route.id]" (click)="open()">
         <ion-label>
           <h2>{{ route.name }}</h2>
           <ion-text color="medium">

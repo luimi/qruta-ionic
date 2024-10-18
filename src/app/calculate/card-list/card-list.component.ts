@@ -27,6 +27,7 @@ export class CardListComponent  implements OnInit {
   }
   updateCards() {
     this.cards = this.cardsCtrl.cards
+    if(this.cards.length > 0 ) this.utils.gaEvent("card-check")
   }
   async openCard(index: number) {
     const answers: any = await this.utils.getTranslation(["general.update", "general.delete", "general.cancel"])
@@ -37,6 +38,7 @@ export class CardListComponent  implements OnInit {
         icon: 'refresh',
         handler: () => {
           this.cardsCtrl.updateBalance(index)
+          this.utils.gaEvent("card-update")
         }
       }, {
         text: answers["general.delete"],
@@ -46,6 +48,7 @@ export class CardListComponent  implements OnInit {
           this.utils.showConfirmDialog(message, () => {
             this.cardsCtrl.deleteCard(index)
             this.updateCards()
+            this.utils.gaEvent("card-deleted")
           })
         }
       }, {

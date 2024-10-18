@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { GeoService } from 'src/app/utils/geo.service';
 import { AddressModalComponent } from '../address-modal/address-modal.component';
+import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
   selector: 'app-address-input',
@@ -16,7 +17,7 @@ export class AddressInputComponent implements OnInit {
   @Output() onChanged =  new EventEmitter<string>()
   public location: any;
   isLoading = false;
-  constructor(public modalCtrl: ModalController, private geo: GeoService) { }
+  constructor(public modalCtrl: ModalController, private geo: GeoService, private utils: UtilsService) { }
 
   ngOnInit() { }
   async openModal() {
@@ -36,6 +37,7 @@ export class AddressInputComponent implements OnInit {
   }
   getCurrentLocation() {
     this.isLoading = true;
+    this.utils.gaEvent("calculate-currentLocation")
     navigator.geolocation.getCurrentPosition(async (loc) => {
       const location = [loc.coords.latitude, loc.coords.longitude];
       this.location = await this.geo.reverse(location);

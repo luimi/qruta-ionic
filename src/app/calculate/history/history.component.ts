@@ -27,6 +27,7 @@ export class HistoryComponent implements OnInit {
     this.list = this.history.get();
   }
   async calculate(path: any) {
+    this.utils.gaEvent("history-selected")
     const loading = await this.utils.showLoading("calculate.history.calculating");
     const data = {
       start: path.from.location,

@@ -47,6 +47,7 @@ export class CardAddComponent implements OnInit {
       orientation: this.cardStyleSelected.orientation
     })
     this.modalCtrl.dismiss()
+    this.utils.gaEvent("card-added")
   }
 
 }

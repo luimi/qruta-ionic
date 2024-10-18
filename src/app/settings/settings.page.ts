@@ -73,10 +73,15 @@ export class SettingsPage implements OnInit {
     this.router.navigateByUrl('/cities');
   }
   async faq() {
+    this.utils.gaEvent("settings-faq")
     const modal = await this.modalCtrl.create({ component: FaqComponent });
     await modal.present();
   }
   install(){
     installer.prompt();
+  }
+
+  openTerms(){
+    this.utils.gaEvent("settings-terms")
   }
 }

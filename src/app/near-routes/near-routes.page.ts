@@ -74,4 +74,8 @@ export class NearRoutesPage extends TabPage implements OnInit {
   getCorrectRoutes() {
     return this.routes[this.selectedBtn];
   }
+
+  open(){
+    this.utils.gaEvent("near-open")
+  }
 }
