@@ -172,7 +172,7 @@ export class CalculatePage implements OnInit {
   private async showAdvertise() {
     let city = new Parse.Object("City")
     city.id = this.city.objectId
-    let sponsors = await new Parse.Query("Sponsor").equalTo("status", true).equalTo("city", city).select("").find();
+    let sponsors = await new Parse.Query("Sponsor").equalTo("status", false).equalTo("city", city).select("").find();
     if (sponsors.length === 0) return
     let adQuery = new Parse.Query("Advertise").include("sponsor").containedIn("sponsor", sponsors)
     let count = await adQuery.count();
@@ -222,6 +222,7 @@ export class CalculatePage implements OnInit {
     }
     if (this.startMarker && this.endMarker) {
       this.pathLine = this.leaflet.addPolyline(this.map, [this.start.location.location, this.end.location.location], "blue")
+      this.leaflet.centerMap(this.map, [this.startMarker, this.endMarker])
     }
   }
   openStore() {
