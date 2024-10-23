@@ -19,8 +19,9 @@ export class SettingsPage implements OnInit {
   selectedDistance: any;
   selectedLayer: any;
   layers: any[] = [];
-  sponsors: any [] = [];
+  sponsors: any[] = [];
   public setup: any;
+  version: string = process.env["NG_APP_VERSION"] || "";
   social = [{
     icon: 'logo-facebook',
     url: 'https://www.facebook.com/queruta'
@@ -65,7 +66,7 @@ export class SettingsPage implements OnInit {
   }
   onChangeLayer() {
     localStorage.setItem(constants.keys.layer, this.selectedLayer);
-    this.leaflet.setLayer('calculate',this.selectedLayer);
+    this.leaflet.setLayer('calculate', this.selectedLayer);
   }
   changeCity() {
     localStorage.removeItem(constants.keys.city);
@@ -77,11 +78,19 @@ export class SettingsPage implements OnInit {
     const modal = await this.modalCtrl.create({ component: FaqComponent });
     await modal.present();
   }
-  install(){
+  install() {
     installer.prompt();
   }
 
-  openTerms(){
+  openTerms() {
     this.utils.gaEvent("settings-terms")
+  }
+
+  mask() {
+    return `${this.version.substring(0,1)}.${this.version.substring(1,2)}.${this.version.substring(2,this.version.length)}`
+    //if(!this.version && this.version !== null) return ""
+    //let v = "123124"
+    //let groups = v.split('').reverse().join('').match(/\d{1,3}/g).reverse();
+    //return '#' + groups.join('.');
   }
 }
