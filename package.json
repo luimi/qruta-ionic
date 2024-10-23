@@ -9,7 +9,7 @@
     "android": "ionic capacitor run android",
     "ios": "ionic capacitor run ios",
     "debug": "ionic capacitor run android -l --external",
-    "release": "cd android && ./gradlew bundleRelease",
+    "release": "ionic capacitor build android && cd android && ./gradlew bundleRelease",
     "external": "ionic serve --external --no-open",
     "nopen": "ionic serve --no-open",
     "deploy": "sh deploy.sh",
