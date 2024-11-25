@@ -64,7 +64,7 @@ export class LeafletHelperService {
     this.currentLayer = L.tileLayer(selectedLayer.layer, {
       attribution: selectedLayer.attribution,
       maxZoom: 18,
-      minZoom: 10
+      minZoom: 0
     });
     this.currentLayer.addTo(map);
     this.isInitialized = true;
@@ -111,7 +111,7 @@ export class LeafletHelperService {
     this.currentLayer = L.tileLayer(selectedLayer.layer, {
       attribution: selectedLayer.attribution,
       maxZoom: 18,
-      minZoom: 10
+      minZoom: 0
     });
     this.maps[id].layer.addLayer(this.currentLayer);
   }
