@@ -69,6 +69,10 @@ export class ResultDetailsPage implements OnInit {
         route.endAddress = await this.geo.reverse(route.endPoint);
       }
       this.leaflet.addPolyline(this.map, this.geo.decode(route.route.polyline), this.colors[index], false, true);
+      if(index > 0 && this.leaflet.computeDistanceBetween(routes[index - 1].endPoint, route.startPoint) > 50) { 
+        let walk: any = await this.geo.walkTo(routes[index - 1].endPoint, route.startPoint)
+        if (walk) this.leaflet.addPolyline(this.map, this.geo.decode(walk), 'black', true);
+      }
     });
     this.data.endAddress = await this.geo.reverse(this.data.end);
     this.leaflet.centerMap(this.map, [start, end]);
