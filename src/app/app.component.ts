@@ -23,14 +23,25 @@ export class AppComponent {
       // español, ingles, frances, aleman, portugues, italiano, chino, polaco, netherlandes
       let currentLangs = ["es", "en", "fr", "de", "pt", "it", "zh", "pl", "nl"]
       translateCtrl.use(currentLang && currentLangs.includes(currentLang) ? currentLang : "en")
-      let android = this.platform.is("android")
-      let ios = this.platform.is("ios")
+      let _platform = "" 
+      const getOS = () => {
+        return this.platform.is("ios") ? "ios" : this.platform.is("android") ? "android" : "web"
+      }
+      if(this.platform.is("desktop")) {
+        _platform = "web-desktop"
+      } else if(this.platform.is("pwa")) {
+        _platform = `pwa-${getOS()}`
+      } else if(this.platform.is("capacitor")) {
+        _platform = `native-${getOS()}`
+      } else if(this.platform.is("mobileweb")) {
+        _platform = `web-${getOS()}`
+      }
       let capacitor = this.platform.is("capacitor")
-      if ((android || ios) && capacitor) {
+      if (capacitor) {
         await StatusBar.setStyle({ style: Style.Dark });
         await StatusBar.setBackgroundColor({ color: '#011f35' });
       }
-      this.utils.gaEvent(`platform-${!capacitor ? 'web' : android ? 'android' : 'ios'}`)
+      this.utils.gaEvent(`platform-${_platform}`)
       this.platform.backButton.subscribeWithPriority(9999, () => { })
     });
   }
