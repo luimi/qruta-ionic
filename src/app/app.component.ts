@@ -42,6 +42,7 @@ export class AppComponent {
         await StatusBar.setBackgroundColor({ color: '#011f35' });
       }
       this.utils.gaEvent(`platform-${_platform}`)
+      this.utils.gaEvent(`version-${process.env["NG_APP_VERSION"] || 0}`)
       this.platform.backButton.subscribeWithPriority(9999, () => { })
     });
   }
