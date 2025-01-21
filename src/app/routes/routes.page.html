@@ -20,16 +20,17 @@
           </a>
         </div>
         <ion-grid>
-          <ion-row class="route-list" *ngFor="let route of filtered[company].routes" [routerLink]="['/route/'+route.id]"
+          <ion-row class="route-list ion-nowrap" *ngFor="let route of filtered[company].routes" [routerLink]="['/route/'+route.id]"
             routerDirection="forward">
-            <ion-col size="auto">
-              <div class="route-box center">
+            <ion-col class="no-wrap v-center">
+              <span class="route-box v-center">
                 <ion-icon name="bus"></ion-icon>
                 {{ route.get("name") }}
-              </div>
+              </span>
+              <span class="detail">{{ route.get("details") }}</span>
             </ion-col>
-            <ion-col class="detail v-center">
-              <span>{{ route.get("details") }}</span></ion-col>
+            <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))"><ion-chip color="primary">Actualizada</ion-chip></ion-col>
+            <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))"><ion-chip color="primary">Nueva</ion-chip></ion-col>
           </ion-row>
         </ion-grid>
       </div>

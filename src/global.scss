@@ -96,17 +96,23 @@ ion-segment-button {
   border-bottom: 5px solid var(--ion-color-primary);
   border-radius: 5px;
   padding: 10px 10px 5px 10px;
-  width: fit-content;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  //width: fit-content;
+  //text-overflow: ellipsis;
+  //white-space: nowrap;
+  //overflow: hidden;
   color: var(--ion-color-primary);
-  display: flex;
+  //display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 10px;
   ion-icon {
     margin-right: 5px;
   }
+}
+.no-wrap {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .v-center {
   display: flex;

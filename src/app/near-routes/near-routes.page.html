@@ -30,20 +30,14 @@
     <ion-list *ngIf="routes">
       <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" [routerLink]="['/route',route.id]" (click)="open()">
         <ion-label>
-          <ion-row>
-            <ion-col size="auto">
-              <div class="route-box center">
-                <ion-icon name="bus"></ion-icon>
-                {{ route.name }}
-              </div>
-            </ion-col>
-            <ion-col class="detail v-center">
-              <span>{{ route.company }}</span>
-            </ion-col>
-          </ion-row>
-          <ion-text color="medium">
-            <p>{{ route.details }}</p>
-          </ion-text>
+          <p class="v-center">
+            <span class="route-box v-center">
+              <ion-icon name="bus"></ion-icon>
+              {{ route.name }}
+            </span>
+            <span>{{ route.company }}</span>
+          </p>
+          <p color="medium">{{ route.details }}</p>
         </ion-label>
       </ion-item>
     </ion-list>

@@ -10,6 +10,7 @@ import { TabPage } from '../tab/tab.page';
 export class RoutesPage extends TabPage implements OnInit {
   companies: any = {};
   filtered: any = {};
+  days = 4 * 24 * 60 * 60 * 1000;
   objectKeys = Object.keys;
   
   constructor(public override utils: UtilsService) { 
@@ -70,6 +71,14 @@ export class RoutesPage extends TabPage implements OnInit {
         });
       }
     });
+  }
+  isNew(createdAt: Date) {
+    let current = new Date()
+    return current.getTime() - createdAt.getTime() < this.days;
+  }
+  isUpdated(updatedAt: Date, createdAt: Date) {
+    let current = new Date();
+    return updatedAt.getTime() - createdAt.getTime() > this.days && current.getTime() - updatedAt.getTime() < this.days;
   }
 }
 
