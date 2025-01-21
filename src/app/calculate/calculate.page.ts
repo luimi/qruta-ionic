@@ -92,6 +92,7 @@ export class CalculatePage implements OnInit {
       const result = await this.apiCtrl.calculate(server, data)
       loading.dismiss();
       if (result.success) {
+        this.utils.gaEvent("calculate-calculated")
         this.history.add(this.start.location, this.end.location, this.type);
         sessionStorage.setItem('result', JSON.stringify(result));
         this.router.navigate(['/result']);
