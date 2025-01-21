@@ -28,7 +28,7 @@
   <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>
   <ion-list lines="none">
     <ion-item *ngFor="let option of options">
-      <ion-label (click)="select(option)">
+      <ion-label (click)="select(option,'search')">
         <h2>{{ option.address }}</h2>
         <p>{{ option.city }}</p>
       </ion-label>
@@ -45,7 +45,7 @@
       [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let recent of recents; index as i">
       <ion-icon name="timer-outline" color="primary" class="ion-padding"></ion-icon>
-      <ion-label (click)="select(recent)">
+      <ion-label (click)="select(recent,'recent')">
         <h2>{{ recent.address }}</h2>
         <p>{{ recent.city }}</p>
       </ion-label>
@@ -62,7 +62,7 @@
       [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let favorite of favorites; index as i">
       <ion-icon name="star" color="primary" class="ion-padding"></ion-icon>
-      <ion-label (click)="select(favorite)">
+      <ion-label (click)="select(favorite,'favorite')">
         <h2>{{ favorite.address }}</h2>
         <p>{{ favorite.city }}</p>
       </ion-label>

@@ -53,8 +53,8 @@ export class AddressModalComponent implements OnInit {
       this.progress = false;
     }
   }
-  select(address: any) {
-    this.utils.gaEvent("calculate-selected")
+  select(address: any, type: string) {
+    this.utils.gaEvent(`calculate-selected-${type}`)
     this.modalCtrl.dismiss(address);
   }
   async selectFromMap() {
