@@ -145,6 +145,10 @@
                 "frequency": "Questa è la frequenza con cui le partenze vengono effettuate, in ore di punta e non, rispettivamente."
             },
             "stops": "Si ferma"
+        },
+        "status": {
+            "new": "Nuovo",
+            "updated": "Aggiornato"
         }
     },
     "settings": {

@@ -145,6 +145,10 @@
                 "frequency": "To jest częstotliwość czasu, w którym kursy wychodzą, w godzinach szczytu i poza nimi, odpowiednio."
             },
             "stops": "Zatrzymuje się"
+        },
+        "status": {
+            "new": "Nowy",
+            "updated": "Zaktualizowane"
         }
     },
     "settings": {

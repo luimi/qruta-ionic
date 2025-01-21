@@ -145,6 +145,10 @@
                 "frequency": "Esta es la frecuencia de tiempo en la que los despachos salen, en horas valle y horas pico, respectivamente."
             },
             "stops": "Paradas"
+        },
+        "status": {
+            "new": "Nueva",
+            "updated": "Actualizada"
         }
     },
     "settings": {

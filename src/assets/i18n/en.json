@@ -145,6 +145,10 @@
                 "frequency": "This is the time frequency in which dispatches leave, during off-peak hours and peak hours, respectively."
             },
             "stops": "Stops"
+        },
+        "status": {
+            "new": "New",
+            "updated": "Updated"
         }
     },
     "settings": {

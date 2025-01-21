@@ -145,6 +145,10 @@
                 "frequency": "Il s'agit de la fréquence à laquelle les départs sont effectués, en heures creuses et en heures de pointe, respectivement."
             },
             "stops": "S'arrête"
+        },
+        "status": {
+            "new": "Nouveau",
+            "updated": "Mise à jour"
         }
     },
     "settings": {

@@ -145,6 +145,10 @@
                 "frequency": "Dit is de frequentie waarmee ritten vertrekken, respectievelijk tijdens piek- en daluren."
             },
             "stops": "Stopt"
+        },
+        "status": {
+            "new": "Nieuw",
+            "updated": "Bijgewerkt"
         }
     },
     "settings": {

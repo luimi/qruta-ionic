@@ -145,6 +145,10 @@
                 "frequency": "Esta é a frequência com que as partidas são feitas, em horários de pico e fora de pico, respectivamente."
             },
             "Stops": "Para"
+        },
+        "status": {
+            "new": "Novo",
+            "updated": "Atualizado"
         }
     },
     "settings": {

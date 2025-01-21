@@ -145,6 +145,10 @@
                 "frequency": "这是出发时间的频率，分别是高峰时间和非高峰时间。"
             },
             "stops": "停止"
+        },
+        "status": {
+            "new": "新",
+            "updated": "已更新"
         }
     },
     "settings": {
