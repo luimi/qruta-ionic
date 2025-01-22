@@ -36,8 +36,7 @@ export class AppComponent {
       } else if(this.platform.is("mobileweb")) {
         _platform = `web-${getOS()}`
       }
-      let capacitor = this.platform.is("capacitor")
-      if (capacitor) {
+      if (this.platform.is("capacitor")) {
         await StatusBar.setStyle({ style: Style.Dark });
         await StatusBar.setBackgroundColor({ color: '#011f35' });
       }
