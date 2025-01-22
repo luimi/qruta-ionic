@@ -29,8 +29,8 @@
               </span>
               <span class="detail">{{ route.get("details") }}</span>
             </ion-col>
-            <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))"><ion-chip color="primary" translate>routes.status.updated</ion-chip></ion-col>
-            <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))"><ion-chip color="primary" translate>routes.status.new</ion-chip></ion-col>
+            <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))" class="v-center"><ion-chip color="primary" translate>routes.status.updated</ion-chip></ion-col>
+            <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))" class="v-center"><ion-chip color="primary" translate>routes.status.new</ion-chip></ion-col>
           </ion-row>
         </ion-grid>
       </div>
