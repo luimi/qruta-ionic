@@ -56,8 +56,8 @@ export class LeafletHelperService {
       return this.maps[id].layer;
     }
     this.city = this.utils.getLocal(constants.keys.city);
-    const location = this.city.location;
-    const zoom = this.city.zoom ? this.city.zoom : 12
+    const location = this.city ? this.city.location : {latitude: 0, longitude: 0};
+    const zoom = this.city && this.city.zoom ? this.city.zoom : 12
     let selectedLayerId = localStorage.getItem(constants.keys.layer)
     let selectedLayer = this.layers[selectedLayerId ? this.layers.map((layer) => layer.id).indexOf(selectedLayerId) : 0];
     const map = new L.Map(id, { zoomControl: false }).setView([location.latitude, location.longitude], zoom);
