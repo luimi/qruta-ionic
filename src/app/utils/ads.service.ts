@@ -17,7 +17,7 @@ export class AdsService {
       console.log("notDetermined")
     }
     AdMob.initialize({
-      requestTrackingAuthorization: true,
+      //requestTrackingAuthorization: true,
       initializeForTesting: !environment.production
     })
   }

@@ -1,0 +1,6 @@
+//Errores
+Skipping pod install because CocoaPods is not installed
+brew install cocoapods
+
+Updating iOS native dependencies with pod install - failed!
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
