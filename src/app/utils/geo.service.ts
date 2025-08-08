@@ -268,6 +268,7 @@ export class GeoService {
       return coordinates;
   }
   private async execute(method:string,data:any){
+    this.utils.gaEvent(`api-${method}`);
     if(method === 'geocode')
       data = data.replace('#','%23');
     return new Promise(async (result,reject) => {
