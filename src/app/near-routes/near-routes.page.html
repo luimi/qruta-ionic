@@ -6,7 +6,7 @@
 
 <ion-content class="ion-padding" *ngIf="routes.urban.length>0 || routes.massive.length>0">
   <ion-grid>
-    <ion-row class="ion-align-items-center"r>
+    <ion-row class="ion-align-items-center" r>
       <ion-col></ion-col>
       <ion-col size="12" size-md="8" size-lg="4">
         <ion-segment [(ngModel)]="selectedBtn" color="primary" mode="ios">
@@ -28,16 +28,18 @@
   </ion-grid>
   <div class="ion-padding">
     <ion-list *ngIf="routes">
-      <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" [routerLink]="['/route',route.id]" (click)="open()">
-        <ion-label>
-          <p class="v-center">
-            <span class="route-box v-center">
-              <ion-icon name="bus"></ion-icon>
-              {{ route.name }}
+      <ion-item class="cursor-pointer" *ngFor="let route of getCorrectRoutes()" [routerLink]="['/route',route.id]"
+        (click)="open()">
+        <ion-label class="route">
+          <div class="content">
+            <span class="name">
+              <span class="route-type-name">
+                <ion-icon class="icon" name="bus"></ion-icon> {{ route.name }}
+              </span>
+              <strong>{{ route.company }}</strong>
             </span>
-            <span><strong class="company">{{ route.company }}</strong></span>
-          </p>
-          <p color="medium" class="details">{{ route.details }}</p>
+            <p class="details">{{ route.details }}</p>
+          </div>
         </ion-label>
       </ion-item>
     </ion-list>
@@ -45,4 +47,4 @@
 </ion-content>
 <ion-content *ngIf="routes.urban.length===0 && routes.massive.length===0">
   <app-empty-state #emptyState icon="location" text=""></app-empty-state>
-</ion-content >
+</ion-content>

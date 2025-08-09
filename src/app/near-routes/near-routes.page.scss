@@ -4,3 +4,51 @@
 .details {
     margin-top: 6px;
 }
+
+.route {
+}
+.route.line {
+  border-bottom: 1px solid #c8c7cc;
+}
+.route .content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.route .content p {
+  font-size: 0.8em;
+}
+.route .content p,
+.route .content span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.route .content .details,
+.route .chevron {
+  color: #c8c7cc;
+}
+
+.route .chevron {
+  padding: 10px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-type-name {
+  border-bottom: 5px solid var(--ion-color-primary);
+  border-radius: 5px;
+  padding: 10px 10px 5px 10px;
+  color: var(--ion-color-primary);
+  display: inline-flex;;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.route-type-name .icon {
+  margin-right: 5px;
+}
