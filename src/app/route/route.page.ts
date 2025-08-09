@@ -67,15 +67,15 @@ export class RoutePage implements OnInit {
       icon: 'logo-facebook',
       url: `http://m.me/queruta?text=${message}`
     }, {
-      icon: 'logo-twitter',
-      url: `https://twitter.com/messages/compose?recipient_id=2575617260&text=${message}`
-    }, {
+      //  icon: 'logo-twitter',
+      //  url: `https://twitter.com/messages/compose?recipient_id=2575617260&text=${message}`
+      //}, {
       icon: 'logo-instagram',
       url: `https://ig.me/m/queruta`
     }, {
-      icon: 'logo-discord',
-      url: 'https://discordapp.com/channels/1187220392260153446/1192299716545888340'
-    }, {
+      //  icon: 'logo-discord',
+      //  url: 'https://discordapp.com/channels/1187220392260153446/1192299716545888340'
+      //}, {
       icon: 'mail',
       url: `mailto:queruta@gmail.com?subject=${subject}&body=${message}`
     }
