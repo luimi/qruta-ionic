@@ -13,6 +13,7 @@ export class UtilsService {
 
   private config: any;
   public setup: any;
+  public currentLocale: string = "en";
   constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, private platform: Platform, private http: HttpClient, private translateCtrl: TranslateService) {
 
   }

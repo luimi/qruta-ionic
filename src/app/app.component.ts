@@ -17,8 +17,9 @@ export class AppComponent {
     private utils: UtilsService
   ) {
     this.platform.ready().then(async () => {
-      let currentLang = this.translateCtrl.getBrowserLang()
+      let currentLang = this.translateCtrl.getBrowserLang() || "en";
       moment.locale(currentLang)
+      this.utils.currentLocale = currentLang
       this.utils.gaEvent(`lang-${currentLang}`)
       // español, ingles, frances, aleman, portugues, italiano, chino, polaco, netherlandes
       let currentLangs = ["es", "en", "fr", "de", "pt", "it", "zh", "pl", "nl"]

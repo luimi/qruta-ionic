@@ -68,6 +68,6 @@ export class NewsPage extends TabPage implements OnInit {
     })
   }
   getTime(date: string) {
-    return moment(date, "ddd MMM DD HH:mm:ss Z YYYY").fromNow()
+    return moment(date, "ddd MMM DD HH:mm:ss Z YYYY", "en").locale(this.utils.currentLocale).fromNow()
   }
 }
