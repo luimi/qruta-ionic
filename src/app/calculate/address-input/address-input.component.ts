@@ -37,7 +37,7 @@ export class AddressInputComponent implements OnInit {
   }
   getCurrentLocation() {
     this.isLoading = true;
-    this.utils.gaEvent("calculate-currentLocation")
+    this.utils.gaEvent("calculate-current-location")
     navigator.geolocation.getCurrentPosition(async (loc) => {
       const location = [loc.coords.latitude, loc.coords.longitude];
       this.location = await this.geo.reverse(location);

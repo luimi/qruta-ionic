@@ -34,7 +34,7 @@ export class CitiesPage implements OnInit {
     });
   }
   selectCity(city:any) {
-    this.utils.gaEvent(`city-${city.id}`)
+    this.utils.gaEvent(`city-${city.get("name").tolowerCase().replaceAll(' ', '-')}`);
     this.utils.setLocal(constants.keys.city, city);
     this.geo.updateCity();
     this.goToMain();

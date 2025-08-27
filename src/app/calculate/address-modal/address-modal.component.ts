@@ -79,7 +79,7 @@ export class AddressModalComponent implements OnInit {
     } else {
       this.utils.showAlert("calculate.modal.dialogs.favoriteExists");
     }
-    this.utils.gaEvent("calculate-favoriteAdded")
+    this.utils.gaEvent("calculate-favorite-added")
   }
   getFavorites() {
     this.favorites = JSON.parse(localStorage.getItem('favorites') || "[]");
@@ -90,7 +90,7 @@ export class AddressModalComponent implements OnInit {
   deleteFavorite(index: number) {
     this.translateCtrl.get("calculate.modal.dialogs.favoriteDelete").subscribe(res => {
       this.utils.showConfirmDialog(res, () => {
-        this.utils.gaEvent("calculate-favoriteDeleted")
+        this.utils.gaEvent("calculate-favorite-deleted")
         this.favorites.splice(index, 1);
         this.saveFavorites();
         this.changeRef.detectChanges();
