@@ -28,15 +28,17 @@ export class RoutePage implements OnInit {
     private adsCtrl: AdsService) { }
 
   ngOnInit() {
-    if (isPlatform("android")) {
-      this.adsCtrl.showBanner()
-    }
+    this.showAd();
   }
 
   goBack() {
     this.location.back();
   }
-
+  async showAd() {
+    if (await this.adsCtrl.isReadyForAds()) {
+      this.adsCtrl.showAd()
+    }
+  }
   async ionViewDidEnter() {
     this.map = this.leaflet.initialize('route');
     let id: any = this.ar.snapshot.paramMap.get('routeId')
@@ -83,9 +85,6 @@ export class RoutePage implements OnInit {
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('route');
-    if (isPlatform("android")) {
-      this.adsCtrl.hideBanner();
-    }
   }
 
 }

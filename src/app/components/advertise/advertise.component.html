@@ -1,0 +1,13 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title translate>result.advertising.title</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img [src]="advertise.image" (click)="openAdvertise()" />
+</ion-content>

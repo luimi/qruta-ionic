@@ -11,13 +11,14 @@ import { AppConfig } from './utils/appConfig';
 import { UtilsService } from './utils/utils.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { AdvertiseComponent } from './components/advertise/advertise.component';
 
 export function LanguageLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AdvertiseComponent],
   imports: [BrowserModule, IonicModule.forRoot({mode: 'ios', hardwareBackButton: false, swipeBackEnabled: false}), AppRoutingModule, HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -33,6 +34,7 @@ export function LanguageLoader(http: HttpClient) {
     multi: true
    },{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
-  schemas: []
+  schemas: [],
+  exports: [AdvertiseComponent]
 })
 export class AppModule {}

@@ -21,15 +21,9 @@ export class ResultPage implements OnInit {
 
   async ngOnInit() {
     this.options = JSON.parse(sessionStorage.getItem('result') || "[]").options;
-    this.showAd()
+    this.adsCtrl.showAd();
   }
-
-  async showAd() {
-    if (isPlatform("android") || isPlatform("ios")) {
-      await this.adsCtrl.showInterstitial();
-      await this.adsCtrl.prepareInterstitial();
-    }
-  }
+  
   openDetails(index: number) {
     this.router.navigate(['/result-details', index]);
   }

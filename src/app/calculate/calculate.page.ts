@@ -11,6 +11,8 @@ import { HistoryComponent } from './history/history.component';
 import Parse from 'parse';
 import { ApiService } from '../utils/api.service';
 import { CardListComponent } from './card-list/card-list.component';
+import { AdsService } from '../utils/ads.service';
+import { deprecate } from 'util';
 
 @Component({
   selector: 'app-calculate',
@@ -40,7 +42,8 @@ export class CalculatePage implements OnInit {
     private utils: UtilsService,
     public modalCtrl: ModalController,
     private apiCtrl: ApiService,
-    private platform: Platform
+    private platform: Platform,
+    private adCtrl: AdsService
   ) { }
 
   ngOnInit() { }
@@ -59,8 +62,6 @@ export class CalculatePage implements OnInit {
       let location: any = await this.geo.reverse([ll.lat, ll.lng]);
       this.actionSheetAddress(location);
     });
-
-    this.showPlaceMarks();
     if (!this.advertise) this.showAdvertise();
     this.utils.getServerConfig("status").then((status: any) => {
       this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
@@ -171,20 +172,18 @@ export class CalculatePage implements OnInit {
   }
 
   private async showAdvertise() {
-    let city = new Parse.Object("City")
-    city.id = this.city.objectId
-    let sponsors = await new Parse.Query("Sponsor").equalTo("status", true).equalTo("city", city).select("").find();
-    if (sponsors.length === 0) return
-    let adQuery = new Parse.Query("Advertise").include("sponsor").containedIn("sponsor", sponsors)
-    let count = await adQuery.count();
-    if (count === 0) return
-    this.advertise = await adQuery.skip(Math.floor(Math.random() * count)).first()
-    this.modal.present()
+    const result: any = await this.adCtrl.getPartnerAd()
+    if(result && result.success) {
+      this.advertise = result
+      this.modal.present()
+    }
   }
-  public openAdvertise(url: string) {
-    window.open(url, '_blank')
+  public openAdvertise() {
+    window.open(this.advertise.url, '_blank')
+    this.adCtrl.setPartnerAdClick(this.advertise.campaign)
   }
 
+  //@deprecate
   private async showPlaceMarks() {
     let city = new Parse.Object("City")
     city.id = this.city.objectId
