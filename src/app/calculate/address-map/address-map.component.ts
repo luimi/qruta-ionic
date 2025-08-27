@@ -28,6 +28,6 @@ export class AddressMapComponent implements OnInit {
     let location = this.map.getBounds().getCenter();
     location = await this.geo.reverse([location.lat,location.lng]);
     this.modalCtrl.dismiss(location);
-    this.utils.gaEvent("calculate-mapLocation")
+    this.utils.gaEvent("calculate-map-location")
   }
 }

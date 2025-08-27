@@ -54,7 +54,7 @@ export class CalculatePage implements OnInit {
     }
     this.map = this.leaflet.initialize('calculate');
     this.map.on('click', async (event: any) => {
-      this.utils.gaEvent("calculate-mapClick");
+      this.utils.gaEvent("calculate-map-click");
       const ll = event.latlng;
       let location: any = await this.geo.reverse([ll.lat, ll.lng]);
       this.actionSheetAddress(location);
