@@ -107,9 +107,9 @@ export class CalculatePage implements OnInit {
     }
   }
   private async actionSheetAddress(location: any) {
-    const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.cancel"])
+    const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.cancel", "calculate.input.selected"])
     const actionSheet = await this.actionSheet.create({
-      header: location.address,
+      header: location.address === "" ? answers["calculate.input.selected"] : location.address,
       buttons: [{
         text: answers["general.origin"],
         icon: 'location',

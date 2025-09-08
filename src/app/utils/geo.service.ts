@@ -33,6 +33,9 @@ export class GeoService {
       },
       bing:(location:number[],server:any)=>{
         return `https://dev.virtualearth.net/REST/v1/Locations/${location[0]},${location[1]}?key=${server.key}`;
+      },
+      cache:(location:number[],server:any) => {
+        return `${server.url}/reverse?lat=${location[0]}&lng=${location[1]}`
       }
     },
     walkto:{
@@ -127,6 +130,13 @@ export class GeoService {
           address: place.name,
           city:place.address.locality,
           location:[location[0],location[1]]
+        }
+      },
+      cache: (result:any) => {
+        return {
+          address: result.address === "address.selected"? '' : result.address,
+          city:"",
+          location:[result.location.latitude,result.location.longitude]
         }
       }
     },
