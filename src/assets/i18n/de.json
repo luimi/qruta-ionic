@@ -16,6 +16,7 @@
     "cities": {
         "title": "Stadt",
         "subtitle": "Bitte wählen Sie Ihre Stadt aus.",
+        "nocity" : "Ist deine Stadt nicht dabei? Wähle hier aus",
         "dialogs": {
             "loading": "Laden der Stadtliste"
         }

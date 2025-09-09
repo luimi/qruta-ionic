@@ -16,6 +16,7 @@
     "cities": {
         "title": "城市",
         "subtitle": "请选择您的城市。",
+        "nocity" : "找不到您的城市？请在此处选择",
         "dialogs": {
             "loading": "加载城市列表中"
         }

@@ -42,4 +42,7 @@ export class CitiesPage implements OnInit {
   goToMain() {
     this.router.navigate(['main/calculate'])
   }
+  goToNoCity() {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLScVFx8JRBerq9pH8Ut5hE-UieCjCy5L44AGMc02Pwr4Sa51wA/viewform?usp=header', '_blank')
+  }
 }

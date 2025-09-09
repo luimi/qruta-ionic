@@ -16,6 +16,7 @@
     "cities": {
         "title": "City",
         "subtitle": "Please select your city.",
+        "nocity" : "Is your city not here? Select here",
         "dialogs": {
             "loading": "Loading list of cities"
         }

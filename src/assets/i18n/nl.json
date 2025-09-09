@@ -16,6 +16,7 @@
     "cities": {
         "title": "Steden",
         "subtitle": "Selecteer alstublieft uw stad.",
+        "nocity" : "Staat je stad er niet bij? Selecteer hier",
         "dialogs": {
             "loading": "Laden van stedenlijst"
         }
