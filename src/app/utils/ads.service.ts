@@ -75,6 +75,7 @@ export class AdsService {
   async showInterstitial() {
     try {
       await AdMob.showInterstitial()
+      this.utils.gaEvent("ads-admob")
       return true
     } catch (e) {
       return false
