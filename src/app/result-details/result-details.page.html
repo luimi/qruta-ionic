@@ -40,13 +40,13 @@
             <!-- TOMAR BUS -->
             <ion-row [routerLink]="['/route/' + step.route.id]" routerDirection="forward">
               <ion-col size="2" [ngClass]="['draw', colors[i]]">
-                <ion-icon name="bus" size="large"></ion-icon>
+                <ion-icon [name]="step.route.type?step.route.type:'bus'" size="large"></ion-icon>
                 <div class="line-bus"></div>
               </ion-col>
               <ion-col size="10" class="info">
                 <div class="title text" translate>result.detail.takeBus</div>
                 <div class="content text v-center">
-                  <ion-icon name="walk" size="large" color="primary"></ion-icon><ion-icon name="bus" size="large"
+                  <ion-icon name="walk" size="large" color="primary"></ion-icon><ion-icon [name]="step.route.type?step.route.type:'bus'" size="large"
                     color="primary"></ion-icon>
                   <div class="route-box">
                     {{ step.route.company }} - {{ step.route.name }}
@@ -63,7 +63,7 @@
               <ion-col size="10" class="info">
                 <div class="title text" translate>result.detail.getDown</div>
                 <div class="content text v-center">
-                  <ion-icon name="bus" size="large" color="primary"></ion-icon>
+                  <ion-icon [name]="step.route.type?step.route.type:'bus'" size="large" color="primary"></ion-icon>
                   <ion-icon name="walk" size="large" color="primary"></ion-icon>
                   <span>{{ step?.endAddress?.address }}</span>
                 </div>

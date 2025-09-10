@@ -26,7 +26,7 @@
     <ion-row class="route-list ion-nowrap" *ngFor="let route of this.favoriteCtrl.favorites" routerDirection="forward">
       <ion-col class="no-wrap v-center" [routerLink]="['/route/'+route.id]">
         <span class="route-box v-center">
-          <ion-icon name="bus"></ion-icon>
+          <ion-icon [name]="route.get('type')?route.get('type'):'bus'"></ion-icon>
           {{ route.get("name") }}
         </span>
         <span class="detail">{{ route.get("details") }}</span>
@@ -65,7 +65,7 @@
             routerDirection="forward">
             <ion-col class="no-wrap v-center" [routerLink]="['/route/'+route.id]">
               <span class="route-box v-center">
-                <ion-icon name="bus"></ion-icon>
+                <ion-icon [name]="route.get('type')?route.get('type'):'bus'"></ion-icon>
                 {{ route.get("name") }}
               </span>
               <span class="detail">{{ route.get("details") }}</span>

@@ -34,7 +34,7 @@
           <div class="content">
             <span class="name">
               <span class="route-type-name">
-                <ion-icon class="icon" name="bus"></ion-icon> {{ route.name }}
+                <ion-icon class="icon" [name]="route.type?route.type:'bus'"></ion-icon> {{ route.name }}
               </span>
               <strong>{{ route.company }}</strong>
             </span>
