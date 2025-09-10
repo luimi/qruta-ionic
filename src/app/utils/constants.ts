@@ -15,6 +15,7 @@ export const constants = {
         recents:'recents',
         status:'status',
         cards: 'cards',
+        favorites: 'favorites',
     },
     errors:{
         calculate:[

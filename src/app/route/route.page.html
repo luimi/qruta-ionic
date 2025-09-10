@@ -4,6 +4,11 @@
       <ion-back-button [text]="''"></ion-back-button>
     </ion-buttons>
     <ion-title>{{route?.get('company')?.get('name')}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toogleFavorite()">
+        <ion-icon slot="icon-only" [name]="route && this.favoriteCtrl.isFavorite(route.id) ? 'star' : 'star-outline' "></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +18,7 @@
       <ion-col size="12" size-md="6" class="col-map">
         <div id="route" style="width:100%; height:100%;"></div>
       </ion-col>
-      <ion-col  size="12" size-md="6" class="col-info scrollable ion-padding-bottom">
+      <ion-col size="12" size-md="6" class="col-info scrollable ion-padding-bottom">
         <div class="ion-padding">
           <h1>{{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}</h1>
           <p style="white-space: break-spaces;">{{route?.get('info')}}</p>

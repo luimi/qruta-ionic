@@ -132,6 +132,7 @@
         "title": "Routes",
         "filter": "Filter",
         "loading": "Loading routes",
+        "all": "All",
         "route": {
             "schedules": "Schedules",
             "hour": "Hour",

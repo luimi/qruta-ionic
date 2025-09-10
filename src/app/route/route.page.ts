@@ -5,7 +5,7 @@ import Parse from 'parse';
 import { Location } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 import { AdsService } from '../utils/ads.service';
-import { isPlatform } from '@ionic/angular';
+import { FavoriteService } from '../utils/favorite.service';
 
 register();
 @Component({
@@ -25,7 +25,8 @@ export class RoutePage implements OnInit {
     private ar: ActivatedRoute,
     private leaflet: LeafletHelperService,
     private location: Location,
-    private adsCtrl: AdsService) { }
+    private adsCtrl: AdsService,
+    public favoriteCtrl: FavoriteService) { }
 
   ngOnInit() {
     this.showAd();
@@ -38,6 +39,9 @@ export class RoutePage implements OnInit {
     if (await this.adsCtrl.isReadyForAds()) {
       this.adsCtrl.showAd()
     }
+  }
+  toogleFavorite() {
+    if(this.route) this.favoriteCtrl.toggleFavorite(this.route)
   }
   async ionViewDidEnter() {
     this.map = this.leaflet.initialize('route');

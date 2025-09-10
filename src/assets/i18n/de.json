@@ -132,6 +132,7 @@
         "title": "Routen",
         "filter": "Filtern",
         "loading": "Routen werden geladen",
+        "all": "Alle",
         "route": {
             "schedules": "Fahrpläne",
             "hour": "Stunde",

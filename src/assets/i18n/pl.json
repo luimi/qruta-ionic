@@ -132,6 +132,7 @@
         "title": "Trasy",
         "filter": "Filtruj",
         "loading": "Wczytywanie tras",
+        "all": "Wszystkie",
         "route": {
             "schedules": "Rozkłady jazdy",
             "hour": "Godzina",

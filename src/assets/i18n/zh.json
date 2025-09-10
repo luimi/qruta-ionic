@@ -132,6 +132,7 @@
         "title": "路线",
         "filter": "筛选",
         "loading": "正在加载路线",
+        "all": "全部",
         "route": {
             "schedules": "时间表",
             "hour": "小时",

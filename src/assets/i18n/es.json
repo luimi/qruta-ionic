@@ -132,6 +132,7 @@
         "title": "Rutas",
         "filter": "Filtrar",
         "loading": "Cargando rutas",
+        "all": "Todas",
         "route": {
             "schedules": "Horarios",
             "hour": "Hora",

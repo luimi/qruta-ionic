@@ -5,8 +5,49 @@
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="objectKeys(companies).length">
-  <ion-searchbar placeholder="{{'routes.filter' | translate}}" (ionInput)="filter($event)"></ion-searchbar>
-  <ion-accordion-group [multiple]="true" expand="inset" #accordion [value]="['0']">
+
+
+  <ion-segment [(ngModel)]="selectedBtn" color="primary" mode="ios">
+    <ion-segment-button value="favorites">
+      <ion-icon name="star"></ion-icon>
+    </ion-segment-button>
+
+    <ion-segment-button value="all">
+      <ion-label translate>
+        routes.all
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <app-empty-state icon="star" text="routes.loading"
+    *ngIf="selectedBtn === 'favorites' && this.favoriteCtrl.favorites.length === 0"></app-empty-state>
+
+  <ion-grid *ngIf="selectedBtn === 'favorites' && this.favoriteCtrl.favorites.length > 0">
+    <ion-row class="route-list ion-nowrap" *ngFor="let route of this.favoriteCtrl.favorites" routerDirection="forward">
+      <ion-col class="no-wrap v-center" [routerLink]="['/route/'+route.id]">
+        <span class="route-box v-center">
+          <ion-icon name="bus"></ion-icon>
+          {{ route.get("name") }}
+        </span>
+        <span class="detail">{{ route.get("details") }}</span>
+      </ion-col>
+      <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))" class="v-center"
+        [routerLink]="['/route/'+route.id]">
+        <ion-chip color="primary" translate>routes.status.updated</ion-chip>
+      </ion-col>
+      <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))" class="v-center" [routerLink]="['/route/'+route.id]">
+        <ion-chip color="primary" translate>routes.status.new</ion-chip>
+      </ion-col>
+      <ion-col size="auto" class="ion-align-self-center" (click)="this.favoriteCtrl.toggleFavorite(route)">
+        <ion-icon [name]="this.favoriteCtrl.isFavorite(route.id) ? 'star':'star-outline'"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-searchbar placeholder="{{'routes.filter' | translate}}" (ionInput)="filter($event)"
+    *ngIf="selectedBtn === 'all'" class="ion-no-padding ion-margin-vertical"></ion-searchbar>
+
+  <ion-accordion-group [multiple]="true" expand="inset" #accordion [value]="['0']" *ngIf="selectedBtn === 'all'" class="ion-no-margin">
     <ion-accordion *ngFor="let company of objectKeys(filtered); index as i" [value]="i">
       <ion-item slot="header" color="primary" class="route-header">
         <ion-label class="ion-text-center">{{
@@ -20,17 +61,26 @@
           </a>
         </div>
         <ion-grid>
-          <ion-row class="route-list ion-nowrap" *ngFor="let route of filtered[company].routes" [routerLink]="['/route/'+route.id]"
+          <ion-row class="route-list ion-nowrap" *ngFor="let route of filtered[company].routes"
             routerDirection="forward">
-            <ion-col class="no-wrap v-center">
+            <ion-col class="no-wrap v-center" [routerLink]="['/route/'+route.id]">
               <span class="route-box v-center">
                 <ion-icon name="bus"></ion-icon>
                 {{ route.get("name") }}
               </span>
               <span class="detail">{{ route.get("details") }}</span>
             </ion-col>
-            <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))" class="v-center"><ion-chip color="primary" translate>routes.status.updated</ion-chip></ion-col>
-            <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))" class="v-center"><ion-chip color="primary" translate>routes.status.new</ion-chip></ion-col>
+            <ion-col size="auto" *ngIf="isUpdated(route.get('updatedAt'), route.get('createdAt'))" class="v-center"
+              [routerLink]="['/route/'+route.id]">
+              <ion-chip color="primary" translate>routes.status.updated</ion-chip>
+            </ion-col>
+            <ion-col size="auto" *ngIf="isNew( route.get('createdAt'))" class="v-center"
+              [routerLink]="['/route/'+route.id]">
+              <ion-chip color="primary" translate>routes.status.new</ion-chip>
+            </ion-col>
+            <ion-col size="auto" class="ion-align-self-center" (click)="this.favoriteCtrl.toggleFavorite(route)">
+              <ion-icon [name]="this.favoriteCtrl.isFavorite(route.id) ? 'star':'star-outline'"></ion-icon>
+            </ion-col>
           </ion-row>
         </ion-grid>
       </div>

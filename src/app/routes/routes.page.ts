@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Parse from 'parse';
 import { UtilsService } from '../utils/utils.service';
 import { TabPage } from '../tab/tab.page';
+import { FavoriteService } from '../utils/favorite.service';
 @Component({
   selector: 'app-routes',
   templateUrl: './routes.page.html',
@@ -12,8 +13,9 @@ export class RoutesPage extends TabPage implements OnInit {
   filtered: any = {};
   days = 4 * 24 * 60 * 60 * 1000;
   objectKeys = Object.keys;
+  selectedBtn: "favorites" | "all" = "all";
   
-  constructor(public override utils: UtilsService) { 
+  constructor(public override utils: UtilsService, public favoriteCtrl: FavoriteService) { 
     super(utils)
   }
   async ionViewDidEnter() {
@@ -39,6 +41,7 @@ export class RoutesPage extends TabPage implements OnInit {
       this.companies[companyId].routes.push(route);
     });
     this.filtered = { ...this.companies }
+    
     this.hideEmptyStateProgress()
   }
 
@@ -79,6 +82,9 @@ export class RoutesPage extends TabPage implements OnInit {
   isUpdated(updatedAt: Date, createdAt: Date) {
     let current = new Date();
     return updatedAt.getTime() - createdAt.getTime() > this.days && current.getTime() - updatedAt.getTime() < this.days;
+  }
+  toggleFavorite(id: string) {
+
   }
 }
 

@@ -132,6 +132,7 @@
         "title": "Percorsi",
         "filter": "Filtra",
         "loading": "Caricamento dei percorsi",
+        "all": "Tutti",
         "route": {
             "schedules": "Orari",
             "hour": "Ora",

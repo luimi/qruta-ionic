@@ -132,6 +132,7 @@
         "title": "Routes",
         "filter": "Filteren",
         "loading": "Routes laden",
+        "all": "Alle",
         "route": {
             "schedules": "Schema's",
             "hour": "Uur",

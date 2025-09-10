@@ -132,6 +132,7 @@
         "title": "Itinéraires",
         "filter": "Filtrer",
         "loading": "Chargement des itinéraires",
+        "all": "Toutes",
         "route": {
             "schedules": "Horaires",
             "hour": "Heure",
