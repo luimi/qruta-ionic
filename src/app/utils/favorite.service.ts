@@ -7,17 +7,15 @@ import { UtilsService } from './utils.service';
   providedIn: 'root'
 })
 export class FavoriteService {
-  public favorites: any;
+  public favorites: any = [];
   favoritesIds: any;
 
   constructor(private utils: UtilsService) {
     if(this.favorites && this.favoritesIds) return;
     let data = localStorage.getItem(constants.local.favorites)
     if (!data) {
-      this.favorites = [];
       this.favoritesIds = []
-    }
-    else {
+    } else {
       this.favoritesIds = JSON.parse(data)
       this.getFavorites()
     }

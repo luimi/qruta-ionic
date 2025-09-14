@@ -16,7 +16,7 @@
     "cities": {
         "title": "Ville",
         "subtitle": "Veuillez sélectionner votre ville.",
-        "nocity" : "Votre ville n'y figure pas ? Sélectionnez ici",
+        "nocity": "Votre ville n'y figure pas ? Sélectionnez ici",
         "dialogs": {
             "loading": "Chargement de la liste des villes"
         }
@@ -133,6 +133,9 @@
         "filter": "Filtrer",
         "loading": "Chargement des itinéraires",
         "all": "Toutes",
+        "favorites": {
+            "hint": "Ajoutez vos itinéraires favoris"
+        },
         "route": {
             "schedules": "Horaires",
             "hour": "Heure",

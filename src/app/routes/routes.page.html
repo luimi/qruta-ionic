@@ -19,7 +19,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <app-empty-state icon="star" text="routes.loading"
+  <app-empty-state icon="star" text="routes.favorites.hint"
     *ngIf="selectedBtn === 'favorites' && this.favoriteCtrl.favorites.length === 0"></app-empty-state>
 
   <ion-grid *ngIf="selectedBtn === 'favorites' && this.favoriteCtrl.favorites.length > 0">

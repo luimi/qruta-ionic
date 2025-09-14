@@ -16,7 +16,7 @@
     "cities": {
         "title": "City",
         "subtitle": "Please select your city.",
-        "nocity" : "Is your city not here? Select here",
+        "nocity": "Is your city not here? Select here",
         "dialogs": {
             "loading": "Loading list of cities"
         }
@@ -133,6 +133,9 @@
         "filter": "Filter",
         "loading": "Loading routes",
         "all": "All",
+        "favorites": {
+            "hint": "Add your favorite routes"
+        },
         "route": {
             "schedules": "Schedules",
             "hour": "Hour",

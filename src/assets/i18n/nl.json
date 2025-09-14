@@ -16,7 +16,7 @@
     "cities": {
         "title": "Steden",
         "subtitle": "Selecteer alstublieft uw stad.",
-        "nocity" : "Staat je stad er niet bij? Selecteer hier",
+        "nocity": "Staat je stad er niet bij? Selecteer hier",
         "dialogs": {
             "loading": "Laden van stedenlijst"
         }
@@ -133,6 +133,9 @@
         "filter": "Filteren",
         "loading": "Routes laden",
         "all": "Alle",
+        "favorites": {
+            "hint": "Voeg je favoriete routes toe"
+        },
         "route": {
             "schedules": "Schema's",
             "hour": "Uur",

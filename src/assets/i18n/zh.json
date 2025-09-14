@@ -16,7 +16,7 @@
     "cities": {
         "title": "城市",
         "subtitle": "请选择您的城市。",
-        "nocity" : "找不到您的城市？请在此处选择",
+        "nocity": "找不到您的城市？请在此处选择",
         "dialogs": {
             "loading": "加载城市列表中"
         }
@@ -133,6 +133,9 @@
         "filter": "筛选",
         "loading": "正在加载路线",
         "all": "全部",
+        "favorites": {
+            "hint": "添加您的收藏路线"
+        },
         "route": {
             "schedules": "时间表",
             "hour": "小时",

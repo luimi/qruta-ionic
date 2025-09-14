@@ -133,6 +133,9 @@
         "filter": "Filtrar",
         "loading": "Cargando rutas",
         "all": "Todas",
+        "favorites": {
+            "hint": "Agrega tus rutas favoritas"
+        },
         "route": {
             "schedules": "Horarios",
             "hour": "Hora",
