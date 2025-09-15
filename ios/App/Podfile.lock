@@ -3,19 +3,19 @@ PODS:
     - CapacitorCordova
   - CapacitorApp (5.0.6):
     - Capacitor
-  - CapacitorCommunityAdmob (5.3.1):
+  - CapacitorCommunityAdmob (5.0.0):
     - Capacitor
-    - Google-Mobile-Ads-SDK (= 10.12.0)
+    - Google-Mobile-Ads-SDK (= 10.1.0)
   - CapacitorCordova (5.4.1)
   - CapacitorHaptics (5.0.6):
     - Capacitor
   - CapacitorKeyboard (5.0.6):
     - Capacitor
-  - CapacitorSplashScreen (5.0.8):
+  - CapacitorSplashScreen (5.0.6):
     - Capacitor
   - CapacitorStatusBar (5.0.6):
     - Capacitor
-  - Google-Mobile-Ads-SDK (10.12.0):
+  - Google-Mobile-Ads-SDK (10.1.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
   - GoogleAppMeasurement (10.29.0):
@@ -72,14 +72,14 @@ PODS:
   - PromisesObjC (2.4.0)
 
 DEPENDENCIES:
-  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@5.4.1_@capacitor+core@5.4.1/node_modules/@capacitor/ios`)"
-  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/app`)"
-  - "CapacitorCommunityAdmob (from `../../node_modules/.pnpm/@capacitor-community+admob@5.3.1/node_modules/@capacitor-community/admob`)"
-  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@5.4.1_@capacitor+core@5.4.1/node_modules/@capacitor/ios`)"
-  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/haptics`)"
-  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/keyboard`)"
-  - "CapacitorSplashScreen (from `../../node_modules/.pnpm/@capacitor+splash-screen@5.0.8_@capacitor+core@5.4.1/node_modules/@capacitor/splash-screen`)"
-  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/status-bar`)"
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
+  - "CapacitorCommunityAdmob (from `../../node_modules/@capacitor-community/admob`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
+  - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
 
 SPEC REPOS:
   trunk:
@@ -92,38 +92,38 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Capacitor:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@5.4.1_@capacitor+core@5.4.1/node_modules/@capacitor/ios"
+    :path: "../../node_modules/@capacitor/ios"
   CapacitorApp:
-    :path: "../../node_modules/.pnpm/@capacitor+app@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/app"
+    :path: "../../node_modules/@capacitor/app"
   CapacitorCommunityAdmob:
-    :path: "../../node_modules/.pnpm/@capacitor-community+admob@5.3.1/node_modules/@capacitor-community/admob"
+    :path: "../../node_modules/@capacitor-community/admob"
   CapacitorCordova:
-    :path: "../../node_modules/.pnpm/@capacitor+ios@5.4.1_@capacitor+core@5.4.1/node_modules/@capacitor/ios"
+    :path: "../../node_modules/@capacitor/ios"
   CapacitorHaptics:
-    :path: "../../node_modules/.pnpm/@capacitor+haptics@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/haptics"
+    :path: "../../node_modules/@capacitor/haptics"
   CapacitorKeyboard:
-    :path: "../../node_modules/.pnpm/@capacitor+keyboard@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/keyboard"
+    :path: "../../node_modules/@capacitor/keyboard"
   CapacitorSplashScreen:
-    :path: "../../node_modules/.pnpm/@capacitor+splash-screen@5.0.8_@capacitor+core@5.4.1/node_modules/@capacitor/splash-screen"
+    :path: "../../node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
-    :path: "../../node_modules/.pnpm/@capacitor+status-bar@5.0.6_@capacitor+core@5.4.1/node_modules/@capacitor/status-bar"
+    :path: "../../node_modules/@capacitor/status-bar"
 
 SPEC CHECKSUMS:
   Capacitor: b506c52a9c818b1973a37022fe51abc83051b5e8
   CapacitorApp: 3bef09d0bbb9698fd1766398499f306647156bbf
-  CapacitorCommunityAdmob: 8e577c66f05a62f1e00038a102ce6167fa6b3eb0
+  CapacitorCommunityAdmob: ee60d41ccbf59fef2bdd7a089315bad6207d23ed
   CapacitorCordova: 1222fdd78bfd0d323cc22bf254eed1484fe6c92a
   CapacitorHaptics: c56885bd07919be808b38db507507919ce4d1b09
   CapacitorKeyboard: 673a4a303383a61f4d360c871f121f8bbaa745b6
-  CapacitorSplashScreen: 0b962a2bee014151569dc59b089ba0e93daeeaf0
+  CapacitorSplashScreen: 7c05fd1ec2cbbb1f0a0ba152d012705ba3dc3062
   CapacitorStatusBar: f7e05ad7e5fb1a1cdacd2f0b55d488550ca07c41
-  Google-Mobile-Ads-SDK: 976fdf273815674eed30b8aafffedb3c25b055e4
+  Google-Mobile-Ads-SDK: 894be2e3e3e8281004bda14381f9af7ad73eeffd
   GoogleAppMeasurement: f9de05ee17401e3355f68e8fc8b5064d429f5918
   GoogleUserMessagingPlatform: f8d0cdad3ca835406755d0a69aa634f00e76d576
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
 
-PODFILE CHECKSUM: 4835130c8050b4af6b3ec2a23a1df33928f24acf
+PODFILE CHECKSUM: 4926e867da88fa3ba32fbdb667d1957a53ac2007
 
 COCOAPODS: 1.16.2
