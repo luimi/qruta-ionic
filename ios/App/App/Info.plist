@@ -27,9 +27,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Para poder guiarte al momento de usar el App.</string>
+	<string>Q'ruta necesita tu ubicación para mostrarte las rutas de bus más cercanas y guiarte en el mapa. Tu ubicación se usa solo mientras la app está abierta.</string>
 	<key>NSUserTrackingUsageDescription</key>
-	<string>Este identificador es para poder ofrecerte publicidad personalizada para ti.</string>
+	<string>Q'ruta utiliza tu ubicación para ofrecerte la mejor experiencia de navegación y para mostrarte anuncios relevantes sobre servicios de transporte o negocios cercanos.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
