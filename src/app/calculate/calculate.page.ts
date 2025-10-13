@@ -46,9 +46,13 @@ export class CalculatePage implements OnInit {
     private adCtrl: AdsService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log("CalculatePage ngOnInit")
+    if (!this.advertise) this.showAdvertise();
+  }
 
   ionViewDidEnter() {
+    console.log("CalculatePage ionViewDidEnter")
     this.city = this.utils.getLocal(constants.keys.city);
     if (this.leaflet.getMap('calculate')) {
       //this.map.invalidateSize()
@@ -62,7 +66,7 @@ export class CalculatePage implements OnInit {
       let location: any = await this.geo.reverse([ll.lat, ll.lng]);
       this.actionSheetAddress(location);
     });
-    if (!this.advertise) this.showAdvertise();
+    
     this.utils.getServerConfig("status").then((status: any) => {
       this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
     })
