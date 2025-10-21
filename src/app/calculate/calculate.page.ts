@@ -47,12 +47,10 @@ export class CalculatePage implements OnInit {
   ) { }
 
   ngOnInit() { 
-    console.log("CalculatePage ngOnInit")
     if (!this.advertise) this.showAdvertise();
   }
 
   ionViewDidEnter() {
-    console.log("CalculatePage ionViewDidEnter")
     this.city = this.utils.getLocal(constants.keys.city);
     if (this.leaflet.getMap('calculate')) {
       //this.map.invalidateSize()
