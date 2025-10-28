@@ -3,7 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { constants } from 'src/app/utils/constants';
 import Parse from 'parse';
 import { UtilsService } from 'src/app/utils/utils.service';
-import { SocialLogin } from '@capgo/capacitor-social-login';
+//import { SocialLogin } from '@capgo/capacitor-social-login';
 
 @Component({
   selector: 'app-login',
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
     }, 1000)
   }
   async loginGoogle() {
-    const res: any = await SocialLogin.login({
+    /*const res: any = await SocialLogin.login({
       provider: 'google',
       options: {
         scopes: ['email', 'profile'],
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
       this.handleLogin(res)
       SocialLogin.logout({ provider: 'google' })
       this.modalCtrl.dismiss()
-    }
+    }*/
   }
 
   async handleLogin(response: any) {
