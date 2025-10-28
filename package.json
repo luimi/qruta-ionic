@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ionic serve",
-    "android": "ionic capacitor run android",
+    "android": "ionic capacitor run android; cd android/app/build/outputs/apk/debug; adb install *.apk",
     "ios": "ionic capacitor run ios",
     "debug": "ionic capacitor run android -l --external",
     "release": "ionic capacitor build android && cd android && ./gradlew bundleRelease",
