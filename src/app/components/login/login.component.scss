@@ -1,0 +1,12 @@
+.logo {
+    max-width: 150px;
+    display: flex;
+    place-self: center;
+}
+.step {
+    border-radius: 20px;
+    background-color: var(--ion-color-primary);
+    .header {
+        color: var(--ion-color-light)
+    }
+}

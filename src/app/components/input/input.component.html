@@ -1,0 +1,8 @@
+<div>
+  <span class="title" translate>{{title}}</span>
+  <ion-item class="input" lines="none" color="tertiary">
+    <ion-icon [name]="icon" slot="start" color="secondary" *ngIf="icon">
+    </ion-icon>
+    <ion-input #inputModel [type]="type" [clearInput]="true" [placeholder]="placeholder" (ionInput)="onInputChanged($event, inputModel)"></ion-input>
+  </ion-item>
+</div>

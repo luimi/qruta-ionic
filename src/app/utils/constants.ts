@@ -8,7 +8,8 @@ export const constants = {
     methods: {
         nearRoutes: 'nearRoutes',
         calculate: 'calculate',
-        getServer: 'getServer'
+        getServer: 'getServer',
+        sendOTPCode: 'sendOTPCode'
     },
     local: {
         result: 'result',

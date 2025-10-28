@@ -10,6 +10,7 @@ import { SettingsPage } from './settings.page';
 import { FaqComponent } from './faq/faq.component';
 import { EmptyStateModule } from '../utils/empty-state/empty-state.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { TranslateModule } from '@ngx-translate/core';
     IonicModule,
     SettingsPageRoutingModule,
     EmptyStateModule,
-    TranslateModule
+    TranslateModule,
+    ComponentsModule
   ],
   declarations: [SettingsPage, FaqComponent],
   exports:[]
