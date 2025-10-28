@@ -15,9 +15,10 @@ import { AdsService } from '../utils/ads.service';
 import { deprecate } from 'util';
 
 @Component({
-  selector: 'app-calculate',
-  templateUrl: './calculate.page.html',
-  styleUrls: ['./calculate.page.scss'],
+    selector: 'app-calculate',
+    templateUrl: './calculate.page.html',
+    styleUrls: ['./calculate.page.scss'],
+    standalone: false
 })
 export class CalculatePage implements OnInit {
 

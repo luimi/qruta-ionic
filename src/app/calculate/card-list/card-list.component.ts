@@ -5,9 +5,10 @@ import { CardsService } from 'src/app/utils/cards.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-  selector: 'app-card-list',
-  templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.scss'],
+    selector: 'app-card-list',
+    templateUrl: './card-list.component.html',
+    styleUrls: ['./card-list.component.scss'],
+    standalone: false
 })
 export class CardListComponent  implements OnInit {
   cards: any = []

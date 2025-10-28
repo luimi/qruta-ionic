@@ -6,9 +6,10 @@ import { UtilsService } from 'src/app/utils/utils.service';
 //import { SocialLogin } from '@capgo/capacitor-social-login';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
+    standalone: false
 })
 export class LoginComponent implements OnInit {
   emailForm: any = { email: '', valid: false }

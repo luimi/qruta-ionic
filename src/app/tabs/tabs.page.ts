@@ -6,9 +6,10 @@ import { environment } from 'src/environments/environment';
 import { UtilsService } from '../utils/utils.service';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+    selector: 'app-tabs',
+    templateUrl: 'tabs.page.html',
+    styleUrls: ['tabs.page.scss'],
+    standalone: false
 })
 export class TabsPage {
   private activeTab?: HTMLElement;

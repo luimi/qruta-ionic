@@ -5,9 +5,10 @@ import { ApiService } from '../utils/api.service';
 import { TabPage } from '../tab/tab.page';
 
 @Component({
-  selector: 'app-near-routes',
-  templateUrl: './near-routes.page.html',
-  styleUrls: ['./near-routes.page.scss'],
+    selector: 'app-near-routes',
+    templateUrl: './near-routes.page.html',
+    styleUrls: ['./near-routes.page.scss'],
+    standalone: false
 })
 export class NearRoutesPage extends TabPage implements OnInit {
 

@@ -3,9 +3,10 @@ import { ModalController, NavParams } from '@ionic/angular';
 declare var twttr: any;
 
 @Component({
-  selector: 'app-twitter',
-  templateUrl: './twitter.component.html',
-  styleUrls: ['./twitter.component.scss'],
+    selector: 'app-twitter',
+    templateUrl: './twitter.component.html',
+    styleUrls: ['./twitter.component.scss'],
+    standalone: false
 })
 export class TwitterComponent implements OnInit {
   source: any;

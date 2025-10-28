@@ -7,9 +7,10 @@ import { ModalController, isPlatform } from '@ionic/angular';
 import { AdsComponent } from './ads/ads.component';
 
 @Component({
-  selector: 'app-result',
-  templateUrl: './result.page.html',
-  styleUrls: ['./result.page.scss'],
+    selector: 'app-result',
+    templateUrl: './result.page.html',
+    styleUrls: ['./result.page.scss'],
+    standalone: false
 })
 // https://github.com/ratson/cordova-plugin-admob-free
 // https://ionicframework.com/docs/native/admob-free

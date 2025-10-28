@@ -8,9 +8,10 @@ import { HistoryService } from 'src/app/utils/history.service';
 import { ApiService } from 'src/app/utils/api.service';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss'],
+    selector: 'app-history',
+    templateUrl: './history.component.html',
+    styleUrls: ['./history.component.scss'],
+    standalone: false
 })
 export class HistoryComponent implements OnInit {
   list: any[] = [];

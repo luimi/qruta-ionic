@@ -5,9 +5,10 @@ import { CardsService } from 'src/app/utils/cards.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-  selector: 'app-card-add',
-  templateUrl: './card-add.component.html',
-  styleUrls: ['./card-add.component.scss'],
+    selector: 'app-card-add',
+    templateUrl: './card-add.component.html',
+    styleUrls: ['./card-add.component.scss'],
+    standalone: false
 })
 export class CardAddComponent implements OnInit {
   cardNumber: string = ""

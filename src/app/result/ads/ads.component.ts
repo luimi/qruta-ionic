@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-ads',
-  templateUrl: './ads.component.html',
-  styleUrls: ['./ads.component.scss'],
+    selector: 'app-ads',
+    templateUrl: './ads.component.html',
+    styleUrls: ['./ads.component.scss'],
+    standalone: false
 })
 export class AdsComponent  implements OnInit {
 

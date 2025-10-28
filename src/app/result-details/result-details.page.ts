@@ -8,9 +8,10 @@ import { Platform, isPlatform } from '@ionic/angular';
 import { constants } from '../utils/constants';
 import { AdsService } from '../utils/ads.service';
 @Component({
-  selector: 'app-result-details',
-  templateUrl: './result-details.page.html',
-  styleUrls: ['./result-details.page.scss'],
+    selector: 'app-result-details',
+    templateUrl: './result-details.page.html',
+    styleUrls: ['./result-details.page.scss'],
+    standalone: false
 })
 export class ResultDetailsPage implements OnInit {
   map: any;

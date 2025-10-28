@@ -4,9 +4,10 @@ import { UtilsService } from '../utils/utils.service';
 import { TabPage } from '../tab/tab.page';
 import { FavoriteService } from '../utils/favorite.service';
 @Component({
-  selector: 'app-routes',
-  templateUrl: './routes.page.html',
-  styleUrls: ['./routes.page.scss'],
+    selector: 'app-routes',
+    templateUrl: './routes.page.html',
+    styleUrls: ['./routes.page.scss'],
+    standalone: false
 })
 export class RoutesPage extends TabPage implements OnInit {
   companies: any = {};

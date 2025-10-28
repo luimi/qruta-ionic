@@ -6,9 +6,10 @@ import { AddressMapComponent } from '../address-map/address-map.component';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-address-modal',
-  templateUrl: './address-modal.component.html',
-  styleUrls: ['./address-modal.component.scss'],
+    selector: 'app-address-modal',
+    templateUrl: './address-modal.component.html',
+    styleUrls: ['./address-modal.component.scss'],
+    standalone: false
 })
 export class AddressModalComponent implements OnInit {
 

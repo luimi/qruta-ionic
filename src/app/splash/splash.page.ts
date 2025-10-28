@@ -5,9 +5,10 @@ import { constants } from '../utils/constants';
 import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
-  selector: 'app-splash',
-  templateUrl: './splash.page.html',
-  styleUrls: ['./splash.page.scss'],
+    selector: 'app-splash',
+    templateUrl: './splash.page.html',
+    styleUrls: ['./splash.page.scss'],
+    standalone: false
 })
 export class SplashPage implements OnInit {
   private splashStatus = false

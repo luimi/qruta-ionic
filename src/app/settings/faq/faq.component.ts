@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import Parse from 'parse';
 import { ModalController } from '@ionic/angular';
 @Component({
-  selector: 'app-faq',
-  templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss'],
+    selector: 'app-faq',
+    templateUrl: './faq.component.html',
+    styleUrls: ['./faq.component.scss'],
+    standalone: false
 })
 export class FaqComponent implements OnInit {
   qr: any[] = [];

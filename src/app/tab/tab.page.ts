@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UtilsService } from '../utils/utils.service';
 
 @Component({
-  selector: 'app-tab',
-  templateUrl: './tab.page.html',
-  styleUrls: ['./tab.page.scss'],
+    selector: 'app-tab',
+    templateUrl: './tab.page.html',
+    styleUrls: ['./tab.page.scss'],
+    standalone: false
 })
 export class TabPage implements OnInit {
   currentCity: any;

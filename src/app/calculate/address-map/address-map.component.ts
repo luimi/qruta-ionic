@@ -5,9 +5,10 @@ import { ModalController } from '@ionic/angular';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-  selector: 'app-address-map',
-  templateUrl: './address-map.component.html',
-  styleUrls: ['./address-map.component.scss'],
+    selector: 'app-address-map',
+    templateUrl: './address-map.component.html',
+    styleUrls: ['./address-map.component.scss'],
+    standalone: false
 })
 export class AddressMapComponent implements OnInit {
   map:any;

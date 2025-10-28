@@ -6,9 +6,10 @@ import * as Parse from 'parse';
 import { GeoService } from '../utils/geo.service';
 
 @Component({
-  selector: 'app-cities',
-  templateUrl: './cities.page.html',
-  styleUrls: ['./cities.page.scss'],
+    selector: 'app-cities',
+    templateUrl: './cities.page.html',
+    styleUrls: ['./cities.page.scss'],
+    standalone: false
 })
 export class CitiesPage implements OnInit {
 

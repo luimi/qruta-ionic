@@ -5,9 +5,10 @@ import { AddressModalComponent } from '../address-modal/address-modal.component'
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-  selector: 'app-address-input',
-  templateUrl: './address-input.component.html',
-  styleUrls: ['./address-input.component.scss'],
+    selector: 'app-address-input',
+    templateUrl: './address-input.component.html',
+    styleUrls: ['./address-input.component.scss'],
+    standalone: false
 })
 export class AddressInputComponent implements OnInit {
   @Input() title: string = "";

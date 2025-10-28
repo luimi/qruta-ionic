@@ -6,9 +6,10 @@ import moment from 'moment';
 import { TabPage } from '../tab/tab.page';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.page.html',
-  styleUrls: ['./news.page.scss'],
+    selector: 'app-news',
+    templateUrl: './news.page.html',
+    styleUrls: ['./news.page.scss'],
+    standalone: false
 })
 export class NewsPage extends TabPage implements OnInit {
 
