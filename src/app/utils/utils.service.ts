@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import Parse from 'parse';
 import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 declare let gtag: any;
 
 @Injectable({
@@ -86,8 +87,8 @@ export class UtilsService {
     this.showAlert(messages[code - 1]);
   }
   public async getServer() {
-    const loadBalancer = process.env["NG_APP_LOADBALANCER_URL"];
-    let server = process.env["NG_APP_SERVER_URL"];
+    const loadBalancer = environment.server.loadBalancer;
+    let server = environment.server.url;
     if (loadBalancer)
       try {
         let response: any = await lastValueFrom(this.http.get(loadBalancer))
@@ -97,7 +98,7 @@ export class UtilsService {
   }
 
   public getInstallationId() {
-    return localStorage.getItem(`Parse/${process.env["NG_APP_APPID"]}/installationId`);
+    return localStorage.getItem(`Parse/${environment.server.appId}/installationId`);
   }
   public getServerConfig(param: string) {
     return new Promise(async (result, reject) => {

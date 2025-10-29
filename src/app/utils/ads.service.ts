@@ -20,9 +20,9 @@ export class AdsService {
     const header: any = new Headers();
     header.append('Content-Type', 'application/json');
     header.append('Accept', 'application/json');
-    header.append('X-Parse-Application-Id', process.env["NG_APP_PARTNER_ID"] || "");
-    if (process.env["NG_APP_PARTNER_KEY"]) {
-      header.append('X-Parse-REST-API-Key', process.env["NG_APP_PARTNER_KEY"] || "");
+    header.append('X-Parse-Application-Id',environment.partner.id);
+    if (environment.partner.key) {
+      header.append('X-Parse-REST-API-Key', environment.partner.key);
     }
     return { partnerUrl, header };
   }
@@ -31,7 +31,7 @@ export class AdsService {
     if (!config) return null;
     const { partnerUrl, header } = config;
     const city = this.utils.getLocal('city');
-    const userId = localStorage.getItem(`Parse/${process.env["NG_APP_APPID"]}/installationId`);
+    const userId = localStorage.getItem(`Parse/${environment.server.appId}/installationId`);
     const request: any = this.http.post(`${partnerUrl}/functions/getCampaign`, {
       code: city.objectId,
       id: userId,
@@ -67,7 +67,7 @@ export class AdsService {
   }
   async prepareInterstitial() {
     const options: AdOptions = {
-      adId: (isPlatform("ios") ? process.env["NG_APP_IOS_ADMOB_INTERSTITIAL"] : process.env["NG_APP_ANDROID_ADMOB_INTERSTITIAL"]) || "",
+      adId: (isPlatform("ios") ? environment.admob.ios : environment.admob.android) || "",
       isTesting: !environment.production,
     }
     await AdMob.prepareInterstitial(options)
@@ -102,21 +102,5 @@ export class AdsService {
   async isReadyForAds() {
     let adTimer = await this.utils.getServerConfig("adTimer") || 30000
     return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > parseInt(`${adTimer}`)
-  }
-
-  //@dreprecate
-  async showBanner() {
-    const options: BannerAdOptions = {
-      adId: (isPlatform("android") ? process.env["NG_APP_ANDROID_ADMOB_BANNER"] : process.env["NG_APP_IOS_ADMOB_BANNER"]) || "",
-      adSize: BannerAdSize.BANNER,
-      position: BannerAdPosition.BOTTOM_CENTER,
-      isTesting: !environment.production,
-      //npa: true
-    }
-    await AdMob.showBanner(options).catch(e => console.log(e))
-  }
-  //@deprecate
-  async hideBanner() {
-    await AdMob.removeBanner()
   }
 }

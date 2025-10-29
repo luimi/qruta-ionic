@@ -4,6 +4,7 @@ import { StatusBar, Style } from '@capacitor/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import moment from 'moment';
 import { UtilsService } from './utils/utils.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-root',
@@ -43,7 +44,7 @@ export class AppComponent {
         await StatusBar.setBackgroundColor({ color: '#011f35' });
       }
       this.utils.gaEvent(`platform-${_platform}`)
-      this.utils.gaEvent(`version-${process.env["NG_APP_VERSION"] || 0}`)
+      this.utils.gaEvent(`version-${environment.version || 0}`)
       this.platform.backButton.subscribeWithPriority(9999, () => { })
     });
   }

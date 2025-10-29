@@ -12,7 +12,7 @@ import Parse from 'parse';
 import { ApiService } from '../utils/api.service';
 import { CardListComponent } from './card-list/card-list.component';
 import { AdsService } from '../utils/ads.service';
-import { deprecate } from 'util';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-calculate',
@@ -67,7 +67,7 @@ export class CalculatePage implements OnInit {
     });
     
     this.utils.getServerConfig("status").then((status: any) => {
-      this.info.isUpdate = status.versionCode > (process.env["NG_APP_VERSION"] || 0);
+      this.info.isUpdate = status.versionCode > environment.version;
     })
     this.inputChanged("none")
     if(!this.start.location) this.getCurrentPosition()
@@ -229,7 +229,7 @@ export class CalculatePage implements OnInit {
     }
   }
   openStore() {
-    window.open(process.env[this.platform.is("ios") ? "NG_APP_APPSTORE_URL" : "NG_APP_PLAYSTORE_URL"], '_blank');
+    window.open(this.platform.is("ios") ? environment.store.ios : environment.store.android, '_blank');
   }
   async openCardList() {
     const modal = await this.modalCtrl.create({

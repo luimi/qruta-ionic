@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
 import { constants } from '../utils/constants';
 import { FaqComponent } from './faq/faq.component';
 import Parse from 'parse';
+import { environment } from 'src/environments/environment';
 declare var installer: any;
 
 @Component({
@@ -22,7 +23,7 @@ export class SettingsPage implements OnInit {
   layers: any[] = [];
   sponsors: any[] = [];
   public setup: any;
-  version: string = process.env["NG_APP_VERSION"] || "";
+  version: string = `${environment.version}`;
   social = [{
     icon: 'logo-facebook',
     url: 'https://www.facebook.com/queruta'

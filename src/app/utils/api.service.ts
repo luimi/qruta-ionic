@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { constants } from './constants';
 import { lastValueFrom } from 'rxjs';
 import Parse from 'parse';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,7 @@ export class ApiService {
       let response: any = await lastValueFrom(
         this.http.post(`${server.url}/functions/${method}`,
           data, {
-          headers: { 'X-Parse-Application-Id': process.env["NG_APP_APPID"] || "" }
+          headers: { 'X-Parse-Application-Id': environment.server.appId || "" }
         })
       )
       return response.result
