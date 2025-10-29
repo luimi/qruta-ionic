@@ -11,7 +11,9 @@
       <ion-card class="info" *ngIf="info.isUpdate">
         <ion-card-content class="ion-no-padding">
           <ion-item *ngIf="info.isUpdate" lines="none">
-            <ion-label translate>calculate.info.update.title</ion-label>
+            <ion-label>
+              <span translate>calculate.info.update.title</span>
+            </ion-label>
             <ion-button slot="end" translate (click)="openStore()"> calculate.info.update.button </ion-button>
           </ion-item>
         </ion-card-content>
@@ -30,7 +32,9 @@
         <!-- Segment entre urbano y masivo -->
         <ion-segment [(ngModel)]="type" mode="ios" *ngIf="city?.massive">
           <ion-segment-button value="urban">
-            <ion-label translate>calculate.main.urban</ion-label>
+            <ion-label>
+              <span translate>calculate.main.urban</span>
+            </ion-label>
           </ion-segment-button>
           <ion-segment-button value="massive">
             <ion-label>{{city?.massive?.name}}</ion-label>

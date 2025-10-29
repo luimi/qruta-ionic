@@ -7,7 +7,9 @@
 <ion-content class="ion-padding" *ngIf="sources.length > 0 && info.length > 0">
   <ion-segment *ngIf="sources.length > 1" (ionChange)="loadInfo()" mode="ios" [(ngModel)]="selected" color="primary">
     <ion-segment-button *ngFor="let source of sources" [value]="source.get('type')">
-      <ion-label translate>news.tabs.{{source.get('type')}}</ion-label>
+      <ion-label >
+        <span translate>news.tabs.{{source.get('type')}}</span>
+      </ion-label>
     </ion-segment-button>
   </ion-segment>
   <div class="masonry">
