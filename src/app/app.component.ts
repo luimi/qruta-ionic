@@ -42,6 +42,7 @@ export class AppComponent {
       if (this.platform.is("capacitor")) {
         await StatusBar.setStyle({ style: Style.Dark });
         await StatusBar.setBackgroundColor({ color: '#011f35' });
+        StatusBar.setOverlaysWebView( { overlay: false } );
       }
       this.utils.gaEvent(`platform-${_platform}`)
       this.utils.gaEvent(`version-${environment.version || 0}`)
