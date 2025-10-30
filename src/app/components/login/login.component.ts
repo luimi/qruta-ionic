@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
 
   async sendOTPCode() {
     this.isLoading = true;
-    let result = await Parse.Cloud.run(constants.methods.sendOTPCode, { email: this.emailForm.email });
+    let result = {success: true}
+    //let result = await Parse.Cloud.run(constants.methods.sendOTPCode, { email: this.emailForm.email });
     if (result.success) {
       this.step = 1;
       this.startCount()

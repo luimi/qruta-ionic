@@ -1,5 +1,5 @@
 .company {
-    color: var(--ion-color-primary)
+    color: var(--ion-color-dark)
 }
 .details {
     margin-top: 6px;
@@ -39,10 +39,10 @@
 }
 
 .route-type-name {
-  border-bottom: 5px solid var(--ion-color-primary);
+  border-bottom: 5px solid var(--ion-color-dark);
   border-radius: 5px;
   padding: 10px 10px 5px 10px;
-  color: var(--ion-color-primary);
+  color: var(--ion-color-dark);
   display: inline-flex;;
   flex-direction: row;
   align-items: center;

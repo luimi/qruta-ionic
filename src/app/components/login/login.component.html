@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="light">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-button (click)="modalCtrl.dismiss()" *ngIf="step === 0">
         <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -21,7 +21,7 @@
       <ion-button expand="block" shape="round" color="light" [disabled]="!emailForm.valid || isLoading" (click)="sendOTPCode()"
         translate> 
         <span *ngIf="!isLoading">CONTINUAR</span> 
-        <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner> 
+        <ion-spinner color="light" *ngIf="isLoading"></ion-spinner> 
       </ion-button>
       <hr />
       <ion-button color="light" shape="round" expand="block" (click)="loginGoogle()">
@@ -44,8 +44,8 @@
     <ion-button expand="block" shape="round" color="light" [disabled]="(codeForm.code !== '' && codeForm.code.length !== 6) || isLoading" (click)="validateOTP()"
         translate> 
         <span *ngIf="!isLoading">INGRESAR</span> 
-        <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner> 
+        <ion-spinner color="dark" *ngIf="isLoading"></ion-spinner> 
       </ion-button>
-    <ion-button expand="block" shape="round" color="primary" (click)="sendOTPCode()" [disabled]="countDown.count > 0" translate>Reenviar Código {{countDown.count > 0 ? '(' + countDown.count + 's)' : ''}}</ion-button>
+    <ion-button expand="block" shape="round" color="light" (click)="sendOTPCode()" [disabled]="countDown.count > 0" translate>Reenviar Código {{countDown.count > 0 ? '(' + countDown.count + 's)' : ''}}</ion-button>
   </div>
 </ion-content>

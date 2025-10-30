@@ -1,7 +1,7 @@
 <ion-content>
   <!-- Fab de tarjetas transcaribe -->
   <ion-fab horizontal="end" vertical="top" slot="fixed" *ngIf="city?.objectId  === 'Gu2tL5zMSH'">
-    <ion-fab-button (click)="openCardList()">
+    <ion-fab-button (click)="openCardList()" color="main">
       <ion-icon name="card-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -14,7 +14,7 @@
             <ion-label>
               <span translate>calculate.info.update.title</span>
             </ion-label>
-            <ion-button slot="end" translate (click)="openStore()"> calculate.info.update.button </ion-button>
+            <ion-button slot="end" translate (click)="openStore()" color="dark"> calculate.info.update.button </ion-button>
           </ion-item>
         </ion-card-content>
       </ion-card>
@@ -43,14 +43,14 @@
         <ion-row class="ion-margin-top">
           <ion-col size="10" size-md="12" class="ion-no-padding">
             <!-- Boton calcular -->
-            <ion-button (click)="calculate()" expand="block" shape="round" color="tertiary" translate>
+            <ion-button (click)="calculate()" expand="block" shape="round" color="white" translate>
               calculate.main.search
             </ion-button>
           </ion-col>
           <ion-col size="2" class="ion-hide-md-up ion-no-padding">
             <!-- Boton historial -->
-            <ion-button  class="ion-no-padding" (click)="showHistory()" color="tertiary" shape="round" expand="block">
-              <ion-icon name="timer-outline" color="secondary"></ion-icon>
+            <ion-button  class="ion-no-padding" (click)="showHistory()" color="white" shape="round" expand="block">
+              <ion-icon name="timer-outline" color="main"></ion-icon>
             </ion-button>
           </ion-col>
         </ion-row>
@@ -64,7 +64,7 @@
     <ng-template>
       <img [src]="advertise.image" (click)="openAdvertise()" />
       <ion-fab slot="fixed" vertical="top" horizontal="end">
-        <ion-fab-button size="small" color="primary" (click)="modal.dismiss()">
+        <ion-fab-button size="small" color="main" (click)="modal.dismiss()">
           <ion-icon name="close"></ion-icon>
         </ion-fab-button>
       </ion-fab>

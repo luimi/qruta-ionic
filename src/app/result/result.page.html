@@ -1,10 +1,10 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-back-button [text]="''"></ion-back-button>
     </ion-buttons>
     <ion-title translate>result.title</ion-title>
-    <ion-buttons slot="primary">
+    <ion-buttons slot="end">
       <ion-button (click)="view = view === 'grid' ? 'list' : 'grid'">
         <ion-icon slot="icon-only" [name]="view === 'grid' ? 'list' : 'grid'"></ion-icon>
       </ion-button>
@@ -39,7 +39,7 @@
     </ion-grid>
     <ion-card-content *ngIf="view === 'list'">
       <ion-item *ngFor="let route of option.routes; let i = index">
-        <ion-icon aria-hidden="true" [name]="route.route.type?route.route.type:'bus'" slot="start" color="primary"></ion-icon>
+        <ion-icon aria-hidden="true" [name]="route.route.type?route.route.type:'bus'" slot="start" color="dark"></ion-icon>
         <ion-label>{{ route.route.company }} - {{ route.route.name }}</ion-label>
       </ion-item>
     </ion-card-content>
@@ -49,11 +49,11 @@
           <ion-col *ngFor="let route of option.routes; let i = index" class="ion-no-padding" [size]="gridSizes[option.routes.length-1]">
             <ion-grid class="ion-no-padding">
               <ion-row>
-                <ion-col class="ion-no-padding"><ion-icon [name]="route.route.type?route.route.type:'bus'" size="large" color="primary"></ion-icon></ion-col>
+                <ion-col class="ion-no-padding"><ion-icon [name]="route.route.type?route.route.type:'bus'" size="large" color="dark"></ion-icon></ion-col>
               </ion-row>
               <ion-row>
                 <ion-col class="ion-no-padding">
-                  <ion-icon name="navigate" color="primary"></ion-icon>
+                  <ion-icon name="navigate" color="dark"></ion-icon>
                   {{ route.routeDistanceText }}
                 </ion-col>
               </ion-row>

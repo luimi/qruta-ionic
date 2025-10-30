@@ -26,7 +26,7 @@ export class UtilsService {
         {
           text: answers["general.no"],
           role: 'cancel',
-          cssClass: 'secondary'
+          cssClass: 'main'
         },
         {
           text: answers["general.yes"],

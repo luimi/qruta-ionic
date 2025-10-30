@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-back-button (click)="backAction()"></ion-back-button>
     </ion-buttons>
@@ -18,24 +18,24 @@
           <ion-select-option value="3">1.5km</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-item detail>
+      <ion-item>
         <ion-select placeholder="Seleccionar" (ionChange)="onChangeLayer()" [(ngModel)]="selectedLayer" label="{{'settings.mapType' | translate}}">
           <ion-select-option *ngFor="let layer of layers" [value]="layer.id">{{layer.title}}</ion-select-option>
         </ion-select>
       </ion-item>
     </div>
     
-    <ion-button color="primary" (click)="faq()" shape="round" expand="block" translate>settings.faq.title</ion-button>
-    <a color="primary" href="mailto:queruta@gmail.com" target="_blank" rel="noopener noreferrer">
-      <ion-button shape="round" expand="block" color="primary" translate>settings.contact</ion-button>
+    <ion-button color="dark" (click)="faq()" shape="round" expand="block" translate>settings.faq.title</ion-button>
+    <a color="dark" href="mailto:queruta@gmail.com" target="_blank" rel="noopener noreferrer">
+      <ion-button shape="round" expand="block" color="dark" translate>settings.contact</ion-button>
     </a>
-    <a color="primary"
+    <a color="dark"
       href="https://docs.google.com/document/d/14d1_fXqkzR4f2iawTnsKjFEPI8EOir3L18qAj560MKk/edit?usp=sharing"
       target="_blank" rel="noopener noreferrer" (click)="openTerms()">
-      <ion-button shape="round" expand="block" color="primary" translate>settings.terms</ion-button>
+      <ion-button shape="round" expand="block" color="dark" translate>settings.terms</ion-button>
     </a>
-    <ion-button color="primary" (click)="changeCity()" shape="round" expand="block" translate>settings.changeCity</ion-button>
-    <ion-button color="primary" (click)="install()" shape="round" expand="block" *ngIf="setup!==undefined" translate>settings.install</ion-button>
+    <ion-button color="dark" (click)="changeCity()" shape="round" expand="block" translate>settings.changeCity</ion-button>
+    <ion-button color="dark" (click)="install()" shape="round" expand="block" *ngIf="setup!==undefined" translate>settings.install</ion-button>
   </ion-list>
   <h3 translate class="center" *ngIf="sponsors.length > 0">settings.sponsors</h3>
   <ion-grid>

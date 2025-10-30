@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-back-button [text]="''"></ion-back-button>
     </ion-buttons>
@@ -32,7 +32,7 @@
               <ion-col size="10" class="info">
                 <div class="title text" translate>result.detail.walkTo</div>
                 <div class="content text v-center">
-                  <ion-icon name="walk" size="large" color="primary"></ion-icon>
+                  <ion-icon name="walk" size="large" color="dark"></ion-icon>
                   <span>{{ step?.startAddress?.address }}</span>
                 </div>
               </ion-col>
@@ -46,8 +46,8 @@
               <ion-col size="10" class="info">
                 <div class="title text" translate>result.detail.takeBus</div>
                 <div class="content text v-center">
-                  <ion-icon name="walk" size="large" color="primary"></ion-icon><ion-icon [name]="step.route.type?step.route.type:'bus'" size="large"
-                    color="primary"></ion-icon>
+                  <ion-icon name="walk" size="large" color="dark"></ion-icon><ion-icon [name]="step.route.type?step.route.type:'bus'" size="large"
+                    color="dark"></ion-icon>
                   <div class="route-box">
                     {{ step.route.company }} - {{ step.route.name }}
                   </div>
@@ -63,8 +63,8 @@
               <ion-col size="10" class="info">
                 <div class="title text" translate>result.detail.getDown</div>
                 <div class="content text v-center">
-                  <ion-icon [name]="step.route.type?step.route.type:'bus'" size="large" color="primary"></ion-icon>
-                  <ion-icon name="walk" size="large" color="primary"></ion-icon>
+                  <ion-icon [name]="step.route.type?step.route.type:'bus'" size="large" color="dark"></ion-icon>
+                  <ion-icon name="walk" size="large" color="dark"></ion-icon>
                   <span>{{ step?.endAddress?.address }}</span>
                 </div>
               </ion-col>
@@ -78,7 +78,7 @@
             <ion-col size="10" class="info">
               <div class="title text" translate>result.detail.destiny </div>
               <div class="content text v-center">
-                <ion-icon name="walk" size="large" color="primary"></ion-icon>
+                <ion-icon name="walk" size="large" color="dark"></ion-icon>
                 <span>{{ data?.endAddress?.address }}</span>
               </div>
             </ion-col>

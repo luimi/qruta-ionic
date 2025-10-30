@@ -1,5 +1,5 @@
 <ion-header class="navbar">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-button fill="clear" (click)="modalCtrl.dismiss()">
         <ion-icon slot="start" name="close"></ion-icon>
@@ -13,18 +13,18 @@
       <div slot="label" translate>calculate.cards.number</div>
     </ion-input>
   </ion-item>
-  <ion-button class="ion-margin-top" expand="block" (click)="search()">
+  <ion-button class="ion-margin-top" expand="block" (click)="search()" color="dark">
     <ion-text translate *ngIf="!loading">general.search</ion-text>
     <ion-spinner *ngIf="loading" name="circular"></ion-spinner>
   </ion-button>
   <div *ngIf="cardInfo.estadoCuenta === 'Activa'">
     <ion-item class="ion-margin-top" lines="none">
-      <ion-select label="{{'calculate.cards.style' | translate}}" [(ngModel)]="cardStyleSelected">
+      <ion-select label="{{'calculate.cards.style' | translate}}" [(ngModel)]="cardStyleSelected" interface="action-sheet">
         <ion-select-option *ngFor="let style of cardStyles" [value]="style">{{style.title}}</ion-select-option>
       </ion-select>
     </ion-item>
     <app-card [info]="cardInfo" [cardStyle]="cardStyleSelected.image" [orientation]="cardStyleSelected.orientation"/>
-    <ion-button class="ion-margin-top" expand="block" translate (click)="save()">general.save</ion-button>
+    <ion-button class="ion-margin-top" expand="block" translate (click)="save()" color="dark">general.save</ion-button>
   </div>
   
 </ion-content>

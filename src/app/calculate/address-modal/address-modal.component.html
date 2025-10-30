@@ -1,5 +1,5 @@
 <ion-header class="navbar">
-  <ion-toolbar color="secondary">
+  <ion-toolbar color="main">
     <ion-buttons slot="start">
       <ion-button fill="clear" (click)="modalCtrl.dismiss()">
         <ion-icon slot="start" name="arrow-back"></ion-icon>
@@ -8,7 +8,7 @@
   </ion-toolbar>
   <div class="searchbar">
     <ion-searchbar [(ngModel)]="address" value="" autocomplete="true" (ionInput)="search($event)"
-      placeholder="{{(type==='address' ? 'calculate.modal.address.hint' : 'calculate.modal.place.hint') | translate}}" color="tertiary">
+      placeholder="{{(type==='address' ? 'calculate.modal.address.hint' : 'calculate.modal.place.hint') | translate}}" color="white">
     </ion-searchbar>
     <ion-segment [(ngModel)]="type" mode="ios">
       <ion-segment-button value="address" class="switch" translate>
@@ -25,7 +25,7 @@
   </div>
 </ion-header>
 <ion-content class="ion-no-padding">
-  <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate" [ngClass]="{'ion-hide': !progress}" color="main"></ion-progress-bar>
   <ion-list lines="none">
     <ion-item *ngFor="let option of options">
       <ion-label (click)="select(option,'search')">
@@ -38,13 +38,13 @@
     </ion-item>
   </ion-list>
   <ion-list lines="none">
-    <ion-list-header translate>
+    <ion-list-header color="light" translate>
       calculate.modal.recent
     </ion-list-header>
     <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="calculate.modal.recentEmpty"
       [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let recent of recents; index as i">
-      <ion-icon name="timer-outline" color="primary" class="ion-padding"></ion-icon>
+      <ion-icon name="timer-outline" color="dark" class="ion-padding"></ion-icon>
       <ion-label (click)="select(recent,'recent')">
         <h2>{{ recent.address }}</h2>
         <p>{{ recent.city }}</p>
@@ -55,13 +55,13 @@
     </ion-item>
   </ion-list>
   <ion-list lines="none">
-    <ion-list-header translate>
+    <ion-list-header color="light" translate>
       calculate.modal.favorites
     </ion-list-header>
     <app-empty-state *ngIf="favorites.length===0" #emptyState icon="star" text="calculate.modal.favoritesEmpty"
       [fullContent]="false"></app-empty-state>
     <ion-item *ngFor="let favorite of favorites; index as i">
-      <ion-icon name="star" color="primary" class="ion-padding"></ion-icon>
+      <ion-icon name="star" color="dark" class="ion-padding"></ion-icon>
       <ion-label (click)="select(favorite,'favorite')">
         <h2>{{ favorite.address }}</h2>
         <p>{{ favorite.city }}</p>
