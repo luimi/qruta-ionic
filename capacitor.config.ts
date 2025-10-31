@@ -13,7 +13,11 @@ const config: CapacitorConfig = {
       launchAutoHide: false,
       backgroundColor: '#011f35',
       //androidSplashResourceName: 'launch_splash'
-    }}
+    }
+  },
+  android: {
+    adjustMarginsForEdgeToEdge: "force"
+  }
 };
 
 export default config;
