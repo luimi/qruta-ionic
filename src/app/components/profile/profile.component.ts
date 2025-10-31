@@ -5,10 +5,10 @@ import { LoginComponent } from '../login/login.component';
 import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
-    selector: 'app-profile',
-    templateUrl: './profile.component.html',
-    styleUrls: ['./profile.component.scss'],
-    standalone: false
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss'],
+  standalone: false
 })
 export class ProfileComponent implements OnInit {
   user: any;
@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
     this.user = Parse.User.current()
   }
   async logOut() {
-    this.utils.showConfirmDialog("¿Deseas cerrar la sesion de este usuario?", async () => {
+    this.utils.showConfirmDialog("profile.logout", async () => {
       await Parse.User.logOut()
       delete this.user;
     })

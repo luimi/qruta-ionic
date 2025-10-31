@@ -3,11 +3,12 @@ import { Location } from '@angular/common';
 import { UtilsService } from '../utils/utils.service';
 import { Router } from '@angular/router';
 import { LeafletHelperService } from '../utils/leaflet-helper.service';
-import { ModalController } from '@ionic/angular';
+import { ModalController, Platform } from '@ionic/angular';
 import { constants } from '../utils/constants';
 import { FaqComponent } from './faq/faq.component';
 import Parse from 'parse';
 import { environment } from 'src/environments/environment';
+import { SocialLogin } from '@capgo/capacitor-social-login';
 declare var installer: any;
 
 @Component({
@@ -43,8 +44,9 @@ export class SettingsPage implements OnInit {
     private router: Router,
     private leaflet: LeafletHelperService,
     private modalCtrl: ModalController,
+    private platform: Platform
   ) {
-
+    this.initSocials();
   }
 
   async ngOnInit() {
@@ -94,5 +96,20 @@ export class SettingsPage implements OnInit {
     //let v = "123124"
     //let groups = v.split('').reverse().join('').match(/\d{1,3}/g).reverse();
     //return '#' + groups.join('.');
+  }
+
+  async initSocials() {
+    const methods: any = {
+      google: {
+        webClientId: environment.social.google.web,
+        iOSClientId: environment.social.google.ios,
+        //iOSServerClientId: 'YOUR_WEB_CLIENT_ID',
+        mode: 'online',
+      }
+    }
+    if(this.utils.isIOS()) {
+      methods['apple'] = {}
+    }
+    await SocialLogin.initialize(methods);
   }
 }

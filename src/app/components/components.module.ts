@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { InputComponent } from './input/input.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, IonicModule, ],
+    imports: [CommonModule, FormsModule, IonicModule, TranslateModule],
     declarations: [ProfileComponent, LoginComponent, InputComponent],
     exports: [ProfileComponent, LoginComponent, InputComponent]
 })

@@ -4,7 +4,7 @@
       <ion-button (click)="modalCtrl.dismiss()" *ngIf="step === 0">
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
-      <ion-button (click)="this.step = 0" *ngIf="step === 1">
+      <ion-button (click)="back()" *ngIf="step === 1">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -14,21 +14,23 @@
 <ion-content class="ion-padding">
   <img src="../../../assets/qruta-logo.png" class="logo ion-margin-vertical" />
   <div *ngIf="step === 0">
-    <h1 class="ion-text-center">Login</h1>
+    <h1 class="ion-text-center" translate>login.title</h1>
     <div class="step ion-padding">
-      <app-input title="Correo Electrónico" icon="mail-outline" type="email" placeholder="usuario@dominio.com"
-        (changed)="emailChange($event)" (isValid)="emailValidityChange($event)"></app-input>
-      <ion-button expand="block" shape="round" color="light" [disabled]="!emailForm.valid || isLoading" (click)="sendOTPCode()"
-        translate> 
-        <span *ngIf="!isLoading">CONTINUAR</span> 
-        <ion-spinner color="light" *ngIf="isLoading"></ion-spinner> 
+      <app-input title="login.otp.email.title" icon="mail-outline" type="email"
+        placeholder="login.otp.email.placeholder" (changed)="emailChange($event)"
+        (isValid)="emailValidityChange($event)">
+      </app-input>
+      <ion-button expand="block" shape="round" color="light" [disabled]="!emailForm.valid || isLoading"
+        (click)="sendOTPCode()" translate>
+        <span *ngIf="!isLoading" translate>login.otp.email.continue</span>
+        <ion-spinner color="light" *ngIf="isLoading"></ion-spinner>
       </ion-button>
       <hr />
       <ion-button color="light" shape="round" expand="block" (click)="loginGoogle()">
         <ion-icon slot="start" name="logo-google"></ion-icon>
         Google
       </ion-button>
-      <ion-button color="light" shape="round" expand="block">
+      <ion-button color="light" shape="round" expand="block" *ngIf="this.utils.isIOS()">
         <ion-icon slot="start" name="logo-apple"></ion-icon>
         Apple
       </ion-button>
@@ -37,15 +39,18 @@
   <div *ngIf="step === 1" class="step ion-padding">
     <div class="header">
       <h3>{{emailForm.email}}</h3>
-      <p>Enviamos un código a tu correo electrónico, revisa tu bandeja de entrada o bandeja de SPAM.</p>
+      <p translate="">login.otp.confirm.message</p>
     </div>
-    <app-input title="Código" icon="lock-closed-outline" type="number" placeholder="123456"
-        (changed)="codeChange($event)"></app-input>
-    <ion-button expand="block" shape="round" color="light" [disabled]="(codeForm.code !== '' && codeForm.code.length !== 6) || isLoading" (click)="validateOTP()"
-        translate> 
-        <span *ngIf="!isLoading">INGRESAR</span> 
-        <ion-spinner color="dark" *ngIf="isLoading"></ion-spinner> 
-      </ion-button>
-    <ion-button expand="block" shape="round" color="light" (click)="sendOTPCode()" [disabled]="countDown.count > 0" translate>Reenviar Código {{countDown.count > 0 ? '(' + countDown.count + 's)' : ''}}</ion-button>
+    <app-input title="login.otp.confirm.title" icon="lock-closed-outline" type="number"
+      placeholder="login.otp.confirm.placeholder" (changed)="codeChange($event)"></app-input>
+    <ion-button expand="block" shape="round" color="light"
+      [disabled]="(codeForm.code !== '' && codeForm.code.length !== 6) || isLoading" (click)="validateOTP()" translate>
+      <span *ngIf="!isLoading" translate>login.otp.confirm.continue</span>
+      <ion-spinner color="dark" *ngIf="isLoading"></ion-spinner>
+    </ion-button>
+    <hr />
+    <ion-button expand="block" shape="round" color="light" (click)="sendOTPCode()"
+      [disabled]="countDown.count > 0">{{'login.otp.confirm.resend' | translate}} {{countDown.count > 0 ? '(' +
+      countDown.count + 's)' : ''}}</ion-button>
   </div>
 </ion-content>

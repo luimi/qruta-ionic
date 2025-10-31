@@ -17,5 +17,11 @@ export const environment = {
   partner: {
     id: 'abcdefghijklmnopqrstuvwxyz1234567890',
     key: 'abcdefghijklmnopqrstuvwxyz1234567890',
+  },
+  social: {
+    google: {
+      web: '167269905194-evpr1d5b98m16hnkskuv1pu8da4v59qt.apps.googleusercontent.com',
+      ios: '167269905194-ab15k1gjlknur58oejvc2c1h8qgg1ems.apps.googleusercontent.com'
+    }
   }
 };

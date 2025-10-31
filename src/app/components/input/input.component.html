@@ -1,8 +1,8 @@
 <div>
-  <span class="title" translate>{{title}}</span>
+  <span class="title">{{title | translate}}</span>
   <ion-item class="input" lines="none" color="white">
     <ion-icon [name]="icon" slot="start" color="main" *ngIf="icon">
     </ion-icon>
-    <ion-input #inputModel [type]="type" [clearInput]="true" [placeholder]="placeholder" (ionInput)="onInputChanged($event, inputModel)"></ion-input>
+    <ion-input #inputModel [type]="type" [clearInput]="true" placeholder="{{placeholder | translate}}" (ionInput)="onInputChanged($event, inputModel)"></ion-input>
   </ion-item>
 </div>

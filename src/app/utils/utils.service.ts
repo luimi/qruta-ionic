@@ -20,8 +20,9 @@ export class UtilsService {
   }
   public async showConfirmDialog(message: string, callback: any) {
     const answers: any = await this.getTranslation(["general.yes", "general.no"])
+    const _message: any = await this.getTranslation(message)
     const alert = await this.alertCtrl.create({
-      message: message,
+      message: _message,
       buttons: [
         {
           text: answers["general.no"],
@@ -137,5 +138,9 @@ export class UtilsService {
     let generic = new Parse.Object(_class);
     if(id) generic.id = id
     return generic
+  }
+
+  public isIOS(){
+    return this.platform.is('ios') && this.platform.is('capacitor')
   }
 }

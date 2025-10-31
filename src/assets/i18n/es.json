@@ -202,5 +202,39 @@
             "transport": "Transporte",
             "news": "Noticias"
         }
+    },
+    "profile": {
+        "title": "Ingresa o regístrate",
+        "help": {
+            "header":"Ingresa o regístrate para poder guardar en la nube estas características:",
+            "options": {
+                "option1": "Rutas favoritas",
+                "option2": "Direcciones favoritas",
+                "option3": "Historial de búsqueda",
+                "option4": "Subscripción"
+            }
+        },
+        "logout": "¿Deseas cerrar la sesión de este usuario?"
+    },
+    "login": {
+        "title": "Login",
+        "otp": {
+            "email":{
+                "title": "Correo Electrónico",
+                "placeholder": "usuario@dominio.com",
+                "continue": "CONTINUAR"
+            },
+            "confirm": {
+                "message": "Enviamos un código a tu correo electrónico. Revisa tu bandeja de entrada o bandeja de SPAM.",
+                "title": "Código",
+                "placeholder": "123456",
+                "continue": "INGRESAR",
+                "resend": "Reenviar código"
+            },
+            "errors": {
+                "error1": "No pudimos enviarte el correo, intenta nuevamente más tarde",
+                "error2": "Código inválido"
+            }
+        }
     }
 }

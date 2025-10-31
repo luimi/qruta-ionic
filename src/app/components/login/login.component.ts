@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { constants } from 'src/app/utils/constants';
 import Parse from 'parse';
 import { UtilsService } from 'src/app/utils/utils.service';
-//import { SocialLogin } from '@capgo/capacitor-social-login';
+import { SocialLogin } from '@capgo/capacitor-social-login';
+import { constants } from 'src/app/utils/constants';
 
 @Component({
     selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   countDown: any = { count: 0 };
   isLoading: boolean = false;
 
-  constructor(public modalCtrl: ModalController, private utils: UtilsService) { }
+  constructor(public modalCtrl: ModalController, public utils: UtilsService) { }
 
   ngOnInit() { }
 
@@ -31,15 +31,19 @@ export class LoginComponent implements OnInit {
 
   async sendOTPCode() {
     this.isLoading = true;
-    let result = {success: true}
-    //let result = await Parse.Cloud.run(constants.methods.sendOTPCode, { email: this.emailForm.email });
+    let result = await Parse.Cloud.run(constants.methods.sendOTPCode, { email: this.emailForm.email });
     if (result.success) {
       this.step = 1;
       this.startCount()
     } else {
-      this.utils.showAlert("No pudimos enviarte el correo, intenta nuevamente mas tarde")
+      this.utils.showAlert("login.otp.errors.error1")
     }
     this.isLoading = false;
+  }
+
+  back() {
+    this.step = 0;
+    this.emailForm = { email: '', valid: false }
   }
 
   codeChange(code: string) {
@@ -52,7 +56,7 @@ export class LoginComponent implements OnInit {
       await Parse.User.logIn(this.emailForm.email, this.codeForm.code);
       this.modalCtrl.dismiss()
     } catch (e) {
-      this.utils.showAlert('Código invalido')
+      this.utils.showAlert('login.otp.errors.error2')
     }
     this.isLoading = false;
   }
@@ -69,17 +73,17 @@ export class LoginComponent implements OnInit {
     }, 1000)
   }
   async loginGoogle() {
-    /*const res: any = await SocialLogin.login({
+    const res: any = await SocialLogin.login({
       provider: 'google',
       options: {
         scopes: ['email', 'profile'],
       },
     });
     if (res) {
-      this.handleLogin(res)
+      await this.handleLogin(res)
       SocialLogin.logout({ provider: 'google' })
       this.modalCtrl.dismiss()
-    }*/
+    }
   }
 
   async handleLogin(response: any) {
