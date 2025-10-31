@@ -12,7 +12,16 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <img src="../../../assets/qruta-logo.png" class="logo ion-margin-vertical" />
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-align-self-center">
+        <div class="ion-text-center ion-margin-bottom logo">
+          <img src="../../../assets/qruta-logo.png" />
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
   <div *ngIf="step === 0">
     <h1 class="ion-text-center" translate>login.title</h1>
     <div class="step ion-padding">
@@ -30,7 +39,7 @@
         <ion-icon slot="start" name="logo-google"></ion-icon>
         Google
       </ion-button>
-      <ion-button color="light" shape="round" expand="block" *ngIf="this.utils.isIOS()">
+      <ion-button color="light" shape="round" expand="block" *ngIf="this.utils.isIOS()" (click)="loginApple()">
         <ion-icon slot="start" name="logo-apple"></ion-icon>
         Apple
       </ion-button>

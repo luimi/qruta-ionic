@@ -9,7 +9,7 @@
     "android": "ionic capacitor run android",
     "ios": "ionic capacitor run ios",
     "apk": "cd android/app/build/outputs/apk/debug; adb install *.apk",
-    "debug": "ionic capacitor run android -l --external",
+    "debug": "ionic capacitor run ios -l --external",
     "release": "ionic capacitor build android && cd android && ./gradlew bundleRelease",
     "external": "ionic serve --external --no-open",
     "nopen": "ionic serve --no-open",

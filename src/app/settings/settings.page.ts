@@ -47,6 +47,7 @@ export class SettingsPage implements OnInit {
     private platform: Platform
   ) {
     this.initSocials();
+    console.log("settings")
   }
 
   async ngOnInit() {
