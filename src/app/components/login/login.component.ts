@@ -101,7 +101,6 @@ export class LoginComponent implements OnInit {
   }
 
   async handleLogin(response: any) {
-    console.log("response", response);
     const { provider, result } = response;
     const { accessToken, idToken, profile, responseType } = result;
     const id = profile[provider === 'google' ? 'id' : 'user'];

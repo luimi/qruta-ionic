@@ -13,6 +13,7 @@ import { ApiService } from '../utils/api.service';
 import { CardListComponent } from './card-list/card-list.component';
 import { AdsService } from '../utils/ads.service';
 import { environment } from 'src/environments/environment';
+import { RecentsService } from '../utils/recents.service';
 
 @Component({
     selector: 'app-calculate',
@@ -27,6 +28,7 @@ export class CalculatePage implements OnInit {
   @ViewChild('start') start: any;
   @ViewChild('end') end: any;
   @ViewChild('modalAdvertise') modal: any;
+  @ViewChild('history') history!: HistoryComponent;
   type = 'urban';
   city: any;
   advertise: any;
@@ -39,12 +41,13 @@ export class CalculatePage implements OnInit {
     private leaflet: LeafletHelperService,
     private geo: GeoService,
     private router: Router,
-    private history: HistoryService,
+    private historyCtrl: HistoryService,
     private utils: UtilsService,
     public modalCtrl: ModalController,
     private apiCtrl: ApiService,
     private platform: Platform,
-    private adCtrl: AdsService
+    private adCtrl: AdsService,
+    private recentCtrl: RecentsService
   ) { }
 
   ngOnInit() { 
@@ -52,6 +55,7 @@ export class CalculatePage implements OnInit {
   }
 
   ionViewDidEnter() {
+    this.history.ngOnInit()
     this.city = this.utils.getLocal(constants.keys.city);
     if (this.leaflet.getMap('calculate')) {
       //this.map.invalidateSize()
@@ -70,7 +74,8 @@ export class CalculatePage implements OnInit {
       this.info.isUpdate = status.versionCode > environment.version;
     })
     this.inputChanged("none")
-    if(!this.start.location) this.getCurrentPosition()
+    if(!this.start.location) this.getCurrentPosition();
+    
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
@@ -97,11 +102,11 @@ export class CalculatePage implements OnInit {
       loading.dismiss();
       if (result.success) {
         this.utils.gaEvent("calculate-calculated")
-        this.history.add(this.start.location, this.end.location, this.type);
+        this.historyCtrl.addHistory(this.start.location, this.end.location, this.type);
         sessionStorage.setItem('result', JSON.stringify(result));
         this.router.navigate(['/result']);
-        this.saveRecent(this.end.location);
-        this.saveRecent(this.start.location);
+        this.recentCtrl.addRecent(this.end.location);
+        this.recentCtrl.addRecent(this.start.location);
       } else {
         this.utils.showErrorByCode(result.codeError, constants.errors.calculate);
       }
@@ -132,23 +137,6 @@ export class CalculatePage implements OnInit {
       }]
     });
     await actionSheet.present();
-  }
-  saveRecent(location: any) {
-    let recents = this.utils.getLocal(constants.local.recents) || [];
-    let isRegistered = false;
-    recents.forEach((entry: any) => {
-      if (entry.address === location.address) {
-        isRegistered = true;
-      }
-    });
-    if (!isRegistered) {
-      recents.unshift(location);
-      if (recents.length > 4) {
-        recents.splice(-1, 1);
-      }
-      this.utils.setLocal(constants.local.recents, recents);
-    }
-
   }
   setAddress(place: any, location: any) {
     place.location = location;

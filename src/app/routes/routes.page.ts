@@ -20,6 +20,7 @@ export class RoutesPage extends TabPage implements OnInit {
     super(utils)
   }
   async ionViewDidEnter() {
+    this.favoriteCtrl.fill()
     if(this.isSameCity()) return
     else  this.companies = {};
     this.showEmptyStateProgress()
@@ -44,6 +45,7 @@ export class RoutesPage extends TabPage implements OnInit {
     this.filtered = { ...this.companies }
     
     this.hideEmptyStateProgress()
+    
   }
 
   filter(evt: any) {

@@ -4,6 +4,9 @@ import { GeoService } from 'src/app/utils/geo.service';
 import { UtilsService } from 'src/app/utils/utils.service';
 import { AddressMapComponent } from '../address-map/address-map.component';
 import { TranslateService } from '@ngx-translate/core';
+import { constants } from 'src/app/utils/constants';
+import { LocationsService } from 'src/app/utils/locations.service';
+import { RecentsService } from 'src/app/utils/recents.service';
 
 @Component({
     selector: 'app-address-modal',
@@ -18,7 +21,9 @@ export class AddressModalComponent implements OnInit {
     private utils: UtilsService,
     private changeRef: ChangeDetectorRef,
     public modalCtrl: ModalController,
-    private translateCtrl: TranslateService) { }
+    private translateCtrl: TranslateService,
+    private locationCtrl: LocationsService,
+    private recentCtrl: RecentsService) { }
 
   address: any = '';
   options: any;
@@ -74,8 +79,8 @@ export class AddressModalComponent implements OnInit {
       item => item.address === address.address
     )
     if (index === -1) {
-      this.favorites.push(address);
-      this.saveFavorites();
+      this.locationCtrl.add(address)
+      this.getFavorites()
       this.utils.showAlert("calculate.modal.dialogs.favoriteAdded");
     } else {
       this.utils.showAlert("calculate.modal.dialogs.favoriteExists");
@@ -83,27 +88,20 @@ export class AddressModalComponent implements OnInit {
     this.utils.gaEvent("calculate-favorite-added")
   }
   getFavorites() {
-    this.favorites = JSON.parse(localStorage.getItem('favorites') || "[]");
-    if (!this.favorites) {
-      this.favorites = [];
-    }
+    this.favorites = this.locationCtrl.get()
   }
   deleteFavorite(index: number) {
     this.translateCtrl.get("calculate.modal.dialogs.favoriteDelete").subscribe(res => {
       this.utils.showConfirmDialog(res, () => {
         this.utils.gaEvent("calculate-favorite-deleted")
-        this.favorites.splice(index, 1);
-        this.saveFavorites();
+        this.locationCtrl.removeByIndex(index)
+        this.getFavorites()
         this.changeRef.detectChanges();
       });
     })
   }
-  saveFavorites() {
-    localStorage.setItem('favorites', JSON.stringify(this.favorites));
-    this.getFavorites();
-  }
   getRecents() {
-    this.recents = JSON.parse(localStorage.getItem('recents') || "[]");
+    this.recents = this.recentCtrl.get();
   }
 
   /**

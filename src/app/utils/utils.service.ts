@@ -5,6 +5,7 @@ import Parse from 'parse';
 import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
+import { constants } from './constants';
 declare let gtag: any;
 
 @Injectable({
@@ -132,7 +133,7 @@ export class UtilsService {
     })
   }
   public gaEvent(name: string) {
-    gtag('event', name, {});
+    if(environment.production) gtag('event', name, {});
   }
   public getGenericObject(_class: string, id?: string) {
     let generic = new Parse.Object(_class);

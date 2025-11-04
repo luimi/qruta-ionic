@@ -17,6 +17,8 @@ export const constants = {
         status:'status',
         cards: 'cards',
         favorites: 'favorites',
+        locations: 'locations',
+        history: 'history',
     },
     errors:{
         calculate:[
