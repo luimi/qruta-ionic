@@ -217,7 +217,11 @@
         "logout": "¿Deseas cerrar la sesión de este usuario?"
     },
     "login": {
-        "title": "Login",
+        "title": "Q'ruta",
+        "welcome": "Bienvenido/a",
+        "login": "Iniciar Sesión",
+        "loginMessage": "Accede a tu cuenta de forma segura",
+        "guest": "Continuar como invitado",
         "otp": {
             "email":{
                 "title": "Correo Electrónico",

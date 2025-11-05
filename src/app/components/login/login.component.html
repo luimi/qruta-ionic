@@ -12,19 +12,67 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-grid class="ion-no-padding">
-    <ion-row class="ion-justify-content-center">
-      <ion-col class="ion-align-self-center">
-        <div class="ion-text-center ion-margin-bottom logo">
-          <img src="../../../assets/qruta-logo.png" />
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  
   <div *ngIf="step === 0">
-    <h1 class="ion-text-center" translate>login.title</h1>
-    <div class="step ion-padding">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center">
+          <div class="ion-text-center ion-margin-bottom logo">
+            <img src="../../../assets/qruta-logo.png" />
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-label>
+            <h1 translate>login.title</h1>
+            <p translate>login.welcome</p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-label>
+            <h1 translate>login.login</h1>
+            <p translate>login.loginMessage</p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-button color="dark" shape="round" expand="block" (click)="loginGoogle()">
+            <ion-icon slot="start" name="logo-google"></ion-icon>
+            Google
+          </ion-button>
+          <ion-button color="dark" shape="round" expand="block" *ngIf="this.utils.isIOS()" (click)="loginApple()">
+            <ion-icon slot="start" name="logo-apple"></ion-icon>
+            Apple
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-button color="dark" shape="round" expand="block" (click)="this.modalCtrl.dismiss()" translate>
+            login.guest
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label class="ion-text-center">
+            <p translate>profile.help.header</p>
+          </ion-label>
+          <ion-item
+            *ngFor="let item of ['star-outline', 'location-outline', 'timer-outline', 'id-card-outline']; let i = index">
+            <ion-icon aria-hidden="true" [name]="item" slot="start"></ion-icon>
+            <ion-label><span translate>profile.help.options.option{{i+1}}</span></ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <div class="step ion-padding">
       <app-input title="login.otp.email.title" icon="mail-outline" type="email"
         placeholder="login.otp.email.placeholder" (changed)="emailChange($event)"
         (isValid)="emailValidityChange($event)">
@@ -35,15 +83,8 @@
         <ion-spinner color="light" *ngIf="isLoading"></ion-spinner>
       </ion-button>
       <hr />
-      <ion-button color="light" shape="round" expand="block" (click)="loginGoogle()">
-        <ion-icon slot="start" name="logo-google"></ion-icon>
-        Google
-      </ion-button>
-      <ion-button color="light" shape="round" expand="block" *ngIf="this.utils.isIOS()" (click)="loginApple()">
-        <ion-icon slot="start" name="logo-apple"></ion-icon>
-        Apple
-      </ion-button>
-    </div>
+
+    </div> -->
   </div>
   <div *ngIf="step === 1" class="step ion-padding">
     <div class="header">

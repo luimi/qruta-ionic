@@ -110,7 +110,6 @@ export class LoginComponent implements OnInit {
     try {
       const user = await Parse.User.logInWith(provider, { authData });
       if (new Date().getTime() - user.get('createdAt').getTime() < 60 * 1000) {
-        user.set('username', profile.email)
         user.set('email', profile.email);
         user.set('name', `${profile.givenName} ${profile.familyName}`)
         user.set('avatar', profile.imageUrl)
