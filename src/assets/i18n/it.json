@@ -202,5 +202,43 @@
             "transport": "Trasporto",
             "news": "Notizie"
         }
+    },
+    "profile": {
+        "title": "Accedi o registrati",
+        "help": {
+            "header": "Accedi o registrati per salvare queste funzionalità nel cloud:",
+            "options": {
+                "option1": "Percorsi preferiti",
+                "option2": "Indirizzi preferiti",
+                "option3": "Cronologia delle ricerche",
+                "option4": "Abbonamento"
+            }
+        },
+        "logout": "Vuoi disconnetterti da questo utente?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Benvenuto/a",
+        "login": "Accedi",
+        "loginMessage": "Accedi in modo sicuro al tuo account",
+        "guest": "Continua come ospite",
+        "otp": {
+            "email": {
+                "title": "Email",
+                "placeholder": "utente@dominio.com",
+                "continue": "CONTINUA"
+            },
+            "confirm": {
+                "message": "Abbiamo inviato un codice alla tua email. Controlla la posta in arrivo o la cartella spam.",
+                "title": "Codice",
+                "placeholder": "123456",
+                "continue": "INSERISCI",
+                "resend": "Invia di nuovo il codice"
+            },
+            "errors": {
+                "error1": "Non siamo riusciti a inviarti l'email, riprova più tardi",
+                "error2": "Codice non valido"
+            }
+        }
     }
 }

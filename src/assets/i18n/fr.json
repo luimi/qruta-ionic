@@ -202,5 +202,43 @@
             "transport": "Transport",
             "news": "Actualités"
         }
+    },
+    "profile": {
+        "title": "Se connecter ou s’inscrire",
+        "help": {
+            "header": "Connectez-vous ou inscrivez-vous pour enregistrer ces fonctionnalités dans le cloud :",
+            "options": {
+                "option1": "Itinéraires favoris",
+                "option2": "Adresses favorites",
+                "option3": "Historique de recherche",
+                "option4": "Abonnement"
+            }
+        },
+        "logout": "Souhaitez-vous vous déconnecter de cet utilisateur ?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Bienvenue",
+        "login": "Se connecter",
+        "loginMessage": "Accédez à votre compte en toute sécurité",
+        "guest": "Continuer en tant qu’invité",
+        "otp": {
+            "email": {
+                "title": "Courriel",
+                "placeholder": "utilisateur@domaine.com",
+                "continue": "CONTINUER"
+            },
+            "confirm": {
+                "message": "Nous avons envoyé un code à votre adresse e-mail. Vérifiez votre boîte de réception ou vos courriers indésirables.",
+                "title": "Code",
+                "placeholder": "123456",
+                "continue": "ENTRER",
+                "resend": "Renvoyer le code"
+            },
+            "errors": {
+                "error1": "Impossible d’envoyer l’e-mail, veuillez réessayer plus tard",
+                "error2": "Code invalide"
+            }
+        }
     }
 }

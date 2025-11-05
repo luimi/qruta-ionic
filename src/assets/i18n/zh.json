@@ -202,5 +202,43 @@
             "transport": "运输",
             "news": "新闻"
         }
+    },
+    "profile": {
+        "title": "登录或注册",
+        "help": {
+            "header": "登录或注册以将这些功能保存到云端：",
+            "options": {
+                "option1": "收藏路线",
+                "option2": "收藏地址",
+                "option3": "搜索历史",
+                "option4": "订阅"
+            }
+        },
+        "logout": "是否要退出此用户？"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "欢迎",
+        "login": "登录",
+        "loginMessage": "安全访问您的帐户",
+        "guest": "以访客身份继续",
+        "otp": {
+            "email": {
+                "title": "电子邮件",
+                "placeholder": "user@domain.com",
+                "continue": "继续"
+            },
+            "confirm": {
+                "message": "我们已将验证码发送到您的邮箱。请检查收件箱或垃圾邮件文件夹。",
+                "title": "验证码",
+                "placeholder": "123456",
+                "continue": "登录",
+                "resend": "重新发送验证码"
+            },
+            "errors": {
+                "error1": "无法发送邮件，请稍后再试",
+                "error2": "验证码无效"
+            }
+        }
     }
 }

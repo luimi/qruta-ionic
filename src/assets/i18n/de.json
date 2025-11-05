@@ -202,5 +202,43 @@
             "transport": "Transport",
             "news": "Nachrichten"
         }
+    },
+    "profile": {
+        "title": "Anmelden oder registrieren",
+        "help": {
+            "header": "Melde dich an oder registriere dich, um diese Funktionen in der Cloud zu speichern:",
+            "options": {
+                "option1": "Lieblingsrouten",
+                "option2": "Lieblingsadressen",
+                "option3": "Suchverlauf",
+                "option4": "Abonnement"
+            }
+        },
+        "logout": "Möchtest du dich von diesem Benutzer abmelden?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Willkommen",
+        "login": "Anmelden",
+        "loginMessage": "Greife sicher auf dein Konto zu",
+        "guest": "Als Gast fortfahren",
+        "otp": {
+            "email": {
+                "title": "E-Mail",
+                "placeholder": "benutzer@domain.com",
+                "continue": "FORTFAHREN"
+            },
+            "confirm": {
+                "message": "Wir haben einen Code an deine E-Mail gesendet. Überprüfe deinen Posteingang oder Spam-Ordner.",
+                "title": "Code",
+                "placeholder": "123456",
+                "continue": "EINGEBEN",
+                "resend": "Code erneut senden"
+            },
+            "errors": {
+                "error1": "Wir konnten die E-Mail nicht senden, bitte versuche es später erneut",
+                "error2": "Ungültiger Code"
+            }
+        }
     }
 }

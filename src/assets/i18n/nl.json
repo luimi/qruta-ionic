@@ -202,5 +202,43 @@
             "transport": "Transport",
             "news": "Nieuws"
         }
+    },
+    "profile": {
+        "title": "Inloggen of registreren",
+        "help": {
+            "header": "Log in of registreer om deze functies in de cloud op te slaan:",
+            "options": {
+                "option1": "Favoriete routes",
+                "option2": "Favoriete adressen",
+                "option3": "Zoekgeschiedenis",
+                "option4": "Abonnement"
+            }
+        },
+        "logout": "Wil je deze gebruiker afmelden?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Welkom",
+        "login": "Inloggen",
+        "loginMessage": "Toegang tot je account op een veilige manier",
+        "guest": "Doorgaan als gast",
+        "otp": {
+            "email": {
+                "title": "E-mail",
+                "placeholder": "gebruiker@domein.com",
+                "continue": "DOORGAAN"
+            },
+            "confirm": {
+                "message": "We hebben een code naar je e-mail gestuurd. Controleer je inbox of spammap.",
+                "title": "Code",
+                "placeholder": "123456",
+                "continue": "INVOEREN",
+                "resend": "Code opnieuw verzenden"
+            },
+            "errors": {
+                "error1": "We konden de e-mail niet verzenden, probeer het later opnieuw",
+                "error2": "Ongeldige code"
+            }
+        }
     }
 }

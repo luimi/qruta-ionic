@@ -202,5 +202,43 @@
             "transport": "Transport",
             "news": "News"
         }
+    },
+    "profile": {
+        "title": "Sign in or Register",
+        "help": {
+            "header": "Sign in or register to save these features to the cloud:",
+            "options": {
+                "option1": "Favorite routes",
+                "option2": "Favorite addresses",
+                "option3": "Search history",
+                "option4": "Subscription"
+            }
+        },
+        "logout": "Do you want to log out of this user?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Welcome",
+        "login": "Sign In",
+        "loginMessage": "Access your account securely",
+        "guest": "Continue as guest",
+        "otp": {
+            "email": {
+                "title": "Email",
+                "placeholder": "user@domain.com",
+                "continue": "CONTINUE"
+            },
+            "confirm": {
+                "message": "We sent a code to your email. Check your inbox or spam folder.",
+                "title": "Code",
+                "placeholder": "123456",
+                "continue": "ENTER",
+                "resend": "Resend code"
+            },
+            "errors": {
+                "error1": "We couldn’t send the email, please try again later",
+                "error2": "Invalid code"
+            }
+        }
     }
 }

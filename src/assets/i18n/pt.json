@@ -202,5 +202,43 @@
             "transport": "Transporte",
             "news": "Notícias"
         }
+    },
+    "profile": {
+        "title": "Entrar ou registrar-se",
+        "help": {
+            "header": "Entre ou registre-se para salvar esses recursos na nuvem:",
+            "options": {
+                "option1": "Rotas favoritas",
+                "option2": "Endereços favoritos",
+                "option3": "Histórico de pesquisa",
+                "option4": "Assinatura"
+            }
+        },
+        "logout": "Deseja encerrar a sessão deste usuário?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Bem-vindo(a)",
+        "login": "Entrar",
+        "loginMessage": "Acesse sua conta com segurança",
+        "guest": "Continuar como convidado",
+        "otp": {
+            "email": {
+                "title": "E-mail",
+                "placeholder": "usuario@dominio.com",
+                "continue": "CONTINUAR"
+            },
+            "confirm": {
+                "message": "Enviamos um código para seu e-mail. Verifique sua caixa de entrada ou pasta de SPAM.",
+                "title": "Código",
+                "placeholder": "123456",
+                "continue": "ENTRAR",
+                "resend": "Reenviar código"
+            },
+            "errors": {
+                "error1": "Não foi possível enviar o e-mail, tente novamente mais tarde",
+                "error2": "Código inválido"
+            }
+        }
     }
 }

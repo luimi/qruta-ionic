@@ -202,5 +202,43 @@
             "transport": "Transport",
             "news": "Wiadomości"
         }
+    },
+    "profile": {
+        "title": "Zaloguj się lub zarejestruj",
+        "help": {
+            "header": "Zaloguj się lub zarejestruj, aby zapisać te funkcje w chmurze:",
+            "options": {
+                "option1": "Ulubione trasy",
+                "option2": "Ulubione adresy",
+                "option3": "Historia wyszukiwania",
+                "option4": "Subskrypcja"
+            }
+        },
+        "logout": "Czy chcesz wylogować tego użytkownika?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Witamy",
+        "login": "Zaloguj się",
+        "loginMessage": "Uzyskaj bezpieczny dostęp do swojego konta",
+        "guest": "Kontynuuj jako gość",
+        "otp": {
+            "email": {
+                "title": "E-mail",
+                "placeholder": "uzytkownik@domena.com",
+                "continue": "KONTYNUUJ"
+            },
+            "confirm": {
+                "message": "Wysłaliśmy kod na twój adres e-mail. Sprawdź skrzynkę odbiorczą lub folder SPAM.",
+                "title": "Kod",
+                "placeholder": "123456",
+                "continue": "ZALOGUJ",
+                "resend": "Wyślij kod ponownie"
+            },
+            "errors": {
+                "error1": "Nie udało się wysłać wiadomości e-mail, spróbuj ponownie później",
+                "error2": "Nieprawidłowy kod"
+            }
+        }
     }
 }
