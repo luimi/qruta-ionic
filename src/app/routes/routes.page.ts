@@ -20,7 +20,9 @@ export class RoutesPage extends TabPage implements OnInit {
     super(utils)
   }
   async ionViewDidEnter() {
-    this.favoriteCtrl.fill()
+    if(!this.favoriteCtrl.isSame()) {
+      this.favoriteCtrl.fill()
+    }
     if(this.isSameCity()) return
     else  this.companies = {};
     this.showEmptyStateProgress()

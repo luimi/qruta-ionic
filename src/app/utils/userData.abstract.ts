@@ -5,6 +5,7 @@ export abstract class UserData {
     type: string = "";
     user: any;
     limit: number = 0;
+    initialState: boolean = true;
     
     constructor(type: string, limit: number = 0) {
         this.type = type;
@@ -16,9 +17,9 @@ export abstract class UserData {
         if(this.isSame()) return this.data;
         else return this.getData()
     }
-    private isSame() {
+    public isSame() {
         const currentNow: any = Parse.User.current()
-        return this.user === undefined && !currentNow || this.user && currentNow && this.user.id === currentNow.id;
+        return this.user === null && !currentNow || this.user && currentNow && this.user.id === currentNow.id;
     }
     private getData() {
         this.user = Parse.User.current()
@@ -59,7 +60,7 @@ export abstract class UserData {
         this.save()
     }
     public removeById(id: string) {
-        let index = this.data.findIndex(id);
+        let index = this.data.findIndex((_id: string) => _id === id);
         this.removeByIndex(index);
     }
 

@@ -12,7 +12,6 @@ export class FavoriteService extends UserData {
 
   constructor(private utils: UtilsService) {
     super(constants.local.favorites)
-    if (this.favorites && this.data) return;
     this.fill()
   }
 
