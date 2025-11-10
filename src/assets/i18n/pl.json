@@ -240,5 +240,36 @@
                 "error2": "Nieprawidłowy kod"
             }
         }
+    },
+    "removeAds": {
+        "title": "Usuń reklamy",
+        "subtitle": "Usuń ogłoszenia",
+        "description": "Ciesz się treściami Q’ruta bez reklam",
+        "benefits": {
+            "b1": "Po wyszukaniu tras",
+            "b2": "Podczas przełączania wyników",
+            "b3": "W szczegółach trasy",
+            "b4": "Podczas uruchamiania aplikacji"
+        },
+        "errors": {
+            "e1": "Musisz się zalogować, aby kontynuować proces",
+            "e2": "Wystąpił błąd podczas generowania linku do płatności. Poczekaj kilka minut i spróbuj ponownie",
+            "e3": "Przelew nie został jeszcze zaksięgowany. Jeśli już dokonałeś płatności, spróbuj ponownie weryfikacji. Skontaktuj się z nami, jeśli potrzebujesz pomocy."
+        },
+        "link": {
+            "title": "Link do płatności",
+            "description": "Kontynuuj w bramce płatności, aż proces się zakończy",
+            "open": "Otwórz link"
+        },
+        "subscribed": {
+            "title": "Aktywna subskrypcja",
+            "description": "Obecnie masz subskrypcję, która wygasa za:",
+            "days": " dni",
+            "profile": "Subskrybowany, "
+        },
+        "buttons": {
+            "continue": "Kontynuuj",
+            "verify": "Zweryfikuj płatność"
+        }
     }
 }

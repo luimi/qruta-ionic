@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="main">
+    <ion-buttons slot="start">
+      <ion-button (click)="this.modalCtrl.dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title translate>removeAds.title</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <h1 class="ion-text-center ion-margin-vertical">
+    <ion-icon name="megaphone-outline" class="huge"></ion-icon>
+  </h1>
+  <ion-label class="ion-text-center ion-margin-vertical">
+    <h1 translate>removeAds.subtitle</h1>
+    <p translate>removeAds.description</p>
+  </ion-label>
+  <ion-list class=" ion-margin-vertical benefits">
+    <ion-item *ngFor="let item of benefits" lines="none">
+      <ion-icon aria-hidden="true" [name]="item.icon" slot="start" size="small"></ion-icon>
+      <ion-label class="ion-no-margin">
+        <p translate>removeAds.benefits.{{item.text}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!user">
+    <app-profile (onChanged)="checkUser($event)"></app-profile>
+    <ion-label class="ion-text-center">
+      <p translate>removeAds.errors.e1</p>
+    </ion-label>
+  </div>
+  <div *ngIf="user && !link && !subscription">
+    <ion-radio-group [value]="plan" class="ion-margin-vertical">
+      <ion-list lines="full">
+        <ion-item *ngFor="let id of plansIds" (click)="setPlan(id)">
+          <ion-radio slot="start" [value]="id" mode="md"></ion-radio>
+          <ion-label>
+            <h1>{{plans[id].title}}</h1>
+          </ion-label>
+          <ion-button slot="end" color="dark">
+            {{plans[id].priceText}}
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-radio-group>
+
+  </div>
+  <div *ngIf="link">
+    <ion-label class="ion-text-center">
+      <h1 translate>removeAds.link.title</h1>
+      <p translate>removeAds.link.description</p>
+    </ion-label>
+    <a [href]="link" target="_blank" rel="noopener noreferrer">
+      <ion-button shape="round" expand="block" color="dark" translate  class="ion-margin-vertical">removeAds.link.open</ion-button>
+    </a>
+  </div>
+   <div *ngIf="subscription" class="ion-text-center">
+    <ion-label class="ion-text-center ion-margin-vertical">
+      <h1 translate>removeAds.subscribed.title</h1>
+      <p translate>removeAds.subscribed.description</p>
+    </ion-label>
+    <ion-button color="dark" class="ion-margin-vertical"> {{getDaysLeft()}} <span translate>removeAds.subscribed.days</span></ion-button>
+   </div>
+</ion-content>
+
+<ion-footer *ngIf="user">
+  <ion-button class="ion-margin-vertical" color="dark" (click)="buyPlan()" expand="block"
+    shape="round" [disabled]="loading" *ngIf="!link && !subscription">
+    <span *ngIf="!loading" translate="">removeAds.buttons.continue</span>
+    <ion-spinner *ngIf="loading"></ion-spinner>
+  </ion-button>
+  <ion-button class="ion-margin-vertical" color="dark" (click)="checkPay()" expand="block"
+    shape="round" [disabled]="loading" *ngIf="link">
+    <span *ngIf="!loading" translate>removeAds.buttons.verify</span>
+    <ion-spinner *ngIf="loading"></ion-spinner>
+  </ion-button>
+</ion-footer>

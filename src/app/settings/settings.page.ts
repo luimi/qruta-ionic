@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { UtilsService } from '../utils/utils.service';
 import { Router } from '@angular/router';
@@ -9,6 +9,8 @@ import { FaqComponent } from './faq/faq.component';
 import Parse from 'parse';
 import { environment } from 'src/environments/environment';
 import { SocialLogin } from '@capgo/capacitor-social-login';
+import { RemoveadvertiseComponent } from '../components/removeadvertise/removeadvertise.component';
+import { ProfileComponent } from '../components/profile/profile.component';
 declare var installer: any;
 
 @Component({
@@ -19,6 +21,7 @@ declare var installer: any;
 })
 export class SettingsPage implements OnInit {
 
+  @ViewChild('profile') profile!: ProfileComponent;
   selectedDistance: any;
   selectedLayer: any;
   layers: any[] = [];
@@ -56,7 +59,7 @@ export class SettingsPage implements OnInit {
     const sl = localStorage.getItem(constants.keys.layer);
     this.setup = installer;
     this.selectedLayer = sl ? sl : '0';
-    this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).exists("icon").find()
+    this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).exists("icon").find();
   }
 
   ionViewWillEnter() { }
@@ -111,5 +114,12 @@ export class SettingsPage implements OnInit {
       methods['apple'] = {}
     }
     await SocialLogin.initialize(methods);
+  }
+
+  async removeAds() {
+    const modal = await this.modalCtrl.create({ component: RemoveadvertiseComponent });
+    await modal.present();
+    await modal.onDidDismiss();
+    this.profile.checkUser();
   }
 }

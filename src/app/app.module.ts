@@ -11,7 +11,6 @@ import { AppConfig } from './utils/appConfig';
 import { UtilsService } from './utils/utils.service';
 import { provideTranslateHttpLoader, TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader, provideTranslateService } from '@ngx-translate/core';
-import { AdvertiseComponent } from './components/advertise/advertise.component';
 
 export function LanguageLoader(http: HttpClient) {
     //return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -19,10 +18,10 @@ export function LanguageLoader(http: HttpClient) {
 }
 
 @NgModule({
-    declarations: [AppComponent, AdvertiseComponent],
+    declarations: [AppComponent],
     bootstrap: [AppComponent],
     schemas: [],
-    exports: [AdvertiseComponent], 
+    exports: [], 
     imports: [
         BrowserModule, 
         IonicModule.forRoot({ mode: 'ios', hardwareBackButton: false, swipeBackEnabled: false }), 

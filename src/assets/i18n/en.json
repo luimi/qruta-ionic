@@ -240,5 +240,36 @@
                 "error2": "Invalid code"
             }
         }
+    },
+    "removeAds": {
+        "title": "Remove ads",
+        "subtitle": "Eliminate advertising",
+        "description": "Enjoy Q’ruta content without ads",
+        "benefits": {
+            "b1": "After searching for routes",
+            "b2": "When switching between results",
+            "b3": "In route details",
+            "b4": "When starting the app"
+        },
+        "errors": {
+            "e1": "You need to log in to continue the process",
+            "e2": "An error occurred while generating the payment link. Please wait a few minutes and try again",
+            "e3": "The transfer is not yet reflected. If you already made the payment, try verifying again. Contact us for assistance if needed."
+        },
+        "link": {
+            "title": "Payment link",
+            "description": "Continue on the payment gateway until the process is complete",
+            "open": "Open link"
+        },
+        "subscribed": {
+            "title": "Active subscription",
+            "description": "You currently have a subscription that expires in:",
+            "days": " days",
+            "profile": "Subscribed, "
+        },
+        "buttons": {
+            "continue": "Continue",
+            "verify": "Verify payment"
+        }
     }
 }

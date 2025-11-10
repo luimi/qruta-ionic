@@ -240,5 +240,36 @@
                 "error2": "Ongeldige code"
             }
         }
+    },
+    "removeAds": {
+        "title": "Advertenties verwijderen",
+        "subtitle": "Verwijder de advertenties",
+        "description": "Geniet van Q’ruta-inhoud zonder advertenties",
+        "benefits": {
+            "b1": "Na het zoeken naar routes",
+            "b2": "Bij het wisselen tussen resultaten",
+            "b3": "In routedetails",
+            "b4": "Wanneer je de app start"
+        },
+        "errors": {
+            "e1": "Je moet inloggen om verder te gaan met het proces",
+            "e2": "Er is een fout opgetreden bij het genereren van de betalingslink. Wacht enkele minuten en probeer het opnieuw",
+            "e3": "De overboeking is nog niet zichtbaar. Als je al hebt betaald, probeer dan opnieuw te verifiëren. Neem contact met ons op als je hulp nodig hebt."
+        },
+        "link": {
+            "title": "Betaallink",
+            "description": "Ga door in de betaalomgeving tot het proces is voltooid",
+            "open": "Link openen"
+        },
+        "subscribed": {
+            "title": "Actief abonnement",
+            "description": "Je hebt momenteel een abonnement dat verloopt over:",
+            "days": " dagen",
+            "profile": "Geabonneerd, "
+        },
+        "buttons": {
+            "continue": "Doorgaan",
+            "verify": "Betaling verifiëren"
+        }
     }
 }

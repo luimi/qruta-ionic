@@ -83,11 +83,12 @@ export class AdsService {
   }
   async showAd() {
     let success = false;
-    if (isPlatform("capacitor") && (isPlatform("android") || isPlatform("ios"))) {
+    const isSubscribed = this.utils.isSubscribed();
+    if (isPlatform("capacitor") && (isPlatform("android") || isPlatform("ios")) && !isSubscribed) {
       success = await this.showInterstitial();
       if (success) await this.prepareInterstitial();
     }
-    if (!success) {
+    if (!success && !isSubscribed) {
       const result: any = await this.getPartnerAd()
       if (result && result.success) {
         const modal = await this.modalCtrl.create({
@@ -96,6 +97,9 @@ export class AdsService {
         });
         modal.present();
       }
+    }
+    if(isSubscribed) {
+      this.utils.gaEvent('sub-block')
     }
     this.lastInterstitial = new Date().getTime()
   }

@@ -9,7 +9,8 @@ export const constants = {
         nearRoutes: 'nearRoutes',
         calculate: 'calculate',
         getServer: 'getServer',
-        sendOTPCode: 'sendOTPCode'
+        sendOTPCode: 'sendOTPCode',
+        getPaymentLink: 'getPaymentLink',
     },
     local: {
         result: 'result',
@@ -19,6 +20,7 @@ export const constants = {
         favorites: 'favorites',
         locations: 'locations',
         history: 'history',
+        subscription: 'subscription',
     },
     errors:{
         calculate:[

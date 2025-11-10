@@ -6,6 +6,7 @@ import { lastValueFrom } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { constants } from './constants';
+import moment from 'moment';
 declare let gtag: any;
 
 @Injectable({
@@ -42,7 +43,7 @@ export class UtilsService {
   }
 
   public async showAlert(text: string, okCallBack?: any) {
-    if(!text) return
+    if (!text) return
     const answer: any = await this.getTranslation("general.ok")
     const message: any = await this.getTranslation(text)
     const alert = await this.alertCtrl.create({
@@ -133,15 +134,35 @@ export class UtilsService {
     })
   }
   public gaEvent(name: string) {
-    if(environment.production) gtag('event', name, {});
+    if (environment.production) gtag('event', name, {});
   }
   public getGenericObject(_class: string, id?: string) {
     let generic = new Parse.Object(_class);
-    if(id) generic.id = id
+    if (id) generic.id = id
     return generic
   }
 
-  public isIOS(){
+  public isIOS() {
     return this.platform.is('ios') && this.platform.is('capacitor')
+  }
+
+  public async checkSubscripction() {
+    const sub = await new Parse.Query("Subscription")
+    .equalTo("status", true)
+    .greaterThan("expireAt", new Date())
+    .first();
+    if (sub) localStorage.setItem(constants.local.subscription, sub.get("expireAt"));
+    return sub !== undefined;
+  }
+
+  public isSubscribed() {
+    let expirationDate: any = localStorage.getItem(constants.local.subscription);
+    if(!expirationDate) return false;
+    expirationDate = moment(expirationDate);
+    if(expirationDate.isBefore(moment())) {
+      localStorage.removeItem(constants.local.subscription);
+      return false;
+    }
+    return  true;
   }
 }

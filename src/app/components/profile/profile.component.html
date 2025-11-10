@@ -6,7 +6,7 @@
     <ion-col class="ion-align-self-center">
       <ion-label *ngIf="user">
         <h2>{{user.get('name') ? user.get('name') : user.get('username')}}</h2>
-        <p></p>
+        <p *ngIf="sub"><span translate>removeAds.subscribed.profile</span>{{getDaysLeft()}}<span translate> removeAds.subscribed.days</span></p>
       </ion-label>
       <ion-label *ngIf="!user" (click)="openLogin()">
         <h2 translate>profile.title</h2>

@@ -240,5 +240,36 @@
                 "error2": "Código inválido"
             }
         }
+    },
+    "removeAds": {
+        "title": "Quitar publicidad",
+        "subtitle": "Elimina la publicidad",
+        "description": "Disfruta del contenido de Q'ruta sin publicidad",
+        "benefits": {
+            "b1": "Después de buscar rutas",
+            "b2": "Al cambiar entre resultados",
+            "b3": "En detalle de ruta",
+            "b4": "Cuando inicias la aplicación"
+        },
+        "errors": {
+            "e1": "Es necesario iniciar sesión para continuar con el proceso",
+            "e2": "Ocurrió un error en la generación del link de pago, espera unos minutos y vuelve a intentarlo",
+            "e3": "Aún no se refleja la transferencia. Si ya realizaste el pago, vuelve a intentar la verificación. Ponte en contacto con nosotros para ayudarte en cualquier problema."
+        },
+        "link": {
+            "title": "Link de pago",
+            "description": "Continúa en la pasarela de pago hasta terminar el proceso",
+            "open": "Abrir enlace"
+        },
+        "subscribed": {
+            "title": "Suscripción activa",
+            "description": "Actualmente tienes una suscripcion que vence en:",
+            "days": " días",
+            "profile": "Suscrito, "
+        },
+        "buttons":{
+            "continue": "Continuar",
+            "verify": "Verificar pago"
+        }
     }
 }

@@ -240,5 +240,36 @@
                 "error2": "Code invalide"
             }
         }
+    },
+    "removeAds": {
+        "title": "Supprimer les publicités",
+        "subtitle": "Éliminez la publicité",
+        "description": "Profitez du contenu de Q’ruta sans publicité",
+        "benefits": {
+            "b1": "Après la recherche d’itinéraires",
+            "b2": "En changeant entre les résultats",
+            "b3": "Dans les détails de l’itinéraire",
+            "b4": "Lorsque vous démarrez l’application"
+        },
+        "errors": {
+            "e1": "Vous devez vous connecter pour continuer le processus",
+            "e2": "Une erreur s’est produite lors de la génération du lien de paiement. Veuillez patienter quelques minutes et réessayer",
+            "e3": "Le virement n’est pas encore visible. Si vous avez déjà effectué le paiement, réessayez la vérification. Contactez-nous si vous avez besoin d’aide."
+        },
+        "link": {
+            "title": "Lien de paiement",
+            "description": "Continuez sur la passerelle de paiement jusqu’à la fin du processus",
+            "open": "Ouvrir le lien"
+        },
+        "subscribed": {
+            "title": "Abonnement actif",
+            "description": "Vous avez actuellement un abonnement qui expire dans :",
+            "days": " jours",
+            "profile": "Abonné, "
+        },
+        "buttons": {
+            "continue": "Continuer",
+            "verify": "Vérifier le paiement"
+        }
     }
 }

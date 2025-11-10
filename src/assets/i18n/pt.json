@@ -240,5 +240,36 @@
                 "error2": "Código inválido"
             }
         }
+    },
+    "removeAds": {
+        "title": "Remover anúncios",
+        "subtitle": "Eliminar publicidade",
+        "description": "Aproveite o conteúdo do Q’ruta sem anúncios",
+        "benefits": {
+            "b1": "Após procurar rotas",
+            "b2": "Ao alternar entre resultados",
+            "b3": "Nos detalhes da rota",
+            "b4": "Ao iniciar o aplicativo"
+        },
+        "errors": {
+            "e1": "É necessário fazer login para continuar o processo",
+            "e2": "Ocorreu um erro ao gerar o link de pagamento. Aguarde alguns minutos e tente novamente",
+            "e3": "A transferência ainda não foi refletida. Se já efetuou o pagamento, tente a verificação novamente. Entre em contato conosco para obter ajuda."
+        },
+        "link": {
+            "title": "Link de pagamento",
+            "description": "Continue no portal de pagamento até concluir o processo",
+            "open": "Abrir link"
+        },
+        "subscribed": {
+            "title": "Assinatura ativa",
+            "description": "Atualmente você possui uma assinatura que expira em:",
+            "days": " dias",
+            "profile": "Assinado, "
+        },
+        "buttons": {
+            "continue": "Continuar",
+            "verify": "Verificar pagamento"
+        }
     }
 }

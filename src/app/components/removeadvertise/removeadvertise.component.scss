@@ -1,0 +1,13 @@
+.huge {
+    font-size: 100px;
+}
+.benefits {
+    ion-item {
+        --min-height: 20px;
+    }
+}
+
+ion-radio {
+  --color: var(--ion-color-dark);
+  --color-checked: var(--ion-color-dark);
+}

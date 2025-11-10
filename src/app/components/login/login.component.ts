@@ -115,6 +115,7 @@ export class LoginComponent implements OnInit {
         user.set('avatar', profile.imageUrl)
         await user.save();
       }
+      await this.utils.checkSubscripction()
     } catch (e: any) {
       return { success: false, error: e.message }
     }

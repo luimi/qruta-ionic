@@ -240,5 +240,36 @@
                 "error2": "Codice non valido"
             }
         }
+    },
+    "removeAds": {
+        "title": "Rimuovi pubblicità",
+        "subtitle": "Elimina la pubblicità",
+        "description": "Goditi i contenuti di Q’ruta senza pubblicità",
+        "benefits": {
+            "b1": "Dopo aver cercato percorsi",
+            "b2": "Quando si passa tra i risultati",
+            "b3": "Nei dettagli del percorso",
+            "b4": "All’avvio dell’app"
+        },
+        "errors": {
+            "e1": "È necessario accedere per continuare il processo",
+            "e2": "Si è verificato un errore durante la generazione del link di pagamento. Attendi qualche minuto e riprova",
+            "e3": "Il trasferimento non è ancora visibile. Se hai già effettuato il pagamento, prova di nuovo la verifica. Contattaci per ricevere assistenza."
+        },
+        "link": {
+            "title": "Link di pagamento",
+            "description": "Continua nella piattaforma di pagamento fino al completamento del processo",
+            "open": "Apri link"
+        },
+        "subscribed": {
+            "title": "Abbonamento attivo",
+            "description": "Hai attualmente un abbonamento che scade tra:",
+            "days": " giorni",
+            "profile": "Abbonato, "
+        },
+        "buttons": {
+            "continue": "Continua",
+            "verify": "Verifica pagamento"
+        }
     }
 }

@@ -240,5 +240,36 @@
                 "error2": "Ungültiger Code"
             }
         }
+    },
+    "removeAds": {
+        "title": "Werbung entfernen",
+        "subtitle": "Entferne die Werbung",
+        "description": "Genieße Q’ruta-Inhalte ohne Werbung",
+        "benefits": {
+            "b1": "Nach der Routensuche",
+            "b2": "Beim Wechseln zwischen Ergebnissen",
+            "b3": "In der Routendetailansicht",
+            "b4": "Wenn du die App startest"
+        },
+        "errors": {
+            "e1": "Du musst dich anmelden, um den Vorgang fortzusetzen",
+            "e2": "Es ist ein Fehler beim Erstellen des Zahlungslinks aufgetreten. Bitte warte einige Minuten und versuche es erneut",
+            "e3": "Die Überweisung ist noch nicht sichtbar. Wenn du bereits bezahlt hast, versuche die Verifizierung erneut. Kontaktiere uns, falls du Hilfe benötigst."
+        },
+        "link": {
+            "title": "Zahlungslink",
+            "description": "Fahre im Zahlungsportal fort, bis der Vorgang abgeschlossen ist",
+            "open": "Link öffnen"
+        },
+        "subscribed": {
+            "title": "Aktives Abonnement",
+            "description": "Du hast derzeit ein Abonnement, das endet am:",
+            "days": " Tage",
+            "profile": "Abonniert, "
+        },
+        "buttons": {
+            "continue": "Fortfahren",
+            "verify": "Zahlung überprüfen"
+        }
     }
 }
