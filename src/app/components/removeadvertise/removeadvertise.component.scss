@@ -1,6 +1,13 @@
-.huge {
-    font-size: 100px;
+.icon {
+    height: 200px;
+    align-content: center;
+    background-color: var(--ion-color-main);
+    color: var(--ion-color-white);
+    ion-icon {
+        font-size: 150px;
+    }
 }
+
 .benefits {
     ion-item {
         --min-height: 20px;
@@ -8,6 +15,6 @@
 }
 
 ion-radio {
-  --color: var(--ion-color-dark);
-  --color-checked: var(--ion-color-dark);
+    --color: var(--ion-color-dark);
+    --color-checked: var(--ion-color-dark);
 }
