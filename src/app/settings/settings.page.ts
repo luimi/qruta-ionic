@@ -41,6 +41,7 @@ export class SettingsPage implements OnInit {
     icon: 'logo-discord',
     url: 'https://discord.gg/u5qCXUTkQx'
   }];
+  showLogin: any = false;
   constructor(
     private location: Location,
     public utils: UtilsService,
@@ -60,6 +61,7 @@ export class SettingsPage implements OnInit {
     this.setup = installer;
     this.selectedLayer = sl ? sl : '0';
     this.sponsors = await new Parse.Query("Sponsor").equalTo("status", true).exists("icon").find();
+    this.showLogin = await this.utils.getServerConfig('showLogin')
   }
 
   ionViewWillEnter() { }

@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <app-profile #profile></app-profile>
+  <app-profile #profile *ngIf="showLogin"></app-profile>
   <ion-list>
     <div class="options">
       <ion-item>
@@ -25,7 +25,7 @@
       </ion-item>
     </div>
     
-    <ion-button color="dark" (click)="removeAds()" shape="round" expand="block" translate>removeAds.title</ion-button>
+    <ion-button color="dark" (click)="removeAds()" shape="round" expand="block" translate *ngIf="showLogin">removeAds.title</ion-button>
     <ion-button color="dark" (click)="faq()" shape="round" expand="block" translate>settings.faq.title</ion-button>
     <a color="dark" href="mailto:queruta@gmail.com" target="_blank" rel="noopener noreferrer">
       <ion-button shape="round" expand="block" color="dark" translate>settings.contact</ion-button>
