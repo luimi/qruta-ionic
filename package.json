@@ -14,6 +14,7 @@
     "external": "ionic serve --external --no-open",
     "nopen": "ionic serve --no-open",
     "deploy": "sh deploy.sh",
+    "zip": "ionic build && cd www/ && zip -r qruta.zip .",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
