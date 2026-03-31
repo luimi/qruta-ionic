@@ -1,0 +1,30 @@
+<div class="story-container">
+  <div class="progress-container">
+    @for(item of stories;track item.url ;let i = $index) {
+    <div class="progress-bg">
+      <div class="progress-fill" [style.width.%]="
+          i < currentIndex ? 100 : i === currentIndex ? progress : 0
+        "></div>
+    </div>
+    }
+
+  </div>
+
+  <div class="content-wrapper">
+    @if(stories[currentIndex].type === 'image') {
+    <img [src]="stories[currentIndex].url" class="story-media" />
+    }
+
+    @if(stories[currentIndex].type === 'video') {
+    <video #videoPlayer [src]="stories[currentIndex].url" class="story-media" autoplay muted playsinline
+      (ended)="onVideoEnded()"></video>
+    }
+
+  </div>
+
+  <div class="nav-overlay">
+    <div class="nav-zone left" (click)="prevStory()"></div>
+    <div class="nav-zone right" (click)="nextStory()"></div>
+  </div>
+
+</div>

@@ -8,10 +8,11 @@ import { InputComponent } from './input/input.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RemoveadvertiseComponent } from './removeadvertise/removeadvertise.component';
 import { AdvertiseComponent } from './advertise/advertise.component';
+import { StoryModule } from './story/story.module';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, IonicModule, TranslateModule],
+    imports: [CommonModule, FormsModule, IonicModule, TranslateModule, StoryModule],
     declarations: [ProfileComponent, LoginComponent, InputComponent, RemoveadvertiseComponent, AdvertiseComponent],
-    exports: [ProfileComponent, LoginComponent, InputComponent, RemoveadvertiseComponent, AdvertiseComponent]
+    exports: [ProfileComponent, LoginComponent, InputComponent, RemoveadvertiseComponent, AdvertiseComponent],
 })
 export class ComponentsModule { }

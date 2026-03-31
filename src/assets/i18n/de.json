@@ -177,7 +177,8 @@
         "buses": "Busse",
         "distance": "Entfernung",
         "advertising": {
-            "title": "Werbung"
+            "title": "Werbung",
+            "more": "Mehr Informationen"
         },
         "detail": {
             "title": "Routendetails",

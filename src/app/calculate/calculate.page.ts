@@ -163,15 +163,19 @@ export class CalculatePage implements OnInit {
   }
 
   private async showAdvertise() {
+    const ads: any = await this.utils.getServerConfig("ads");
+    if(!ads[constants.ads.onStartup]) return;
     const result: any = await this.adCtrl.getPartnerAd()
     if(result && result.success) {
       this.advertise = result
       this.modal.present()
     }
   }
+  
   public openAdvertise() {
     window.open(this.advertise.url, '_blank')
     this.adCtrl.setPartnerAdClick(this.advertise.campaign)
+    this.modal.dismiss()
   }
 
   //@deprecate

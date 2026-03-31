@@ -1,13 +1,15 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="main">
     <ion-title translate>result.advertising.title</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="dismiss()">
-        <ion-icon slot="icon-only" name="close"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <img [src]="advertise.image" (click)="openAdvertise()" />
+  <app-story [stories]="advertise.assets" (onAllStoriesEnd)="dismiss()"></app-story>
 </ion-content>
+
+@if(advertise.url) {
+<ion-footer>
+  <ion-button class="ion-margin-horizontal" shape="round" color="white" size="small" (click)="openAdvertise()"
+    translate>result.advertising.more</ion-button>
+</ion-footer>
+}

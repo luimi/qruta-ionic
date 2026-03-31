@@ -177,7 +177,8 @@
         "buses": "Ônibus",
         "distance": "Distância",
         "advertising": {
-            "title": "Publicidade"
+            "title": "Publicidade",
+            "more": "Mais informações"
         },
         "detail": {
             "title": "Detalhe da Rota",

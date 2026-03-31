@@ -37,7 +37,7 @@ export class ResultDetailsPage implements OnInit {
   }
   async showAd() {
     if (await this.adsCtrl.isReadyForAds()) {
-      this.adsCtrl.showAd()
+      this.adsCtrl.showAd(constants.ads.onResultOption)
     }
   }
   async loadData() {

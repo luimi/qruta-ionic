@@ -177,7 +177,8 @@
         "buses": "公交车",
         "distance": "距离",
         "advertising": {
-            "title": "广告"
+            "title": "广告",
+            "more": "更多信息"
         },
         "detail": {
             "title": "路线详情",

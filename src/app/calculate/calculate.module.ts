@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardAddComponent } from './card-add/card-add.component';
 import { CardComponent } from './card/card.component';
+import { StoryModule } from '../components/story/story.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { CardComponent } from './card/card.component';
     IonicModule,
     CalculatePageRoutingModule,
     EmptyStateModule,
-    TranslateModule
+    TranslateModule,
+    StoryModule
   ],
   declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent],
   providers: [Geolocation],

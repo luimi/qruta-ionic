@@ -1,12 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AdsService } from 'src/app/utils/ads.service';
+import { StoryModule } from '../story/story.module';
 
 @Component({
     selector: 'app-advertise',
     templateUrl: './advertise.component.html',
     styleUrls: ['./advertise.component.scss'],
-    standalone: false
+    standalone: false,
 })
 export class AdvertiseComponent  implements OnInit {
   @Input() advertise: any;
@@ -21,5 +22,6 @@ export class AdvertiseComponent  implements OnInit {
   public openAdvertise() {
     window.open(this.advertise.url, '_blank')
     this.adCtrl.setPartnerAdClick(this.advertise.campaign)
+    this.dismiss()
   }
 }

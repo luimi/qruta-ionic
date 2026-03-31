@@ -31,8 +31,8 @@ export class AdsService {
     if (!config) return null;
     const { partnerUrl, header } = config;
     const city = this.utils.getLocal('city');
-    const userId = localStorage.getItem(`Parse/${environment.server.appId}/installationId`);
-    const request: any = this.http.post(`${partnerUrl}/functions/getCampaign`, {
+    const userId = localStorage.getItem(`Parse/${environment.server.appId}/installationId`) || localStorage.getItem(`Parse/${environment.server.appId}/currentInstallationId`);
+    const request: any = this.http.post(`${partnerUrl}/functions/getRandomCampaign`, {
       code: city.objectId,
       id: userId,
     }, { headers: header });
@@ -81,7 +81,9 @@ export class AdsService {
       return false
     }
   }
-  async showAd() {
+  async showAd(onPage: string) {
+    const ads: any = await this.utils.getServerConfig("ads");
+    if(!ads[onPage]) return;
     let success = false;
     const isSubscribed = this.utils.isSubscribed();
     if (isPlatform("capacitor") && (isPlatform("android") || isPlatform("ios")) && !isSubscribed) {
@@ -104,7 +106,7 @@ export class AdsService {
     this.lastInterstitial = new Date().getTime()
   }
   async isReadyForAds() {
-    let adTimer = await this.utils.getServerConfig("adTimer") || 30000
-    return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > parseInt(`${adTimer}`)
+    let ads: any = await this.utils.getServerConfig("ads") || 30000
+    return this.lastInterstitial === 0 || new Date().getTime() - this.lastInterstitial > parseInt(`${ads.timer}`)
   }
 }

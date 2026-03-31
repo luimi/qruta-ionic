@@ -54,6 +54,7 @@ ion-modal#advertise {
   --height: auto;
   --border-radius: 6px;
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  --background: var(--ion-color-main); 
 }
 
 ion-modal#advertise .wrapper {

@@ -5,6 +5,7 @@ import { UtilsService } from '../utils/utils.service';
 import { AdsService } from '../utils/ads.service';
 import { ModalController, isPlatform } from '@ionic/angular';
 import { AdsComponent } from './ads/ads.component';
+import { constants } from '../utils/constants';
 
 @Component({
     selector: 'app-result',
@@ -22,7 +23,7 @@ export class ResultPage implements OnInit {
 
   async ngOnInit() {
     this.options = JSON.parse(sessionStorage.getItem('result') || "[]").options;
-    this.adsCtrl.showAd();
+    this.adsCtrl.showAd(constants.ads.onResult);
   }
   
   openDetails(index: number) {

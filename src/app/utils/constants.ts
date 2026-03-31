@@ -1,4 +1,10 @@
 export const constants = {
+    ads: {
+        onStartup: 'onStartup',
+        onResult: 'onResult',
+        onResultOption: 'onResultOption',
+        onRoute: 'onRoute'
+    },
     keys: {
         city: 'city',
         walkDistance: 'walkDistance',

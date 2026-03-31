@@ -14,7 +14,8 @@
             <ion-label>
               <span translate>calculate.info.update.title</span>
             </ion-label>
-            <ion-button slot="end" translate (click)="openStore()" color="dark"> calculate.info.update.button </ion-button>
+            <ion-button slot="end" translate (click)="openStore()" color="dark"> calculate.info.update.button
+            </ion-button>
           </ion-item>
         </ion-card-content>
       </ion-card>
@@ -49,7 +50,7 @@
           </ion-col>
           <ion-col size="2" class="ion-hide-md-up ion-no-padding">
             <!-- Boton historial -->
-            <ion-button  class="ion-no-padding" (click)="showHistory()" color="white" shape="round" expand="block">
+            <ion-button class="ion-no-padding" (click)="showHistory()" color="white" shape="round" expand="block">
               <ion-icon name="timer-outline" color="main"></ion-icon>
             </ion-button>
           </ion-col>
@@ -60,14 +61,14 @@
     </div>
   </div>
   <!-- Modal de publicidad -->
-  <ion-modal id="advertise" #modalAdvertise>
+  <ion-modal id="advertise" #modalAdvertise backdrop-dismiss="false">
     <ng-template>
-      <img [src]="advertise.image" (click)="openAdvertise()" />
-      <ion-fab slot="fixed" vertical="top" horizontal="end">
-        <ion-fab-button size="small" color="main" (click)="modal.dismiss()">
-          <ion-icon name="close"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
+      <app-story [stories]="advertise.assets" (onAllStoriesEnd)="modal.dismiss()"></app-story>
+      @if(advertise.url) {
+      <ion-button class="ion-margin-horizontal" shape="round" color="white" size="small" (click)="openAdvertise()"
+        translate>result.advertising.more</ion-button>
+      }
+
     </ng-template>
   </ion-modal>
 </ion-content>

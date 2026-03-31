@@ -1,9 +1,9 @@
-img {
-    height: 100%;
+ion-content, ion-footer {
+    text-align: center;
+    background-color: var(--ion-color-main);
+    --background-color: var(--ion-color-main);
 }
 
-ion-content {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
+app-story {
+    max-height: 100%;
 }

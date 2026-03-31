@@ -6,6 +6,8 @@ import { Location } from '@angular/common';
 import { register } from 'swiper/element/bundle';
 import { AdsService } from '../utils/ads.service';
 import { FavoriteService } from '../utils/favorite.service';
+import { UtilsService } from '../utils/utils.service';
+import { constants } from '../utils/constants';
 
 register();
 @Component({
@@ -27,6 +29,7 @@ export class RoutePage implements OnInit {
     private leaflet: LeafletHelperService,
     private location: Location,
     private adsCtrl: AdsService,
+    private utils: UtilsService,
     public favoriteCtrl: FavoriteService) { }
 
   ngOnInit() {
@@ -38,7 +41,7 @@ export class RoutePage implements OnInit {
   }
   async showAd() {
     if (await this.adsCtrl.isReadyForAds()) {
-      this.adsCtrl.showAd()
+      this.adsCtrl.showAd(constants.ads.onRoute)
     }
   }
   toogleFavorite() {
