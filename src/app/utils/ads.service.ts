@@ -96,6 +96,7 @@ export class AdsService {
         const modal = await this.modalCtrl.create({
           component: AdvertiseComponent,
           componentProps: { advertise: result },
+          backdropDismiss: false
         });
         modal.present();
       }
