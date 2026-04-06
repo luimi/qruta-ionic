@@ -76,6 +76,7 @@ export class CalculatePage implements OnInit {
     this.inputChanged("none")
     if(!this.start.location) this.getCurrentPosition();
     
+    this.showPlaceMarks();
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
@@ -178,13 +179,10 @@ export class CalculatePage implements OnInit {
     this.modal.dismiss()
   }
 
-  //@deprecate
   private async showPlaceMarks() {
     let city = new Parse.Object("City")
     city.id = this.city.objectId
-    let sponsors = await new Parse.Query("Sponsor").equalTo("status", true).equalTo("city", city).select("").find();
-    if (sponsors.length === 0) return
-    let placemarks = await new Parse.Query("PlaceMark").include("sponsor").containedIn("sponsor", sponsors).find();
+    let placemarks = await new Parse.Query("PlaceMark").equalTo("city", city).equalTo("status", true).find();
     placemarks.forEach((placemark) => {
       let place = {
         address: placemark.get("title"),
