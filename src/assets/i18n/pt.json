@@ -76,6 +76,8 @@
             "recentEmpty": "Não há endereços usados recentemente",
             "favorites": "Favoritos",
             "favoritesEmpty": "Adicione algum favorito!",
+            "places": "Lugares",
+            "placesEmpty": "Em breve: lugares icônicos da cidade",
             "dialogs": {
                 "favoriteAdded": "Endereço adicionado aos favoritos",
                 "favoriteExists": "Você já tem este endereço nos seus favoritos",

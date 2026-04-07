@@ -76,6 +76,8 @@
             "recentEmpty": "Keine kürzlich verwendeten Adressen",
             "favorites": "Favoriten",
             "favoritesEmpty": "Fügen Sie einige Favoriten hinzu!",
+            "places": "Orte",
+            "placesEmpty": "Demnächst: ikonische Orte der Stadt",
             "dialogs": {
                 "favoriteAdded": "Adresse zu Favoriten hinzugefügt",
                 "favoriteExists": "Sie haben diese Adresse bereits in Ihren Favoriten",

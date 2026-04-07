@@ -76,6 +76,8 @@
             "recentEmpty": "Geen recent gebruikte adressen",
             "favorites": "Favorieten",
             "favoritesEmpty": "Voeg enkele favorieten toe!",
+            "places": "Plaatsen",
+            "placesEmpty": "Binnenkort: iconische plekken in de stad",
             "dialogs": {
                 "favoriteAdded": "Adres toegevoegd aan favorieten",
                 "favoriteExists": "Dit adres staat al in uw favorieten",

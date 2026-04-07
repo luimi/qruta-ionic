@@ -7,12 +7,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { constants } from 'src/app/utils/constants';
 import { LocationsService } from 'src/app/utils/locations.service';
 import { RecentsService } from 'src/app/utils/recents.service';
+import { PlacesService } from 'src/app/utils/places.service';
 
 @Component({
-    selector: 'app-address-modal',
-    templateUrl: './address-modal.component.html',
-    styleUrls: ['./address-modal.component.scss'],
-    standalone: false
+  selector: 'app-address-modal',
+  templateUrl: './address-modal.component.html',
+  styleUrls: ['./address-modal.component.scss'],
+  standalone: false
 })
 export class AddressModalComponent implements OnInit {
 
@@ -23,7 +24,8 @@ export class AddressModalComponent implements OnInit {
     public modalCtrl: ModalController,
     private translateCtrl: TranslateService,
     private locationCtrl: LocationsService,
-    private recentCtrl: RecentsService) { }
+    private recentCtrl: RecentsService,
+    private placesCtrl: PlacesService) { }
 
   address: any = '';
   options: any;
@@ -31,12 +33,14 @@ export class AddressModalComponent implements OnInit {
   secondsTimeOut = 1
   favorites: any[] = [];
   recents: any[] = [];
+  places: any[] = [];
   textMaxLength = 1;
   type = 'place';
   progress = false;
   ngOnInit() {
     this.getFavorites();
     this.getRecents();
+    this.getPlaces();
   }
 
   search(e: any) {
@@ -90,7 +94,8 @@ export class AddressModalComponent implements OnInit {
   getFavorites() {
     this.favorites = this.locationCtrl.get()
   }
-  deleteFavorite(index: number) {
+  deleteFavorite(favorite: any) {
+    let index = this.favorites.findIndex(_favorite => _favorite.address === favorite.address)
     this.translateCtrl.get("calculate.modal.dialogs.favoriteDelete").subscribe(res => {
       this.utils.showConfirmDialog(res, () => {
         this.utils.gaEvent("calculate-favorite-deleted")
@@ -102,6 +107,14 @@ export class AddressModalComponent implements OnInit {
   }
   getRecents() {
     this.recents = this.recentCtrl.get();
+  }
+
+  async getPlaces() {
+    this.places = await this.placesCtrl.getPlaces();
+  }
+
+  getFiltered(array: any[]) {
+    return array.filter(place => place.address.toLowerCase().includes(this.address.toLowerCase()))
   }
 
   /**

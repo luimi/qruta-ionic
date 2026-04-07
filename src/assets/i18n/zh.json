@@ -76,6 +76,8 @@
             "recentEmpty": "没有最近使用的地址",
             "favorites": "收藏夹",
             "favoritesEmpty": "添加一些收藏！",
+            "places": "地点",
+            "placesEmpty": "即将推出：城市标志性地点",
             "dialogs": {
                 "favoriteAdded": "地址已添加到收藏夹",
                 "favoriteExists": "您已将此地址添加到收藏夹",

@@ -41,9 +41,9 @@
     <ion-list-header color="light" translate>
       calculate.modal.recent
     </ion-list-header>
-    <app-empty-state *ngIf="recents.length===0" #emptyState icon="timer" text="calculate.modal.recentEmpty"
+    <app-empty-state *ngIf="recents.length===0 && !address" icon="timer" text="calculate.modal.recentEmpty"
       [fullContent]="false"></app-empty-state>
-    <ion-item *ngFor="let recent of recents; index as i">
+    <ion-item *ngFor="let recent of getFiltered(recents); index as i">
       <ion-icon name="timer-outline" color="dark" class="ion-padding"></ion-icon>
       <ion-label (click)="select(recent,'recent')">
         <h2>{{ recent.address }}</h2>
@@ -58,17 +58,31 @@
     <ion-list-header color="light" translate>
       calculate.modal.favorites
     </ion-list-header>
-    <app-empty-state *ngIf="favorites.length===0" #emptyState icon="star" text="calculate.modal.favoritesEmpty"
+    <app-empty-state *ngIf="favorites.length===0 && !address" icon="star" text="calculate.modal.favoritesEmpty"
       [fullContent]="false"></app-empty-state>
-    <ion-item *ngFor="let favorite of favorites; index as i">
+    <ion-item *ngFor="let favorite of getFiltered(favorites); index as i">
       <ion-icon name="star" color="dark" class="ion-padding"></ion-icon>
       <ion-label (click)="select(favorite,'favorite')">
         <h2>{{ favorite.address }}</h2>
         <p>{{ favorite.city }}</p>
       </ion-label>
-      <ion-button slot="end" (click)="deleteFavorite(i)" fill="clear" size="12" class="ion-no-padding">
+      <ion-button slot="end" (click)="deleteFavorite(favorite)" fill="clear" size="12" class="ion-no-padding">
         <ion-icon name="trash" color="dark"></ion-icon>
       </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-list-header color="light" translate>
+      calculate.modal.places
+    </ion-list-header>
+    <app-empty-state *ngIf="places.length===0 && !address" icon="location" text="calculate.modal.placesEmpty"
+      [fullContent]="false"></app-empty-state>
+    <ion-item *ngFor="let place of getFiltered(places); index as i">
+      <ion-icon name="location" color="dark" class="ion-padding"></ion-icon>
+      <ion-label (click)="select(place,'place')">
+        <h2>{{ place.address }}</h2>
+        <p>{{ place.city }}</p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

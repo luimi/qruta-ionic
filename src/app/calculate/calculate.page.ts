@@ -14,6 +14,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { AdsService } from '../utils/ads.service';
 import { environment } from 'src/environments/environment';
 import { RecentsService } from '../utils/recents.service';
+import { PlacesService } from '../utils/places.service';
 
 @Component({
     selector: 'app-calculate',
@@ -47,7 +48,8 @@ export class CalculatePage implements OnInit {
     private apiCtrl: ApiService,
     private platform: Platform,
     private adCtrl: AdsService,
-    private recentCtrl: RecentsService
+    private recentCtrl: RecentsService,
+    private placesCtrl: PlacesService
   ) { }
 
   ngOnInit() { 
@@ -180,16 +182,9 @@ export class CalculatePage implements OnInit {
   }
 
   private async showPlaceMarks() {
-    let city = new Parse.Object("City")
-    city.id = this.city.objectId
-    let placemarks = await new Parse.Query("PlaceMark").equalTo("city", city).equalTo("status", true).find();
-    placemarks.forEach((placemark) => {
-      let place = {
-        address: placemark.get("title"),
-        city: this.city.name,
-        location: [placemark.get("location").latitude, placemark.get("location").longitude]
-      }
-      let marker = this.leaflet.addMarker(this.map, place.location, placemark.get("title"), placemark.get("icon"), placemark.get("size"))
+    let places: any[] = await this.placesCtrl.getPlaces();
+    places.forEach((place) => {
+      let marker = this.leaflet.addMarker(this.map, place.location, place.address, place.icon, place.size)
       marker.on('click', () => {
         this.actionSheetAddress(place);
       })
