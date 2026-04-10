@@ -1,0 +1,317 @@
+{
+    "general": {
+        "yes": "Sí",
+        "no": "No",
+        "ok": "D'acord",
+        "origin": "Origen",
+        "destination": "Destinació",
+        "cancel": "Cancel·lar",
+        "urban": "Urbà",
+        "massive": "Massiu",
+        "update": "Actualitzar",
+        "delete": "Eliminar",
+        "search": "Cercar",
+        "save": "Desar"
+    },
+    "cities": {
+        "title": "Ciutat",
+        "subtitle": "Selecciona la teva ciutat, si us plau.",
+        "nocity": "No hi és la teva ciutat? Selecciona aquí",
+        "dialogs": {
+            "loading": "Carregant llista de ciutats"
+        }
+    },
+    "maintenance": {
+        "message": "Ho sentim, en aquests moments l'aplicació està en manteniment. Tornarem aviat a la normalitat."
+    },
+    "tabs": {
+        "calculate": "Calcular",
+        "near": "Propers",
+        "routes": "Rutes",
+        "settings": "Ajustos",
+        "news": "Novetats"
+    },
+    "calculate": {
+        "wheretogo": "On vols anar?",
+        "main": {
+            "origin": {
+                "title": "Adreça d'origen",
+                "hint": "Exemple: carrer 84 # 27 - 18"
+            },
+            "destiny": {
+                "title": "Adreça de destinació",
+                "hint": "Exemple: Centre Comercial..."
+            },
+            "urban": "Urbà",
+            "history": "Historial",
+            "search": "CERCAR RUTA",
+            "calculating": "Cercant rutes",
+            "errors": {
+                "originOrDestinyMissing": "Si us plau, tria una adreça d'origen i una de destinació.",
+                "highDemand": "En aquests moments tenim una alta demanda de sol·licituds. Torna-ho a provar més tard.",
+                "error1": "No s'ha pogut realitzar el càlcul, torna-ho a provar.",
+                "error2": "No s'ha enviat el codi de la ciutat.",
+                "error3": "No s'ha enviat el codi d'àrea.",
+                "error4": "No s'ha enviat la ubicació d'inici.",
+                "error5": "No s'ha enviat la ubicació de destinació.",
+                "error6": "No s'han trobat rutes a prop de l'origen.",
+                "error7": "No s'han trobat rutes a prop de la destinació.",
+                "error8": "No s'han trobat opcions per a aquest recorregut."
+            }
+        },
+        "input": {
+            "selected": "Ubicació seleccionada"
+        },
+        "modal": {
+            "address": {
+                "title": "Adreça",
+                "hint": "Carrera 64 # 86 - 168"
+            },
+            "place": {
+                "title": "Lloc",
+                "hint": "Centre comercial..."
+            },
+            "onMap": "Fixar la ubicació al mapa",
+            "recent": "Recents",
+            "recentEmpty": "No hi ha adreces usades recentment",
+            "favorites": "Preferits",
+            "favoritesEmpty": "Afegeix algun preferit!",
+            "places": "Llocs",
+            "placesEmpty": "Pròximament: llocs icònics de la ciutat",
+            "dialogs": {
+                "favoriteAdded": "Adreça afegida als preferits",
+                "favoriteExists": "Ja tens aquesta adreça als teus preferits",
+                "favoriteDelete": "Vols esborrar aquest preferit?"
+            }
+        },
+        "map": {
+            "title": "Triar ubicació",
+            "select": "Seleccionar adreça aquí"
+        },
+        "history": {
+            "title": "Historial",
+            "empty": "No has realitzat càlculs",
+            "calculating": "Calculant rutes, espera un moment, si us plau.",
+            "selected": "Ubicació seleccionada"
+        },
+        "info": {
+            "update": {
+                "title": "Hi ha una nova versió de l'aplicació!",
+                "button": "Actualitzar"
+            }
+        },
+        "cards": {
+            "title": "Consulta el teu saldo",
+            "empty": "Afegeix una targeta",
+            "number": "Introdueix el número de targeta",
+            "search": "Cercar",
+            "style": "Estil de targeta",
+            "save": "Desar",
+            "confirm": "Vols eliminar aquesta targeta?"
+        }
+    },
+    "nearRoutes": {
+        "title": "Rutes properes",
+        "urban": "Urbà",
+        "masive": "Massiu",
+        "location": {
+            "search": "Obtenint la teva ubicació",
+            "hint": "Recorda activar el GPS al teu dispositiu",
+            "error": "No hem pogut obtenir la teva ubicació"
+        },
+        "search": {
+            "searching": "Cercant rutes properes a tu",
+            "notFound": "No s'han trobat rutes a prop de la teva ubicació"
+        },
+        "errors": {
+            "error1": "No es poden obtenir les rutes properes en aquest moment.",
+            "error2": "No s'ha enviat la ubicació.",
+            "error3": "No s'ha enviat el codi de la ciutat.",
+            "error4": "No s'ha enviat el codi d'àrea."
+        }
+    },
+    "routes": {
+        "title": "Rutes",
+        "filter": "Filtrar",
+        "loading": "Carregant rutes",
+        "all": "Totes",
+        "favorites": {
+            "hint": "Afegeix les teves rutes preferides"
+        },
+        "route": {
+            "schedules": "Horaris",
+            "hour": "Hora",
+            "frequenzy": "Freqüència",
+            "monday2friday": "Dl-Dv",
+            "saturday": "Ds",
+            "sunday&holyday": "Dg i F",
+            "updated": "Última actualització: {{date}}",
+            "support": "Saps si aquesta ruta ha canviat? Explica'ns-ho!",
+            "help": {
+                "hour": "Aquesta és l'hora de la primera i l'última sortida del dia.",
+                "frequency": "Aquesta és la freqüència de temps amb què surten els vehicles en hores vall i hores punta, respectivament."
+            },
+            "stops": "Parades"
+        },
+        "status": {
+            "new": "Nova",
+            "updated": "Actualitzada"
+        }
+    },
+    "settings": {
+        "title": "Ajustos",
+        "walkDistance": "Distància a caminar",
+        "mapType": "Tipus de mapa",
+        "contact": "Contacte",
+        "terms": "Termes i condicions",
+        "changeCity": "Canviar de ciutat",
+        "install": "Instal·lar l'App",
+        "sponsors": "Patrocinadors",
+        "faq": {
+            "title": "Preguntes freqüents",
+            "loading": "Carregant preguntes freqüents",
+            "filter": "Filtrar"
+        }
+    },
+    "result": {
+        "title": "Resultats",
+        "time": "Temps",
+        "buses": "Busos",
+        "distance": "Distància",
+        "advertising": {
+            "title": "Publicitat",
+            "more": "Més informació"
+        },
+        "detail": {
+            "title": "Detall del recorregut",
+            "walkTo": "Caminar fins a",
+            "takeBus": "Agafar el bus",
+            "getDown": "Baixar-se",
+            "destiny": "Caminar fins a la destinació",
+            "dialogs": {
+                "loading": "Carregant..."
+            }
+        }
+    },
+    "news": {
+        "title": "Novetats",
+        "loading": "Carregant fonts...",
+        "noNews": "Ho sentim, no hi ha fonts disponibles.",
+        "twitter": {
+            "loading": "Carregant tuits...",
+            "noTweets": "No s'ha pogut obtenir cap tuit"
+        },
+        "tabs": {
+            "transport": "Transport",
+            "news": "Notícies"
+        }
+    },
+    "profile": {
+        "title": "Entra o registra't",
+        "help": {
+            "header": "Entra o registra't per poder desar al núvol aquestes característiques:",
+            "options": {
+                "option1": "Rutes preferides",
+                "option2": "Adreces preferides",
+                "option3": "Historial de cerca",
+                "option4": "Subscripció"
+            }
+        },
+        "logout": "Vols tancar la sessió d'aquest usuari?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "Benvingut/da",
+        "login": "Inicia la sessió",
+        "loginMessage": "Accedeix al teu compte de forma segura",
+        "guest": "Continua com a convidat",
+        "otp": {
+            "email": {
+                "title": "Correu electrònic",
+                "placeholder": "usuari@domini.com",
+                "continue": "CONTINUAR"
+            },
+            "confirm": {
+                "message": "T'hem enviat un codi al teu correu electrònic. Revisa la teva bústia d'entrada o de correu brossa (SPAM).",
+                "title": "Codi",
+                "placeholder": "123456",
+                "continue": "ENTRAR",
+                "resend": "Reenviar codi"
+            },
+            "errors": {
+                "error1": "No t'hem pogut enviar el correu, torna-ho a provar més tard",
+                "error2": "Codi invàlid"
+            }
+        }
+    },
+    "removeAds": {
+        "title": "Treure publicitat",
+        "subtitle": "Elimina la publicitat",
+        "description": "Gaudeix del contingut de Q'ruta sense publicitat",
+        "benefits": {
+            "b1": "Després de cercar rutes",
+            "b2": "Al canviar entre resultats",
+            "b3": "En el detall de la ruta",
+            "b4": "Quan inicies l'aplicació"
+        },
+        "errors": {
+            "e1": "És necessari iniciar la sessió per continuar amb el procés",
+            "e2": "Ha sorgit un error en la generació de l'enllaç de pagament, espera uns minuts i torna-ho a provar",
+            "e3": "Encara no es reflecteix la transferència. Si ja has fet el pagament, torna a provar la verificació. Posa't en contacte amb nosaltres per ajudar-te amb qualsevol problema."
+        },
+        "link": {
+            "title": "Enllaç de pagament",
+            "description": "Continua a la passarel·la de pagament fins a acabar el procés",
+            "open": "Obrir enllaç"
+        },
+        "subscribed": {
+            "title": "Subscripció activa",
+            "description": "Actualment tens una subscripció que venç en:",
+            "days": " dies",
+            "profile": "Subscrit, "
+        },
+        "buttons": {
+            "continue": "Continuar",
+            "verify": "Verificar pagament"
+        }
+    },
+    "information": {
+        "routes": "Rutes actives",
+        "models": {
+            "sitm": "Aquesta ciutat utilitza exclusivament un Sistema Integrat de Transport Massiu (SITM). Els busos circulen per carrils especials per evitar el trànsit dels automòbils. Totes les rutes estan connectades entre si, permetent que les persones canviïn de bus sense pagar diners extra. És un sistema organitzat que funciona com una sola xarxa unificada.",
+            "tcp": "Aquesta ciutat utilitza únicament el Transport Públic Col·lectiu (TPC). Els busos circulen pels mateixos carrers que els vehicles particulars i les motocicletes. Generalment, els passatgers paguen el viatge amb diners en efectiu directament al conductor en pujar al vehicle. Cada ruta de bus és independent i no existeix una connexió oficial entre les diferents empreses. Els busos poden aturar-se en molts punts del carrer per recollir passatgers.",
+            "hybrid": "Aquesta ciutat té dos sistemes de transport diferents que funcionen alhora: el SITM i el TPC. El sistema massiu fa servir estacions i carrils ràpids, mentre que el sistema tradicional fa servir els carrers normals. Tanmateix, aquests dos sistemes no estan integrats. Això significa que els passatgers no poden fer servir la mateixa targeta per a tots dos i han de pagar un bitllet nou cada vegada que canvien d'un sistema a l'altre. Les rutes d'ambdós sistemes poden seguir camins similars, però operen de forma totalment separada."
+        },
+        "fares": {
+            "title": "Tarifes",
+            "days": {
+                "all": "Tots els dies",
+                "m2f": "Dilluns a divendres",
+                "m2s": "Dilluns a dissabte",
+                "s&h": "Diumenges i festius",
+                "monday": "Dilluns",
+                "tuesday": "Dimarts",
+                "wednesday": "Dimecres",
+                "thursday": "Dijous",
+                "friday": "Divendres",
+                "saturday": "Dissabte",
+                "sunday": "Diumenge"
+            }
+        },
+        "free": "Gratis",
+        "payment": {
+            "title": "Mètodes de pagament",
+            "methods": {
+                "cash": "Efectiu",
+                "card": "Targeta recarregable",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Telèfon intel·ligent"
+            }
+        },
+        "coverage":{
+            "title": "Cobertura"
+        },
+        "moreInfo": "Més informació"
+    }
+}

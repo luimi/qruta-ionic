@@ -1,0 +1,317 @@
+{
+    "general": {
+        "yes": "예",
+        "no": "아니요",
+        "ok": "확인",
+        "origin": "출발지",
+        "destination": "도착지",
+        "cancel": "취소",
+        "urban": "시내",
+        "massive": "광역",
+        "update": "업데이트",
+        "delete": "삭제",
+        "search": "검색",
+        "save": "저장"
+    },
+    "cities": {
+        "title": "도시",
+        "subtitle": "도시를 선택해 주세요.",
+        "nocity": "찾으시는 도시가 없나요? 여기를 선택하세요",
+        "dialogs": {
+            "loading": "도시 목록을 불러오는 중"
+        }
+    },
+    "maintenance": {
+        "message": "죄송합니다. 현재 앱 점검 중입니다. 곧 정상화될 예정이오니 잠시만 기다려 주세요."
+    },
+    "tabs": {
+        "calculate": "길찾기",
+        "near": "주변",
+        "routes": "노선",
+        "settings": "설정",
+        "news": "소식"
+    },
+    "calculate": {
+        "wheretogo": "어디로 가시나요?",
+        "main": {
+            "origin": {
+                "title": "출발지 주소",
+                "hint": "예: 84번가 # 27 - 18"
+            },
+            "destiny": {
+                "title": "목적지 주소",
+                "hint": "예: OO 쇼핑몰..."
+            },
+            "urban": "시내",
+            "history": "히스토리",
+            "search": "경로 검색",
+            "calculating": "경로 찾는 중",
+            "errors": {
+                "originOrDestinyMissing": "출발지와 목적지 주소를 모두 선택해 주세요.",
+                "highDemand": "현재 접속자가 많아 요청이 지연되고 있습니다. 잠시 후 다시 시도해 주세요.",
+                "error1": "경로를 계산할 수 없습니다. 다시 시도해 주세요.",
+                "error2": "도시 코드가 전송되지 않았습니다.",
+                "error3": "지역 코드가 전송되지 않았습니다.",
+                "error4": "출발 위치가 전송되지 않았습니다.",
+                "error5": "목적지 위치가 전송되지 않았습니다.",
+                "error6": "출발지 근처에 노선이 없습니다.",
+                "error7": "목적지 근처에 노선이 없습니다.",
+                "error8": "이 경로에 대한 옵션을 찾을 수 없습니다."
+            }
+        },
+        "input": {
+            "selected": "선택된 위치"
+        },
+        "modal": {
+            "address": {
+                "title": "주소",
+                "hint": "카레라 64 # 86 - 168"
+            },
+            "place": {
+                "title": "장소",
+                "hint": "OO 쇼핑몰..."
+            },
+            "onMap": "지도에서 위치 설정",
+            "recent": "최근 기록",
+            "recentEmpty": "최근 사용한 주소가 없습니다",
+            "favorites": "즐겨찾기",
+            "favoritesEmpty": "즐겨찾기를 추가해 보세요!",
+            "places": "장소",
+            "placesEmpty": "준비 중: 도시의 주요 명소",
+            "dialogs": {
+                "favoriteAdded": "즐겨찾기에 추가되었습니다",
+                "favoriteExists": "이미 즐겨찾기에 등록된 주소입니다",
+                "favoriteDelete": "이 즐겨찾기를 삭제하시겠습니까?"
+            }
+        },
+        "map": {
+            "title": "위치 선택",
+            "select": "여기에서 주소 선택"
+        },
+        "history": {
+            "title": "히스토리",
+            "empty": "검색 기록이 없습니다",
+            "calculating": "경로를 계산 중입니다. 잠시만 기다려 주세요.",
+            "selected": "선택된 위치"
+        },
+        "info": {
+            "update": {
+                "title": "새로운 버전의 앱이 출시되었습니다!",
+                "button": "업데이트하기"
+            }
+        },
+        "cards": {
+            "title": "잔액 조회",
+            "empty": "카드를 추가하세요",
+            "number": "카드 번호 입력",
+            "search": "조회",
+            "style": "카드 스타일",
+            "save": "저장",
+            "confirm": "이 카드를 삭제하시겠습니까?"
+        }
+    },
+    "nearRoutes": {
+        "title": "주변 노선",
+        "urban": "시내",
+        "masive": "광역",
+        "location": {
+            "search": "사용자 위치 확인 중",
+            "hint": "기기의 GPS를 켰는지 확인해 주세요",
+            "error": "위치 정보를 가져올 수 없습니다"
+        },
+        "search": {
+            "searching": "주변 노선 검색 중",
+            "notFound": "주변에 검색된 노선이 없습니다"
+        },
+        "errors": {
+            "error1": "현재 주변 노선 정보를 가져올 수 없습니다.",
+            "error2": "위치 정보가 전송되지 않았습니다.",
+            "error3": "도시 코드가 전송되지 않았습니다.",
+            "error4": "지역 코드가 전송되지 않았습니다."
+        }
+    },
+    "routes": {
+        "title": "노선",
+        "filter": "필터",
+        "loading": "노선 불러오는 중",
+        "all": "전체",
+        "favorites": {
+            "hint": "자주 이용하는 노선을 추가하세요"
+        },
+        "route": {
+            "schedules": "시간표",
+            "hour": "시간",
+            "frequenzy": "배차 간격",
+            "monday2friday": "월~금",
+            "saturday": "토",
+            "sunday&holyday": "일·공휴",
+            "updated": "최근 업데이트: {{date}}",
+            "support": "노선 변경 정보를 알고 계신가요? 제보해 주세요!",
+            "help": {
+                "hour": "첫차 및 막차 시간 정보입니다.",
+                "frequency": "평시와 출퇴근 시간대의 배차 간격 정보입니다."
+            },
+            "stops": "정류장"
+        },
+        "status": {
+            "new": "신규",
+            "updated": "업데이트됨"
+        }
+    },
+    "settings": {
+        "title": "설정",
+        "walkDistance": "도보 거리",
+        "mapType": "지도 유형",
+        "contact": "문의하기",
+        "terms": "이용약관",
+        "changeCity": "도시 변경",
+        "install": "앱 설치",
+        "sponsors": "스폰서",
+        "faq": {
+            "title": "자주 묻는 질문",
+            "loading": "질문 목록 불러오는 중",
+            "filter": "필터"
+        }
+    },
+    "result": {
+        "title": "검색 결과",
+        "time": "시간",
+        "buses": "버스",
+        "distance": "거리",
+        "advertising": {
+            "title": "광고",
+            "more": "더 보기"
+        },
+        "detail": {
+            "title": "상세 경로",
+            "walkTo": "정류장까지 걷기",
+            "takeBus": "버스 탑승",
+            "getDown": "하차",
+            "destiny": "목적지까지 걷기",
+            "dialogs": {
+                "loading": "로딩 중..."
+            }
+        }
+    },
+    "news": {
+        "title": "새 소식",
+        "loading": "피드 불러오는 중...",
+        "noNews": "현재 이용 가능한 소식이 없습니다.",
+        "twitter": {
+            "loading": "트윗 불러오는 중...",
+            "noTweets": "트윗을 가져올 수 없습니다"
+        },
+        "tabs": {
+            "transport": "교통",
+            "news": "뉴스"
+        }
+    },
+    "profile": {
+        "title": "로그인 또는 회원가입",
+        "help": {
+            "header": "로그인하시면 다음 기능들을 클라우드에 저장할 수 있습니다:",
+            "options": {
+                "option1": "즐겨찾는 노선",
+                "option2": "즐겨찾는 주소",
+                "option3": "검색 히스토리",
+                "option4": "구독 정보"
+            }
+        },
+        "logout": "로그아웃 하시겠습니까?"
+    },
+    "login": {
+        "title": "Q'ruta",
+        "welcome": "환영합니다",
+        "login": "로그인",
+        "loginMessage": "계정에 안전하게 접속하세요",
+        "guest": "게스트로 계속하기",
+        "otp": {
+            "email": {
+                "title": "이메일 주소",
+                "placeholder": "user@domain.com",
+                "continue": "계속하기"
+            },
+            "confirm": {
+                "message": "이메일로 인증 코드를 보냈습니다. 받은 편지함이나 스팸함을 확인해 주세요.",
+                "title": "인증 코드",
+                "placeholder": "123456",
+                "continue": "로그인",
+                "resend": "코드 재전송"
+            },
+            "errors": {
+                "error1": "이메일 전송에 실패했습니다. 나중에 다시 시도해 주세요.",
+                "error2": "잘못된 코드입니다"
+            }
+        }
+    },
+    "removeAds": {
+        "title": "광고 제거",
+        "subtitle": "광고 없이 이용하기",
+        "description": "광고 없이 쾌적하게 Q'ruta를 즐기세요",
+        "benefits": {
+            "b1": "경로 검색 후",
+            "b2": "결과 간 전환 시",
+            "b3": "노선 상세 페이지에서",
+            "b4": "앱 시작 시"
+        },
+        "errors": {
+            "e1": "계속하려면 로그인이 필요합니다",
+            "e2": "결제 링크 생성 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.",
+            "e3": "아직 입금 확인이 되지 않았습니다. 결제를 완료하셨다면 다시 확인을 시도해 주세요. 문제가 지속될 경우 고객센터로 문의 바랍니다."
+        },
+        "link": {
+            "title": "결제 링크",
+            "description": "결제 단계가 완료될 때까지 창을 닫지 마세요",
+            "open": "링크 열기"
+        },
+        "subscribed": {
+            "title": "구독 활성화됨",
+            "description": "현재 구독 만료일까지 남은 기간:",
+            "days": " 일",
+            "profile": "구독 중, "
+        },
+        "buttons": {
+            "continue": "계속하기",
+            "verify": "결제 확인"
+        }
+    },
+    "information": {
+        "routes": "운행 노선",
+        "models": {
+            "sitm": "이 도시는 통합 대중교통 시스템(SITM)을 전용으로 사용합니다. 버스는 교통 체증을 피하기 위해 전용 차로로 운행됩니다. 모든 노선이 서로 연결되어 있어 추가 요금 없이 환승이 가능합니다. 단일 네트워크로 운영되는 체계적인 시스템입니다.",
+            "tcp": "이 도시는 공동 대중교통(TCP)만을 사용합니다. 버스는 일반 승용차나 오토바이와 같은 차로를 이용합니다. 일반적으로 승차 시 운전기사에게 현금으로 직접 요금을 지불합니다. 각 버스 노선은 독립적이며 운수 회사 간의 공식적인 연결은 없습니다. 버스는 승객을 태우기 위해 길가 여러 곳에서 정차할 수 있습니다.",
+            "hybrid": "이 도시는 SITM과 TCP라는 두 가지 교통 시스템이 동시에 운영됩니다. 광역 시스템은 정류장과 전용 차로를 사용하고, 전통적인 시스템은 일반 도로를 사용합니다. 하지만 두 시스템은 통합되어 있지 않습니다. 즉, 동일한 카드를 사용할 수 없으며 환승 시마다 새로 요금을 지불해야 합니다. 노선이 비슷할 수 있으나 완전히 분리되어 운영됩니다."
+        },
+        "fares": {
+            "title": "요금 안내",
+            "days": {
+                "all": "매일",
+                "m2f": "월요일~금요일",
+                "m2s": "월요일~토요일",
+                "s&h": "일요일 및 공휴일",
+                "monday": "월요일",
+                "tuesday": "화요일",
+                "wednesday": "수요일",
+                "thursday": "목요일",
+                "friday": "금요일",
+                "saturday": "토요일",
+                "sunday": "일요일"
+            }
+        },
+        "free": "무료",
+        "payment": {
+            "title": "결제 수단",
+            "methods": {
+                "cash": "현금",
+                "card": "충전식 카드",
+                "qr": "QR 코드",
+                "rfc": "RFC",
+                "smarthPhone": "스마트폰"
+            }
+        },
+        "coverage":{
+            "title": "서비스 범위"
+        },
+        "moreInfo": "더 보기"
+    }
+}
