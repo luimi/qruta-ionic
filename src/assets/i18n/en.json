@@ -274,5 +274,44 @@
             "continue": "Continue",
             "verify": "Verify payment"
         }
+    },
+    "information": {
+        "routes": "Active routes",
+        "models": {
+            "sitm": "This city exclusively uses an Integrated Mass Transit System (SITM). Buses travel on dedicated lanes to avoid car traffic. All routes are connected, allowing passengers to transfer between buses without paying extra. It is an organized system that works as a single unified network.",
+            "tcp": "This city only uses Collective Public Transport (TPC). Buses run on the same streets as private vehicles and motorcycles. Passengers usually pay in cash directly to the driver when boarding. Each bus route is independent, and there is no official connection between different companies. Buses can stop at many points along the street to pick up passengers.",
+            "hybrid": "This city has two transport systems operating at the same time: SITM and TPC. The mass system uses stations and dedicated lanes, while the traditional system uses regular streets. However, these systems are not integrated. This means passengers cannot use the same card for both and must pay a new fare each time they switch systems. Routes from both systems may follow similar paths but operate completely separately."
+        },
+        "fares": {
+            "title": "Fares",
+            "days": {
+                "all": "Every day",
+                "m2f": "Monday to Friday",
+                "m2s": "Monday to Saturday",
+                "s&h": "Sundays and holidays",
+                "monday": "Monday",
+                "tuesday": "Tuesday",
+                "wednesday": "Wednesday",
+                "thursday": "Thursday",
+                "friday": "Friday",
+                "saturday": "Saturday",
+                "sunday": "Sunday"
+            }
+        },
+        "free": "Free",
+        "payment": {
+            "title": "Payment methods",
+            "methods": {
+                "cash": "Cash",
+                "card": "Rechargeable card",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Coverage"
+        },
+        "moreInfo": "More information"
     }
 }

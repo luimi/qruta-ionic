@@ -274,5 +274,44 @@
             "continue": "Doorgaan",
             "verify": "Betaling verifiëren"
         }
+    },
+    "information": {
+        "routes": "Actieve routes",
+        "models": {
+            "sitm": "Deze stad gebruikt uitsluitend een geïntegreerd massatransportsysteem (SITM). Bussen rijden op speciale rijstroken om autoverkeer te vermijden. Alle routes zijn met elkaar verbonden, waardoor passagiers kunnen overstappen zonder extra te betalen. Het is een georganiseerd systeem dat werkt als één uniform netwerk.",
+            "tcp": "Deze stad gebruikt alleen collectief openbaar vervoer (TPC). Bussen rijden op dezelfde wegen als privévoertuigen en motoren. Passagiers betalen meestal contant direct aan de chauffeur bij het instappen. Elke buslijn is onafhankelijk en er is geen officiële verbinding tussen verschillende bedrijven. Bussen kunnen op veel punten langs de weg stoppen om passagiers op te pikken.",
+            "hybrid": "Deze stad heeft twee transportsystemen die tegelijkertijd werken: SITM en TPC. Het massatransportsysteem gebruikt stations en snelle rijstroken, terwijl het traditionele systeem gewone straten gebruikt. Deze systemen zijn echter niet geïntegreerd. Dit betekent dat passagiers niet dezelfde kaart voor beide kunnen gebruiken en elke keer opnieuw moeten betalen bij overstappen. Routes kunnen vergelijkbare trajecten volgen maar werken volledig gescheiden."
+        },
+        "fares": {
+            "title": "Tarieven",
+            "days": {
+                "all": "Elke dag",
+                "m2f": "Maandag tot vrijdag",
+                "m2s": "Maandag tot zaterdag",
+                "s&h": "Zondagen en feestdagen",
+                "monday": "Maandag",
+                "tuesday": "Dinsdag",
+                "wednesday": "Woensdag",
+                "thursday": "Donderdag",
+                "friday": "Vrijdag",
+                "saturday": "Zaterdag",
+                "sunday": "Zondag"
+            }
+        },
+        "free": "Gratis",
+        "payment": {
+            "title": "Betaalmethoden",
+            "methods": {
+                "cash": "Contant",
+                "card": "Oplaadbare kaart",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Dekking"
+        },
+        "moreInfo": "Meer informatie"
     }
 }

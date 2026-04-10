@@ -274,5 +274,44 @@
             "continue": "Continua",
             "verify": "Verifica pagamento"
         }
+    },
+    "information": {
+        "routes": "Percorsi attivi",
+        "models": {
+            "sitm": "Questa città utilizza esclusivamente un sistema integrato di trasporto di massa (SITM). Gli autobus viaggiano su corsie dedicate per evitare il traffico automobilistico. Tutte le linee sono collegate tra loro, consentendo ai passeggeri di cambiare autobus senza costi aggiuntivi. È un sistema organizzato che funziona come una rete unificata.",
+            "tcp": "Questa città utilizza solo il trasporto pubblico collettivo (TPC). Gli autobus circolano sulle stesse strade dei veicoli privati e delle motociclette. I passeggeri pagano generalmente in contanti direttamente all'autista al momento della salita. Ogni linea è indipendente e non esiste una connessione ufficiale tra le diverse aziende. Gli autobus possono fermarsi in molti punti lungo la strada per raccogliere passeggeri.",
+            "hybrid": "Questa città ha due sistemi di trasporto che funzionano contemporaneamente: SITM e TPC. Il sistema di massa utilizza stazioni e corsie rapide, mentre quello tradizionale utilizza le strade normali. Tuttavia, questi sistemi non sono integrati. Ciò significa che i passeggeri non possono utilizzare la stessa carta per entrambi e devono pagare una nuova tariffa ogni volta che cambiano sistema. Le linee possono seguire percorsi simili ma operano separatamente."
+        },
+        "fares": {
+            "title": "Tariffe",
+            "days": {
+                "all": "Tutti i giorni",
+                "m2f": "Dal lunedì al venerdì",
+                "m2s": "Dal lunedì al sabato",
+                "s&h": "Domeniche e festivi",
+                "monday": "Lunedì",
+                "tuesday": "Martedì",
+                "wednesday": "Mercoledì",
+                "thursday": "Giovedì",
+                "friday": "Venerdì",
+                "saturday": "Sabato",
+                "sunday": "Domenica"
+            }
+        },
+        "free": "Gratuito",
+        "payment": {
+            "title": "Metodi di pagamento",
+            "methods": {
+                "cash": "Contanti",
+                "card": "Carta ricaricabile",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Copertura"
+        },
+        "moreInfo": "Maggiori informazioni"
     }
 }

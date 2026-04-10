@@ -274,5 +274,44 @@
             "continue": "Continuar",
             "verify": "Verificar pagamento"
         }
+    },
+    "information": {
+        "routes": "Rotas ativas",
+        "models": {
+            "sitm": "Esta cidade utiliza exclusivamente um Sistema Integrado de Transporte Massivo (SITM). Os ônibus circulam por faixas exclusivas para evitar o trânsito de carros. Todas as rotas estão conectadas, permitindo que os passageiros façam transferências sem custo adicional. É um sistema organizado que funciona como uma rede unificada.",
+            "tcp": "Esta cidade utiliza apenas o Transporte Público Coletivo (TPC). Os ônibus circulam nas mesmas ruas que veículos particulares e motocicletas. Geralmente, os passageiros pagam em dinheiro diretamente ao motorista ao embarcar. Cada linha é independente e não existe conexão oficial entre diferentes empresas. Os ônibus podem parar em vários pontos ao longo da rua para pegar passageiros.",
+            "hybrid": "Esta cidade possui dois sistemas de transporte que operam simultaneamente: SITM e TPC. O sistema massivo usa estações e faixas rápidas, enquanto o tradicional usa ruas comuns. No entanto, esses sistemas não são integrados. Isso significa que os passageiros não podem usar o mesmo cartão e precisam pagar uma nova tarifa ao mudar de sistema. As rotas podem ser semelhantes, mas operam separadamente."
+        },
+        "fares": {
+            "title": "Tarifas",
+            "days": {
+                "all": "Todos os dias",
+                "m2f": "Segunda a sexta",
+                "m2s": "Segunda a sábado",
+                "s&h": "Domingos e feriados",
+                "monday": "Segunda-feira",
+                "tuesday": "Terça-feira",
+                "wednesday": "Quarta-feira",
+                "thursday": "Quinta-feira",
+                "friday": "Sexta-feira",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+            }
+        },
+        "free": "Grátis",
+        "payment": {
+            "title": "Métodos de pagamento",
+            "methods": {
+                "cash": "Dinheiro",
+                "card": "Cartão recarregável",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Cobertura"
+        },
+        "moreInfo": "Mais informações"
     }
 }

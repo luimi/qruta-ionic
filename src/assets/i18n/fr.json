@@ -274,5 +274,44 @@
             "continue": "Continuer",
             "verify": "Vérifier le paiement"
         }
+    },
+    "information": {
+        "routes": "Lignes actives",
+        "models": {
+            "sitm": "Cette ville utilise exclusivement un système intégré de transport de masse (SITM). Les bus circulent sur des voies réservées pour éviter le trafic automobile. Toutes les lignes sont connectées entre elles, permettant aux passagers de changer de bus sans payer de supplément. C'est un système organisé qui fonctionne comme un réseau unifié.",
+            "tcp": "Cette ville utilise uniquement le transport public collectif (TPC). Les bus circulent sur les mêmes routes que les véhicules privés et les motos. Les passagers paient généralement en espèces directement au conducteur en montant dans le véhicule. Chaque ligne de bus est indépendante et il n'existe pas de connexion officielle entre les différentes entreprises. Les bus peuvent s'arrêter à de nombreux points pour prendre des passagers.",
+            "hybrid": "Cette ville dispose de deux systèmes de transport fonctionnant en même temps : le SITM et le TPC. Le système de masse utilise des stations et des voies rapides, tandis que le système traditionnel utilise les rues normales. Cependant, ces deux systèmes ne sont pas intégrés. Cela signifie que les passagers ne peuvent pas utiliser la même carte pour les deux et doivent payer un nouveau tarif à chaque changement de système. Les lignes peuvent suivre des trajets similaires mais fonctionnent séparément."
+        },
+        "fares": {
+            "title": "Tarifs",
+            "days": {
+                "all": "Tous les jours",
+                "m2f": "Lundi au vendredi",
+                "m2s": "Lundi au samedi",
+                "s&h": "Dimanches et jours fériés",
+                "monday": "Lundi",
+                "tuesday": "Mardi",
+                "wednesday": "Mercredi",
+                "thursday": "Jeudi",
+                "friday": "Vendredi",
+                "saturday": "Samedi",
+                "sunday": "Dimanche"
+            }
+        },
+        "free": "Gratuit",
+        "payment": {
+            "title": "Méthodes de paiement",
+            "methods": {
+                "cash": "Espèces",
+                "card": "Carte rechargeable",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Couverture"
+        },
+        "moreInfo": "Plus d'informations"
     }
 }

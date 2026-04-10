@@ -17,6 +17,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { CardAddComponent } from './card-add/card-add.component';
 import { CardComponent } from './card/card.component';
 import { StoryModule } from '../components/story/story.module';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   imports: [
@@ -28,8 +29,8 @@ import { StoryModule } from '../components/story/story.module';
     TranslateModule,
     StoryModule
   ],
-  declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent],
+  declarations: [CalculatePage, AddressInputComponent, HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent, InfoComponent],
   providers: [Geolocation],
-  exports: [HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent]
+  exports: [HistoryComponent, AddressMapComponent, AddressModalComponent, CardListComponent, CardAddComponent, CardComponent, InfoComponent]
 })
 export class CalculatePageModule {}

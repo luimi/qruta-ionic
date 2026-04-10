@@ -274,5 +274,44 @@
             "continue": "Kontynuuj",
             "verify": "Zweryfikuj płatność"
         }
+    },
+    "information": {
+        "routes": "Aktywne trasy",
+        "models": {
+            "sitm": "To miasto korzysta wyłącznie z Zintegrowanego Systemu Transportu Masowego (SITM). Autobusy poruszają się po wydzielonych pasach, aby uniknąć ruchu samochodowego. Wszystkie trasy są ze sobą połączone, co pozwala pasażerom przesiadać się bez dodatkowych opłat. Jest to zorganizowany system działający jako jedna spójna sieć.",
+            "tcp": "To miasto korzysta wyłącznie z transportu publicznego zbiorowego (TPC). Autobusy poruszają się po tych samych ulicach co pojazdy prywatne i motocykle. Pasażerowie zazwyczaj płacą gotówką bezpośrednio kierowcy przy wejściu. Każda linia autobusowa jest niezależna i nie ma oficjalnego połączenia między różnymi firmami. Autobusy mogą zatrzymywać się w wielu miejscach, aby zabrać pasażerów.",
+            "hybrid": "To miasto ma dwa systemy transportu działające jednocześnie: SITM i TPC. System masowy korzysta ze stacji i szybkich pasów, podczas gdy tradycyjny używa zwykłych ulic. Systemy te nie są jednak zintegrowane. Oznacza to, że pasażerowie nie mogą używać tej samej karty i muszą płacić za każdym razem przy zmianie systemu. Trasy mogą być podobne, ale działają całkowicie oddzielnie."
+        },
+        "fares": {
+            "title": "Taryfy",
+            "days": {
+                "all": "Codziennie",
+                "m2f": "Od poniedziałku do piątku",
+                "m2s": "Od poniedziałku do soboty",
+                "s&h": "Niedziele i święta",
+                "monday": "Poniedziałek",
+                "tuesday": "Wtorek",
+                "wednesday": "Środa",
+                "thursday": "Czwartek",
+                "friday": "Piątek",
+                "saturday": "Sobota",
+                "sunday": "Niedziela"
+            }
+        },
+        "free": "Bezpłatne",
+        "payment": {
+            "title": "Metody płatności",
+            "methods": {
+                "cash": "Gotówka",
+                "card": "Karta doładowywana",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartfon"
+            }
+        },
+        "coverage": {
+            "title": "Zasięg"
+        },
+        "moreInfo": "Więcej informacji"
     }
 }

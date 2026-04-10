@@ -15,6 +15,7 @@ import { AdsService } from '../utils/ads.service';
 import { environment } from 'src/environments/environment';
 import { RecentsService } from '../utils/recents.service';
 import { PlacesService } from '../utils/places.service';
+import { InfoComponent } from './info/info.component';
 
 @Component({
     selector: 'app-calculate',
@@ -219,6 +220,13 @@ export class CalculatePage implements OnInit {
   async openCardList() {
     const modal = await this.modalCtrl.create({
       component: CardListComponent
+    });
+    modal.present();
+  }
+  async openCityInformation() {
+    this.utils.gaEvent("information-open")
+    const modal = await this.modalCtrl.create({
+      component: InfoComponent
     });
     modal.present();
   }

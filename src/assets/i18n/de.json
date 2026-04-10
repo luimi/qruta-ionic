@@ -274,5 +274,44 @@
             "continue": "Fortfahren",
             "verify": "Zahlung überprüfen"
         }
+    },
+    "information": {
+        "routes": "Aktive Routen",
+        "models": {
+            "sitm": "Diese Stadt nutzt ausschließlich ein integriertes Massentransportsystem (SITM). Busse fahren auf speziellen Fahrspuren, um den Autoverkehr zu vermeiden. Alle Routen sind miteinander verbunden, sodass Fahrgäste ohne zusätzliche Kosten umsteigen können. Es ist ein organisiertes System, das als ein einheitliches Netzwerk funktioniert.",
+            "tcp": "Diese Stadt nutzt ausschließlich den kollektiven öffentlichen Verkehr (TPC). Busse fahren auf denselben Straßen wie Privatfahrzeuge und Motorräder. Fahrgäste bezahlen die Fahrt in der Regel bar direkt beim Fahrer beim Einsteigen. Jede Buslinie ist unabhängig und es gibt keine offizielle Verbindung zwischen den verschiedenen Unternehmen. Busse können an vielen Punkten entlang der Straße anhalten, um Fahrgäste aufzunehmen.",
+            "hybrid": "Diese Stadt verfügt über zwei Verkehrssysteme, die gleichzeitig betrieben werden: SITM und TPC. Das Massensystem nutzt Stationen und Schnellspuren, während das traditionelle System normale Straßen nutzt. Diese beiden Systeme sind jedoch nicht integriert. Das bedeutet, dass Fahrgäste nicht dieselbe Karte für beide verwenden können und jedes Mal einen neuen Fahrpreis zahlen müssen, wenn sie das System wechseln. Die Routen beider Systeme können ähnlich verlaufen, funktionieren jedoch völlig getrennt."
+        },
+        "fares": {
+            "title": "Tarife",
+            "days": {
+                "all": "Jeden Tag",
+                "m2f": "Montag bis Freitag",
+                "m2s": "Montag bis Samstag",
+                "s&h": "Sonntage und Feiertage",
+                "monday": "Montag",
+                "tuesday": "Dienstag",
+                "wednesday": "Mittwoch",
+                "thursday": "Donnerstag",
+                "friday": "Freitag",
+                "saturday": "Samstag",
+                "sunday": "Sonntag"
+            }
+        },
+        "free": "Kostenlos",
+        "payment": {
+            "title": "Zahlungsmethoden",
+            "methods": {
+                "cash": "Bargeld",
+                "card": "Wiederaufladbare Karte",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Smartphone"
+            }
+        },
+        "coverage": {
+            "title": "Abdeckung"
+        },
+        "moreInfo": "Weitere Informationen"
     }
 }

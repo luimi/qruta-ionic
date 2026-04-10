@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="main">
+    <ion-buttons slot="start" (click)="modalCtrl.dismiss()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding-bottom">
+  @if(city?.get("image")) {
+  <img class="city-image" [src]="city.get('image')">
+  }
+
+  <ion-item lines="none">
+    <ion-label>
+      <h1>{{city?.get("name")}}</h1>
+      <p>{{count}} - <span translate>information.routes</span></p>
+    </ion-label>
+  </ion-item>
+
+  @if(city?.get("model")) {
+  <ion-item lines="none">
+    <ion-label><span translate>information.models.{{city?.get("model")}}</span></ion-label>
+  </ion-item>
+  }
+
+  @if(city?.get("fares")){
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="dark"><span translate>information.fares.title</span></ion-label>
+    </ion-list-header>
+    @for(item of city.get('fares'); track item.name) {
+    <ion-item>
+      <ion-label><span translate>{{item.name}}</span></ion-label>
+      <ion-note slot="end">
+        <ion-chip color="dark" translate>{{item.value}}</ion-chip>
+      </ion-note>
+    </ion-item>
+    }
+  </ion-list>
+  }
+
+  @if(city?.get("payments")){
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="dark"><span translate>information.payment.title</span></ion-label>
+    </ion-list-header>
+    @for(item of city.get("payments"); track item.name) {
+    <ion-item>
+      <ion-label><span translate>information.payment.methods.{{item.name}}</span></ion-label>
+      <ion-note slot="end">
+        <ion-icon [name]="item.icon" size="large"></ion-icon>
+      </ion-note>
+    </ion-item>
+    }
+
+  </ion-list>
+  }
+
+  @if(city?.get("coverage")){
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="dark"><span translate>information.coverage.title</span></ion-label>
+    </ion-list-header>
+    @for(item of city.get("coverage"); track item.name) {
+    <ion-item>
+      <ion-label>{{item.name}}</ion-label>
+      <ion-note slot="end">
+        <ion-icon name="location-outline" size="large"></ion-icon>
+      </ion-note>
+    </ion-item>
+    }
+
+  </ion-list>
+  }
+  @if(city?.get("infoLink")) {
+  <ion-button color="dark" class="ion-margin" expand="block" shape="round" (click)="moreInfo()" translate>information.moreInfo</ion-button>
+  }
+
+</ion-content>

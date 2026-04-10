@@ -16,7 +16,7 @@
     "cities": {
         "title": "Ciudad",
         "subtitle": "Por favor, selecciona tu ciudad.",
-        "nocity" : "¿No está tu ciudad? Selecciona aquí",
+        "nocity": "¿No está tu ciudad? Selecciona aquí",
         "dialogs": {
             "loading": "Cargando lista de ciudades"
         }
@@ -48,7 +48,7 @@
             "calculating": "Buscando Rutas",
             "errors": {
                 "originOrDestinyMissing": "Por favor, escoja una dirección de origen y una de destino.",
-                "highDemand": "En estos momentos, estamos teniendo una alta demanda de solicitudes. Por favor, intenta nuevamente." ,
+                "highDemand": "En estos momentos, estamos teniendo una alta demanda de solicitudes. Por favor, intenta nuevamente.",
                 "error1": "No se puede realizar el cálculo, intenta nuevamente.",
                 "error2": "No se envió el código de la ciudad.",
                 "error3": "No se envio el codigo de area.",
@@ -160,21 +160,21 @@
     },
     "settings": {
         "title": "Ajustes",
-        "walkDistance":"Distancia a caminar",
-        "mapType":"Tipo de mapa",
-        "contact":"Contacto",
-        "terms":"Términos y condiciones",
-        "changeCity":"Cambiar de ciudad",
-        "install":"Instalar App",
+        "walkDistance": "Distancia a caminar",
+        "mapType": "Tipo de mapa",
+        "contact": "Contacto",
+        "terms": "Términos y condiciones",
+        "changeCity": "Cambiar de ciudad",
+        "install": "Instalar App",
         "sponsors": "Patrocinadores",
         "faq": {
             "title": "Preguntas frecuentes",
-            "loading":"Cargando preguntas frecuentes",
-            "filter":"Filtrar"
+            "loading": "Cargando preguntas frecuentes",
+            "filter": "Filtrar"
         }
     },
     "result": {
-        "title":"Resultados",
+        "title": "Resultados",
         "time": "Tiempo",
         "buses": "Buses",
         "distance": "Distancia",
@@ -183,11 +183,11 @@
             "more": "Más Información"
         },
         "detail": {
-            "title":"Detalle de recorrido",
-            "walkTo":"Caminar hasta",
-            "takeBus":"Tomar el bus",
-            "getDown":"Bajarse",
-            "destiny":"Caminar al destino",
+            "title": "Detalle de recorrido",
+            "walkTo": "Caminar hasta",
+            "takeBus": "Tomar el bus",
+            "getDown": "Bajarse",
+            "destiny": "Caminar al destino",
             "dialogs": {
                 "loading": "Cargando..."
             }
@@ -201,7 +201,7 @@
             "loading": "Cargando tweets...",
             "noTweets": "No se pudo obtener ningún tweet"
         },
-        "tabs":{
+        "tabs": {
             "transport": "Transporte",
             "news": "Noticias"
         }
@@ -209,7 +209,7 @@
     "profile": {
         "title": "Ingresa o regístrate",
         "help": {
-            "header":"Ingresa o regístrate para poder guardar en la nube estas características:",
+            "header": "Ingresa o regístrate para poder guardar en la nube estas características:",
             "options": {
                 "option1": "Rutas favoritas",
                 "option2": "Direcciones favoritas",
@@ -226,7 +226,7 @@
         "loginMessage": "Accede a tu cuenta de forma segura",
         "guest": "Continuar como invitado",
         "otp": {
-            "email":{
+            "email": {
                 "title": "Correo Electrónico",
                 "placeholder": "usuario@dominio.com",
                 "continue": "CONTINUAR"
@@ -270,9 +270,48 @@
             "days": " días",
             "profile": "Suscrito, "
         },
-        "buttons":{
+        "buttons": {
             "continue": "Continuar",
             "verify": "Verificar pago"
         }
+    },
+    "information": {
+        "routes": "Rutas activas",
+        "models": {
+            "sitm": "Esta ciudad utiliza exclusivamente un Sistema Integrado de Transporte Masivo (SITM). Los buses viajan por carriles especiales para evitar el tráfico de los automóviles. Todas las rutas están conectadas entre sí, permitiendo que las personas cambien de bus sin pagar un dinero extra. Es un sistema organizado que funciona como una sola red unificada.",
+            "tcp": "Esta ciudad utiliza únicamente el Transporte Público Colectivo (TPC). Los buses circulan por las mismas calles que los vehículos particulares y las motocicletas. Generalmente, los pasajeros pagan el viaje con dinero en efectivo directamente al conductor al subir al vehículo. Cada ruta de bus es independiente y no existe una conexión oficial entre las diferentes empresas. Los buses pueden detenerse en muchos puntos de la calle para recoger pasajeros.",
+            "hybrid": "Esta ciudad tiene dos sistemas de transporte diferentes que funcionan al mismo tiempo: el SITM y el TPC. El sistema masivo usa estaciones y carriles rápidos, mientras que el sistema tradicional usa las calles normales. Sin embargo, estos dos sistemas no están integrados. Esto significa que los pasajeros no pueden usar la misma tarjeta para ambos y deben pagar un pasaje nuevo cada vez que cambian de un sistema al otro. Las rutas de ambos sistemas pueden seguir caminos similares pero operan de forma totalmente separada."
+        },
+        "fares": {
+            "title": "Tarifas",
+            "days": {
+                "all": "Todos los días",
+                "m2f": "Lunes a viernes",
+                "m2s": "Lunes a sábado",
+                "s&h": "Domingos y festivos",
+                "monday": "Lunes",
+                "tuesday": "Martes",
+                "wednesday": "Miercoles",
+                "thursday": "Jueves",
+                "friday": "Viernes",
+                "saturday": "Sábado",
+                "sunday": "Domingo"
+            }
+        },
+        "free": "Gratis",
+        "payment": {
+            "title": "Métodos de pago",
+            "methods": {
+                "cash": "Efectivo",
+                "card": "Tarjeta recargable",
+                "qr": "QR",
+                "rfc": "RFC",
+                "smarthPhone": "Teléfono inteligente"
+            }
+        },
+        "coverage":{
+            "title": "Cobertura"
+        },
+        "moreInfo": "Más Información"
     }
 }
