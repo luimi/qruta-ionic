@@ -9,6 +9,7 @@ import {
   ViewChild,
   ChangeDetectorRef
 } from '@angular/core';
+import { UtilsService } from 'src/app/utils/utils.service';
 
 @Component({
   selector: 'app-story',
@@ -23,13 +24,14 @@ export class StoryComponent implements OnInit {
   currentIndex: number = 0;
   progress: number = 0;
   private interval: any;
-  private readonly IMAGE_DURATION = 5000;
+  private IMAGE_DURATION = 5000;
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef, private utils: UtilsService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getStoryTimer();
     this.startStory();
   }
 
@@ -86,5 +88,10 @@ export class StoryComponent implements OnInit {
 
   onVideoEnded() {
     this.nextStory();
+  }
+
+  private async getStoryTimer(){
+    const ads: any = await this.utils.getServerConfig("ads");
+    this.IMAGE_DURATION = ads.storyTime;
   }
 }

@@ -65,8 +65,10 @@
     <ng-template>
       <app-story [stories]="advertise.assets" (onAllStoriesEnd)="modal.dismiss()"></app-story>
       @if(advertise.url) {
-      <ion-button class="ion-margin-horizontal" shape="round" color="white" size="small" (click)="openAdvertise()"
-        translate>result.advertising.more</ion-button>
+      <ion-item (click)="openAdvertise()">
+        <ion-icon aria-hidden="true" name="chevron-forward" slot="end"></ion-icon>
+        <ion-label><span translate>result.advertising.more</span></ion-label>
+      </ion-item>
       }
 
     </ng-template>
