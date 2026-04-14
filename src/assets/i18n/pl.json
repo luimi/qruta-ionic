@@ -186,6 +186,7 @@
             "title": "Szczegóły trasy",
             "walkTo": "Idź pieszo do",
             "takeBus": "Weź autobus",
+            "take": "Wziąć transport",
             "getDown": "Wysiądź",
             "destiny": "Idź pieszo do celu",
             "dialogs": {

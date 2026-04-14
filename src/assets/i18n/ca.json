@@ -186,6 +186,7 @@
             "title": "Detall del recorregut",
             "walkTo": "Caminar fins a",
             "takeBus": "Agafar el bus",
+            "take": "Agafar el transport",
             "getDown": "Baixar-se",
             "destiny": "Caminar fins a la destinació",
             "dialogs": {

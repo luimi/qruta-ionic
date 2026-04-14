@@ -186,6 +186,7 @@
             "title": "Route Detail",
             "walkTo": "Walk to",
             "takeBus": "Take the bus",
+            "take": "Take the transport",
             "getDown": "Get down",
             "destiny": "Walk to the destination",
             "dialogs": {

@@ -186,6 +186,7 @@
             "title": "Routendetails",
             "walkTo": "Zu Fuß gehen nach",
             "takeBus": "Bus nehmen",
+            "take": "Den Transport nehmen",
             "getDown": "Aussteigen",
             "destiny": "Zum Ziel gehen",
             "dialogs": {

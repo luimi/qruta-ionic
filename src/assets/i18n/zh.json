@@ -186,6 +186,7 @@
             "title": "路线详情",
             "walkTo": "步行至",
             "takeBus": "乘坐公交车",
+            "take": "乘坐交通工具",
             "getDown": "下车",
             "destiny": "步行至目的地",
             "dialogs": {

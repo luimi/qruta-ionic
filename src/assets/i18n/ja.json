@@ -186,6 +186,7 @@
             "title": "ルート詳細",
             "walkTo": "まで歩く",
             "takeBus": "バスに乗る",
+            "take": "交通機関を利用する",
             "getDown": "降りる",
             "destiny": "目的地まで歩く",
             "dialogs": {

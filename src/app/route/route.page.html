@@ -20,7 +20,13 @@
       </ion-col>
       <ion-col size="12" size-md="6" class="col-info scrollable ion-padding-bottom">
         <div class="ion-padding">
-          <h1>{{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}</h1>
+          <ion-item lines="none">
+            <ion-icon src="/assets/transport/{{route?.get('type')?route.get('type'):'bus'}}.svg" slot="start" size="large"></ion-icon>
+            <ion-label>
+              {{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}
+            </ion-label>
+          </ion-item>
+          
           <p style="white-space: break-spaces;">{{route?.get('info')}}</p>
           <swiper-container *ngIf="images.length>0" [pagination]="true">
             <swiper-slide *ngFor="let image of images">

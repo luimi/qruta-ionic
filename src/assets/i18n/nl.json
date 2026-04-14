@@ -186,6 +186,7 @@
             "title": "Routedetails",
             "walkTo": "Lopen naar",
             "takeBus": "Bus nemen",
+            "take": "Het vervoer nemen",
             "getDown": "Uitstappen",
             "destiny": "Lopen naar bestemming",
             "dialogs": {
