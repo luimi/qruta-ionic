@@ -187,6 +187,7 @@ export class CalculatePage implements OnInit {
     places.forEach((place) => {
       let marker = this.leaflet.addMarker(this.map, place.location, place.address, place.icon, place.size)
       marker.on('click', () => {
+        this.utils.gaEvent("calculate-map-place");
         this.actionSheetAddress(place);
       })
     })
