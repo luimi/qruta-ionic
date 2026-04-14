@@ -6,7 +6,8 @@
     <ion-title>{{route?.get('company')?.get('name')}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="toogleFavorite()">
-        <ion-icon slot="icon-only" [name]="route && this.favoriteCtrl.isFavorite(route.id) ? 'star' : 'star-outline' "></ion-icon>
+        <ion-icon slot="icon-only"
+          [name]="route && this.favoriteCtrl.isFavorite(route.id) ? 'star' : 'star-outline' "></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -21,12 +22,13 @@
       <ion-col size="12" size-md="6" class="col-info scrollable ion-padding-bottom">
         <div class="ion-padding">
           <ion-item lines="none">
-            <ion-icon src="/assets/transport/{{route?.get('type')?route.get('type'):'bus'}}.svg" slot="start" size="large"></ion-icon>
+            <ion-icon src="/assets/transport/{{route?.get('type')?route.get('type'):'bus'}}.svg" slot="start"
+              size="large"></ion-icon>
             <ion-label>
-              {{route?.get('name')}} {{route?.get('details')?'-':''}} {{route?.get('details')}}
+              <b>{{route?.get('name')}} </b> <span>{{route?.get('details')?'-':''}} {{route?.get('details')}}</span>
             </ion-label>
           </ion-item>
-          
+
           <p style="white-space: break-spaces;">{{route?.get('info')}}</p>
           <swiper-container *ngIf="images.length>0" [pagination]="true">
             <swiper-slide *ngFor="let image of images">
@@ -36,6 +38,17 @@
 
             </swiper-slide>
           </swiper-container>
+          @if(route?.get('payment') && route?.get('payment').length > 0) {
+          <div>
+            <h3 translate>information.payment.title</h3>
+            @for(item of route.get('payment'); track item) {
+            <ion-chip color="dark">
+              <ion-icon src="/assets/payment/{{item}}.svg"></ion-icon>
+              <ion-label><span translate>information.payment.methods.{{item}}</span></ion-label>
+            </ion-chip>
+            }
+          </div>
+          }
           <ion-grid class="schedule">
             <ion-row>
               <ion-col size="2">

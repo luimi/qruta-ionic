@@ -306,8 +306,9 @@
                 "cash": "Efectivo",
                 "card": "Tarjeta recargable",
                 "qr": "QR",
-                "rfc": "RFC",
-                "smarthPhone": "Teléfono inteligente"
+                "nfc": "NFC",
+                "ticket": "Tiquete",
+                "phone": "Teléfono inteligente"
             }
         },
         "coverage":{

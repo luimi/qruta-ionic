@@ -306,8 +306,9 @@
                 "cash": "Gotówka",
                 "card": "Karta doładowywana",
                 "qr": "QR",
-                "rfc": "RFC",
-                "smarthPhone": "Smartfon"
+                "nfc": "NFC",
+                "ticket": "Bilet",
+                "phone": "Smartfon"
             }
         },
         "coverage": {

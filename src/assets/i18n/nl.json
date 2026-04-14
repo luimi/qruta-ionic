@@ -306,8 +306,9 @@
                 "cash": "Contant",
                 "card": "Oplaadbare kaart",
                 "qr": "QR",
-                "rfc": "RFC",
-                "smarthPhone": "Smartphone"
+                "nfc": "NFC",
+                "ticket": "Ticket",
+                "phone": "Smartphone"
             }
         },
         "coverage": {

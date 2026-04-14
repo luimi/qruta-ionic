@@ -306,8 +306,9 @@
                 "cash": "현금",
                 "card": "충전식 카드",
                 "qr": "QR 코드",
-                "rfc": "RFC",
-                "smarthPhone": "스마트폰"
+                "nfc": "NFC",
+                "ticket": "티켓",
+                "phone": "스마트폰"
             }
         },
         "coverage":{

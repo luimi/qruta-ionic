@@ -306,8 +306,9 @@
                 "cash": "Наличные",
                 "card": "Пополняемая карта",
                 "qr": "QR-код",
-                "rfc": "RFC/NFC",
-                "smarthPhone": "Смартфон"
+                "nfc": "NFC",
+                "ticket": "Билет",
+                "phone": "Смартфон"
             }
         },
         "coverage": {
