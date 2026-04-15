@@ -65,6 +65,9 @@ ion-segment-button.ios {
   --border-radius: 20px;
 }
 
+.information {
+  margin-top: var(--ion-safe-area-top);
+}
 .transcaribe {
-  margin-top: 65px;
+  margin-top: calc(var(--ion-safe-area-top) + 65px);
 }
