@@ -23,6 +23,7 @@ export class StoryComponent implements OnInit {
 
   currentIndex: number = 0;
   progress: number = 0;
+  isMuted: boolean = true;
   private interval: any;
   private IMAGE_DURATION = 5000;
 
@@ -90,8 +91,20 @@ export class StoryComponent implements OnInit {
     this.nextStory();
   }
 
-  private async getStoryTimer(){
+  private async getStoryTimer() {
     const ads: any = await this.utils.getServerConfig("ads");
     this.IMAGE_DURATION = ads.storyTime;
+  }
+
+  toggleMute() {
+    this.isMuted = !this.isMuted;
+  }
+  tooglePlay() {
+    let vp = this.videoPlayer.nativeElement
+    if(vp.paused) {
+      vp.play()
+    } else {
+      vp.pause()
+    }
   }
 }

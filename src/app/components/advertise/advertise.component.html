@@ -9,9 +9,9 @@
 
 @if(advertise.url) {
 <ion-footer>
-  <ion-item (click)="openAdvertise()">
-  <ion-icon aria-hidden="true" name="chevron-forward" slot="end"></ion-icon>
-  <ion-label><span translate>result.advertising.more</span></ion-label>
+  <ion-item class="more" (click)="openAdvertise()" color="white">
+    <ion-icon aria-hidden="true" name="chevron-forward" slot="end"></ion-icon>
+    <ion-label><span translate>result.advertising.more</span></ion-label>
   </ion-item>
 </ion-footer>
 }

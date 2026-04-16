@@ -16,8 +16,18 @@
     }
 
     @if(stories[currentIndex].type === 'video') {
-    <video #videoPlayer [src]="stories[currentIndex].url" class="story-media" autoplay muted playsinline
-      (ended)="onVideoEnded()"></video>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+      <ion-fab-button (click)="toggleMute()" color="main">
+        <ion-icon name="volume-{{isMuted?'mute':'high'}}-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+      <ion-fab-button (click)="tooglePlay()" color="main">
+        <ion-icon name="{{videoPlayer.paused?'play-outline':'pause-outline'}}"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <video #videoPlayer [src]="stories[currentIndex].url" class="story-media" autoplay muted playsinline webkit-playsinline
+      (ended)="onVideoEnded()" [muted]="isMuted"></video>
     }
 
   </div>
@@ -26,5 +36,4 @@
     <div class="nav-zone left" (click)="prevStory()"></div>
     <div class="nav-zone right" (click)="nextStory()"></div>
   </div>
-
 </div>

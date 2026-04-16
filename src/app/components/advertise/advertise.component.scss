@@ -7,3 +7,7 @@ ion-content, ion-footer {
 app-story {
     max-height: 100%;
 }
+
+.more {
+    margin-bottom: var(--ion-safe-area-bottom);
+}
