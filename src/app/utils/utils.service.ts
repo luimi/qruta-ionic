@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { constants } from './constants';
 import moment from 'moment';
 declare let gtag: any;
+declare let _paq: any;
 
 @Injectable({
   providedIn: 'root'
@@ -133,8 +134,11 @@ export class UtilsService {
       this.translateCtrl.get(key).subscribe(result => res(result))
     })
   }
+  //TODO agregar mas parametros
   public gaEvent(name: string) {
     if (environment.production) gtag('event', name, {});
+    //TODO mejorar
+    _paq.push(['trackEvent', 'events', 'category', name, 1]);
   }
   public getGenericObject(_class: string, id?: string) {
     let generic = new Parse.Object(_class);
