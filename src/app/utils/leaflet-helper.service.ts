@@ -148,6 +148,24 @@ export class LeafletHelperService {
     let m = L.marker(location, options).addTo(map);
     return m;
   }
+  public addBusinessMarker(map: any, location: number[], title?: string, logoUrl?: string) {
+    const logo = logoUrl || './assets/location.png';
+    const safeLogo = logo.replace(/"/g, '&quot;');
+    const safeTitle = (title || '').replace(/"/g, '&quot;');
+    const icon = L.divIcon({
+      className: 'business-marker',
+      html: `<div class="business-marker__bubble"><img src="${safeLogo}" alt="${safeTitle}" /></div><div class="business-marker__tail"></div>`,
+      iconSize: [44, 50],
+      iconAnchor: [22, 50],
+      popupAnchor: [0, -50]
+    });
+    let options: any = { icon };
+    if (title) {
+      options.title = title;
+    }
+    let m = L.marker(location, options).addTo(map);
+    return m;
+  }
   public addBusMarker(map: any, location: number[], title: string, angle: number) {
     //http://jsfiddle.net/z2er1pbc/
     let options: any = {};

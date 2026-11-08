@@ -111,3 +111,41 @@
   flex-direction: row;
   align-items: center;
 }
+
+/* Marker de comercios con forma de globo de chat */
+.business-marker {
+  background: transparent;
+  border: none;
+}
+
+.business-marker__bubble {
+  position: relative;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 2px solid var(--ion-color-main, #011f35);
+  background: var(--ion-color-main-contrast, #fff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.business-marker__bubble img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.business-marker__tail {
+  width: 14px;
+  height: 14px;
+  margin: -8px auto 0;
+  background: var(--ion-color-main, #fff);
+  border-right: 2px solid var(--ion-color-main, #011f35);
+  border-bottom: 2px solid var(--ion-color-main, #011f35);
+  border-bottom-right-radius: 3px;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+}

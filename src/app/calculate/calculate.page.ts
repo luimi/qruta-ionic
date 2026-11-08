@@ -203,7 +203,7 @@ export class CalculatePage implements OnInit {
     businesses.forEach((business: any) => {
       if (!business.location) return;
       const location = [business.location.lat, business.location.lng];
-      let marker = this.leaflet.addMarker(this.map, location, business.name, business.logo || './assets/location.png', [32, 32]);
+      let marker = this.leaflet.addBusinessMarker(this.map, location, business.name, business.logo);
       marker.on('click', () => {
         this.utils.gaEvent("calculate-map-menube");
         this.actionSheetMenube(business);
