@@ -6,6 +6,7 @@
         "origin": "출발지",
         "destination": "도착지",
         "cancel": "취소",
+        "viewMenu": "메뉴 보기",
         "urban": "시내",
         "massive": "광역",
         "update": "업데이트",

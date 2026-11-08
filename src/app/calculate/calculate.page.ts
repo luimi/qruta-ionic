@@ -15,6 +15,7 @@ import { AdsService } from '../utils/ads.service';
 import { environment } from 'src/environments/environment';
 import { RecentsService } from '../utils/recents.service';
 import { PlacesService } from '../utils/places.service';
+import { MenubeService } from '../utils/menube.service';
 import { InfoComponent } from './info/info.component';
 
 @Component({
@@ -50,7 +51,8 @@ export class CalculatePage implements OnInit {
     private platform: Platform,
     private adCtrl: AdsService,
     private recentCtrl: RecentsService,
-    private placesCtrl: PlacesService
+    private placesCtrl: PlacesService,
+    private menubeCtrl: MenubeService
   ) { }
 
   ngOnInit() { 
@@ -80,6 +82,7 @@ export class CalculatePage implements OnInit {
     if(!this.start.location) this.getCurrentPosition();
     
     this.showPlaceMarks();
+    this.showMenubeBusinesses();
   }
   ionViewWillLeave() {
     this.leaflet.removeMap('calculate')
@@ -191,6 +194,56 @@ export class CalculatePage implements OnInit {
         this.actionSheetAddress(place);
       })
     })
+  }
+
+  private async showMenubeBusinesses() {
+    if (!this.city || !this.city.location) return;
+    const result: any = await this.menubeCtrl.getNearBy(this.city.location.latitude, this.city.location.longitude);
+    const businesses: any[] = result && result.businesses ? result.businesses : [];
+    businesses.forEach((business: any) => {
+      if (!business.location) return;
+      const location = [business.location.lat, business.location.lng];
+      let marker = this.leaflet.addMarker(this.map, location, business.name, business.logo || './assets/location.png', [32, 32]);
+      marker.on('click', () => {
+        this.utils.gaEvent("calculate-map-menube");
+        this.actionSheetMenube(business);
+      })
+    })
+  }
+
+  private async actionSheetMenube(business: any) {
+    const answers: any = await this.utils.getTranslation(["general.origin", "general.destination", "general.viewMenu", "general.cancel"])
+    const location = {
+      address: business.address || business.name,
+      location: [business.location.lat, business.location.lng]
+    }
+    const actionSheet = await this.actionSheet.create({
+      header: business.name,
+      buttons: [{
+        text: answers["general.origin"],
+        icon: 'location',
+        handler: () => {
+          this.setAddress(this.start, location);
+        }
+      }, {
+        text: answers["general.destination"],
+        icon: 'flag',
+        handler: () => {
+          this.setAddress(this.end, location);
+        }
+      }, {
+        text: answers["general.viewMenu"],
+        icon: 'restaurant-outline',
+        handler: () => {
+          window.open(business.menuUrl, '_blank');
+        }
+      }, {
+        text: answers["general.cancel"],
+        icon: 'close',
+        role: 'cancel'
+      }]
+    });
+    await actionSheet.present();
   }
 
   inputChanged(input: string) {

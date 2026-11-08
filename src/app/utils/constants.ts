@@ -17,6 +17,7 @@ export const constants = {
         getServer: 'getServer',
         sendOTPCode: 'sendOTPCode',
         getPaymentLink: 'getPaymentLink',
+        getMenubeNearby: 'getMenubeNearby',
     },
     local: {
         result: 'result',
