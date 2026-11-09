@@ -224,18 +224,21 @@ export class CalculatePage implements OnInit {
         icon: 'location',
         handler: () => {
           this.setAddress(this.start, location);
+          this.utils.gaEvent("calculate-map-menube-start");
         }
       }, {
         text: answers["general.destination"],
         icon: 'flag',
         handler: () => {
           this.setAddress(this.end, location);
+          this.utils.gaEvent("calculate-map-menube-end");
         }
       }, {
         text: answers["general.viewMenu"],
         icon: 'restaurant-outline',
         handler: () => {
           window.open(business.menuUrl, '_blank');
+          this.utils.gaEvent("calculate-map-menube-menu");
         }
       }, {
         text: answers["general.cancel"],
